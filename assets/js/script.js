@@ -10,6 +10,7 @@ var focusTimer,
     cssTargetTimer,
     classTargetTimer,
     pollingLoop,
+    w = 0,
     polling = $('.polling');
 
 $(document).ready(function(e) {
@@ -200,6 +201,8 @@ function json_ajax(_this) {
 }
 
 $(window).on('load', function (e) {
+    w = $(window).width();
+
 	preloading('hide')
 
     $('.load').each(function() {
@@ -213,16 +216,16 @@ $(window).on('load', function (e) {
     else
     	$('.top').fadeOut(400);
 }).on('resize', function(e) {
-	preloading('show')
+    if ($(window).width() != w) {
+        preloading('show');
 
-	resizeTimer = window.setTimeout(function() {
-		preloading('hide')
-	}, 300)
+        resizeTimer = window.setTimeout(function() {
+            preloading('hide')
+        }, 300)
+    }
+
+    w = $(window).width();
 });
-
-function polling() {
-
-}
 
 function getFormData($form) {
     var unindexed_array = $form.serializeArray(),

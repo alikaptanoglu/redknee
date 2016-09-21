@@ -23,7 +23,7 @@
 
 .hide-desktop { display: none; }
 
-body { padding: 0; overflow-y: hidden; transition: all .3s ease 0s; }
+body { padding: 0; transition: all .3s ease 0s; }
 
 a { color: #838076; }
 a:hover { color: #6e6b60; }
