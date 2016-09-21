@@ -1,0 +1,20 @@
+{
+	"toast": false,
+	"go": false,
+	"html": [
+		{ "type": "dom", "target": ".messages", "text": "" },
+		{ "type": "append", "target": ".messages", "text": "<div class=\"list-group-item text-right\"><div class=\"title\"><p class=\"message\">Sed ac erat dictum, euismod sapien et, aliquet ipsum.</p><p class=\"options\"><span class=\"date text-muted\">16:15</span><a href=\"#\"><i class=\"ion ion-trash-a ion-fw\"></i></a><a href=\"#\"><i class=\"ion ion-eye-disabled ion-fw\"></i></a></p></div><img alt=\"...\" src=\"upload/user-2.jpg\" class=\"img img-responsive\" /></div>" },
+		{ "type": "append", "target": ".messages", "text": "<div class=\"list-group-item text-right\"><div class=\"title\"><p class=\"message\">Sed ac erat dictum, euismod sapien et, aliquet ipsum.</p><p class=\"options\"><span class=\"date text-muted\">16:15</span><a href=\"#\"><i class=\"ion ion-trash-a ion-fw\"></i></a><a href=\"#\"><i class=\"ion ion-eye-disabled ion-fw\"></i></a></p></div><img alt=\"...\" src=\"upload/user-2.jpg\" class=\"img img-responsive\" /></div>" },
+		{ "type": "append", "target": ".messages", "text": "<div class=\"list-group-item text-right\"><div class=\"title\"><p class=\"message\">Sed ac erat dictum, euismod sapien et, aliquet ipsum.</p><p class=\"options\"><span class=\"date text-muted\">16:15</span><a href=\"#\"><i class=\"ion ion-trash-a ion-fw\"></i></a><a href=\"#\"><i class=\"ion ion-eye-disabled ion-fw\"></i></a></p></div><img alt=\"...\" src=\"upload/user-2.jpg\" class=\"img img-responsive\" /></div>" },
+		{ "type": "append", "target": ".messages", "text": "<div class=\"list-group-item text-right\"><div class=\"title\"><p class=\"message\">Sed ac erat dictum, euismod sapien et, aliquet ipsum.</p><p class=\"options\"><span class=\"date text-muted\">16:15</span><a href=\"#\"><i class=\"ion ion-trash-a ion-fw\"></i></a><a href=\"#\"><i class=\"ion ion-eye-disabled ion-fw\"></i></a></p></div><img alt=\"...\" src=\"upload/user-2.jpg\" class=\"img img-responsive\" /></div>" },
+		{ "type": "append", "target": ".messages", "text": "<div class=\"list-group-item text-right\"><div class=\"title\"><p class=\"message\">Sed ac erat dictum, euismod sapien et, aliquet ipsum.</p><p class=\"options\"><span class=\"date text-muted\">16:15</span><a href=\"#\"><i class=\"ion ion-trash-a ion-fw\"></i></a><a href=\"#\"><i class=\"ion ion-eye-disabled ion-fw\"></i></a></p></div><img alt=\"...\" src=\"upload/user-2.jpg\" class=\"img img-responsive\" /></div>" }
+	],
+	"dom": false,
+	"modal": false,
+	"classTarget": [
+		{ "target": ".user-lists > .active", "add": false, "remove": "active" },
+		{ "target": "#dm-user-2", "add": "active", "remove": false }
+	],
+	"cssTarget": false,
+	"pollingLoop": 10000
+}

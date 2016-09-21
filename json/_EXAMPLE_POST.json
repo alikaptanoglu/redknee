@@ -1,0 +1,44 @@
+{
+	"toast": {
+		"text": "TOAST TEXT",
+		"timeOut": 4000 // Hide Delay MS
+	},
+	"go": {
+		"url": "forum-topic.html", // Redirect URL
+		"delay": 1000 // Delay MS
+	},
+	"html": [
+		{ "type": "append", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "dom", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "prepend", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "before", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "after", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" }
+	],
+	"dom": [
+		{ "type": "show", "target": ".target-selector" },
+		{ "type": "hide", "target": ".target-selector" },
+		{ "type": "remove", "target": ".target-selector" },
+		{ "type": "reset", "target": ".target-selector" },
+		{ "type": "appendTo", "element": ".element", "target": ".target-selector" },
+		{ "type": "prependTo", "element": ".element", "target": ".target-selector" }
+	],
+	"modal": {
+		"url": "json/example-modal.json", // Modal URL
+		"delay": 2000 // Modal Open Delay MS
+	},
+	"classTarget": [
+		{ "target": ".target-selector", "add": "ion-android-favorite text-danger", "remove": "ion-android-favorite-outline" }
+	],
+	"cssTarget": [
+		{
+			"target": "body", // Selector
+			"css": [
+				{
+					"padding": "10px",
+					"color": "#fff"
+				}
+			]
+		}
+	],
+	"pollingLoop": 1000 //Loop this json function
+}

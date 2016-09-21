@@ -1,0 +1,7 @@
+{
+	"header": false,
+	"content": "<div class=\"alert alert-info\"><i class=\"ion ion-information ion-fw\"></i> Search Success</div><div>HTML Results</div>",
+	"toast": false,
+	"go": false,
+	"closeDelay": false
+}

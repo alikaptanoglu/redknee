@@ -1,0 +1,11 @@
+{
+	"toast": { "text": "Form Submitted...", "timeOut": 4000 },
+	"go": false,
+	"html": [
+		{ "type": "dom", "target": ".form-results", "text": "<div class=\"alert alert-success\">Form submitted div.</div>" }
+	],
+	"dom": false,
+	"modal": { "url": "json/example-modal.json", "delay": 2000 },
+	"classTarget": false,
+	"cssTarget": false
+}

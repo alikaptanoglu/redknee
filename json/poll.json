@@ -1,0 +1,38 @@
+{
+	"toast": { "text": "Vote Submitted...", "timeOut": 4000 },
+	"go": false,
+	"modal": false,
+	"dom": false,
+	"html": [
+		{ "type": "dom", "target": ".poll > .option-1 > .result", "text": "50%" },
+		{ "type": "dom", "target": ".poll > .option-1 > .progress > .progress-bar > .sr-only", "text": "50% Complete" },
+
+		{ "type": "dom", "target": ".poll > .option-2 > .result", "text": "50%" },
+		{ "type": "dom", "target": ".poll > .option-2 > .progress > .progress-bar > .sr-only", "text": "50% Complete" },
+		
+		{ "type": "dom", "target": ".poll > .results > strong", "text": "2" }
+	],
+	"classTarget": [
+		{ "target": ".poll > .option-1 > .progress > .progress-bar", "add": "active", "remove": false },
+		
+		{ "target": ".poll", "add": "poll-active", "remove": false }
+	],
+	"cssTarget": [
+		{
+			"target": ".poll > .option-1 > .progress > .progress-bar",
+			"css": [
+				{
+					"width": "50%"
+				}
+			]
+		},
+		{
+			"target": ".poll > .option-2 > .progress > .progress-bar",
+			"css": [
+				{
+					"width": "50%"
+				}
+			]
+		}
+	]
+}

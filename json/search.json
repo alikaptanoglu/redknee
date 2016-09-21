@@ -1,0 +1,9 @@
+{
+	"toast": { "text": "Searching...", "timeOut": 1000 },
+	"go": false,
+	"html": false,
+	"dom": false,
+	"modal": { "url": "json/search-results.json", "delay": 0 },
+	"classTarget": false,
+	"cssTarget": false
+}

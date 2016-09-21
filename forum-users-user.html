@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="RedKnee is the best">
+
+    <link rel="icon" href="favicon.ico">
+
+    <title>RedKnee | Multipurpose Template</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext" rel="stylesheet" crossorigin="anonymous">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/ionicons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="preloader">
+      <img alt="..." src="assets/img/preloader.gif" />
+      <p>a few seconds</p>
+    </div>
+    <div class="polling"></div>
+
+    <div class="modal">
+      <div class="modal-header float">
+        <div class="modal-title col col-xs-10"></div>
+        <div class="modal-close col col-xs-2">
+          <a href="#" class="toggle-class" data-target="body" data-remove="modal-active">
+            <i class="ion ion-ios-close-empty"></i>
+          </a>
+        </div>
+      </div>
+      <div class="modal-content"></div>
+    </div>
+
+    <div class="toast">
+      <div class="toast-content"></div>
+    </div>
+
+    <div class="search">
+      <div class="container">
+        <form method="post" action="json/search.json" class="ajax">
+          <input type="text" class="form-control" name="search" placeholder="Search" />
+        </form>
+        <a href="#" class="times toggle-class" data-remove="search-active" data-target="body">
+          <i class="ion ion-ios-close-empty"></i>
+        </a>
+      </div>
+    </div>
+    <nav class="drawer">
+      <div class="container">
+        <ul class="float pull-left">
+          <li class="hide-desktop header">
+            <div class="float vertical-center">
+              <div class="col col-xs-4">
+                <img alt="..." src="assets/img/logo-drawer.png" class="img-responsive" />
+              </div>
+              <div class="col col-xs-8 drawer-close">
+                <a href="#" class="toggle-class" data-target="body" data-remove="drawer-active">
+                  <i class="ion ion-ios-arrow-left"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="hide-mobile logo">
+            <a href="index.html">
+              <img alt="..." src="assets/img/logo-navbar.png" class="img img-responsive" />
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              HOME
+            </a>
+          </li>
+          <li>
+            <a href="#" class="disabled">
+              HOME 2 <span class="badge">Coming Soon</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="active">
+              FORUM <i class="ion ion-ios-arrow-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="adventure-travel.html">Adventure Travel</a></li>
+              <li><a href="agency.html">Agency</a></li>
+              <li><a href="app-landing.html">App Landing</a></li>
+              <li><a href="resume.html">Resume</a></li>
+              <li><a href="capital-film.html">Capital Film</a></li>
+              <li><a href="fashion.html">Fashion</a></li>
+              <li><a href="fitness.html">Fitness</a></li>
+              <li><a href="restaurant.html">Restaurant</a></li>
+              <li><a href="video.html">Video</a></li>
+              <li><a href="winery.html">Winery</a></li>
+              <li><a href="event-seminar.html">Event/Seminar</a></li>
+              <li><a href="architecture.html">Architecture</a></li>
+              <li><a href="photography.html">Photography</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown">
+              UTILITY <i class="ion ion-ios-arrow-down"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="utility-about-us.html">About Us</a></li>
+              <li><a href="utility-services.html">Services</a></li>
+              <li><a href="utility-contact.html">Contact</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="utility-planner.html">Planner</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="utility-login.html">Login</a></li>
+              <li><a href="utility-register.html">Register</a></li>
+              <li><a href="utility-password.html">Password</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="utility-coming-soon.html">Coming Soon</a></li>
+              <li><a href="utility-faq.html">FAQ</a></li>
+              <li><a href="utility-confirmation.html">Confirmation</a></li>
+              <li><a href="utility-countdown.html">Countdown</a></li>
+              <li><a href="utility-404-not-found.html">404 Not Found</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="float pull-right">
+          <li class="sep">
+            <a href="#top" class="toggle-class focus" data-add="search-active" data-remove="drawer-active modal-active" data-focus="input[name=search]" data-target="body">
+              <i class="ion ion-ios-search"></i>
+              <span class="hide-desktop">SEARCH</span>
+            </a>
+          </li>
+          <li class="dropdown pull-right sep">
+            <a href="#" data-toggle="dropdown">
+              <i class="ion ion-person"></i>
+              <span>USER</span>
+              <i class="ion ion-ios-arrow-down hide-desktop"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="utility-login.html" class="modal-open" data-url="json/sign-in.json"><i class="ion ion-fw ion-person"></i> Sign In</a></li>
+              <li><a href="utility-register.html" class="modal-open" data-url="json/sign-up.json"><i class="ion ion-fw ion-person-add"></i> Sign Up</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="utility-password.html" class="modal-open" data-url="json/password.json"><i class="ion ion-fw ion-help"></i> Forgotten Password</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="utility-my-account.html"><i class="ion ion-fw ion-person"></i> Account Information</a></li>
+            </ul>
+          </li>
+          <li class="hide-desktop footer">
+            <div class="social">
+              <a href="#">
+                <i class="ion ion-social-facebook"></i>
+              </a>
+              <a href="#">
+                <i class="ion ion-social-twitter"></i>
+              </a>
+            </div>
+            <p class="copyright">© 2016 Bestify.com | All right reserverd.</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header class="mobile hide-desktop">
+      <div class="container">
+        <a href="#" class="toggle-class" data-target="body" data-add="drawer-active">
+          <i class="ion ion-navicon"></i>
+        </a>
+        <a href="index.html">
+          <img alt="..." src="assets/img/logo-drawer.png" class="img img-responsive" />
+        </a>
+      </div>
+    </header>
+    <div class="overlay">
+      <a href="#" class="toggle-class" data-target="body" data-remove="drawer-active modal-active"></a>
+    </div>
+    <div class="bread">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li>
+                  <a href="index.html">
+                    <i class="ion ion-home ion-fw"></i> <span class="hide-desktop">Home</span>
+                  </a>
+                </li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="forum-users.html">Users</a></li>
+                <li>John Doe</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="headline bg" data-imageSrc="assets/img/headline/7.png" data-bgColor="#333" data-color="#fff">
+        <div class="container text-center">
+            <h1>John Doe</h1>
+        </div>
+    </div>
+
+    <div class="main forum">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-5">
+
+            <div class="panel panel-redling">
+              <div class="panel-heading">User Information</div>
+              <div class="panel-body">
+                <div class="user-details">
+                  <div class="float text-center">
+                    <div class="col col-xs-12">
+                      <img alt="..." src="upload/user.jpg" class="img img-responsive img-circle" />
+                    </div>
+                    <div class="col col-xs-12 info">
+                      <h3>John Doe</h3>
+                      <div class="mention text-muted dropdown">
+                        <a href="#" data-toggle="dropdown">@jdoe <i class="ion ion-ios-arrow-down"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="forum-users-user.html">Profile</a></li>
+                          <li><a href="forum-users-dm.html">Direct Message</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col col-xs-12">
+                      <div class="tab-content">
+                        <div class="tab-pane fade in active" id="user2-tab-1-3">
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <strong>Join</strong> 2 Month
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Last Login</strong> 1 Day Ago
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Threads</strong> 44
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Likes</strong> 445
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Profile Hit</strong> 12,977
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tab-pane fade" id="user2-tab-2-3">
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <strong>Name</strong> John Doe
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Age</strong> 24
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Sex</strong> Male
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Location</strong> Netherland
+                            </li>
+                            <li class="list-group-item">
+                              <strong>Education</strong> University
+                            </li>
+                          </ul>
+                        </div>
+                      </div> <!-- /. TabContent -->
+                      <ul class="nav nav-tabs float">
+                        <li class="active pull-left">
+                          <a href="#user2-tab-1-3" data-toggle="tab">
+                            <i class="ion ion-record ion-fw"></i>
+                          </a>
+                        </li>
+                        <li class="pull-left">
+                          <a href="#user2-tab-2-3" data-toggle="tab">
+                            <i class="ion ion-record ion-fw"></i>
+                          </a>
+                        </li>
+                      </ul> <!-- /. NavTabs -->
+                    </div>
+                  </div> <!-- /. Row -->
+                </div> <!-- /. UserDetails -->
+              </div>
+            </div>
+
+          </div> <!-- /. Col -->
+          <div class="col col-sm-7">
+
+            <div class="panel panel-redling">
+              <div class="panel-heading">Last Topic Attended</div>
+              <div class="list-group">
+                <div class="list-group-item">
+                  <div class="row">
+                    <div class="item col-sm-8 title">
+                      <a href="forum-topic.html">
+                        <i class="ion ion-ios-arrow-right ion-fw"></i>
+                        Example Forum Topic
+                      </a>
+                    </div>
+                    <div class="item col-sm-4 date">
+                      <i class="ion ion-ios-clock-outline"></i>
+                      5.09.2016 11:26
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row">
+                    <div class="item col-sm-8 title">
+                      <a href="forum-topic.html">
+                        <i class="ion ion-ios-folder-outline ion-fw"></i>
+                        Example Forum Topic
+                      </a>
+                    </div>
+                    <div class="item col-sm-4 date">
+                      <i class="ion ion-ios-clock-outline"></i>
+                      5.09.2016 11:26
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row">
+                    <div class="item col-sm-8 title">
+                      <a href="forum-topic.html">
+                        <i class="ion ion-ios-folder-outline ion-fw"></i>
+                        Example Forum Topic
+                      </a>
+                    </div>
+                    <div class="item col-sm-4 date">
+                      <i class="ion ion-ios-clock-outline"></i>
+                      5.09.2016 11:26
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row">
+                    <div class="item col-sm-8 title">
+                      <a href="forum-topic.html">
+                        <i class="ion ion-ios-sunny-outline ion-fw"></i>
+                        Example Forum Topic
+                      </a>
+                    </div>
+                    <div class="item col-sm-4 date">
+                      <i class="ion ion-ios-clock-outline"></i>
+                      5.09.2016 11:26
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row">
+                    <div class="item col-sm-8 title">
+                      <a href="forum-topic.html">
+                        <i class="ion ion-ios-lightbulb-outline ion-fw"></i>
+                        Example Forum Topic
+                      </a>
+                    </div>
+                    <div class="item col-sm-4 date">
+                      <i class="ion ion-ios-clock-outline"></i>
+                      5.09.2016 11:26
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div class="row">
+                    <div class="item col-sm-8 title">
+                      <a href="forum-topic.html">
+                        <i class="ion ion-ios-lightbulb-outline ion-fw"></i>
+                        Example Forum Topic
+                      </a>
+                    </div>
+                    <div class="item col-sm-4 date">
+                      <i class="ion ion-ios-clock-outline"></i>
+                      5.09.2016 11:26
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-redling">
+              <div class="panel-heading">Signature</div>
+              <div class="panel-body">
+                <div class="signature">
+                  Hey there! I'm using <a href="#">redknee</a>...
+                </div>
+              </div>
+            </div>
+
+          </div> <!-- /. Col -->
+          <div class="col col-sm-12">
+
+            <div class="panel panel-redling">
+              <div class="panel-heading">User Comments</div>
+              <div class="list-group" id="user-comment">
+                <div class="list-group-item">
+                  <p>
+                    <i class="ion ion-chatbubble ion-fw"></i>
+                    <a href="#" class="root">Admin</a>
+                    <span class="date text-muted">
+                      <em>08.08.2016 16:04</em>
+                    </span>
+                  </p>
+                  <p>Aliquam congue odio et nulla eleifend, ac maximus massa iaculis.</p>
+                </div>
+                <div class="list-group-item">
+                  <p>
+                    <i class="ion ion-chatbubble ion-fw"></i>
+                    <a href="#" class="root">Admin</a>
+                    <span class="date text-muted">
+                      <em>08.08.2016 16:04</em>
+                    </span>
+                  </p>
+                  <p>Vivamus vitae odio accumsan sapien malesuada cursus.</p>
+                </div>
+                <div class="list-group-item">
+                  <p>
+                    <i class="ion ion-chatbubble ion-fw"></i>
+                    <a href="#" class="root">Admin</a>
+                    <span class="date text-muted">
+                      <em>08.08.2016 16:04</em>
+                    </span>
+                  </p>
+                  <p>Cras sed nulla tempor, pellentesque mauris eu, efficitur elit.</p>
+                </div>
+                <div class="list-group-item">
+                  <p>
+                    <i class="ion ion-chatbubble ion-fw"></i>
+                    <a href="#" class="root">Admin</a>
+                    <span class="date text-muted">
+                      <em>08.08.2016 16:04</em>
+                    </span>
+                  </p>
+                  <p>Cras quis metus et orci luctus rutrum at quis diam.</p>
+                </div>
+                <div class="list-group-item">
+                  <p>
+                    <i class="ion ion-chatbubble ion-fw"></i>
+                    <a href="#" class="root">Admin</a>
+                    <span class="date text-muted">
+                      <em>08.08.2016 16:04</em>
+                    </span>
+                  </p>
+                  <p>Nam auctor ligula a sem consequat, suscipit congue orci ultricies.</p>
+                </div>
+              </div>
+              <div class="panel-body">
+                <form method="post" action="json/user-comment.json" class="ajax" id="user-comment-form">
+                  <textarea class="form-control" name="comment" placeholder="Your Comment?"></textarea>
+                  <button class="btn btn-default" type="submit">Post</button>
+                </form>
+              </div>
+            </div>
+
+            <nav aria-label="Page navigation">
+              <ul class="pagination pg-center">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <i aria-hidden="true" class="ion ion-ios-arrow-left"></i>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <i aria-hidden="true" class="ion ion-ios-arrow-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+          </div> <!-- /. Col -->
+        </div> <!-- /. Row -->
+      </div> <!-- /. Container -->
+    </div> <!-- /. Main -->
+
+    <footer class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col col-sm-8">
+          <p>
+            <img alt="..." src="assets/img/logo-navbar.png" class="img img-responsive" />
+            Designed by <a href="https://twitter.com/wutlu" target="_blank">@wutlu</a>. © 2016 <a href="#">redknee.io</a>
+          </p>
+          </div>
+          <div class="col col-sm-4">
+            <ul class="float">
+              <li class="col pull-left">
+                <a href="#">
+                  <i class="ion ion-social-facebook ion-fw"></i>
+                  facebook
+                </a>
+              </li>
+              <li class="col pull-left">
+                <a href="#">
+                  <i class="ion ion-social-twitter ion-fw"></i>
+                  twitter
+                </a>
+              </li>
+              <li class="col pull-left">
+                <a href="#">
+                  <i class="ion ion-social-instagram ion-fw"></i>
+                  instagram
+                </a>
+              </li>
+              <li class="col pull-left">
+                <a href="#">
+                  <i class="ion ion-social-youtube ion-fw"></i>
+                  youtube
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="top">
+        <a href="#top">
+            <i class="ion ion-chevron-up"></i>
+        </a>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
