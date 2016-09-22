@@ -270,7 +270,7 @@ function modal(_url) {
                 if (obj.size)
                     modal.addClass(obj.size);
 
-                $('body').addClass('modal-active').removeClass('drawer-active');
+                $('body').addClass('modal-active').removeClass('drawer-active dock-active');
 
                 modal.find('.modal-title').html(obj.header.title);
                 modal.find('.modal-content').html(obj.content);

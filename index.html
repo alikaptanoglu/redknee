@@ -128,9 +128,16 @@
         </ul>
         <ul class="float pull-right">
           <li class="sep">
-            <a href="#top" class="toggle-class focus" data-add="search-active" data-remove="drawer-active modal-active" data-focus="input[name=search]" data-target="body">
+            <a href="#top" class="toggle-class focus" data-add="search-active" data-remove="drawer-active modal-active dock-active" data-focus="input[name=search]" data-target="body">
               <i class="ion ion-ios-search"></i>
               <span class="hide-desktop">SEARCH</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="toggle-class" data-add="dock-active" data-remove="drawer-active modal-active search-active" data-target="body">
+              <i class="ion ion-android-notifications"></i>
+              <span class="hide-desktop">DOCK</span>
+              <span class="badge">10+</span>
             </a>
           </li>
           <li class="dropdown pull-right sep">
@@ -641,6 +648,47 @@
         <a href="#top">
             <i class="ion ion-chevron-up"></i>
         </a>
+    </div>
+
+    <div class="dock">
+      <a href="#" class="toggle-class toggle-dock" data-target="body" data-remove="dock-active">
+        <i class="ion ion-ios-arrow-right"></i>
+      </a>
+
+      <div class="panel panel-redling">
+        <div class="panel-heading">Calendar</div>
+        <div class="alert text-muted">Not Content</div>
+        <div class="panel-footer">
+          <a href="#" class="btn btn-default">See All</a>
+          <a href="#" class="btn btn-primary">Create</a>
+        </div>
+      </div>
+
+      <div class="panel panel-redling">
+        <div class="panel-heading">Notifications</div>
+        <div class="alert text-muted">Not Content</div>
+        <div class="panel-footer">
+          <a href="#" class="btn btn-primary">Create</a>
+        </div>
+      </div>
+
+      <div class="panel panel-redling">
+        <div class="panel-heading">Notes</div>
+        <div class="alert text-muted">Not Content</div>
+        <div class="panel-footer">
+          <a href="#" class="btn btn-default">See All</a>
+          <a href="#" class="btn btn-primary">Create</a>
+        </div>
+      </div>
+
+      <div class="panel panel-redling">
+        <div class="panel-heading">Todos</div>
+        <div class="alert text-muted">Not Content</div>
+        <div class="panel-footer">
+          <a href="#" class="btn btn-default">See All</a>
+          <a href="#" class="btn btn-primary">Create</a>
+        </div>
+      </div>
     </div>
 
     <script src="assets/js/jquery.min.js"></script>
