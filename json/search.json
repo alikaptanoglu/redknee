@@ -3,7 +3,10 @@
 	"go": false,
 	"html": false,
 	"dom": false,
-	"modal": { "url": "json/search-results.json", "delay": 0 },
+	"modal": {
+		"header": false,
+		"content": "<div class=\"alert alert-info\"><i class=\"ion ion-information ion-fw\"></i> Search Success</div><div>HTML Results</div>"
+	},
 	"classTarget": false,
 	"cssTarget": false
 }

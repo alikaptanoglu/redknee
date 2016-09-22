@@ -5,7 +5,12 @@
 		{ "type": "dom", "target": ".form-results", "text": "<div class=\"alert alert-success\">Form submitted div.</div>" }
 	],
 	"dom": false,
-	"modal": { "url": "json/example-modal.json", "delay": 2000 },
+	"modal": {
+		"header": false,
+		"content": "<div class=\"alert alert-info\"><i class=\"ion ion-information ion-fw\"></i> Example Modal Success</div><div>Html area</div>",
+		"delay": 4000,
+		"closeDelay": 2000
+	},
 	"classTarget": false,
 	"cssTarget": false
 }

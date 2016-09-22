@@ -22,10 +22,6 @@
 		{ "type": "appendTo", "element": ".element", "target": ".target-selector" },
 		{ "type": "prependTo", "element": ".element", "target": ".target-selector" }
 	],
-	"modal": {
-		"url": "json/example-modal.json", // Modal URL
-		"delay": 2000 // Modal Open Delay MS
-	},
 	"classTarget": [
 		{ "target": ".target-selector", "add": "ion-android-favorite text-danger", "remove": "ion-android-favorite-outline" }
 	],
@@ -40,5 +36,15 @@
 			]
 		}
 	],
-	"pollingLoop": 1000 //Loop this json function
+	"pollingLoop": 1000, //Loop this json function
+	"modal": {
+		"header": {
+			"title": "Login",
+			"close": true
+		},
+		"content": "modal content",
+		"delay": 1000,
+		"closeDelay": 5000,
+		"size": "modal-sm"
+	}
 }

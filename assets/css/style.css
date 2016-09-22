@@ -55,7 +55,18 @@ p { margin: 0 0 10px; }
 .form-control::-moz-placeholder { color: inherit; opacity: .6; }
 .form-control:-ms-input-placeholder { color: inherit; opacity: .6; }
 
-.btn { transition: all .3s ease 0s; background: transparent; border-width: 0; box-shadow: none !important; margin: 0 0 10px; padding: 10px 15px; border-radius: 4px; color: #333; }
+.btn {
+	text-transform: uppercase;
+	font-weight: bold;
+	transition: all .3s ease 0s;
+	background: transparent;
+	border-width: 0;
+	box-shadow: none !important;
+	margin: 0 0 10px;
+	padding: 10px 15px;
+	border-radius: 4px;
+	color: #333;
+}
 
 .alert { margin: 0 0 10px; border-width: 0; }
 
@@ -223,6 +234,9 @@ footer.main > .container > .row > .col > .float > .col { float: none !important;
 footer.main > .container a { font-weight: 400; color: #fafafa; transition: all .3s ease 0s; }
 footer.main > .container a:hover { color: #ccc; }
 
+html { position: relative; min-height: 100%; }
+body.footer { margin-bottom: 8%; background: #f0f0f0; }
+
 /* Main */
 div.main { padding: 15px 0; }
 
@@ -256,7 +270,21 @@ div.main { padding: 15px 0; }
 .panel-redling > .list-group > .list-group-item:hover { background: #fafafa; border-radius: 4px; }
 .panel-redling > .panel-footer { background: transparent; }
 
+
+.panel-material {
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 1px -2px rgba(0, 0, 0, .1), 0 1px 5px 0 rgba(0, 0, 0, .1);
+	background: #fff;
+	border-radius: 4px;
+	border-width: 0;
+}
+.panel-material > .panel-heading { font-size: 24px; font-weight: 300; }
+.panel-material > .panel-footer { border-radius: 0 0 4px 4px; border-color: #e5e5e5; border-width: 1px 0 0; background: transparent; }
+.panel-material > .panel-footer > .btn { margin: 0; }
+.panel-material > .list-group > .list-group-item { border-width: 0; }
+.panel-material > .list-group > .list-group-item:hover { background: #fafafa; }
+
 /* Breadcrumb */
+.bread { background: #fff; }
 .bread > .container > .breadcrumb { margin: 0; background: transparent; color: #999; }
 .bread > .container > .breadcrumb > li > a { color: #333; font-weight: bold; transition: all .3s ease 0s; }
 .bread > .container > .breadcrumb > li > a:hover { color: #ef4034; }

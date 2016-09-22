@@ -179,10 +179,39 @@ function json_ajax(_this) {
                 }
 
                 if (obj.modal) {
-                    window.clearTimeout(modalTimer);
+                    var modal = $('.modal');
 
-                    modalTimer = window.setTimeout(function() {
-                        modal(obj.modal.url);
+                    window.clearTimeout(modalTimer);
+                    window.clearTimeout(modalCloseDelay);
+                    window.clearTimeout(goTimer);
+
+                     modalTimer = window.setTimeout(function() {
+                        if (obj.modal.header)
+                            modal.children('.modal-header').show();
+                        else {
+                            modal.children('.modal-header').hide();
+
+                            if (obj.modal.header.close)
+                                modal.find('.modal-close').show();
+                            else
+                                modal.find('.modal-close').hide();
+                        }
+
+                        if (obj.modal.size)
+                            modal.addClass(obj.modal.size);
+
+                        $('body').addClass('modal-active').removeClass('drawer-active dock-active');
+
+                        modal.find('.modal-title').html(obj.modal.header.title);
+                        modal.find('.modal-content').html(obj.modal.content);
+
+                        if (obj.modal.closeDelay) {
+                            window.clearTimeout(modalCloseDelay);
+
+                            modalCloseDelay = window.setTimeout(function() {
+                                $('body').removeClass('modal-active');
+                            }, obj.modal.closeDelay)
+                        }
                     }, obj.modal.delay)
                 }
 
@@ -236,57 +265,6 @@ function getFormData($form) {
     })
 
     return indexed_array;
-}
-
-function modal(_url) {
-	polling.addClass('active');
-
-    window.clearTimeout(modalTimer);
-    window.clearTimeout(modalCloseDelay);
-    window.clearTimeout(goTimer);
-
-    modalTimer = window.setTimeout(function() {
-        $.ajax({
-            type: 'GET',
-            dataType: 'json',
-            url: _url,
-            error: function(obj, code, text) { json_error(obj, code, text) },
-            success: function(obj) {
-            	json_results(obj);
-
-            	var modal = $('.modal');
-
-                if (obj.header == false)
-                	modal.children('.modal-header').hide();
-                else {
-                	modal.children('.modal-header').show();
-
-                	if (obj.header.close == false)
-                		modal.find('.modal-close').hide();
-                	else
-                		modal.find('.modal-close').show();
-                }
-
-                if (obj.size)
-                    modal.addClass(obj.size);
-
-                $('body').addClass('modal-active').removeClass('drawer-active dock-active');
-
-                modal.find('.modal-title').html(obj.header.title);
-                modal.find('.modal-content').html(obj.content);
-
-                if (obj.closeDelay) {
-                	window.clearTimeout(modalCloseDelay);
-
-                	modalCloseDelay = window.setTimeout(function() {
-                		$('body').removeClass('modal-active');
-                	}, obj.closeDelay)
-                }
-
-                polling.removeClass('active');
-            }
-        })
-    }, 400)
 }
 
 function preloading(status) {
