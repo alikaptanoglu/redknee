@@ -1,7 +1,0 @@
-{
-	"modal": {
-		"header": { "title": "Register", "close": true },
-		"content": "<form class=\"ajax\" method=\"post\" action=\"json/form-submit.json\"><input type=\"text\" name=\"uid\" class=\"form-control\" placeholder=\"User Name\" /><input type=\"text\" name=\"email\" class=\"form-control\" placeholder=\"E-mail\" /><input type=\"password\" name=\"pwd\" class=\"form-control\" placeholder=\"Password\" /><input type=\"password\" name=\"pwd2\" class=\"form-control\" placeholder=\"Re Password\" /><button class=\"btn btn-default\" type=\"submit\">Register</button></form><div class=\"form-results\"></div>",
-		"size": "modal-sm"
-	}
-}

@@ -8,11 +8,12 @@
 		"delay": 1000 // Delay MS
 	},
 	"html": [
-		{ "type": "append", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
-		{ "type": "dom", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
-		{ "type": "prepend", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
-		{ "type": "before", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" },
-		{ "type": "after", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" }
+		{ "type": "append", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "dom", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "prepend", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "before", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>" },
+		{ "type": "after", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>" }
+		{ "type": "value", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>" }
 	],
 	"dom": [
 		{ "type": "show", "target": ".target-selector" },
@@ -22,10 +23,10 @@
 		{ "type": "appendTo", "element": ".element", "target": ".target-selector" },
 		{ "type": "prependTo", "element": ".element", "target": ".target-selector" }
 	],
-	"classTarget": [
+	"editClass": [
 		{ "target": ".target-selector", "add": "ion-android-favorite text-danger", "remove": "ion-android-favorite-outline" }
 	],
-	"cssTarget": [
+	"editCss": [
 		{
 			"target": "body", // Selector
 			"css": [
@@ -36,15 +37,18 @@
 			]
 		}
 	],
-	"pollingLoop": 1000, //Loop this json function
+	"loop": 1000, //Loop this json function
 	"modal": {
-		"header": {
-			"title": "Login",
-			"close": true
-		},
-		"content": "modal content",
+		"heading": "Modal Title",
+		"body": "modal content",
 		"delay": 1000,
 		"closeDelay": 5000,
-		"size": "modal-sm"
+		"close": false,
+		"class": "modal-sm-4 modal-sm-offset-4"
+	},
+	"pagination": {
+		"total_results": 1064,
+		"current_page": 50,
+		"total_page": 107
 	}
 }

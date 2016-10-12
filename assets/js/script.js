@@ -1,34 +1,85 @@
-var focusTimer,
-    resizeTimer,
-    readyTimer,
-    formTimer,
-    goTimer,
-    modalTimer,
-    modalCloseDelay,
-    toastTimer,
-    targetTimer,
-    cssTargetTimer,
-    classTargetTimer,
-    pollingLoop,
-    w = 0,
-    polling = $('.polling');
+var w = 0,
+	body = $('body');
 
-$(document).ready(function(e) {
-	$('[data-toggle="tooltip"]').tooltip()
+var resizeTimer,
+	editClassTimer,
+	focusTimer,
+	formTimer,
+	goTimer,
+	toastTimer,
+	pollingLoop,
+	modalTimer,
+	modalCloseDelay,
+	keyupTimer,
+    hashPrev;
 
-	$('.bg').each(function() {
-		var data = $(this).data();
+$(window).on('load', function (e) {
+	w = $(window).width();
 
-		$(this).css({
-			'background-image': 'url(' + data.imagesrc + ')',
-			'background-color': data.bgcolor,
-			'color': data.color
-		})
+	resizeTimer = window.setTimeout(function() {
+        body.removeClass('preloader-active')
+    }, 400)
+
+	windowReady(e)
+
+    $('.load').each(function(i, el) {
+        var _this = $(this);
+
+        setTimeout(function() {
+           json_ajax(_this, false);
+        }, 100 + (i * 100));
+
+    })
+
+	$('.css').each(function() {
+		var _this = $(this);
+
+		if (_this.data('backgroundImage'))
+			_this.css('backgroundImage', _this.data('backgroundImage'))
+		if (_this.data('color'))
+			_this.css('color', _this.data('color'))
+		if (_this.data('backgroundColor'))
+			_this.css('backgroundColor', _this.data('backgroundColor'))
 	})
-}).on('click', '.toast', function() {
-	window.clearTimeout(toastTimer);
+}).on('scroll', function(e) {
+    var st = $(this).scrollTop();
 
-	$(this).fadeOut(100);
+    (st > 800) ? body.addClass('top-active') : body.removeClass('top-active');
+}).on('resize', function(e) {
+    if ($(window).width() != w) {
+        body.addClass('preloader-active')
+        windowReady(e)
+
+        resizeTimer = window.setTimeout(function() {
+            body.removeClass('preloader-active')
+        }, 400)
+    }
+
+    w = $(window).width();
+});
+
+$(document).on('click', '.edit-class', function() {
+	var _this = $(this);
+
+	if (_this.hasClass('disabled'))
+		return false;
+
+	if (_this.data('remove'))
+		$(_this.data('target')).removeClass(_this.data('remove'))
+	if (_this.data('toggle'))
+		$(_this.data('target')).toggleClass(_this.data('toggle'))
+	if (_this.data('add'))
+		$(_this.data('target')).addClass(_this.data('add'))
+}).on('click', '.focus', function() {
+	var _this = $(this);
+
+	if (!_this.hasClass('disabled')) {
+		window.clearTimeout(focusTimer);
+		
+		focusTimer = window.setTimeout(function() {
+			$(_this.data('focus')).focus()
+		}, 500)
+	}
 }).on('click', 'a', function(e) {
 	var _this = $(this),
 	    data = _this.data();
@@ -36,116 +87,169 @@ $(document).ready(function(e) {
     if (_this.hasClass('disabled'))
         return false;
 
-	if (_this.hasClass('toggle-class')) {
-		if (data.remove != undefined)
-			$(data.target).removeClass(data.remove);
-
-		if (data.add != undefined)
-			setTimeout(function() {
-				$(data.target).addClass(data.add);
-			}, 100)
-	}
-
-	if (_this.hasClass('focus')) {
-		window.clearTimeout(focusTimer);
-
-		focusTimer = window.setTimeout(function() {
-			$(data.focus).focus();
-		}, 500)
-	}
-
-	if (_this.hasClass('modal-open')) {
-		modal(_this.data('url'));
-
-		e.preventDefault()
-	}
-
 	if (_this.attr('href') == '#')
 		e.preventDefault()
 	else if (_this.attr('href') == '#top') {
-		$("html, body").animate({ scrollTop: 0 }, 500);
+		$('html, body').animate({ scrollTop: 0 }, 500);
 
 		e.preventDefault()
 	}
+}).on('click', '.closes', function(e) {
+	var _this = $(this);
+
+	if (_this.data('target'))
+		$(_this.data('target')).hide()
+	else
+		_this.hide()
+}).on('submit', 'form.ajax', function() {
+	var _this = $(this);
+
+	json_ajax(_this);
+
+    return false;
+}).on('click', 'a.ajax', function() {
+	var _this = $(this);
+
+	json_ajax(_this);
+
+    return false;
+}).on('keyup', 'form.keyup', function() {
+	var _this = $(this);
+
+	window.clearTimeout(keyupTimer);
+
+	keyupTimer = window.setTimeout(function() {
+		json_ajax(_this);
+	}, 500)
+
+    return false;
 }).keyup(function(e) {
     if (e.keyCode == 27) {
     	c('Escape Key', 'warn');
     } else if (e.keyCode == 13) {
     	c('Enter Key', 'warn');
     }
-}).on('submit', 'form.ajax', function() {
-    json_ajax($(this));
-
-    return false;
-}).on('click', 'a.ajax', function() {
-    json_ajax($(this));
-
-    return false;
-}).on('click', '.spoiler', function() {
-    $(this).children('.content').slideToggle(200);
 })
 
 function json_ajax(_this) {
-    polling.addClass('active');
-
-    var optional_data;
-
-    if (_this.is('form')) {
-        _this.css('opacity', '.5')
-             .find('button[type=submit]')
-             .attr('disabled', true)
-             .addClass('disabled')
-             .css('cursor', 'wait');
-
-        optional_data = $.extend({}, _this.data(), getFormData(_this));
-    } else if (_this.is('a')) {
-        _this.css('opacity', '.5')
-             .addClass('disabled')
-             .css('cursor', 'wait');
-
-        optional_data = $.extend({}, _this.data());
-    }
-
-    window.clearTimeout(formTimer);
-    window.clearTimeout(pollingLoop);
+	if (_this.hasClass('disabled'))
+		return false;
 
     formTimer = window.setTimeout(function() {
-        $.ajax({
-            type: _this.is('form') ? 'POST' : 'GET',
+    	var data_type = 'POST',
+    		data_vars;
+
+    	_this.addClass('disabled wait');
+    	body.addClass('polling-active');
+
+    	if (_this.is('form')) {
+            data_vars = $.extend({}, data_vars, getFormData(_this))
+    	} else if (_this.is('a'))
+        	if (_this.data('token'))
+            	data_type = 'POST';
+            else
+            	data_type = 'GET';
+
+        data_vars = $.extend({}, data_vars, _this.data());
+
+        if (_this.data('include'))
+        	data_vars[$(_this.data('include')).attr('name')] = $(_this.data('include')).val();
+
+        if (_this.data('pager')) {
+            var hash = window.location.hash.replace("#", "").split("-"),
+                page = 1;
+
+            if ($.isNumeric(hash[1]) && hash[0] == 'page')
+                page = hash[1];
+
+            hashchange(function(id) {
+                var id = id.split('-');
+
+                if ($.isNumeric(id[1]) && id[0] == 'page')
+                    json_ajax(_this);
+            })
+
+            data_vars = $.extend({}, data_vars, { "page": page });
+
+            hashPrev = "page-" + page;
+        }
+
+    	$.ajax({
+            type: data_type,
             dataType: 'json',
             url: _this.is('form') ? _this.attr('action') : _this.data('href'),
-            data: optional_data,
-            error: function(obj, code, text) { json_error(obj, code, text) },
-            success: function(obj) {
-                json_results(obj);
+            data: (data_type == 'POST') ? data_vars : '',
+            error: function(jqXHR, exception) {
+            	var msg = '';
 
-                if (_this.is('form')) {
-                    _this.css('opacity', 1)
-                         .find('button[type=submit]')
-                         .removeAttr('disabled')
-                         .removeClass('disabled')
-                         .css('cursor', 'pointer');
-                } else if (_this.is('a')) {
-                    _this.css('opacity', 1)
-                         .removeClass('disabled')
-                         .css('cursor', 'pointer');
+            	if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else if (jqXHR.status == 422) {
+                	msg = 422;
+                } else {
+                    msg = 'Uncaught Error.';
                 }
 
+                if (msg == 422) {
+                	$(_this).next('.after-form-errors').remove();
+
+                    $('<div/>', { class: 'alert alert-danger after-form-errors closes' }).appendTo(_this.after());
+                    $('<ul/>', { class: 'list-group' }).appendTo('.after-form-errors');
+
+					$.each(obj, function(key, val) {
+                        $('<li/>', { class: 'list-group-item', html: val }).appendTo('.after-form-errors > .list-group');
+                    })
+                } else {
+                	modal({ 'heading': msg, 'body': jqXHR.responseText, 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1' });
+                }
+
+                body.removeClass('polling-active');
+                _this.removeClass('disabled wait');
+            },
+            success: function(obj) {
+            	if (obj.go) {
+                    window.clearTimeout(goTimer);
+
+                    goTimer = window.setTimeout(function() {
+                        location.href = obj.go.url;
+                    }, obj.go.delay)
+                }
+
+                if (obj.toast)
+                    toast(obj.toast.text, obj.toast.timeOut)
+            		
                 if (obj.html) {
                     $.each(obj.html, function(key, val) {
+                        var content = val.content;
+
+                        if (val.escapeHTML)
+                            content = escapeHTML(val.content);
+
                         if (val.type == 'dom')
-                            $(val.target).html(val.text);
+                            $(val.target).html(content);
                         else if (val.type == 'append')
-                            $(val.target).append(val.text);
+                            $(val.target).append(content);
                         else if (val.type == 'prepend')
-                            $(val.target).prepend(val.text);
+                            $(val.target).prepend(content);
                         else if (val.type == 'before')
-                            $(val.target).before(val.text);
+                            $(val.target).before(content);
                         else if (val.type == 'after')
-                            $(val.target).after(val.text);
+                            $(val.target).after(content);
+                        else if (val.type == 'value')
+                            $(val.target).val(text);
                     })
                 }
-                
+
                 if (obj.dom) {
                     $.each(obj.dom, function(key, val) {
                         if (val.type == 'show')
@@ -163,123 +267,104 @@ function json_ajax(_this) {
                     })
                 }
 
-                if (obj.classTarget) {
-                    $.each(obj.classTarget, function(key, val) {
-                        if (val.add)
-                            $(val.target).addClass(val.add);
+                if (obj.editClass) {
+                    $.each(obj.editClass, function(key, val) {
                         if (val.remove)
                             $(val.target).removeClass(val.remove);
+                        if (val.add)
+                            $(val.target).addClass(val.add);
                     })
                 }
 
-                if (obj.cssTarget) {
-                    $.each(obj.cssTarget, function(key, val) {
+                if (obj.editCss) {
+                    $.each(obj.editCss, function(key, val) {
                         $(val.target).css(val.css[0]);
                     })
                 }
 
-                if (obj.modal) {
-                    var modal = $('.modal');
+                if (obj.modal)
+                    modal(obj.modal);
 
-                    window.clearTimeout(modalTimer);
-                    window.clearTimeout(modalCloseDelay);
-                    window.clearTimeout(goTimer);
-
-                     modalTimer = window.setTimeout(function() {
-                        if (obj.modal.header)
-                            modal.children('.modal-header').show();
-                        else {
-                            modal.children('.modal-header').hide();
-
-                            if (obj.modal.header.close)
-                                modal.find('.modal-close').show();
-                            else
-                                modal.find('.modal-close').hide();
-                        }
-
-                        if (obj.modal.size)
-                            modal.addClass(obj.modal.size);
-
-                        $('body').addClass('modal-active').removeClass('drawer-active dock-active');
-
-                        modal.find('.modal-title').html(obj.modal.header.title);
-                        modal.find('.modal-content').html(obj.modal.content);
-
-                        if (obj.modal.closeDelay) {
-                            window.clearTimeout(modalCloseDelay);
-
-                            modalCloseDelay = window.setTimeout(function() {
-                                $('body').removeClass('modal-active');
-                            }, obj.modal.closeDelay)
-                        }
-                    }, obj.modal.delay)
-                }
-
-                if (obj.pollingLoop) {
-                    window.clearTimeout(pollingLoop);
+                if (obj.loop) {
+    				window.clearTimeout(pollingLoop);
 
                     pollingLoop = window.setTimeout(function() {
                         json_ajax(_this);
-                    }, obj.pollingLoop)
+                    }, obj.loop)
                 }
 
-                polling.removeClass('active');
+                if (obj.pagination) {
+                    var pagination = $('<ul/>', { 'class': 'pagination' });
+
+                    if (parseInt(obj.pagination.current_page) > 3)
+                        var page = parseInt(obj.pagination.current_page) - 1,
+                            btn = $('<li/>').appendTo(pagination),
+                            link = $('<a/>', { href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
+                            icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-left' }).appendTo(link);
+
+                    if (obj.pagination.total_page > 1) {
+                        for (var i = parseInt(obj.pagination.current_page)-3; i <= parseInt(obj.pagination.current_page)+3; i++) {
+                            if (i >= 1 && i <= obj.pagination.total_page)
+                                var btn = $('<li/>', { class: (i == obj.pagination.current_page) ? 'active' : '' }).appendTo(pagination),
+                                    link = $('<a/>', { href: '#page-' + i, html: i }).appendTo(btn);
+                        }
+                    }
+
+                    if (obj.pagination.total_page > parseInt(obj.pagination.current_page)+3) {
+                        var page = parseInt(obj.pagination.current_page) + 1,
+                            btn = $('<li/>').appendTo(pagination),
+                            link = $('<a/>', { href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
+                            icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-right' }).appendTo(link);
+                    }
+
+                    $(_this.data('pager')).html(pagination);
+                }
+
+            	body.removeClass('polling-active');
+            	_this.removeClass('disabled wait');
             }
-        })
-    }, 400)
+         })
+    }, 200)
 }
 
-$(window).on('load', function (e) {
-    w = $(window).width();
+/* Escape HTML */
+function escapeHTML(text) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;',
+        "\\": ''
+    };
 
-	preloading('hide')
-
-    $('.load').each(function() {
-        json_ajax($(this));
-    })
-}).on('scroll', function(e) {
-	var st = $(this).scrollTop();
-
-    if (st > 800)
-    	$('.top').fadeIn(400);
-    else
-    	$('.top').fadeOut(400);
-}).on('resize', function(e) {
-    if ($(window).width() != w) {
-        preloading('show');
-
-        resizeTimer = window.setTimeout(function() {
-            preloading('hide')
-        }, 300)
-    }
-
-    w = $(window).width();
-});
-
-function getFormData($form) {
-    var unindexed_array = $form.serializeArray(),
-        indexed_array = {};
-
-    $.map(unindexed_array, function(n, i) {
-        indexed_array[n['name']] = n['value'];
-    })
-
-    return indexed_array;
+    return text.replace(/[&<>\\"']/g, function(m) { return map[m]; });
 }
 
-function preloading(status) {
-	if (status == 'hide') {
-					 window.clearTimeout(readyTimer);
-		readyTimer = window.setTimeout(function() {
-			$('body').addClass('ready');
-		}, 100)
-	} else {
-		window.clearTimeout(resizeTimer);
+/* Hash Change */
+function hashchange(callback) {
+    var hash = '',
+        url = window.location.href.split('#')[1],
+        time;
+ 
+    time = window.setInterval(function () {
+        hash = (window.location.href.split('#')[1] || '');
 
-		$('body').removeClass('ready');
-	}
+        if ((hashPrev !== hash) && (hash.length > 1)) {
+            window.clearInterval(time);
+
+            hashPrev = hash;
+
+            if (callback) callback(hash);
+
+            hashchange(callback);
+        } 
+    }, 100);
 }
 
+
+
+/* Console Log */
 function c(t, type) {
 	if (type == 'warn')
 		console.warn(t);
@@ -287,24 +372,6 @@ function c(t, type) {
 		alert(t);
 	else
 		console.log(t);
-}
-
-function json_results(obj) {
-	if (obj.go) {
-		window.clearTimeout(goTimer);
-
-		goTimer = window.setTimeout(function() {
-			location.href = obj.go.url;
-		}, obj.go.delay)
-
-	}
-
-	if (obj.toast)
-		toast(obj.toast.text, obj.toast.timeOut)
-}
-
-function json_error(obj, code, text) {
-	c(code + '(' + text + ')', 'warn')
 }
 
 function toast(text, timeOut) {
@@ -320,3 +387,69 @@ function toast(text, timeOut) {
 		}, timeOut);
 	}
 }
+
+function getFormData($form) {
+    var unindexed_array = $form.serializeArray(),
+        indexed_array = {};
+
+    $.map(unindexed_array, function(n, i) {
+        indexed_array[n['name']] = n['value'];
+    })
+
+    return indexed_array;
+}
+
+function modal(obj) {
+	var panel = $('.modal').children('.panel');
+
+	window.clearTimeout(modalTimer);
+    window.clearTimeout(modalCloseDelay);
+    window.clearTimeout(goTimer);
+
+    modalTimer = window.setTimeout(function() {
+		(obj.heading) ? panel.children('.panel-heading').html(obj.heading).show() : panel.children('.modal-heading').hide();
+		(obj.body) ? panel.children('.panel-body').html(obj.body).show() : panel.children('.panel-body').hide();
+		(obj.close == false) ? panel.children('.panel-close').hide() : panel.children('.panel-close').show();
+		(obj.class) ? panel.removeClass().addClass('panel panel-material ' + obj.class) : '';
+	
+		if (obj.closeDelay) {
+            window.clearTimeout(modalCloseDelay);
+
+            modalCloseDelay = window.setTimeout(function() {
+                $('body').removeClass('modal-active');
+            }, obj.closeDelay)
+        }
+
+        body.addClass('modal-active');
+	}, (obj.delay) ? obj.delay : 0)
+}
+
+function windowReady() {
+    var windowWidth = $(window).width();
+
+    if (windowWidth < 992)
+        body.removeClass('drawer-active dock-active')
+    else
+    	body.addClass('drawer-active')
+}
+
+/*
+google.charts.load('current', {
+	'packages': ['corechart']
+});
+
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Windows PC', 124],
+    ['Mac', 77],
+    ['iPad/iPhone', 15],
+    ['Android', 250],
+    ['Others', 66]
+  ]), options = {
+    title: 'Where do you usually browse?'
+  }, chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}
+*/

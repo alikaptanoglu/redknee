@@ -1,7 +1,0 @@
-{
-	"modal": {
-		"header": { "title": "Login", "close": true },
-		"content": "<form class=\"ajax\" method=\"post\" action=\"json/form-submit.json\"><input type=\"text\" name=\"uid\" class=\"form-control\" placeholder=\"E-mail\" /><input type=\"password\" name=\"pwd\" class=\"form-control\" placeholder=\"Password\" /><button class=\"btn btn-default\" type=\"submit\">Login</button></form><div class=\"form-results\"></div>",
-		"size": "modal-sm"
-	}
-}

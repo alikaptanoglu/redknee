@@ -1,7 +1,0 @@
-{
-	"header": false,
-	"content": "<div class=\"alert alert-info\"><i class=\"ion ion-information ion-fw\"></i> Example Modal Success</div><div>Html area</div>",
-	"toast": { "text": "You will be redirected to the main page in 6 seconds...", "timeOut": 4000 },
-	"go": { "url": "index.html", "delay": 6000 },
-	"closeDelay": 2000
-}
