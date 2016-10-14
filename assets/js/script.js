@@ -379,10 +379,17 @@ function toast(text, timeOut) {
 
 function getFormData($form) {
     var unindexed_array = $form.serializeArray(),
-        indexed_array = {};
+        indexed_array = {},
+        ii = 0;
 
     $.map(unindexed_array, function(n, i) {
-        indexed_array[n['name'].replace('[]', '[' + i + ']')] = n['value'];
+
+        if (n['name'].indexOf("[]") > 0) {
+            indexed_array[n['name'].replace('[]', '[' + ii + ']')] = n['value'];
+
+            ii++;
+        } else
+            indexed_array[n['name']] = n['value'];
     })
 
     return indexed_array;

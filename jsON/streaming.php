@@ -33,16 +33,20 @@ foreach ($items as $row) {
 			<h3><a href="#"><?php echo $row['title'];?></a></h3>
 		</div>
 		<div class="card-body">
-			<p><?php echo $row['description'];?></p>
 			<p class="text-muted">26 Sep 2016, Fri 11:52</p>
+			<p><?php echo $row['description'];?></p>
+		</div>
+		<div class="card-footer">
+			<a class="btn btn-default" href="#">Explore</a>
+			<a class="btn btn-danger btn-colored" href="#">Explore</a>
+			<a class="btn btn-info btn-colored" href="#">Explore</a>
+			<a class="btn btn-primary btn-colored" href="#">Explore</a>
+			<a class="btn btn-warning btn-colored" href="#">Explore</a>
+			<a class="btn btn-success btn-colored" href="#">Explore</a>
+			<a class="btn btn-default btn-colored" href="#">Explore</a>
 		</div>
 	</div>
 </article>
-<div class="panel-footer">
-	<a href="#"><i class="ion ion-fw ion-heart"></i></a>
-	<a href="#"><i class="ion ion-fw ion-android-textsms"></i></a>
-	<a href="#"><i class="ion ion-fw ion-android-share-alt"></i></a>
-</div>
 <?php
 }
 
