@@ -1,508 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta name="description" content="RedKnee is the best">
+		<meta name="description" content="RedKnee is the best">
 
-    <link rel="icon" href="favicon.ico">
+		<link rel="icon" href="favicon.ico">
 
-    <title>RedKnee | Multipurpose Template</title>
+		<title>RedKnee | Multipurpose Template</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext&v=2" rel="stylesheet" crossorigin="anonymous">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/ionicons.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="manifest.json" rel="manifest">
-  </head>
-  <body class="preloader-active">
-    <nav class="header">
-      <div class="container-fluid">
-        <ul class="pull-left">
-          <li class="hidden-lg hidden-md">
-            <a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
-              <div class="disk"></div>
-              <div class="disk"></div>
-              <div class="disk"></div>
-            </a>
-          </li>
-          <li class="visible-lg visible-md">
-            <a href="#"><img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" /></a>
-          </li>
-        </ul>
-        <ul class="pull-right">
-          <li>
-            <a href="#top" class="edit-class focus" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
-              <i class="ion ion-ios-search"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="edit-class" data-toggle="dock-active" data-remove="search-active" data-target="body">
-              <i class="ion ion-android-notifications"></i> <span class="badge">10+</span>
-            </a>
-          </li>
-          <li class="dropdown">
-            <a href="#" data-toggle="dropdown">
-              <i class="ion ion-person"></i>
-            </a>
-            <ul class="dropdown-menu pull-right">
-              <li><a href=""><i class="ion ion-fw ion-person"></i> Sign In</a></li>
-              <li><a href=""><i class="ion ion-fw ion-person-add"></i> Sign Up</a></li>
-              <li class="divider"></li>
-              <li><a href=""><i class="ion ion-fw ion-help"></i> Forgotten Password</a></li>
-              <li class="divider"></li>
-              <li><a href=""><i class="ion ion-fw ion-person"></i> Account Information</a></li>
-            </ul>
-          </li>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext&v=2" rel="stylesheet" crossorigin="anonymous">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/ionicons.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="manifest.json" rel="manifest">
+	</head>
+	<body class="preloader-active">
+		<nav class="header">
+			<div class="container-fluid">
+				<ul class="pull-left">
+					<li class="hidden-lg hidden-md">
+						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
+							<div class="disk"></div>
+							<div class="disk"></div>
+							<div class="disk"></div>
+						</a>
+					</li>
+					<li class="visible-lg visible-md">
+						<a href="#"><img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" /></a>
+					</li>
+				</ul>
+				<ul class="pull-right">
+					<li>
+						<a href="#top" class="edit-class focus" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
+							<i class="ion ion-ios-search"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="edit-class ajax" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
+							<i class="ion ion-android-notifications"></i> <span class="badge" id="notification-badge">10+</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown">
+							<i class="ion ion-person"></i>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li><a class="ajax" data-href="jsON/.php" href="#"><i class="ion ion-fw ion-person"></i> Sign In</a></li>
+							<li><a class="ajax" data-href="jsON/.php" href="#"><i class="ion ion-fw ion-person-add"></i> Sign Up</a></li>
+							<li class="divider"></li>
+							<li><a class="ajax" data-href="jsON/.php" href="#"><i class="ion ion-fw ion-help"></i> Forgotten Password</a></li>
+							<li class="divider"></li>
+							<li><a href="utility-my-account.html"><i class="ion ion-fw ion-person"></i> Account Information</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="search">
+			<div class="container-fluid">
+				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
+					<input type="text" name="search" class="form-control" placeholder="Search" />
+					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
+						<i class="ion ion-ios-close-empty"></i>
+					</a>
+				</form>
+			</div>
+		</div>
+		<main class="content">
+			<ul class="breadcrumb">
+				<li>
+					<a href="#"><i class="ion ion-fw ion-home"></i> HOME</a>
+				</li>
+				<li class="dropdown active">
+					<a href="#" data-toggle="dropdown">
+						<strong>Feed <i class="ion ion-ios-arrow-down"></i></strong>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">News</a></li>
+						<li><a href="#">Video</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="container-fluid">
+				<div class="headline row">
+					<div data-background-image="url(upload/example-small.jpg)" class="css item col-lg-5 col-md-4 col-sm-6">
+						<a href="#">
+							<div class="type photo">PHOTO</div>
+							<div class="title">In semper augue vitae porttitor pellentesque</div>
+						</a>
+					</div>
+					<div data-background-image="url(upload/example-small-2.jpg)" class="css item col-lg-4 col-md-4 col-sm-6">
+						<a href="#">
+							<div class="type video">VIDEO</div>
+							<div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+						</a>
+					</div>
+					<div data-background-image="url(upload/example-small-3.jpg)" class="css item col-lg-3 col-md-4 col-sm-6">
+						<a href="#">
+							<div class="type video">VIDEO</div>
+							<div class="title">Nullam eleifend diam Nullam eleifend diam Nullam eleifend diam</div>
+						</a>
+					</div>
+					<div data-background-image="url(upload/example-small-4.jpg)" class="css item col-lg-3 col-md-4 col-sm-6">
+						<a href="#">
+							<div class="type article">ARTICLE</div>
+							<div class="title">Maecenas sagittis orci</div>
+						</a>
+					</div>
+				</div>
+				<div class="panel-grid row">
+					<div class="col-sm-8">
+						<div class="panel panel-material">
+							<div class="panel-heading">Active Forum Topics</div>
+							<div class="list-group">
+								<a class="list-group-item" href="forum-topic.html">
+									<div class="row">
+										<div class="col-xs-8">
+											<p>
+												<strong>
+													<i class="ion ion-ios-arrow-right ion-fw"></i>
+													Quisque eu turpis eget ex gravida pulvinar.
+												</strong>
+											</p>
+											<p class="text-muted">Started by Admin</p>
+										</div>
+										<div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
+									</div>
+								</a>
+								<a class="list-group-item" href="forum-topic.html">
+									<div class="row">
+										<div class="col-xs-8">
+											<p>
+												<strong>
+													<i class="ion ion-ios-folder-outline ion-fw"></i>
+													Quisque facilisis mauris quis metus volutpat feugiat.
+												</strong>
+											</p>
+											<p class="text-muted">Started by Admin</p>
+										</div>
+										<div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
+									</div>
+								</a>
+								<a class="list-group-item" href="forum-topic.html">
+									<div class="row">
+										<div class="col-xs-8">
+											<p>
+												<strong>
+													<i class="ion ion-ios-folder-outline ion-fw"></i>
+													In pretium arcu at mollis ornare.
+												</strong>
+											</p>
+											<p class="text-muted">Started by Admin</p>
+										</div>
+										<div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
+									</div>
+								</a>
+								<a class="list-group-item" href="forum-topic.html">
+									<div class="row">
+										<div class="col-xs-8">
+											<p>
+												<strong>
+													<i class="ion ion-ios-sunny-outline ion-fw"></i>
+													Fusce porta nulla at metus iaculis, non scelerisque lectus placerat.
+												</strong>
+											</p>
+											<p class="text-muted">Started by Admin</p>
+										</div>
+										<div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
+									</div>
+								</a>
+								<a class="list-group-item" href="forum-topic.html">
+									<div class="row">
+										<div class="col-xs-8">
+											<p>
+												<strong>
+													<i class="ion ion-ios-lightbulb-outline ion-fw"></i>
+													Sed facilisis mi sit amet orci convallis, eget varius sem congue.
+												</strong>
+											</p>
+											<p class="text-muted">Started by Admin</p>
+										</div>
+										<div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
+									</div>
+								</a>
+							</div>
+						</div>
 
-        </ul>
-      </div>
-    </nav>
-    <div class="search">
-      <div class="container-fluid">
-        <input type="text" name="search" class="form-control" placeholder="Search" />
-        <a href="#" class="times edit-class" data-remove="search-active" data-target="body">
-          <i class="ion ion-ios-close-empty"></i>
-        </a>
-      </div>
-    </div>
-    <main class="content">
-      <ul class="breadcrumb">
-          <li>
-            <a href="#"><i class="ion ion-fw ion-home"></i> HOME</a>
-          </li>
-          <li class="dropdown active">
-            <a href="#" data-toggle="dropdown">
-              <strong>Feed <i class="ion ion-ios-arrow-down"></i></strong>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">News</a></li>
-              <li><a href="#">Video</a></li>
-            </ul>
-          </li>
-      </ul>
-      <div class="container-fluid">
-        <div class="headline row">
-          <div data-background-image="url(upload/example-small.jpg)" class="css item col-lg-5 col-md-4 col-sm-6">
-            <a href="#">
-              <div class="type photo">PHOTO</div>
-              <div class="title">In semper augue vitae porttitor pellentesque</div>
-            </a>
-          </div>
-          <div data-background-image="url(upload/example-small-2.jpg)" class="css item col-lg-4 col-md-4 col-sm-6">
-            <a href="#">
-              <div class="type video">VIDEO</div>
-              <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            </a>
-          </div>
-          <div data-background-image="url(upload/example-small-3.jpg)" class="css item col-lg-3 col-md-4 col-sm-6">
-            <a href="#">
-              <div class="type video">VIDEO</div>
-              <div class="title">Nullam eleifend diam Nullam eleifend diam Nullam eleifend diam</div>
-            </a>
-          </div>
-          <div data-background-image="url(upload/example-small-4.jpg)" class="css item col-lg-3 col-md-4 col-sm-6">
-            <a href="#">
-              <div class="type article">ARTICLE</div>
-              <div class="title">Maecenas sagittis orci</div>
-            </a>
-          </div>
-        </div>
-        <div class="panel-grid row">
-          <div class="col-sm-8">
-            <div class="alert alert-info closes">
-              <i class="ion ion-fw ion-information"></i>
-              Vestibulum eget libero vel nulla condimentum varius sollicitudin eget nisi.
-            </div>
-            <div class="alert alert-danger">
-              <i class="ion ion-fw ion-alert"></i>
-              Cras at urna ultrices velit tristique ullamcorper.
-            </div>
-            <div class="alert alert-success">
-              <i class="ion ion-fw ion-checkmark"></i>
-              Vivamus nec erat vel metus dictum pulvinar.
-            </div>
-            <div class="alert alert-warning">
-              <i class="ion ion-fw ion-nuclear"></i>
-              Mauris a quam placerat leo auctor viverra.
-            </div>
+						<div class="panel panel-material load" data-pager="#streaming-pager" data-href="jsON/streaming.php" id="streaming">
+							<div class="panel-heading"><i class="ion ion-fw ion-social-rss"></i> Streaming</div>
+							<div class="rolling"></div>
+						</div>
+						<div id="streaming-pager" class="material-pager"></div>
+					</div>
+					<div class="col-sm-4">
+						<div class="panel panel-material">
+							<div class="panel-heading"><i class="ion ion-fw ion-stats-bars"></i> Where do you usually browse?</div>
+							<div class="panel-body panel-body-padding">
 
-            <div class="panel panel-material">
-              <div class="panel-heading">Active Forum Topics</div>
-              <div class="list-group">
-                <a class="list-group-item" href="forum-topic.html">
-                  <div class="row">
-                    <div class="col-xs-8">
-                      <p>
-                        <strong>
-                          <i class="ion ion-ios-arrow-right ion-fw"></i>
-                          Quisque eu turpis eget ex gravida pulvinar.
-                        </strong>
-                      </p>
-                      <p class="text-muted">Started by Admin</p>
-                    </div>
-                    <div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
-                  </div>
-                </a>
-                <a class="list-group-item" href="forum-topic.html">
-                  <div class="row">
-                    <div class="col-xs-8">
-                      <p>
-                        <strong>
-                          <i class="ion ion-ios-folder-outline ion-fw"></i>
-                          Quisque facilisis mauris quis metus volutpat feugiat.
-                        </strong>
-                      </p>
-                      <p class="text-muted">Started by Admin</p>
-                    </div>
-                    <div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
-                  </div>
-                </a>
-                <a class="list-group-item" href="forum-topic.html">
-                  <div class="row">
-                    <div class="col-xs-8">
-                      <p>
-                        <strong>
-                          <i class="ion ion-ios-folder-outline ion-fw"></i>
-                          In pretium arcu at mollis ornare.
-                        </strong>
-                      </p>
-                      <p class="text-muted">Started by Admin</p>
-                    </div>
-                    <div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
-                  </div>
-                </a>
-                <a class="list-group-item" href="forum-topic.html">
-                  <div class="row">
-                    <div class="col-xs-8">
-                      <p>
-                        <strong>
-                          <i class="ion ion-ios-sunny-outline ion-fw"></i>
-                          Fusce porta nulla at metus iaculis, non scelerisque lectus placerat.
-                        </strong>
-                      </p>
-                      <p class="text-muted">Started by Admin</p>
-                    </div>
-                    <div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
-                  </div>
-                </a>
-                <a class="list-group-item" href="forum-topic.html">
-                  <div class="row">
-                    <div class="col-xs-8">
-                      <p>
-                        <strong>
-                          <i class="ion ion-ios-lightbulb-outline ion-fw"></i>
-                          Sed facilisis mi sit amet orci convallis, eget varius sem congue.
-                        </strong>
-                      </p>
-                      <p class="text-muted">Started by Admin</p>
-                    </div>
-                    <div class="col-xs-4 text-muted">26 Sep 2016, Fri 11:52</div>
-                  </div>
-                </a>
-              </div>
-            </div>
+								<form method="post" action="json/poll-post.php" data-token="csrf" class="ajax poll">
+									<div class="row" id="option-row-1">
+										<div class="col-xs-2">
+											<input type="radio" name="vote" id="option-1" value="1" />
+										</div>
+										<div class="col-xs-10">
+											<label for="option-1">Windows PC</label>
+											<span class="percent text-muted"></span>
+							                <div class="progress">
+							                  <div class="progress-bar progress-bar-info"></div>
+							                </div>
+										</div>
+									</div>
+									<div class="row" id="option-row-2">
+										<div class="col-xs-2">
+											<input type="radio" name="vote" id="option-2" value="1" />
+										</div>
+										<div class="col-xs-10">
+											<label for="option-2">Mac</label>
+											<span class="percent text-muted"></span>
+	                      					<div class="progress">
+	                      					  <div class="progress-bar progress-bar-info"></div>
+	                      					</div>
+										</div>
+									</div>
+									<div class="row" id="option-row-3">
+										<div class="col-xs-2">
+											<input type="radio" name="vote" id="option-3" value="1" />
+										</div>
+										<div class="col-xs-10">
+											<label for="option-3">Android</label>
+											<span class="percent text-muted"></span>
+	                      					<div class="progress">
+	                      					  <div class="progress-bar progress-bar-info"></div>
+	                      					</div>
+										</div>
+									</div>
+									<div class="row" id="option-row-4">
+										<div class="col-xs-2">
+											<input type="radio" name="vote" id="option-4" value="1" />
+										</div>
+										<div class="col-xs-10">
+											<label for="option-4">Other</label>
+											<span class="percent text-muted"></span>
+	                      					<div class="progress">
+	                      					  <div class="progress-bar progress-bar-info"></div>
+	                      					</div>
+										</div>
+									</div>
+									<div class="poll-results"></div>
 
-            <div class="panel panel-material">
-              <div class="panel-heading"><i class="ion ion-fw ion-social-rss"></i> Streaming</div>
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-4 col-sm-2">
-                    <img alt="..." src="upload/stream-xsmall-8.jpg" class="img img-responsive" />
-                  </div>
-                  <div class="col-xs-8 col-sm-7">
-                    <h3><a href="#">Morbi quis odio eu ex consectetura.</a></h3>
-                    <p class="text-muted">Nullam cursus purus et lorem semper, vitae blandit ex dapibus.</p>
-                  </div>
-                  <div class="hidden-xs col-sm-3 text-muted">
-                    26 Sep 2016, Fri 11:52
-                  </div>
-                </div>
-              </div>
+									<button type="submit" class="btn btn-default">
+										<i class="ion ion-checkmark ion-fw"></i> Vote
+									</button>
+								</form>
 
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-4 col-sm-2">
-                    <img alt="..." src="upload/stream-xsmall-5.jpg" class="img img-responsive" />
-                  </div>
-                  <div class="col-xs-8 col-sm-7">
-                    <h3><a href="#">Nulla convallis elit eget libero semper posuere.</a></h3>
-                    <p class="text-muted">Etiam sollicitudin orci faucibus purus ultrices, eu euismod tellus venenatis.</p>
-                  </div>
-                  <div class="hidden-xs col-sm-3 text-muted">
-                    26 Sep 2016, Fri 11:52
-                  </div>
-                </div>
-              </div>
+							</div>
+						</div>
 
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-4 col-sm-2">
-                    <img alt="..." src="upload/stream-xsmall-4.jpg" class="img img-responsive" />
-                  </div>
-                  <div class="col-xs-8 col-sm-7">
-                    <h3><a href="#">Nunc vehicula sem quis neque placerat tempus.</a></h3>
-                    <p class="text-muted">Quisque facilisis lorem sit amet ligula faucibus imperdiet non in tortor.</p>
-                  </div>
-                  <div class="hidden-xs col-sm-3 text-muted">
-                    26 Sep 2016, Fri 11:52
-                  </div>
-                </div>
-              </div>
+						<div class="panel panel-material">
+							<div class="panel-heading">Gallery</div>
+							<div class="panel-body">
+					            <div class="gallery">
+					              <article class="thumbnail css" data-background-image="url(upload/gallery-small.jpg)">
+					                <div class="caption">
+					                  <a href="#">
+					                    <i class="ion ion-play ion-fw"></i>
+					                    Cras a libero vel leo posuere aliquet.
+					                  </a>
+					                </div>
+					              </article> <!-- /. Thumbnail -->
+					              <article class="thumbnail css" data-background-image="url(upload/gallery-small-2.jpg)">
+					                <div class="caption">
+					                  <a href="#">
+					                    <i class="ion ion-images ion-fw"></i>
+					                    Nam a mi nec urna porttitor mollis.
+					                  </a>
+					                </div>
+					              </article> <!-- /. Thumbnail -->
+					              <article class="thumbnail css" data-background-image="url(upload/gallery-small-3.jpg)" />
+					                <div class="caption">
+					                  <a href="#">
+					                    <i class="ion ion-play ion-fw"></i>
+					                    Nunc id mi vitae nulla faucibus mattis sit amet eget risus.
+					                  </a>
+					                </div>
+					              </article> <!-- /. Thumbnail -->
+					              <article class="thumbnail css" data-background-image="url(upload/gallery-small-4.jpg)" />
+					                <div class="caption">
+					                  <a href="#">
+					                    <i class="ion ion-images ion-fw"></i>
+					                    Quisque commodo felis a felis dapibus suscipit.
+					                  </a>
+					                </div>
+					              </article> <!-- /. Thumbnail -->
+					              <article class="thumbnail css" data-background-image="url(upload/gallery-small-5.jpg)" />
+					                <div class="caption">
+					                  <a href="#">
+					                    <i class="ion ion-images ion-fw"></i>
+					                    Quisque commodo felis a felis dapibus suscipit.
+					                  </a>
+					                </div>
+					              </article> <!-- /. Thumbnail -->
+					            </div>
+							</div>
+						</div>
 
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-4 col-sm-2">
-                    <img alt="..." src="upload/stream-xsmall-3.jpg" class="img img-responsive" />
-                  </div>
-                  <div class="col-xs-8 col-sm-7">
-                    <h3><a href="#">Maecenas tincidunt velit eu nunc aliquet luctus.</a></h3>
-                    <p class="text-muted">Duis eget diam ultrices, sodales mi condimentum, accumsan lectus.</p>
-                  </div>
-                  <div class="hidden-xs col-sm-3 text-muted">
-                    26 Sep 2016, Fri 11:52
-                  </div>
-                </div>
-              </div>
+						
+						<div class="alert alert-info closes">
+							<i class="ion ion-fw ion-information"></i>
+							Vestibulum eget libero vel nulla condimentum varius sollicitudin eget nisi.
+						</div>
+						<div class="alert alert-danger">
+							<i class="ion ion-fw ion-alert"></i>
+							Cras at urna ultrices velit tristique ullamcorper.
+						</div>
+						<div class="alert alert-success">
+							<i class="ion ion-fw ion-checkmark"></i>
+							Vivamus nec erat vel metus dictum pulvinar.
+						</div>
+						<div class="alert alert-warning">
+							<i class="ion ion-fw ion-nuclear"></i>
+							Mauris a quam placerat leo auctor viverra.
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="main">
+				<div class="container-fluid">
+					<div class="col col-sm-8">
+						<img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" />
+						Designed by <a href="https://twitter.com/wutlu" target="_blank">@wutlu</a>. © 2016 <a href="#">RedKnee</a>
+					</div>
+					<div class="col col-sm-4">
+						<div class="list-group">
+							<a class="list-group-item" href="#">
+								<i class="ion ion-social-facebook ion-fw"></i> facebook
+							</a>
+							<a class="list-group-item" href="#">
+								<i class="ion ion-social-twitter ion-fw"></i> twitter
+							</a>
+							<a class="list-group-item" href="#">
+								<i class="ion ion-social-instagram ion-fw"></i> instagram
+							</a>
+							<a class="list-group-item" href="#">
+								<i class="ion ion-social-youtube ion-fw"></i> youtube
+							</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</main>
 
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-4 col-sm-2">
-                    <img alt="..." src="upload/stream-xsmall-2.jpg" class="img img-responsive" />
-                  </div>
-                  <div class="col-xs-8 col-sm-7">
-                    <h3><a href="#">Fusce a nibh sit amet nibh gravida sodales.</a></h3>
-                    <p class="text-muted">Curabitur ullamcorper sem quis arcu feugiat, vel efficitur felis cursus.</p>
-                  </div>
-                  <div class="hidden-xs col-sm-3 text-muted">
-                    26 Sep 2016, Fri 11:52
-                  </div>
-                </div>
-              </div>
+		<div class="drawer">
+			<div class="container-fluid">
+				<div class="brand">
+					<a href="#"><img alt="Brand" src="assets/img/logo-drawer.png" class="img img-responsive" /></a>
+				</div>
+				<div class="group list-group">
+					<a href="#" class="list-group-item">
+						<i class="ion ion-fw ion-home"></i> HOME
+					</a>
+					<a href="home2.html" class="list-group-item disabled">
+						<i class="ion ion-fw ion-home"></i> HOME 2 <span class="badge">Coming Soon</span>
+					</a>
+				</div>
+				<div class="group panel-group">
+					<div class="panel">
+						<div class="panel-heading">
+							<a data-toggle="collapse" href="#collapsePages">
+								<strong><i class="ion ion-ios-arrow-down ion-fw"></i> PAGES</strong>
+							</a>
+						</div>
+						<div class="panel-collapse collapse" id="collapsePages">
+							<div class="list-group">
+								<a class="list-group-item" href="adventure-travel.html">Adventure Travel</a>
+								<a class="list-group-item" href="forum.html">Forum</a>
+								<a class="list-group-item" href="agency.html">Agency</a>
+								<a class="list-group-item" href="app-landing.html">App Landing</a>
+								<a class="list-group-item" href="resume.html">Resume</a>
+								<a class="list-group-item" href="capital-film.html">Capital Film</a>
+								<a class="list-group-item" href="fashion.html">Fashion</a>
+								<a class="list-group-item" href="fitness.html">Fitness</a>
+								<a class="list-group-item" href="restaurant.html">Restaurant</a>
+								<a class="list-group-item" href="video.html">Video</a>
+								<a class="list-group-item" href="winery.html">Winery</a>
+								<a class="list-group-item" href="event-seminar.html">Event/Seminar</a>
+								<a class="list-group-item" href="architecture.html">Architecture</a>
+								<a class="list-group-item" href="photography.html">Photography</a>
+								<a class="list-group-item" href="portfolio.html">Portfolio</a>
+								<a class="list-group-item" href="shop.html">Shop</a>
+								<a class="list-group-item" href="blog.html">Blog</a>
+							</div>
+						</div>
+					</div>
+					<div class="panel">
+						<div class="panel-heading">
+							<a data-toggle="collapse" href="#collapseUtility">
+								<strong><i class="ion ion-ios-arrow-down ion-fw"></i> UTILITY</strong>
+							</a>
+						</div>
+						<div class="panel-collapse collapse" id="collapseUtility">
+							<div class="list-group">
+								<a class="list-group-item" href="utility-about-us.html">About Us</a>
+								<a class="list-group-item" href="utility-services.html">Services</a>
+								<a class="list-group-item" href="utility-contact.html">Contact</a>
+								<a class="list-group-item" href="utility-planner.html">Planner</a>
+								<a class="list-group-item" href="utility-sign-in.html">Sign In</a>
+								<a class="list-group-item" href="utility-sign-up.html">Sign Up</a>
+								<a class="list-group-item" href="utility-pwd.html">Password</a>
+								<a class="list-group-item" href="utility-coming-soon.html">Coming Soon</a>
+								<a class="list-group-item" href="utility-faq.html">FAQ</a>
+								<a class="list-group-item" href="utility-confirmation.html">Confirmation</a>
+								<a class="list-group-item" href="utility-countdown.html">Countdown</a>
+								<a class="list-group-item" href="utility-404-not-found.html">404 Not Found</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
 
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-4 col-sm-2">
-                    <img alt="..." src="upload/stream-xsmall-7.jpg" class="img img-responsive" />
-                  </div>
-                  <div class="col-xs-8 col-sm-7">
-                    <h3><a href="#">Aliquam posuere elit in est cursus imperdiet.</a></h3>
-                    <p class="text-muted">Praesent id quam mollis, consequat sem vehicula, fringilla arcu.</p>
-                  </div>
-                  <div class="hidden-xs col-sm-3 text-muted">
-                    26 Sep 2016, Fri 11:52
-                  </div>
-                </div>
-              </div>
+		<div class="preloader">
+			<div class="rolling"></div>
+			<p>a few seconds</p>
+		</div>
+		<div class="polling">
+			<div class="rolling"></div>
+		</div>
 
-              <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-4 col-sm-2">
-                    <img alt="..." src="upload/stream-xsmall-10.jpg" class="img img-responsive" />
-                  </div>
-                  <div class="col-xs-8 col-sm-7">
-                    <h3><a href="#">Mauris maximus libero quis gravida auctor.</a></h3>
-                    <p class="text-muted">Pellentesque vitae magna consectetur, posuere magna ac, suscipit nunc.</p>
-                  </div>
-                  <div class="hidden-xs col-sm-3 text-muted">
-                    26 Sep 2016, Fri 11:52
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="panel panel-material">
-              <div class="panel-heading"><i class="ion ion-fw ion-stats-bars"></i> Where do you usually browse?</div>
-              <div class="panel-body panel-body-padding">
+		<div class="toast closes">
+			<div class="toast-content">Toast Alert...</div>
+		</div>
 
-                <form method="post" action="json/poll.json" class="ajax">
-                  <div class="poll">
-                    <div class="option option-1">
-                      <label>
-                        <input type="radio" name="vote" value="1" />
-                        <strong>Windows PC</strong>
-                      </label>
-                    </div>
+		<a href="#top" class="top">
+			<i class="ion ion-chevron-up"></i>
+		</a>
 
-                    <div class="option option-2">
-                      <label>
-                        <input type="radio" name="vote" value="2" />
-                        <strong>Mac</strong>
-                      </label>
-                    </div>
+		<div class="dock">
+			<div class="rolling"></div>
+		</div>
+		<div class="overlay overlay-dock edit-class" data-remove="dock-active" data-target="body"></div>
 
-                    <div class="option option-3">
-                      <label>
-                        <input type="radio" name="vote" value="3" />
-                        <strong>iPad/iPhone</strong>
-                      </label>
-                    </div>
+		<div class="modal">
+			<div class="panel panel-material col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+				<div class="panel-heading"></div>
+				<div class="panel-close edit-class" data-remove="modal-active" data-target="body">
+					<i class="ion ion-ios-close-empty"></i>
+				</div>
+				<div class="panel-body"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-modal"></div>
 
-                    <div class="option option-4">
-                      <label>
-                        <input type="radio" name="vote" value="4" />
-                        <strong>Android</strong>
-                      </label>
-                    </div>
-
-                    <div class="option option-5">
-                      <label>
-                        <input type="radio" name="vote" value="5" />
-                        <strong>Others</strong>
-                      </label>
-                    </div>
-
-                    <div id="piechart" class="chart" style="width: 90%;"></div>
-
-                    <button type="submit" class="btn btn-default">
-                      <i class="ion ion-checkmark ion-fw"></i> Vote
-                    </button>
-                  </div>
-                </form>
-
-              </div>
-            </div>
-
-            <div class="panel panel-material">
-              <div class="panel-heading">Gallery</div>
-              <div class="panel-body">test</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <footer class="main">
-        <div class="container-fluid">
-          <div class="col col-sm-8">
-              <img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" />
-              Designed by <a href="https://twitter.com/wutlu" target="_blank">@wutlu</a>. © 2016 <a href="#">RedKnee</a>
-          </div>
-          <div class="col col-sm-4">
-            <div class="list-group">
-              <a class="list-group-item" href="#">
-                  <i class="ion ion-social-facebook ion-fw"></i> facebook
-              </a>
-              <a class="list-group-item" href="#">
-                  <i class="ion ion-social-twitter ion-fw"></i> twitter
-              </a>
-              <a class="list-group-item" href="#">
-                  <i class="ion ion-social-instagram ion-fw"></i> instagram
-              </a>
-              <a class="list-group-item" href="#">
-                  <i class="ion ion-social-youtube ion-fw"></i> youtube
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </main>
-
-    <div class="drawer">
-      <div class="container-fluid">
-        <div class="brand">
-          <a href="#"><img alt="Brand" src="assets/img/logo-drawer.png" class="img img-responsive" /></a>
-        </div>
-        <div class="group list-group">
-          <a href="#" class="list-group-item">
-            <i class="ion ion-fw ion-home"></i> HOME
-          </a>
-          <a href="home2.html" class="list-group-item disabled">
-            <i class="ion ion-fw ion-home"></i> HOME 2 <span class="badge">Coming Soon</span>
-          </a>
-        </div>
-        <div class="group panel-group">
-          <div class="panel">
-            <div class="panel-heading">
-              <a data-toggle="collapse" href="#collapsePages">
-                <strong><i class="ion ion-ios-arrow-down ion-fw"></i> PAGES</strong>
-              </a>
-            </div>
-            <div class="panel-collapse collapse" id="collapsePages">
-              <div class="list-group">
-                <a class="list-group-item" href="adventure-travel.html">Adventure Travel</a>
-                <a class="list-group-item" href="forum.html">Forum</a>
-                <a class="list-group-item" href="agency.html">Agency</a>
-                <a class="list-group-item" href="app-landing.html">App Landing</a>
-                <a class="list-group-item" href="resume.html">Resume</a>
-                <a class="list-group-item" href="capital-film.html">Capital Film</a>
-                <a class="list-group-item" href="fashion.html">Fashion</a>
-                <a class="list-group-item" href="fitness.html">Fitness</a>
-                <a class="list-group-item" href="restaurant.html">Restaurant</a>
-                <a class="list-group-item" href="video.html">Video</a>
-                <a class="list-group-item" href="winery.html">Winery</a>
-                <a class="list-group-item" href="event-seminar.html">Event/Seminar</a>
-                <a class="list-group-item" href="architecture.html">Architecture</a>
-                <a class="list-group-item" href="photography.html">Photography</a>
-                <a class="list-group-item" href="portfolio.html">Portfolio</a>
-                <a class="list-group-item" href="shop.html">Shop</a>
-                <a class="list-group-item" href="blog.html">Blog</a>
-              </div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-heading">
-              <a data-toggle="collapse" href="#collapseUtility">
-                <strong><i class="ion ion-ios-arrow-down ion-fw"></i> UTILITY</strong>
-              </a>
-            </div>
-            <div class="panel-collapse collapse" id="collapseUtility">
-              <div class="list-group">
-                <a class="list-group-item" href="utility-about-us.html">About Us</a>
-                <a class="list-group-item" href="utility-services.html">Services</a>
-                <a class="list-group-item" href="utility-contact.html">Contact</a>
-                <a class="list-group-item" href="utility-planner.html">Planner</a>
-                <a class="list-group-item" href="utility-login.html">Login</a>
-                <a class="list-group-item" href="utility-register.html">Register</a>
-                <a class="list-group-item" href="utility-password.html">Password</a>
-                <a class="list-group-item" href="utility-coming-soon.html">Coming Soon</a>
-                <a class="list-group-item" href="utility-faq.html">FAQ</a>
-                <a class="list-group-item" href="utility-confirmation.html">Confirmation</a>
-                <a class="list-group-item" href="utility-countdown.html">Countdown</a>
-                <a class="list-group-item" href="utility-404-not-found.html">404 Not Found</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
-
-    <div class="preloader">
-      <img alt="..." src="assets/img/preloader.gif" />
-      <p>a few seconds</p>
-    </div>
-    <div class="polling"></div>
-
-    <div class="toast closes">
-      <div class="toast-content">Toast Alert...</div>
-    </div>
-
-    <a href="#top" class="top">
-      <i class="ion ion-chevron-up"></i>
-    </a>
-
-    <div class="dock">
-      <img alt="Loading" src="assets/img/rolling.svg" class="rolling" />
-    </div>
-    <div class="overlay overlay-dock edit-class" data-remove="dock-active" data-target="body"></div>
-
-    <div class="modal">
-      <div class="panel panel-material col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-        <div class="panel-close edit-class" data-remove="modal-active" data-target="body">
-          <i class="ion ion-fw ion-ios-close-empty"></i>
-        </div>
-        <div class="panel-heading"></div>
-        <div class="panel-body"></div>
-      </div>
-    </div>
-    <div class="overlay overlay-modal"></div>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="assets/js/pie.js"></script>
-    <script src="assets/js/script.js?v=0.7"></script>
-  </body>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+		<script src="assets/js/script.js?v=0.7"></script>
+	</body>
 </html>

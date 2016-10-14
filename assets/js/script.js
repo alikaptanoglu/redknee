@@ -31,16 +31,7 @@ $(window).on('load', function (e) {
 
     })
 
-	$('.css').each(function() {
-		var _this = $(this);
-
-		if (_this.data('backgroundImage'))
-			_this.css('backgroundImage', _this.data('backgroundImage'))
-		if (_this.data('color'))
-			_this.css('color', _this.data('color'))
-		if (_this.data('backgroundColor'))
-			_this.css('backgroundColor', _this.data('backgroundColor'))
-	})
+	initial()
 }).on('scroll', function(e) {
     var st = $(this).scrollTop();
 
@@ -102,17 +93,11 @@ $(document).on('click', '.edit-class', function() {
 	else
 		_this.hide()
 }).on('submit', 'form.ajax', function() {
-	var _this = $(this);
-
-	json_ajax(_this);
+	json_ajax($(this));
 
     return false;
 }).on('click', 'a.ajax', function() {
-	var _this = $(this);
-
-	json_ajax(_this);
-
-    return false;
+	json_ajax($(this));
 }).on('keyup', 'form.keyup', function() {
 	var _this = $(this);
 
@@ -135,12 +120,12 @@ function json_ajax(_this) {
 	if (_this.hasClass('disabled'))
 		return false;
 
+    body.addClass('polling-active');
+    _this.addClass('disabled wait');
+
     formTimer = window.setTimeout(function() {
     	var data_type = 'POST',
     		data_vars;
-
-    	_this.addClass('disabled wait');
-    	body.addClass('polling-active');
 
     	if (_this.is('form')) {
             data_vars = $.extend({}, data_vars, getFormData(_this))
@@ -182,36 +167,34 @@ function json_ajax(_this) {
             error: function(jqXHR, exception) {
             	var msg = '';
 
-            	if (jqXHR.status === 0) {
+            	if (jqXHR.status === 0)
                     msg = 'Not connect.\n Verify Network.';
-                } else if (jqXHR.status == 404) {
+                else if (jqXHR.status == 404)
                     msg = 'Requested page not found. [404]';
-                } else if (jqXHR.status == 500) {
+                else if (jqXHR.status == 500)
                     msg = 'Internal Server Error [500].';
-                } else if (exception === 'parsererror') {
+                else if (exception === 'parsererror')
                     msg = 'Requested JSON parse failed.';
-                } else if (exception === 'timeout') {
+                else if (exception === 'timeout')
                     msg = 'Time out error.';
-                } else if (exception === 'abort') {
+                else if (exception === 'abort')
                     msg = 'Ajax request aborted.';
-                } else if (jqXHR.status == 422) {
+                else if (jqXHR.status == 422)
                 	msg = 422;
-                } else {
+                else
                     msg = 'Uncaught Error.';
-                }
 
                 if (msg == 422) {
                 	$(_this).next('.after-form-errors').remove();
 
-                    $('<div/>', { class: 'alert alert-danger after-form-errors closes' }).appendTo(_this.after());
+                    _this.after($('<div/>', { class: 'alert alert-danger after-form-errors closes' })).appendTo();
                     $('<ul/>', { class: 'list-group' }).appendTo('.after-form-errors');
 
-					$.each(obj, function(key, val) {
+					$.each($.parseJSON(jqXHR.responseText), function(key, val) {
                         $('<li/>', { class: 'list-group-item', html: val }).appendTo('.after-form-errors > .list-group');
                     })
-                } else {
+                } else
                 	modal({ 'heading': msg, 'body': jqXHR.responseText, 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1' });
-                }
 
                 body.removeClass('polling-active');
                 _this.removeClass('disabled wait');
@@ -227,8 +210,24 @@ function json_ajax(_this) {
 
                 if (obj.toast)
                     toast(obj.toast.text, obj.toast.timeOut)
-            		
-                if (obj.html) {
+
+                if (obj.dom)
+                    $.each(obj.dom, function(key, val) {
+                        if (val.type == 'show')
+                            $(val.target).show();
+                        else if (val.type == 'hide')
+                            $(val.target).hide();
+                        else if (val.type == 'remove')
+                            $(val.target).remove();
+                        else if (val.type == 'reset')
+                            $(val.target)[0].reset();
+                        else if (val.type == 'appendTo')
+                            $(val.element).appendTo(val.target);
+                        else if (val.type == 'prependTo')
+                            $(val.element).prependTo(val.target);
+                    })
+
+                if (obj.html)
                     $.each(obj.html, function(key, val) {
                         var content = val.content;
 
@@ -248,39 +247,19 @@ function json_ajax(_this) {
                         else if (val.type == 'value')
                             $(val.target).val(text);
                     })
-                }
 
-                if (obj.dom) {
-                    $.each(obj.dom, function(key, val) {
-                        if (val.type == 'show')
-                            $(val.target).show();
-                        else if (val.type == 'hide')
-                            $(val.target).hide();
-                        else if (val.type == 'remove')
-                            $(val.target).remove();
-                        else if (val.type == 'reset')
-                            $(val.target)[0].reset();
-                        else if (val.type == 'appendTo')
-                            $(val.element).appendTo(val.target);
-                        else if (val.type == 'prependTo')
-                            $(val.element).prependTo(val.target);
-                    })
-                }
-
-                if (obj.editClass) {
+                if (obj.editClass)
                     $.each(obj.editClass, function(key, val) {
                         if (val.remove)
                             $(val.target).removeClass(val.remove);
                         if (val.add)
                             $(val.target).addClass(val.add);
                     })
-                }
 
-                if (obj.editCss) {
+                if (obj.editCss)
                     $.each(obj.editCss, function(key, val) {
                         $(val.target).css(val.css[0]);
                     })
-                }
 
                 if (obj.modal)
                     modal(obj.modal);
@@ -302,26 +281,25 @@ function json_ajax(_this) {
                             link = $('<a/>', { href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-left' }).appendTo(link);
 
-                    if (obj.pagination.total_page > 1) {
+                    if (obj.pagination.total_page > 1)
                         for (var i = parseInt(obj.pagination.current_page)-3; i <= parseInt(obj.pagination.current_page)+3; i++) {
                             if (i >= 1 && i <= obj.pagination.total_page)
                                 var btn = $('<li/>', { class: (i == obj.pagination.current_page) ? 'active' : '' }).appendTo(pagination),
                                     link = $('<a/>', { href: '#page-' + i, html: i }).appendTo(btn);
                         }
-                    }
 
-                    if (obj.pagination.total_page > parseInt(obj.pagination.current_page)+3) {
+                    if (obj.pagination.total_page > parseInt(obj.pagination.current_page)+3)
                         var page = parseInt(obj.pagination.current_page) + 1,
                             btn = $('<li/>').appendTo(pagination),
                             link = $('<a/>', { href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-right' }).appendTo(link);
-                    }
 
-                    $(_this.data('pager')).html(pagination);
+                    $(_this.data('pager')).html(pagination)
                 }
 
-            	body.removeClass('polling-active');
-            	_this.removeClass('disabled wait');
+            	body.removeClass('polling-active')
+            	_this.removeClass('disabled wait')
+                initial()
             }
          })
     }, 200)
@@ -362,7 +340,18 @@ function hashchange(callback) {
     }, 100);
 }
 
+function initial() {
+    $('.css').each(function() {
+        var _this = $(this);
 
+        if (_this.data('backgroundImage'))
+            _this.css('backgroundImage', _this.data('backgroundImage'))
+        if (_this.data('color'))
+            _this.css('color', _this.data('color'))
+        if (_this.data('backgroundColor'))
+            _this.css('backgroundColor', _this.data('backgroundColor'))
+    })
+}
 
 /* Console Log */
 function c(t, type) {
@@ -393,7 +382,7 @@ function getFormData($form) {
         indexed_array = {};
 
     $.map(unindexed_array, function(n, i) {
-        indexed_array[n['name']] = n['value'];
+        indexed_array[n['name'].replace('[]', '[' + i + ']')] = n['value'];
     })
 
     return indexed_array;
@@ -407,7 +396,7 @@ function modal(obj) {
     window.clearTimeout(goTimer);
 
     modalTimer = window.setTimeout(function() {
-		(obj.heading) ? panel.children('.panel-heading').html(obj.heading).show() : panel.children('.modal-heading').hide();
+		(obj.heading) ? panel.children('.panel-heading').html(obj.heading).show() : panel.children('.panel-heading').html('');
 		(obj.body) ? panel.children('.panel-body').html(obj.body).show() : panel.children('.panel-body').hide();
 		(obj.close == false) ? panel.children('.panel-close').hide() : panel.children('.panel-close').show();
 		(obj.class) ? panel.removeClass().addClass('panel panel-material ' + obj.class) : '';
@@ -432,24 +421,3 @@ function windowReady() {
     else
     	body.addClass('drawer-active')
 }
-
-/*
-google.charts.load('current', {
-	'packages': ['corechart']
-});
-
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Windows PC', 124],
-    ['Mac', 77],
-    ['iPad/iPhone', 15],
-    ['Android', 250],
-    ['Others', 66]
-  ]), options = {
-    title: 'Where do you usually browse?'
-  }, chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-  chart.draw(data, options);
-}
-*/
