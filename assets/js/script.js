@@ -50,17 +50,17 @@ $(window).on('load', function (e) {
 });
 
 $(document).on('click', '.edit-class', function() {
-	var _this = $(this);
+    var _this = $(this);
 
-	if (_this.hasClass('disabled'))
-		return false;
+    if (_this.hasClass('disabled'))
+        return false;
 
-	if (_this.data('remove'))
-		$(_this.data('target')).removeClass(_this.data('remove'))
-	if (_this.data('toggle'))
-		$(_this.data('target')).toggleClass(_this.data('toggle'))
-	if (_this.data('add'))
-		$(_this.data('target')).addClass(_this.data('add'))
+    if (_this.data('remove'))
+        $((_this.target == 'this')?_this:_this.data('target')).removeClass(_this.data('remove'))
+    if (_this.data('toggle'))
+        $((_this.target == 'this')?_this:_this.data('target')).toggleClass(_this.data('toggle'))
+    if (_this.data('add'))
+        $((_this.target == 'this')?_this:_this.data('target')).addClass(_this.data('add'))
 }).on('click', '.focus', function() {
 	var _this = $(this);
 
@@ -97,7 +97,12 @@ $(document).on('click', '.edit-class', function() {
 
     return false;
 }).on('click', 'a.ajax', function() {
-	json_ajax($(this));
+    var _this = $(this);
+
+    if (_this.data('load'))
+	   json_ajax($(_this.data('load')));
+    else
+        json_ajax(_this);
 }).on('keyup', 'form.keyup', function() {
 	var _this = $(this);
 
@@ -214,17 +219,17 @@ function json_ajax(_this) {
                 if (obj.dom)
                     $.each(obj.dom, function(key, val) {
                         if (val.type == 'show')
-                            $(val.target).show();
+                            $((val.target == 'this')?_this:val.target).show();
                         else if (val.type == 'hide')
-                            $(val.target).hide();
+                            $((val.target == 'this')?_this:val.target).hide();
                         else if (val.type == 'remove')
-                            $(val.target).remove();
+                            $((val.target == 'this')?_this:val.target).remove();
                         else if (val.type == 'reset')
-                            $(val.target)[0].reset();
+                            $((val.target == 'this')?_this:val.target)[0].reset();
                         else if (val.type == 'appendTo')
-                            $(val.element).appendTo(val.target);
+                            $((val.element == 'this')?_this:val.element).appendTo(val.target);
                         else if (val.type == 'prependTo')
-                            $(val.element).prependTo(val.target);
+                            $((val.element == 'this')?_this:val.element).prependTo(val.target);
                     })
 
                 if (obj.html)
@@ -235,30 +240,30 @@ function json_ajax(_this) {
                             content = escapeHTML(val.content);
 
                         if (val.type == 'dom')
-                            $(val.target).html(content);
+                            $((val.target == 'this')?_this:val.target).html(content);
                         else if (val.type == 'append')
-                            $(val.target).append(content);
+                            $((val.target == 'this')?_this:val.target).append(content);
                         else if (val.type == 'prepend')
-                            $(val.target).prepend(content);
+                            $((val.target == 'this')?_this:val.target).prepend(content);
                         else if (val.type == 'before')
-                            $(val.target).before(content);
+                            $((val.target == 'this')?_this:val.target).before(content);
                         else if (val.type == 'after')
-                            $(val.target).after(content);
+                            $((val.target == 'this')?_this:val.target).after(content);
                         else if (val.type == 'value')
-                            $(val.target).val(text);
+                            $((val.target == 'this')?_this:val.target).val(text);
                     })
 
                 if (obj.editClass)
                     $.each(obj.editClass, function(key, val) {
                         if (val.remove)
-                            $(val.target).removeClass(val.remove);
+                            $((val.target == 'this')?_this:val.target).removeClass(val.remove);
                         if (val.add)
-                            $(val.target).addClass(val.add);
+                            $((val.target == 'this')?_this:val.target).addClass(val.add);
                     })
 
                 if (obj.editCss)
                     $.each(obj.editCss, function(key, val) {
-                        $(val.target).css(val.css[0]);
+                        $((val.target == 'this')?_this:val.target).css(val.css[0]);
                     })
 
                 if (obj.modal)
@@ -404,7 +409,8 @@ function modal(obj) {
 
     modalTimer = window.setTimeout(function() {
 		(obj.heading) ? panel.children('.panel-heading').html(obj.heading).show() : panel.children('.panel-heading').html('');
-		(obj.body) ? panel.children('.panel-body').html(obj.body).show() : panel.children('.panel-body').hide();
+        (obj.body) ? panel.children('.panel-body').html(obj.body).show() : panel.children('.panel-body').hide();
+		(obj.footer) ? panel.children('.panel-footer').html(obj.footer).show() : panel.children('.panel-footer').hide();
 		(obj.close == false) ? panel.children('.panel-close').hide() : panel.children('.panel-close').show();
 		(obj.class) ? panel.removeClass().addClass('panel panel-material ' + obj.class) : '';
 	

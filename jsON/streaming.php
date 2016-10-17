@@ -25,7 +25,7 @@ $items = [
 	]
 ];
 
-foreach ($items as $row) {
+foreach ($items as $key => $row) {
 ?>
 <article class="panel-body">
 	<div class="card">
@@ -37,13 +37,15 @@ foreach ($items as $row) {
 			<p><?php echo $row['description'];?></p>
 		</div>
 		<div class="card-footer">
-			<a class="btn btn-default" href="#">Explore</a>
-			<a class="btn btn-danger btn-colored" href="#">Explore</a>
-			<a class="btn btn-info btn-colored" href="#">Explore</a>
-			<a class="btn btn-primary btn-colored" href="#">Explore</a>
-			<a class="btn btn-warning btn-colored" href="#">Explore</a>
-			<a class="btn btn-success btn-colored" href="#">Explore</a>
-			<a class="btn btn-default btn-colored" href="#">Explore</a>
+			<a class="btn btn-default btn-colored ajax" id="like-btn-<?php echo $key?>" data-href="/jsON/like.php?key=<?php echo $key;?>" href="#">
+				<i class="ion ion-fw ion-happy-outline"></i> <span>14</span>
+			</a>
+			<a class="btn btn-default btn-colored ajax" data-href="/jsON/share.php" href="#">
+				<i class="ion ion-fw ion-android-share-alt"></i>
+			</a>
+			<a class="btn btn-default btn-colored" href="#">
+				<i class="ion ion-fw ion-chatbubble"></i> <span>40</span>
+			</a>
 		</div>
 	</div>
 </article>
@@ -62,9 +64,9 @@ $array = [
 		[ "type" => "remove", "target" => "#streaming > .panel-footer" ]
 	],
 	"pagination" => [
-		"total_results" => 1064,
+		"total_results" => 100,
 		"current_page" => $_POST['page'],
-		"total_page" => 107
+		"total_page" => 10
 	]
 ];
 

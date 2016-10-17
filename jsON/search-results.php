@@ -2,65 +2,99 @@
 header('Content-Type: application/json');
 ob_start();
 ?>
-<div class="panel-body">
-	<div class="row">
-		<div class="col-xs-4 col-sm-2">
-			<img alt="..." src="upload/stream-xsmall-8.jpg" class="img img-responsive" />
+<div class="container-fluid search-results">
+	<div class="panel panel-material">
+		<div class="panel-heading">Search Results</div>
+		<div class="list-group">
+			<a class="list-group-item" href="forum-topic.html">
+				<div class="row">
+					<div class="col-sm-8">
+						<p>
+							<strong>
+								<i class="ion ion-fw ion-search"></i>
+								Quisque eu turpis eget ex gravida pulvinar.
+							</strong>
+						</p>
+						<p class="text-muted">Started by Admin</p>
+					</div>
+					<div class="col-sm-4 text-muted">26 Sep 2016, Fri 11:52</div>
+				</div>
+			</a>
+			<a class="list-group-item" href="forum-topic.html">
+				<div class="row">
+					<div class="col-sm-8">
+						<p>
+							<strong>
+								<i class="ion ion-fw ion-search"></i>
+								Quisque facilisis mauris quis metus volutpat feugiat.
+							</strong>
+						</p>
+						<p class="text-muted">Started by Admin</p>
+					</div>
+					<div class="col-sm-4 text-muted">26 Sep 2016, Fri 11:52</div>
+				</div>
+			</a>
+			<a class="list-group-item" href="forum-topic.html">
+				<div class="row">
+					<div class="col-sm-8">
+						<p>
+							<strong>
+								<i class="ion ion-fw ion-search"></i>
+								In pretium arcu at mollis ornare.
+							</strong>
+						</p>
+						<p class="text-muted">Started by Admin</p>
+					</div>
+					<div class="col-sm-4 text-muted">26 Sep 2016, Fri 11:52</div>
+				</div>
+			</a>
+			<a class="list-group-item" href="forum-topic.html">
+				<div class="row">
+					<div class="col-sm-8">
+						<p>
+							<strong>
+								<i class="ion ion-fw ion-search"></i>
+								Fusce porta nulla at metus iaculis, non scelerisque lectus placerat.
+							</strong>
+						</p>
+						<p class="text-muted">Started by Admin</p>
+					</div>
+					<div class="col-sm-4 text-muted">26 Sep 2016, Fri 11:52</div>
+				</div>
+			</a>
+			<a class="list-group-item" href="forum-topic.html">
+				<div class="row">
+					<div class="col-sm-8">
+						<p>
+							<strong>
+								<i class="ion ion-fw ion-search"></i>
+								Sed facilisis mi sit amet orci convallis, eget varius sem congue.
+							</strong>
+						</p>
+						<p class="text-muted">Started by Admin</p>
+					</div>
+					<div class="col-sm-4 text-muted">26 Sep 2016, Fri 11:52</div>
+				</div>
+			</a>
 		</div>
-		<div class="col-xs-8 col-sm-7">
-			<h3><a href="#">Morbi quis odio eu ex consectetura.</a></h3>
-			<p class="text-muted">Nullam cursus purus et lorem semper, vitae blandit ex dapibus.</p>
-		</div>
-		<div class="hidden-xs col-sm-3 text-muted">26 Sep 2016, Fri 11:52</div>
-	</div>
-</div>
-
-<div class="panel-body">
-	<div class="row">
-		<div class="col-xs-4 col-sm-2">
-			<img alt="..." src="upload/stream-xsmall-5.jpg" class="img img-responsive" />
-		</div>
-		<div class="col-xs-8 col-sm-7">
-			<h3><a href="#">Nulla convallis elit eget libero semper posuere.</a></h3>
-			<p class="text-muted">Etiam sollicitudin orci faucibus purus ultrices, eu euismod tellus venenatis.</p>
-		</div>
-		<div class="hidden-xs col-sm-3 text-muted">26 Sep 2016, Fri 11:52</div>
-	</div>
-</div>
-
-<div class="panel-body">
-	<div class="row">
-		<div class="col-xs-4 col-sm-2">
-			<img alt="..." src="upload/stream-xsmall-4.jpg" class="img img-responsive" />
-		</div>
-		<div class="col-xs-8 col-sm-7">
-			<h3><a href="#">Nunc vehicula sem quis neque placerat tempus.</a></h3>
-			<p class="text-muted">Quisque facilisis lorem sit amet ligula faucibus imperdiet non in tortor.</p>
-		</div>
-		<div class="hidden-xs col-sm-3 text-muted">26 Sep 2016, Fri 11:52</div>
-	</div>
-</div>
-
-<div class="panel-body">
-	<div class="row">
-		<div class="col-xs-4 col-sm-2">
-			<img alt="..." src="upload/stream-xsmall-3.jpg" class="img img-responsive" />
-		</div>
-		<div class="col-xs-8 col-sm-7">
-			<h3><a href="#">Maecenas tincidunt velit eu nunc aliquet luctus.</a></h3>
-			<p class="text-muted">Duis eget diam ultrices, sodales mi condimentum, accumsan lectus.</p>
-		</div>
-		<div class="hidden-xs col-sm-3 text-muted">26 Sep 2016, Fri 11:52</div>
 	</div>
 </div>
 <?php
 $content = ob_get_clean();
 
 $array = [
-	"modal" => [
-		"heading" => "Search Results",
-		"body" => $content,
-		"class" => 'col-xs-10 col-xs-offset-1'
+	"html" => [
+		[
+			"type" => "after",
+			"content" => $content,
+			"target" => ".search"
+		]
+	],
+	"dom" => [
+		[
+			"type" => "remove",
+			"target" => ".search-results"
+		]
 	]
 ];
 

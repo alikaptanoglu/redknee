@@ -41,10 +41,11 @@
 	"modal": {
 		"heading": "Modal Title",
 		"body": "modal content",
+		"footer": "modal footer",
 		"delay": 1000,
 		"closeDelay": 5000,
 		"close": false,
-		"class": "modal-sm-4 modal-sm-offset-4"
+		"class": "col-sm-4 col-sm-offset-4"
 	},
 	"pagination": {
 		"total_results": 1064,
