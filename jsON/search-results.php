@@ -77,6 +77,11 @@ ob_start();
 				</div>
 			</a>
 		</div>
+		<div class="text-right">
+			<a class="btn btn-danger btn-colored edit-class" data-target=".search-results" data-add="hidden" href="#">
+				<i class="ion ion-fw ion-ios-arrow-up"></i>
+			</a>
+		</div>
 	</div>
 </div>
 <?php

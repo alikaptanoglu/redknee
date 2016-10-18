@@ -108,6 +108,7 @@ body.polling-active > .polling { display: table; }
 	bottom: 0;
 	left: 0;
 	transform: translate(-100%);
+	transition: all .2s ease 0s;	
 	overflow: auto;
 }
 .drawer > .container-fluid > .brand { margin: 0 -15px 5px; padding: 0 15px; max-height: 64px; background: #efefef; }
@@ -132,9 +133,6 @@ body.drawer-active > .drawer { transform: translate(0); box-shadow: 0 0 10px 1px
 	body.drawer-active > .overlay-drawer {
 		transform: translate(0);
 		z-index: 800;
-		background-image: url('../img/overlay-bg.png');
-		background-repeat: repeat-y;
-		background-position: right center;
 	}
 }
 /*************/
@@ -394,7 +392,8 @@ main.content > footer.main a:hover { color: #ccc; }
 /*------*/
 .gallery > .thumbnail { border-width: 0; margin: 0; padding: 0; }
 .gallery > .thumbnail + .thumbnail { margin: 10px 0 0; }
-.gallery > .thumbnail > .caption { padding: 10px; background: rgba(255, 255, 255, .7); }
+.gallery > .thumbnail > .caption { padding: 90px 10px 10px; background: rgba(255, 255, 255, .7); }
+.gallery > .thumbnail > .caption:hover { background: rgba(255, 255, 255, .5); }
 /*------*/
 
 /*************/
@@ -438,7 +437,6 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn:hover,
 .btn:active,
 .btn:focus { box-shadow: none; }
-.btn:active { opacity: .6; }
 
 .btn-info.btn-colored:hover,
 .btn-info.btn-colored:focus { background: #349ef3 !important; }
@@ -453,14 +451,33 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn-default.btn-colored:hover,
 .btn-default.btn-colored:focus { background: #f0f0f0 !important; }
 
+.ripple { overflow: hidden; position: relative; transition: all .5s ease 0s; }
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+
+  animation: ripple-animation 2s;
+}
+
+@keyframes ripple-animation {
+    from { transform: scale(1); opacity: .4; }
+    to { transform: scale(20); opacity: 0; }
+}
+
 .form-control {
   resize: none;
   background: transparent;
   margin: 0 0 10px;
-  border-width: 0 0 1px;
+  border-width: 0 0 2px;
   box-shadow: none;
+  cursor: pointer;
+  border-radius: 0;
+  color: #999;
 }
-.form-control:focus { box-shadow: none; }
+.form-control:focus { cursor: text; box-shadow: none; }
 
 /*------*/
 .material-pager > ul.pagination { margin: 20px auto; float: none; display: table; }
@@ -468,3 +485,11 @@ body.search-active > .search { margin: 48px 0 0; }
 .material-pager > ul.pagination > li > a:hover { background: rgba(0, 0, 0, .1); }
 .material-pager > ul.pagination > li.active > a { background: #2577ff; color: #fff; }
 /*************/
+
+
+
+
+
+
+
+

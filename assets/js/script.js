@@ -119,7 +119,29 @@ $(document).on('click', '.edit-class', function() {
     } else if (e.keyCode == 13) {
     	c('Enter Key', 'warn');
     }
-})
+}).on('mousedown', '.ripple', function (event) {
+    var _this = $(this),
+        div = $('<div/>', { class: 'ripple-effect' }),
+        btnOffset = _this.offset(),
+        xPos = event.pageX - btnOffset.left,
+        yPos = event.pageY - btnOffset.top,
+        ripple = $(".ripple-effect");
+
+    ripple.css({
+        "width": _this.height(),
+        "height": _this.height()
+    });
+
+    div.css({
+        top: yPos - (ripple.height()/2),
+        left: xPos - (ripple.width()/2)
+    }).appendTo(_this);
+
+    window.setTimeout(function(){
+        div.remove();
+    }, 500);
+});
+
 
 function json_ajax(_this) {
 	if (_this.hasClass('disabled'))

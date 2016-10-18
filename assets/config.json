@@ -218,7 +218,7 @@
     "@jumbotron-font-size": "ceil((@font-size-base * 1.5))",
     "@jumbotron-heading-font-size": "ceil((@font-size-base * 4.5))",
     "@state-success-text": "#3c763d",
-    "@state-success-bg": "#b1d981",
+    "@state-success-bg": "#a1cf8b",
     "@state-success-border": "darken(spin(@state-success-bg, -10), 5%)",
     "@state-info-text": "#31708f",
     "@state-info-bg": "#64b5f6",
@@ -422,5 +422,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=409afb399c91295bae23d5acc9e6e9b0"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=95870eeb96904eaba94a17f04effb966"
 }
