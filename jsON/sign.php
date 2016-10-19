@@ -2,7 +2,9 @@
 header('Content-Type: application/json');
 ob_start();
 
-if ($_GET['q'] == 'in') {
+$q = preg_replace("/[^inupw]/i", "", $_GET['q']);
+
+if ($q == 'in') {
 ?>
 <form method="post" action="/jsON/form-post.php" class="ajax" id="form-id" data-token="{token-code}">
 	<input type="text" class="form-control" name="uid" placeholder="E-mail" />
@@ -17,7 +19,7 @@ if ($_GET['q'] == 'in') {
 	</div>
 </form>
 <?php
-} else if ($_GET['q'] == 'up') {
+} else if ($q == 'up') {
 ?>
 <form method="post" action="/jsON/form-post.php" class="ajax" id="form-id" data-token="{token-code}">
 	<input type="text" class="form-control" name="name" placeholder="Name" />
@@ -34,7 +36,7 @@ if ($_GET['q'] == 'in') {
 	</div>
 </form>
 <?php
-} else if ($_GET['q'] == 'pw') {
+} else if ($q == 'pw') {
 ?>
 <form method="post" action="/jsON/form-post.php" class="ajax" id="form-id" data-token="{token-code}">
 	<input type="text" class="form-control" name="uid" placeholder="E-mail" />
@@ -59,7 +61,7 @@ $content = ob_get_clean();
 $array = [
 	"modal" => [
 		"body" => $content,
-		"class" => "col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-5 user"
+		"class" => "col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-4 user"
 	]
 ];
 

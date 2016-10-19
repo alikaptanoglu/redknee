@@ -119,7 +119,7 @@ $(document).on('click', '.edit-class', function() {
     } else if (e.keyCode == 13) {
     	c('Enter Key', 'warn');
     }
-}).on('mousedown', '.ripple', function (event) {
+}).on('mouseup', '.ripple', function (event) {
     var _this = $(this),
         div = $('<div/>', { class: 'ripple-effect' }),
         btnOffset = _this.offset(),
@@ -127,21 +127,22 @@ $(document).on('click', '.edit-class', function() {
         yPos = event.pageY - btnOffset.top,
         ripple = $(".ripple-effect");
 
+    event.preventDefault();
+
     ripple.css({
         "width": _this.height(),
         "height": _this.height()
     });
 
     div.css({
-        top: yPos - (ripple.height()/2),
-        left: xPos - (ripple.width()/2)
+        "top": yPos - (ripple.height()/2),
+        "left": xPos - (ripple.width()/2)
     }).appendTo(_this);
 
     window.setTimeout(function(){
         div.remove();
     }, 500);
 });
-
 
 function json_ajax(_this) {
 	if (_this.hasClass('disabled'))
@@ -161,6 +162,9 @@ function json_ajax(_this) {
             	data_type = 'POST';
             else
             	data_type = 'GET';
+
+        if (_this.data('type'))
+            data_type = _this.data('type');
 
         data_vars = $.extend({}, data_vars, _this.data());
 
@@ -305,20 +309,20 @@ function json_ajax(_this) {
                     if (parseInt(obj.pagination.current_page) > 3)
                         var page = parseInt(obj.pagination.current_page) - 1,
                             btn = $('<li/>').appendTo(pagination),
-                            link = $('<a/>', { href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
+                            link = $('<a/>', { class: 'ripple', href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-left' }).appendTo(link);
 
                     if (obj.pagination.total_page > 1)
                         for (var i = parseInt(obj.pagination.current_page)-3; i <= parseInt(obj.pagination.current_page)+3; i++) {
                             if (i >= 1 && i <= obj.pagination.total_page)
                                 var btn = $('<li/>', { class: (i == obj.pagination.current_page) ? 'active' : '' }).appendTo(pagination),
-                                    link = $('<a/>', { href: '#page-' + i, html: i }).appendTo(btn);
+                                    link = $('<a/>', { class: 'ripple', href: '#page-' + i, html: i }).appendTo(btn);
                         }
 
                     if (obj.pagination.total_page > parseInt(obj.pagination.current_page)+3)
                         var page = parseInt(obj.pagination.current_page) + 1,
                             btn = $('<li/>').appendTo(pagination),
-                            link = $('<a/>', { href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
+                            link = $('<a/>', { class: 'ripple', href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-right' }).appendTo(link);
 
                     $(_this.data('pager')).html(pagination)
@@ -326,6 +330,7 @@ function json_ajax(_this) {
 
             	body.removeClass('polling-active')
             	_this.removeClass('disabled wait')
+
                 initial()
             }
          })

@@ -54,7 +54,7 @@ a:visited { color: #666; }
 /*************/
 
 /* List Group */
-.list-group > .list-group-item { background: transparent; border-width: 0; padding: 10px; }
+.list-group > .list-group-item { background: transparent; border-width: 0; padding: 10px; border-radius: 0; }
 /*************/
 
 /* Polling */
@@ -93,6 +93,11 @@ body.polling-active > .polling { display: table; }
     color: #fff;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
 }
+.alert.alert-fluid {
+	margin: 0 -15px;
+	border-radius: 0;
+	box-shadow: none;
+}
 .alert a { color: #fff; }
 .alert a:hover { opacity: .5; }
 /*************/
@@ -111,19 +116,18 @@ body.polling-active > .polling { display: table; }
 	transition: all .2s ease 0s;	
 	overflow: auto;
 }
-.drawer > .container-fluid > .brand { margin: 0 -15px 5px; padding: 0 15px; max-height: 64px; background: #efefef; }
+.drawer > .container-fluid > .brand { margin: 0 -15px; padding: 0 15px; max-height: 64px; background: #efefef; }
 .drawer > .container-fluid > .brand > a > .img { max-height: 64px; }
 .drawer > .container-fluid > .brand > a:hover > .img { margin: 0 0 0 20px; }
 .drawer > .container-fluid > .panel-group > .panel { background: transparent; box-shadow: none; border-width: 0; }
 .drawer > .container-fluid > .panel-group > .panel > .panel-heading { padding: 0; }
 .drawer > .container-fluid > .panel-group > .panel > .panel-collapse > .list-group { border-width: 0; }
 .drawer > .container-fluid > .group { margin: 0 -15px 5px; }
-.drawer > .container-fluid > .group a { display: block; height: 100%; padding: 5px 15px; }
-.drawer > .container-fluid > .group a:hover { background: #f0f0f0; }
+.drawer > .container-fluid > .group a { display: block; height: 100%; padding: 10px 15px; }
 .drawer > .container-fluid > .group a.disabled { opacity: .5; }
+.drawer > .container-fluid > .group a.active { background: #666; }
 .drawer > .container-fluid > .group a > .badge { float: none; }
 .drawer > .container-fluid .list-group > .list-group-item { border-width: 0; padding: 5px 15px; }
-.drawer > .container-fluid .list-group > .list-group-item:hover { background: #f0f0f0; }
 
 body.drawer-active { padding: 0 0 0 240px; }
 body.drawer-active > .drawer { transform: translate(0); box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2); }
@@ -167,7 +171,7 @@ body.dock-active > .overlay-dock { transform: translate(0); z-index: 700; }
 	transform: translate(-100%);
 	transition: none;
 	overflow: auto;
-	padding: 128px 0;
+	padding: 64px 0;
 }
 .modal:before,
 .modal:after {
@@ -285,6 +289,7 @@ nav.header > .container-fluid > ul > li > a > .img { max-height: 64px; }
 nav.header > .container-fluid > ul > li > a:hover,
 nav.header > .container-fluid > ul > li > a.active { background: rgba(255, 255, 255, .1); }
 nav.header > .container-fluid > ul > li > a.disabled { opacity: .5; box-shadow: none; cursor: default; }
+nav.header > .container-fluid > ul > li > .dropdown-menu { border-radius: 0 0 2px 2px; }
 
 body.drawer-active > nav.header { left: 240px; }
 
@@ -349,6 +354,9 @@ main.content > footer.main a:hover { color: #ccc; }
 }
 @media(min-width: 1200px) {}
 /*------*/
+.title { padding: 5% 0; background-size: 700px 100px; background-position: bottom center; }
+.title > .container-fluid > h1 { margin: 0; font-weight: 300; }
+/*------*/
 .panel-material { box-shadow: none; background: transparent; }
 .panel-material > .panel-heading { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
 .panel-material > .panel-body {
@@ -359,6 +367,11 @@ main.content > footer.main a:hover { color: #ccc; }
   border-width: 0;
   padding: 10px;
   border-radius: 2px;
+}
+.panel-material > .panel-body.note {
+	padding: 0 32px;
+	background-image: repeating-linear-gradient(0deg, #e5d9a1, #e5d9a1 1px, #fff4c2 1px, #fff4c2 32px);
+	line-height: 32px;
 }
 .panel-material > .panel-body > .card { margin: -10px; }
 .panel-material > .panel-body.panel-body-padding { padding: 30px; }
@@ -408,6 +421,7 @@ main.content > footer.main a:hover { color: #ccc; }
 	font-weight: 300;
 	font-size: 20px;
 	color: rgba(255, 255, 255, .5);
+	background: transparent;
 }
 .search > .container-fluid a.times {
 	color: #fff;
@@ -469,9 +483,9 @@ body.search-active > .search { margin: 48px 0 0; }
 
 .form-control {
   resize: none;
-  background: transparent;
+  background: rgba(230, 240, 250, .5);
   margin: 0 0 10px;
-  border-width: 0 0 2px;
+  border-width: 0 0 0 1px;
   box-shadow: none;
   cursor: pointer;
   border-radius: 0;
