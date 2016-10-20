@@ -142,7 +142,9 @@ $(document).on('click', '.edit-class', function() {
     window.setTimeout(function(){
         div.remove();
     }, 500);
-});
+})
+
+
 
 function json_ajax(_this) {
 	if (_this.hasClass('disabled'))
@@ -216,12 +218,12 @@ function json_ajax(_this) {
                     msg = 'Uncaught Error.';
 
                 if (msg == 422) {
-                	$(_this).next('.after-form-errors').remove();
-
+                	_this.next('.after-form-errors').remove();
                     _this.after($('<div/>', { class: 'alert alert-danger after-form-errors closes' })).appendTo();
+
                     $('<ul/>', { class: 'list-group' }).appendTo('.after-form-errors');
 
-					$.each($.parseJSON(jqXHR.responseText), function(key, val) {
+					$.each(jqXHR, function(key, val) {
                         $('<li/>', { class: 'list-group-item', html: val }).appendTo('.after-form-errors > .list-group');
                     })
                 } else
@@ -382,6 +384,14 @@ function initial() {
             _this.css('color', _this.data('color'))
         if (_this.data('backgroundColor'))
             _this.css('backgroundColor', _this.data('backgroundColor'))
+    })
+
+    autosize($('.autosize'))
+
+    $('.masked').each(function() {
+        var _this = $(this);
+
+        _this.mask(_this.attr('data-format'), { placeholder: _this.attr('data-placeholder') });
     })
 }
 

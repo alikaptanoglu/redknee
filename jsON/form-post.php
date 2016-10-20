@@ -13,7 +13,7 @@ $array = [
 		[
 			"type" => "after",
 			"target" => "this",
-			"content" => "<div class=\"successfully alert alert-success\"><i class=\"ion ion-fw ion-checkmark\"></i> Form submitted successfully!</div>"
+			"content" => "<div class=\"successfully closes alert alert-success\"><i class=\"ion ion-fw ion-checkmark\"></i> Form submitted successfully!</div>"
 		]
 	],
 	"dom" => [

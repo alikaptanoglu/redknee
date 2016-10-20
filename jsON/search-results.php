@@ -78,8 +78,8 @@ ob_start();
 			</a>
 		</div>
 		<div class="text-right">
-			<a class="btn btn-danger btn-colored edit-class" data-target=".search-results" data-add="hidden" href="#">
-				<i class="ion ion-fw ion-ios-arrow-up"></i>
+			<a class="btn btn-danger btn-colored edit-class ripple" data-target=".search-results" data-add="hidden" href="#">
+				<i class="ion ion-fw ion-close"></i>
 			</a>
 		</div>
 	</div>

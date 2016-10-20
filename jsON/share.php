@@ -11,7 +11,7 @@ ob_start();
 </div>
 
 <div class="text-right">
-	<a class="edit-class btn btn-default btn-colored ripple" href="#" data-target="body" data-remove="modal-active">CANCEL</a>
+	<a class="edit-class btn btn-danger btn-colored ripple" href="#" data-target="body" data-remove="modal-active">CANCEL</a>
 </div>
 <?php
 $content = ob_get_clean();

@@ -37,13 +37,13 @@ foreach ($items as $key => $row) {
 			<p><?php echo $row['description'];?></p>
 		</div>
 		<div class="card-footer">
-			<a class="btn btn-default btn-colored ajax" id="like-btn-<?php echo $key?>" data-href="jsON/like.php?key=<?php echo $key;?>" href="#">
+			<a class="btn btn-default ripple btn-colored ajax" id="like-btn-<?php echo $key?>" data-href="jsON/like.php?key=<?php echo $key;?>" href="#">
 				<i class="ion ion-fw ion-happy-outline"></i> <span>14</span>
 			</a>
-			<a class="btn btn-default btn-colored ajax" data-href="jsON/share.php" href="#">
+			<a class="btn btn-default ripple btn-colored ajax" data-href="jsON/share.php" href="#">
 				<i class="ion ion-fw ion-android-share-alt"></i>
 			</a>
-			<a class="btn btn-default btn-colored" href="article-read.html">
+			<a class="btn btn-default ripple btn-colored" href="article-read.html">
 				<i class="ion ion-fw ion-chatbubble"></i> <span>40</span>
 			</a>
 		</div>

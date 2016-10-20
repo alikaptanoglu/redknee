@@ -15,10 +15,11 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 * > .progress:last-child,
 * > .alert { margin: 5px 0; }
 
-a { color: #444; }
-a:hover,
+a,
+a:visited,
 a:link,
-a:visited { color: #666; }
+a:active { color: #444; }
+a:hover { color: #999; }
 
 .css {
 	background-repeat: no-repeat;
@@ -119,11 +120,8 @@ body.polling-active > .polling { display: table; }
 .drawer > .container-fluid > .brand { margin: 0 -15px; padding: 0 15px; max-height: 64px; background: #efefef; }
 .drawer > .container-fluid > .brand > a > .img { max-height: 64px; }
 .drawer > .container-fluid > .brand > a:hover > .img { margin: 0 0 0 20px; }
-.drawer > .container-fluid > .panel-group > .panel { background: transparent; box-shadow: none; border-width: 0; }
-.drawer > .container-fluid > .panel-group > .panel > .panel-heading { padding: 0; }
-.drawer > .container-fluid > .panel-group > .panel > .panel-collapse > .list-group { border-width: 0; }
 .drawer > .container-fluid > .group { margin: 0 -15px 5px; }
-.drawer > .container-fluid > .group a { display: block; height: 100%; padding: 10px 15px; }
+.drawer > .container-fluid > .group a { display: block; height: 100%; padding: 0 15px; }
 .drawer > .container-fluid > .group a.disabled { opacity: .5; }
 .drawer > .container-fluid > .group a.active { background: #666; }
 .drawer > .container-fluid > .group a > .badge { float: none; }
@@ -300,6 +298,8 @@ body.drawer-active > nav.header { left: 240px; }
 
 /* Main Content */
 main.content > .breadcrumb { margin: 0; background: #fff; }
+main.content > .breadcrumb > li.active { font-weight: bold; }
+
 main.content > .container-fluid { margin: 0; }
 main.content > .container-fluid > .panel-grid { padding: 15px 0; }
 
@@ -309,9 +309,10 @@ main.content > footer.main > .container-fluid > .col > .img:hover { opacity: 1; 
 main.content > footer.main > .container-fluid > .col > .list-group { margin: 10px 0; }
 main.content > footer.main > .container-fluid > .col > .list-group > .list-group-item { padding: 5px; }
 main.content > footer.main > .container-fluid > .col > .list-group > .list-group-item:hover { background: rgba(0, 0, 0, .1) }
-main.content > footer.main a { color: #111; font-weight: bold; }
+main.content > footer.main a { color: #111; }
 main.content > footer.main a:hover { color: #ccc; }
-
+/***/
+footer.copyright a { font-weight: bold; }
 /*------*/
 .headline > .item {
 	background-repeat: no-repeat;
@@ -355,7 +356,8 @@ main.content > footer.main a:hover { color: #ccc; }
 @media(min-width: 1200px) {}
 /*------*/
 .title { padding: 5% 0; background-size: 700px 100px; background-position: bottom center; }
-.title > .container-fluid > h1 { margin: 0; font-weight: 300; }
+.title > .container-fluid > h1 { margin: 0; }
+.title > .container-fluid > p { font-size: 16px; font-weight: 300; }
 /*------*/
 .panel-material { box-shadow: none; background: transparent; }
 .panel-material > .panel-heading { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
@@ -373,8 +375,11 @@ main.content > footer.main a:hover { color: #ccc; }
 	background-image: repeating-linear-gradient(0deg, #e5d9a1, #e5d9a1 1px, #fff4c2 1px, #fff4c2 32px);
 	line-height: 32px;
 }
+.panel-material > .panel-body.note > p { border-left: 1px solid #c00; padding: 0 0 0 32px; }
 .panel-material > .panel-body > .card { margin: -10px; }
 .panel-material > .panel-body.panel-body-padding { padding: 30px; }
+.panel-material > .panel-body.panel-body-unstyled { padding: 0; box-shadow: none; background: transparent; }
+.panel-material > .panel-body > p { padding: 10px 0; }
 .panel-material > .panel-body.panel-body-null { padding: 0; }
 .panel-material > .panel-body + .panel-body { margin: 15px 0 0; }
 .panel-material p,
@@ -386,6 +391,9 @@ main.content > footer.main a:hover { color: #ccc; }
     padding: 0;
     background: #fff;
 }
+/*------*/
+.panel-unstyled { background: transparent; box-shadow: none; }
+.panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
 /*------*/
 .card {  }
 .card > .card-heading { border-radius: 2px 2px 0 0; }
@@ -411,6 +419,20 @@ main.content > footer.main a:hover { color: #ccc; }
 
 /*************/
 
+/* Tab Content */
+.tab-panel > .nav-tabs { border-bottom: 2px solid #ddd; }
+.tab-panel > .nav-tabs > li.active > a,
+.tab-panel > .nav-tabs > li.active > a:focus,
+.tab-panel > .nav-tabs > li.active > a:hover { border-width: 0; }
+.tab-panel > .nav-tabs > li > a { border: none; color: #666; }
+.tab-panel > .nav-tabs > li.active > a,
+.tab-panel > .nav-tabs > li > a:hover { border: none; color: #4285f4 !important; background: transparent; }
+.tab-panel > .nav-tabs > li > a::after { content: ""; background: #4285f4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.tab-panel > .nav-tabs > li.active > a::after,
+.tab-panel > .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-panel > .tab-content { padding: 10px; }
+
+/*************/
 /* Search */
 .search { background: #d32f2f; }
 .search > .container-fluid .form-control {
@@ -453,16 +475,22 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn:focus { box-shadow: none; }
 
 .btn-info.btn-colored:hover,
+.btn-info.btn-colored:active,
 .btn-info.btn-colored:focus { background: #349ef3 !important; }
 .btn-danger.btn-colored:hover,
+.btn-danger.btn-colored:active,
 .btn-danger.btn-colored:focus { background: #f3343d !important; }
 .btn-warning.btn-colored:hover,
+.btn-warning.btn-colored:active,
 .btn-warning.btn-colored:focus { background: #f3aa34 !important; }
 .btn-success.btn-colored:hover,
+.btn-success.btn-colored:active,
 .btn-success.btn-colored:focus { background: #99cd5a !important; }
 .btn-primary.btn-colored:hover,
+.btn-primary.btn-colored:active,
 .btn-primary.btn-colored:focus { background: #005af1 !important; }
 .btn-default.btn-colored:hover,
+.btn-default.btn-colored:active,
 .btn-default.btn-colored:focus { background: #f0f0f0 !important; }
 
 .ripple { overflow: hidden; position: relative; transition: all .5s ease 0s; }
@@ -483,9 +511,10 @@ body.search-active > .search { margin: 48px 0 0; }
 
 .form-control {
   resize: none;
-  background: rgba(230, 240, 250, .5);
+  background: transparent;
   margin: 0 0 10px;
-  border-width: 0 0 0 1px;
+  border-width: 0 0 1px;
+  border-color: #f0f0f0;
   box-shadow: none;
   cursor: pointer;
   border-radius: 0;

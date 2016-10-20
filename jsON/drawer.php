@@ -19,7 +19,7 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 	</a>
 </div>
 <div class="group panel-group" id="drawer-menu">
-	<div class="panel">
+	<div class="panel panel-unstyled">
 		<div class="panel-heading">
 			<a data-toggle="collapse" data-parent="#drawer-menu" href="#collapsePages">
 				<strong><i class="ion ion-ios-arrow-down ion-fw"></i> PAGES</strong>
@@ -47,7 +47,7 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 			</div>
 		</div>
 	</div>
-	<div class="panel">
+	<div class="panel panel-unstyled">
 		<div class="panel-heading">
 			<a data-toggle="collapse" data-parent="#drawer-menu" href="#collapseUtility">
 				<strong><i class="ion ion-ios-arrow-down ion-fw"></i> UTILITY</strong>
@@ -57,14 +57,27 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 			<div class="list-group">
 				<a class="list-group-item" href="utility-about-us.html">About Us</a>
 				<a class="list-group-item" href="utility-services.html">Services</a>
-				<a class="list-group-item" href="utility-contact.html">Contact</a>
-				<a class="list-group-item" href="utility-sign-in.html">Sign In</a>
-				<a class="list-group-item" href="utility-sign-up.html">Sign Up</a>
-				<a class="list-group-item" href="utility-pwd.html">Password</a>
-				<a class="list-group-item" href="utility-coming-soon.html">Coming Soon</a>
-				<a class="list-group-item" href="utility-faq.html">FAQ</a>
-				<a class="list-group-item" href="utility-countdown.html">Countdown</a>
-				<a class="list-group-item<?php get('page', '404', ' active');?>" href="utility-404-not-found.html">404 Not Found</a>
+				<a class="list-group-item<?php get('page', 'contact', ' active');?>" href="utility-contact.html">Contact</a>
+				<a class="list-group-item<?php get('page', 'signin', ' active');?>" href="utility-sign-in.html">Sign In</a>
+				<a class="list-group-item<?php get('page', 'signup', ' active');?>" href="utility-sign-up.html">Sign Up</a>
+				<a class="list-group-item<?php get('page', 'pwd', ' active');?>" href="utility-pwd.html">Password</a>
+				<a class="list-group-item<?php get('page', 'myaccount', ' active');?>" href="utility-my-account.html">My Account</a>
+				<a class="list-group-item<?php get('page', 'faq', ' active');?>" href="utility-faq.html">FAQ</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-unstyled">
+		<div class="panel-heading">
+			<a data-toggle="collapse" data-parent="#drawer-menu" href="#collapseMiscelaneous">
+				<strong><i class="ion ion-ios-arrow-down ion-fw"></i> MISCELANEOUS</strong>
+			</a>
+		</div>
+		<div class="panel-collapse collapse<?php get('panel', 'miscelaneous', ' in');?>" id="collapseMiscelaneous">
+			<div class="list-group">
+				<a class="list-group-item" href="miscelaneous-coming-soon.html">Coming Soon</a>
+				<a class="list-group-item" href="miscelaneous-countdown.html">Countdown</a>
+				<a class="list-group-item<?php get('page', '404', ' active');?>" href="miscelaneous-404-not-found.html">404 Not Found</a>
 			</div>
 		</div>
 	</div>

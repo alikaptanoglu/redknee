@@ -1,10 +1,7 @@
 <?php
-header('Content-Type => application/json');
+header('Content-Type: application/json');
 
 $array = [
-	"editClass" => [
-		[ "target" => ".poll .progress", "remove" => "hidden" ]
-	],
 	"editCss" => [
 		[ "target" => ".poll #option-row-1 .progress > .progress-bar", "css" => [ [ "width" => "40%" ] ] ],
 		[ "target" => ".poll #option-row-2 .progress > .progress-bar", "css" => [ [ "width" => "10%" ] ] ],
