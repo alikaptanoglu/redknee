@@ -7,11 +7,11 @@ var resizeTimer,
 	formTimer,
 	goTimer,
 	toastTimer,
-	pollingLoop,
 	modalTimer,
 	modalCloseDelay,
 	keyupTimer,
-    hashPrev;
+    hashPrev,
+    loadTimer;
 
 $(window).on('load', function (e) {
 	w = $(window).width();
@@ -66,7 +66,7 @@ $(document).on('click', '.edit-class', function() {
 
 	if (!_this.hasClass('disabled')) {
 		window.clearTimeout(focusTimer);
-		
+
 		focusTimer = window.setTimeout(function() {
 			$(_this.data('focus')).focus()
 		}, 500)
@@ -144,8 +144,6 @@ $(document).on('click', '.edit-class', function() {
     }, 500);
 })
 
-
-
 function json_ajax(_this) {
 	if (_this.hasClass('disabled'))
 		return false;
@@ -158,7 +156,7 @@ function json_ajax(_this) {
     		data_vars;
 
     	if (_this.is('form')) {
-            data_vars = $.extend({}, data_vars, getFormData(_this))
+            data_vars = $.extend(data_vars, getFormData(_this))
     	} else if (_this.is('a'))
         	if (_this.data('token'))
             	data_type = 'POST';
@@ -168,10 +166,20 @@ function json_ajax(_this) {
         if (_this.data('type'))
             data_type = _this.data('type');
 
-        data_vars = $.extend({}, data_vars, _this.data());
+        data_vars = $.extend(data_vars, _this.data());
 
-        if (_this.data('include'))
-        	data_vars[$(_this.data('include')).attr('name')] = $(_this.data('include')).val();
+        if (_this.data('include')) {
+            var items = _this.data('include').split(','),
+                array = $("<div />");
+
+            $.each(items, function(key, val) {
+                array.data(val, $('[name=' + val + ']').val());
+
+                data_vars = $.extend(data_vars, array.data());
+            })
+
+            delete data_vars["include"];
+        }
 
         if (_this.data('pager')) {
             var hash = window.location.hash.replace("#", "").split("-"),
@@ -187,7 +195,7 @@ function json_ajax(_this) {
                     json_ajax(_this);
             })
 
-            data_vars = $.extend({}, data_vars, { "page": page });
+            data_vars = $.extend(data_vars, { "page": page });
 
             hashPrev = "page-" + page;
         }
@@ -249,17 +257,17 @@ function json_ajax(_this) {
                 if (obj.dom)
                     $.each(obj.dom, function(key, val) {
                         if (val.type == 'show')
-                            $((val.target == 'this')?_this:val.target).show();
+                            $((val.target == 'this')?_this:val.target).show()
                         else if (val.type == 'hide')
-                            $((val.target == 'this')?_this:val.target).hide();
+                            $((val.target == 'this')?_this:val.target).hide()
                         else if (val.type == 'remove')
-                            $((val.target == 'this')?_this:val.target).remove();
+                            $((val.target == 'this')?_this:val.target).remove()
                         else if (val.type == 'reset')
-                            $((val.target == 'this')?_this:val.target)[0].reset();
+                            $((val.target == 'this')?_this:val.target)[0].reset()
                         else if (val.type == 'appendTo')
-                            $((val.element == 'this')?_this:val.element).appendTo(val.target);
+                            $((val.element == 'this')?_this:val.element).appendTo(val.target)
                         else if (val.type == 'prependTo')
-                            $((val.element == 'this')?_this:val.element).prependTo(val.target);
+                            $((val.element == 'this')?_this:val.element).prependTo(val.target)
                     })
 
                 if (obj.html)
@@ -270,42 +278,42 @@ function json_ajax(_this) {
                             content = escapeHTML(val.content);
 
                         if (val.type == 'dom')
-                            $((val.target == 'this')?_this:val.target).html(content);
+                            $((val.target == 'this')?_this:val.target).html(content)
                         else if (val.type == 'append')
-                            $((val.target == 'this')?_this:val.target).append(content);
+                            $((val.target == 'this')?_this:val.target).append(content)
                         else if (val.type == 'prepend')
-                            $((val.target == 'this')?_this:val.target).prepend(content);
+                            $((val.target == 'this')?_this:val.target).prepend(content)
                         else if (val.type == 'before')
-                            $((val.target == 'this')?_this:val.target).before(content);
+                            $((val.target == 'this')?_this:val.target).before(content)
                         else if (val.type == 'after')
-                            $((val.target == 'this')?_this:val.target).after(content);
+                            $((val.target == 'this')?_this:val.target).after(content)
                         else if (val.type == 'value')
-                            $((val.target == 'this')?_this:val.target).val(text);
+                            $((val.target == 'this')?_this:val.target).val(text)
                     })
 
                 if (obj.editClass)
                     $.each(obj.editClass, function(key, val) {
                         if (val.remove)
-                            $((val.target == 'this')?_this:val.target).removeClass(val.remove);
+                            $((val.target == 'this')?_this:val.target).removeClass(val.remove)
                         if (val.add)
-                            $((val.target == 'this')?_this:val.target).addClass(val.add);
+                            $((val.target == 'this')?_this:val.target).addClass(val.add)
                     })
 
                 if (obj.editCss)
                     $.each(obj.editCss, function(key, val) {
-                        $((val.target == 'this')?_this:val.target).css(val.css[0]);
+                        $((val.target == 'this')?_this:val.target).css(val.css[0])
                     })
 
-                if (obj.modal)
-                    modal(obj.modal);
+                if (obj.load) {
+                    window.clearTimeout(loadTimer);
 
-                if (obj.loop) {
-    				window.clearTimeout(pollingLoop);
-
-                    pollingLoop = window.setTimeout(function() {
-                        json_ajax(_this);
-                    }, obj.loop)
+                    loadTimer = window.setTimeout(function() {
+                        json_ajax($((obj.load.target == 'this')?_this:obj.load.target));
+                    }, obj.load.delay)
                 }
+
+                if (obj.modal)
+                    modal(obj.modal)
 
                 if (obj.pagination) {
                     var pagination = $('<ul/>', { 'class': 'pagination' });

@@ -37,7 +37,6 @@
 			]
 		}
 	],
-	"loop": 1000, //Loop this json function
 	"modal": {
 		"heading": "Modal Title",
 		"body": "modal content",
@@ -51,5 +50,9 @@
 		"total_results": 1064,
 		"current_page": 50,
 		"total_page": 107
+	},
+	"load": {
+		"target": "this",
+		"delay": 1000
 	}
 }
