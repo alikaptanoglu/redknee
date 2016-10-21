@@ -223,11 +223,13 @@ function json_ajax(_this) {
 
                     $('<ul/>', { class: 'list-group' }).appendTo('.after-form-errors');
 
-					$.each(jqXHR, function(key, val) {
+					$.each($.parseJSON(jqXHR.responseText), function(key, val) {
                         $('<li/>', { class: 'list-group-item', html: val }).appendTo('.after-form-errors > .list-group');
                     })
-                } else
-                	modal({ 'heading': msg, 'body': jqXHR.responseText, 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1' });
+                } else {
+                    toast(msg, 2000)
+                	modal({ 'heading': msg, 'body': jqXHR.responseText, 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1' })
+                }
 
                 body.removeClass('polling-active');
                 _this.removeClass('disabled wait');
@@ -388,6 +390,8 @@ function initial() {
 
     autosize($('.autosize'))
 
+    $('[data-toggle=tooltip]').tooltip()
+    $('[data-toggle=popover]').popover()
     $('.masked').each(function() {
         var _this = $(this);
 
