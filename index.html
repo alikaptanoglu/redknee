@@ -199,56 +199,47 @@
 						<div class="panel panel-material">
 							<div class="panel-heading"><i class="ion ion-fw ion-stats-bars"></i> Where do you usually browse?</div>
 							<div class="panel-body panel-body-padding">
-								<form data-include="deneme,best" method="post" action="jsON/poll-post.php" data-token="csrf" class="ajax poll">
-									<div class="row" id="option-row-1">
-										<div class="col-xs-2 text-center">
-											<input type="radio" name="vote" id="option-1" value="1" />
-										</div>
-										<div class="col-xs-10">
-											<label for="option-1">Windows PC</label>
+								<form method="post" action="jsON/poll-post.php" data-token="csrf" class="ajax">
+									<div class="radio" id="poll-radio-1">
+										<label>
+											<input type="radio" name="optionsRadios" value="1" />
+											Windows PC
 											<span class="percent text-muted"></span>
-							                <div class="progress">
-							                  <div class="progress-bar progress-bar-info"></div>
+											<div class="progress">
+							                	<div class="progress-bar progress-bar-info"></div>
 							                </div>
-										</div>
+										</label>
 									</div>
-									<div class="row" id="option-row-2">
-										<div class="col-xs-2 text-center">
-											<input type="radio" name="vote" id="option-2" value="1" />
-										</div>
-										<div class="col-xs-10">
-											<label for="option-2">Mac</label>
+									<div class="radio" id="poll-radio-2">
+										<label>
+											<input type="radio" name="optionsRadios" value="2" />
+											Mac
 											<span class="percent text-muted"></span>
-	                      					<div class="progress">
-	                      					  <div class="progress-bar progress-bar-info"></div>
-	                      					</div>
-										</div>
+											<div class="progress">
+							                	<div class="progress-bar progress-bar-info"></div>
+							                </div>
+										</label>
 									</div>
-									<div class="row" id="option-row-3">
-										<div class="col-xs-2 text-center">
-											<input type="radio" name="vote" id="option-3" value="1" />
-										</div>
-										<div class="col-xs-10">
-											<label for="option-3">Android</label>
+									<div class="radio" id="poll-radio-3">
+										<label>
+											<input type="radio" name="optionsRadios" value="3" />
+											Android
 											<span class="percent text-muted"></span>
-	                      					<div class="progress">
-	                      					  <div class="progress-bar progress-bar-info"></div>
-	                      					</div>
-										</div>
+											<div class="progress">
+							                	<div class="progress-bar progress-bar-info"></div>
+							                </div>
+										</label>
 									</div>
-									<div class="row" id="option-row-4">
-										<div class="col-xs-2 text-center">
-											<input type="radio" name="vote" id="option-4" value="1" />
-										</div>
-										<div class="col-xs-10">
-											<label for="option-4">Other</label>
+									<div class="radio" id="poll-radio-4">
+										<label>
+											<input type="radio" name="optionsRadios" value="4" />
+											Other
 											<span class="percent text-muted"></span>
-	                      					<div class="progress">
-	                      					  <div class="progress-bar progress-bar-info"></div>
-	                      					</div>
-										</div>
+											<div class="progress">
+							                	<div class="progress-bar progress-bar-info"></div>
+							                </div>
+										</label>
 									</div>
-									<div class="poll-results"></div>
 									<div class="text-right">
 										<button type="submit" class="btn btn-default btn-colored ripple">
 											<i class="ion ion-checkmark ion-fw"></i> Vote

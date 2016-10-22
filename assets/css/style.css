@@ -11,7 +11,10 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 .disabled { opacity: .5; }
 .wait { cursor: wait; }
 
-.avatar { max-width: 96px; margin: 0 auto; float: none; }
+.radio > label,
+.checkbox > label { width: 100%; }
+
+.avatar { max-width: 96px; }
 
 * > .btn:last-child,
 * > .progress:last-child,
@@ -58,6 +61,7 @@ a:hover { color: #999; }
 
 /* List Group */
 .list-group > .list-group-item { background: transparent; border-width: 0; padding: 10px; border-radius: 0; }
+.list-group.list-group-limit { max-height: 100px; overflow: auto; }
 /*************/
 
 /* Polling */
@@ -171,7 +175,7 @@ body.dock-active > .overlay-dock { transform: translate(0); z-index: 700; }
 	transform: translate(-100%);
 	transition: none;
 	overflow: auto;
-	padding: 64px 0;
+	padding: 24px 0;
 }
 .modal:before,
 .modal:after {
@@ -516,7 +520,7 @@ body.search-active > .search { margin: 48px 0 0; }
 
 @keyframes ripple-animation {
     from { transform: scale(1); opacity: .4; }
-    to { transform: scale(20); opacity: 0; }
+    to { transform: scale(40); opacity: 0; }
 }
 
 .form-control {
@@ -531,6 +535,10 @@ body.search-active > .search { margin: 48px 0 0; }
   color: #999;
 }
 .form-control:focus { cursor: text; box-shadow: none; }
+
+.input-group { margin: 0 0 10px; }
+.input-group > .input-group-addon { border-width: 0; background: transparent; }
+.input-group > .input-group-addon > .ion { font-size: 22px; }
 
 /*------*/
 .material-pager > ul.pagination { margin: 20px auto; float: none; display: table; }

@@ -93,33 +93,118 @@
 		            		<div class="tab-content">
 		            			<div class="tab-pane active" id="tab-1">
 
-				           			<div class="panel panel-material">
-					        			<div class="panel-body panel-body-padding">
-						        			<form method="post" action="jsON/form-post.php" class="ajax">
-							        			<div class="row">
-				            						<div class="col-sm-8">
-				            							<label for="fname">Full Name</label>
-							        					<input name="fname" id="fname" value="John Doe" placeholder="Full Name" type="text" class="form-control" required />
-
-							        				</div>
-							        				<div class="col-sm-4 text-center">
-				            							<img alt="..." src="upload/user.jpg" class="img img-circle avatar img-responsive" />
-							        					<a class="btn btn-info btn-colored ripple" href="#">Upload</a>
-							        				</div>
-							        			</div>
-							        			<div class="row">
-							        				<div class="col-sm-12">
-
-				            							<label for="cpwd">Current Password</label>
-							        					<input name="cpwd" id="cpwd" placeholder="Current Password" type="password" class="form-control" required />
-							        				</div>
-							        				<div class="col-sm-12 text-right">
-							        					<button type="submit" class="btn btn-colored ripple btn-primary">Save</button>
-							        				</div>
-							        			</div>
-							        		</form>
-					        			</div>
-				           			</div>
+						        	<div class="panel panel-material">
+							        	<div class="panel-body panel-body-padding">
+								        	<form method="post" action="jsON/form-post.php" class="ajax">
+									    		<div class="row">
+									    			<div class="col-sm-2">
+									    				<a href="#" data-input="[name=avatar]" data-img=".avatar" data-extensions="jpg,png,jpeg" data-alert="Only image files!" class="upload-base64 btn btn-default btn-colored ripple">
+							            					<img alt="..." src="upload/user.jpg" class="img img-circle img-responsive avatar" />
+							            				</a>
+										    			<input type="hidden" name="avatar" />
+										    		</div>
+							            			<div class="col-sm-4">
+							            				<label for="fname">Full Name</label>
+										    			<input name="fname" id="fname" value="John Doe" placeholder="Full Name" type="text" class="form-control" required />
+										    			<label for="birth">Date of Birth</label>
+										    			<input name="birth" id="birth" class="form-control masked" data-format="99/99/9999" placeholder="dd/mm/yyyy" data-placeholder="dd/mm/yyyy" type="text" value="05/02/1993" />
+										    			<label for="location">Location</label>
+										    			<div class="input-group">
+															<div class="input-group-addon">
+																<i class="ion ion-fw ion-location"></i>
+															</div>
+															<input type="text" class="form-control" name="location" id="location" placeholder="Location" />
+														</div>
+							            			</div>
+							            			<div class="col-sm-6">
+							            				<div class="row">
+											        		<div class="col-sm-6">
+											        			<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-skype"></i>
+																	</div>
+																	<input type="text" class="form-control" name="skype" id="skype" placeholder="Skype Name" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-facebook"></i>
+																	</div>
+																	<input type="text" class="form-control" name="facebook" id="facebook" placeholder="Facebook Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-twitter"></i>
+																	</div>
+																	<input type="text" class="form-control" name="twitter" id="twitter" placeholder="Twitter Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-googleplus"></i>
+																	</div>
+																	<input type="text" class="form-control" name="googleplus" id="googleplus" placeholder="GooglePlus Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-github"></i>
+																	</div>
+																	<input type="text" class="form-control" name="github" id="github" placeholder="Github Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-whatsapp"></i>
+																	</div>
+																	<input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Whatsapp Profile" />
+																</div>
+											        		</div>
+											        		<div class="col-sm-6">
+											        			<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-youtube"></i>
+																	</div>
+																	<input type="text" class="form-control" name="youtube" id="youtube" placeholder="Youtube Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-vimeo"></i>
+																	</div>
+																	<input type="text" class="form-control" name="vimeo" id="vimeo" placeholder="Vimeo Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-linkedin"></i>
+																	</div>
+																	<input type="text" class="form-control" name="linkedin" id="linkedin" placeholder="Linkedin Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-tumblr"></i>
+																	</div>
+																	<input type="text" class="form-control" name="tumblr" id="tumblr" placeholder="Tumblr Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-social-instagram"></i>
+																	</div>
+																	<input type="text" class="form-control" name="instagram" id="instagram" placeholder="Instagram Profile" />
+																</div>
+																<div class="input-group">
+																	<div class="input-group-addon">
+																		<i class="ion ion-fw ion-earth"></i>
+																	</div>
+																	<input type="text" class="form-control" name="globe" id="globe" placeholder="Web Site" value="http://" />
+																</div>
+											        		</div>
+										        		</div>
+							            			</div>
+						            			</div>
+						            			<label for="cpwd">Current Password</label>
+								        		<input name="cpwd" id="cpwd" placeholder="Current Password" type="password" class="form-control" required />
+								        		<div class="text-right">
+									    			<button type="submit" class="btn btn-colored ripple btn-primary">Save</button>
+									    		</div>
+								    		</form>
+							        	</div>
+						        	</div>
 
 		            			</div>
 		            			<div class="tab-pane" id="tab-2">
@@ -133,11 +218,12 @@
 							        					<input name="uname" id="uname" value="johndoe" placeholder="User Name" data-content="Sorry :( readonly" data-toggle="popover" type="text" class="form-control" readonly />
 							        					<label for="email">E-mail</label>
 							        					<input name="email" id="email" value="johndoe@wutlu.com" placeholder="E-mail" type="email" class="form-control" required />
-							        					
+							        					<label for="signature">Signature</label>
+							        					<textarea class="form-control" name="signature" id="signature" placeholder="Signature"></textarea>
 							        				</div>
 							        				<div class="col-sm-4">
 							        					<div class="alert alert-info">
-							        						<i class="ion ion-fw ion-information"></i> Only for change!
+							        						<i class="ion ion-fw ion-information"></i> If you want to change!
 							        					</div>
 				            							<label for="npwd">New Password</label>
 							        					<input name="npwd" id="npwd" placeholder="New Password" type="password" class="form-control" required />

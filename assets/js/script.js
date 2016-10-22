@@ -103,16 +103,20 @@ $(document).on('click', '.edit-class', function() {
 	   json_ajax($(_this.data('load')));
     else
         json_ajax(_this);
-}).on('keyup', 'form.keyup', function() {
-	var _this = $(this);
+}).on('keyup', '.keyup', function() {
+    var _this = $(this);
 
-	window.clearTimeout(keyupTimer);
+    window.clearTimeout(keyupTimer);
 
-	keyupTimer = window.setTimeout(function() {
-		json_ajax(_this);
-	}, 500)
+    keyupTimer = window.setTimeout(function() {
+        json_ajax(_this);
+    }, 500)
 
     return false;
+}).on('change', '.change', function() {
+    var _this = $(this);
+
+    json_ajax(_this);
 }).keyup(function(e) {
     if (e.keyCode == 27) {
     	c('Escape Key', 'warn');
@@ -142,6 +146,44 @@ $(document).on('click', '.edit-class', function() {
     window.setTimeout(function(){
         div.remove();
     }, 500);
+}).on('click', '.upload-base64', function() {
+    var _this = $(this),
+        input = $('<input/>', { type: 'file' }),
+        fileTypes = { 'extensions': [ 'jpg', 'jpeg', 'png' ], 'alert': 'Only image files!' };
+
+    if (_this.data('extensions'))
+        fileTypes['extensions'] = _this.data('extensions').split(',');
+    if (_this.data('alert'))
+        fileTypes['alert'] = _this.data('alert');
+
+    input.click()
+    input.on('change', function() {
+        if (input[0].files && input[0].files[0]) {
+            var extension = input[0].files[0].name.split('.').pop().toLowerCase();
+
+            if (fileTypes['extensions'].indexOf(extension) > -1) {
+                var filereader = new FileReader()
+                    filereader.onload = function(e) {
+                        if (_this.data('input'))
+                            $(_this.data('input')).val(e.target.result)
+                        if (_this.data('img'))
+                            $(_this.data('img')).attr('src', e.target.result)
+                    }
+
+                    filereader.readAsDataURL(input[0].files[0])
+            } else {
+                toast(fileTypes['alert'], 4000)
+            }
+        }
+    })
+}).on('click', '.write', function() {
+    var _this = $(this),
+        target = $(_this.data('target'));
+
+    if (target.is('input') || target.is('textarea'))
+        target.val(_this.data('text'))
+    else
+        target.html(_this.data('text'))
 })
 
 function json_ajax(_this) {
@@ -155,9 +197,9 @@ function json_ajax(_this) {
     	var data_type = 'POST',
     		data_vars;
 
-    	if (_this.is('form')) {
+    	if (_this.is('form'))
             data_vars = $.extend(data_vars, getFormData(_this))
-    	} else if (_this.is('a'))
+    	else if (_this.is('a'))
         	if (_this.data('token'))
             	data_type = 'POST';
             else
