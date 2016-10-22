@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<meta name="description" content="RedKnee is the best">
+
+		<link rel="icon" href="favicon.ico">
+
+		<title>RedKnee | Multipurpose Template</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext&v=2" rel="stylesheet" crossorigin="anonymous">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/ionicons.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="manifest.json" rel="manifest">
+	</head>
+	<body class="preloader-active">
+		<nav class="header">
+			<div class="container-fluid">
+				<ul class="pull-left">
+					<li class="hidden-lg hidden-md">
+						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
+							<div class="disk"></div>
+							<div class="disk"></div>
+							<div class="disk"></div>
+						</a>
+					</li>
+					<li class="visible-lg visible-md">
+						<a href="index.html"><img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" /></a>
+					</li>
+				</ul>
+				<ul class="pull-right">
+					<li>
+						<a href="#top" class="edit-class focus" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
+							<i class="ion ion-ios-search"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="edit-class ajax" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
+							<i class="ion ion-android-notifications"></i> <span class="badge" id="notification-badge">10+</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown">
+							<i class="ion ion-person"></i>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li><a class="ajax" data-href="jsON/sign.php?q=in" href="#"><i class="ion ion-fw ion-person"></i> Sign In</a></li>
+							<li><a class="ajax" data-href="jsON/sign.php?q=up" href="#"><i class="ion ion-fw ion-person-add"></i> Sign Up</a></li>
+							<li class="divider"></li>
+							<li><a class="ajax" data-href="jsON/sign.php?q=pw" href="#"><i class="ion ion-fw ion-help"></i> Forgotten Password</a></li>
+							<li class="divider"></li>
+							<li><a href="utility-my-account.html"><i class="ion ion-fw ion-person"></i> My Account</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="search">
+			<div class="container-fluid">
+				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
+					<input type="text" name="search" class="form-control" placeholder="Search" />
+					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
+						<i class="ion ion-ios-close-empty"></i>
+					</a>
+				</form>
+			</div>
+		</div>
+		<main class="content">
+			<ul class="breadcrumb">
+				<li>
+					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
+				</li>
+				<li class="dropdown active">Sign In</li>
+			</ul>
+			<div class="container-fluid">
+				<div class="panel-grid row">
+					<div class="col col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+						<div class="panel panel-material">
+							<div class="panel-heading">Sign In</div>
+							<div class="panel-body panel-body-padding">
+								<form method="post" action="jsON/form-post.php" class="ajax" data-token="{token-code}">
+									<input type="text" class="form-control" name="uid" placeholder="E-mail" />
+									<input type="password" class="form-control" name="pwd" placeholder="Password" />
+									<div class="alert alert-info">
+										<a href="utility-pwd.html"><i class="ion ion-fw ion-information"></i> Forgot your password?</a>
+									</div>
+									<div class="text-right">
+										<button type="submit" class="ajax btn btn-default btn-colored ripple">
+											<i class="ion ion-fw ion-chevron-right"></i>
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+
+						<footer class="copyright">
+							Designed by <a href="https://twitter.com/wutlu" target="_blank">@wutlu</a>. © 2016 <a href="#">RedKnee</a>
+						</footer>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div class="drawer">
+			<div class="container-fluid load" data-href="jsON/drawer.php?page=signin&panel=utility" data-type="get">
+				<div class="rolling"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
+
+		<div class="preloader">
+			<div class="rolling"></div>
+			<p>a few seconds</p>
+		</div>
+		<div class="polling">
+			<div class="rolling"></div>
+		</div>
+
+		<div class="toast closes">
+			<div class="toast-content">Toast Alert...</div>
+		</div>
+
+		<a href="#top" class="page-top">
+			<i class="ion ion-chevron-up"></i>
+		</a>
+
+		<div class="dock">
+			<div class="rolling"></div>
+		</div>
+		<div class="overlay overlay-dock edit-class" data-remove="dock-active" data-target="body"></div>
+
+		<div class="modal">
+			<div class="panel panel-material col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+				<div class="panel-heading"></div>
+				<div class="panel-close edit-class" data-remove="modal-active" data-target="body">
+					<i class="ion ion-ios-close-empty"></i>
+				</div>
+				<div class="panel-body"></div>
+				<div class="panel-footer"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-modal"></div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+		<script src="assets/js/autosize.min.js"></script>
+		<script src="assets/js/maskedinput.min.js"></script>
+		<script src="assets/js/script.js?v=0.7"></script>
+	</body>
+</html>
