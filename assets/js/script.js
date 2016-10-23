@@ -1,3 +1,5 @@
+var root = '';
+
 var w = 0,
 	body = $('body');
 
@@ -47,7 +49,7 @@ $(window).on('load', function (e) {
     }
 
     w = $(window).width();
-});
+})
 
 $(document).on('click', '.edit-class', function() {
     var _this = $(this);
@@ -438,15 +440,49 @@ function initial() {
             _this.css('backgroundColor', _this.data('backgroundColor'))
     })
 
-    autosize($('.autosize'))
-
     $('[data-toggle=tooltip]').tooltip()
     $('[data-toggle=popover]').popover()
-    $('.masked').each(function() {
-        var _this = $(this);
 
-        _this.mask(_this.attr('data-format'), { placeholder: _this.attr('data-placeholder') });
+    $.ajaxSetup({
+       cache: true
     })
+
+    getScript('.maskedInput', 'assets/js/maskedinput.min.js', function(selector) {
+        $(selector).each(function() {
+            var _this = $(this);
+
+            _this.mask(_this.attr('data-format'), { placeholder: _this.attr('data-placeholder') });
+        })
+    })
+
+    getScript('.autosize', 'assets/js/autosize.min.js', function(selector) {
+        autosize($(selector))
+    })
+
+    getScript('.countdown', 'assets/js/countdown.min.js', function(selector) {
+        $(selector).each(function() {
+            var _this = $(this);
+
+            _this.countdown(_this.data('deadline'), function(e) {
+                _this.text(e.strftime(_this.data('print')));
+            })
+        })
+    })
+}
+
+function getScript(selector, file, func) {
+    var obj = $(selector);
+
+    if (obj.length > 0) {
+        if (obj.data('load'))
+            func(selector)
+        else
+            $.getScript(root + file, function() {
+                func(selector)
+            })
+
+        obj.data('load', 'loaded')
+    }
 }
 
 /* Console Log */

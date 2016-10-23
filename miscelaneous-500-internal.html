@@ -9,7 +9,7 @@
 
 		<link rel="icon" href="favicon.ico">
 
-		<title>RedKnee | Multipurpose Template</title>
+		<title>Oops! Internal Error</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext&v=2" rel="stylesheet" crossorigin="anonymous">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -61,7 +61,7 @@
 		</nav>
 		<div class="search">
 			<div class="container-fluid">
-				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
+				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="{csrf}">
 					<input type="text" name="search" class="form-control" placeholder="Search" />
 					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
 						<i class="ion ion-ios-close-empty"></i>
@@ -74,86 +74,32 @@
 				<li>
 					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
 				</li>
-				<li class="active">Contact</li>
+				<li class="active">500 Internal Error</li>
 			</ul>
-			<div class="title css text-center" data-background-image="url(assets/img/headline/5.png)" data-background-color="#d32f2f" data-color="#fff">
+			<div class="title css text-center" data-background-image="url(assets/img/headline/4.png)" data-background-color="#111" data-color="#fff">
 			    <div class="container-fluid">
-				    <h1>feel free to ask</h1>
-				    <p>we don't bite</p>
+				    <h1>500</h1>
+				    <p>internal error</p>
 			    </div>
 			</div>
 			<div class="container-fluid">
 				<div class="panel-grid row">
-					<div class="col col-sm-5">
+					<div class="col-sm-6 col-sm-offset-3">
 						<div class="panel panel-material">
-							<div class="panel-heading">Central Office</div>
-							<div class="panel-body">
-								<div class="embed-responsive embed-responsive-16by9">
-									<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d48382.504194728346!2d-74.03437649941154!3d40.720074489463705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slv!2slv!4v1425169860652" frameborder="0"></iframe>
-								</div>
-							</div>
-							<ul class="list-group">
-								<li class="list-group-item"><i class="ion ion-fw ion-home"></i> 2011 Main St., New York</li>
-								<li class="list-group-item"><i class="ion ion-fw ion-iphone"></i> 444-555-0000</li>
-								<li class="list-group-item"><i class="ion ion-fw ion-android-call"></i> 444-555-0000</li>
-								<li class="list-group-item"><i class="ion ion-fw ion-email"></i> themes@wutlu.com</li>
-								<li class="list-group-item"><i class="ion ion-fw ion-earth"></i> www.wutlu.com</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col col-sm-7">
-						<div class="panel panel-material">
-							<div class="panel-heading">Contact Form</div>
-							<div class="panel-body panel-body-padding">
-								<form method="post" action="jsON/form-post.php" class="ajax" id="form-id" data-token="{token-code}">
-									<label>NAME <sup>REQUIRED</sup></label>
-									<input type="text" class="form-control" name="name" required />
-									<label>YOUR EMAIL <sup>REQUIRED</sup></label>
-									<input type="email" class="form-control" name="email" required />
-									<label>SUBJECT</label>
-									<input type="text" class="form-control" name="subject" />
-									<label>YOUR MESSAGE</label>
-									<textarea class="form-control autosize" name="message" required></textarea>
-
-									<div class="text-right">
-										<button type="submit" class="ajax btn btn-default btn-colored ripple">
-											SEND <i class="ion ion-fw ion-chevron-right"></i>
-										</button>
-									</div>
-								</form>
+							<div class="panel-body note">
+    							<p>We're sorry for the inconvenience, please use the button below to go <a href="javascript:window.history.back()">back</a></p>
 							</div>
 						</div>
+						<footer class="copyright">
+							Designed by <a href="https://twitter.com/wutlu" target="_blank">@wutlu</a>. © 2016 <a href="#">RedKnee</a>
+						</footer>
 					</div>
 				</div>
 			</div>
-			<footer class="main copyright">
-				<div class="container-fluid">
-					<div class="col col-sm-8">
-						<img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" />
-						Designed by <a href="https://twitter.com/wutlu" target="_blank">@wutlu</a>. © 2016 <a href="#">RedKnee</a>
-					</div>
-					<div class="col col-sm-4">
-						<div class="list-group">
-							<a class="list-group-item" href="#">
-								<i class="ion ion-social-facebook ion-fw"></i> facebook
-							</a>
-							<a class="list-group-item" href="#">
-								<i class="ion ion-social-twitter ion-fw"></i> twitter
-							</a>
-							<a class="list-group-item" href="#">
-								<i class="ion ion-social-instagram ion-fw"></i> instagram
-							</a>
-							<a class="list-group-item" href="#">
-								<i class="ion ion-social-youtube ion-fw"></i> youtube
-							</a>
-						</div>
-					</div>
-				</div>
-			</footer>
 		</main>
 
 		<div class="drawer">
-			<div class="container-fluid load" data-href="jsON/drawer.php?page=contact&panel=utility" data-type="get">
+			<div class="container-fluid load" data-href="jsON/drawer.php?page=500&amp;panel=miscelaneous" data-type="get">
 				<div class="rolling"></div>
 			</div>
 		</div>
