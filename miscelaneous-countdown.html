@@ -87,14 +87,29 @@
 				<div class="panel-grid row">
 					<div class="col-sm-6 col-sm-offset-3">
 						<div class="panel panel-material">
-							<div class="panel-body note">
-								<p><strong>COMING SOON NOTES</strong></p>
-    							<p>We're currently under constructon</p>
-    							<p>Sit tight, we won't be unavailable that much longer!</p>
+							<div class="panel-body panel-body-padding">
+								<form method="post" action="jsON/form-post.php" class="ajax">
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="ion ion-fw ion-email"></i>
+										</div>
+										<input type="text" class="form-control" name="email" id="email" placeholder="E-mail" />
+									</div>
+									<div class="text-right">
+										<button type="submit" class="btn btn-info btn-colored ripple">Subscribe</button>
+									</div>
+									<div class="alert alert-info">
+										<i class="ion ion-fw ion-ionformation"></i> Our website is under construction, follow us for update now!
+									</div>
+								</form>
 							</div>
 						</div>
 						<footer class="copyright">
-							Designed by <a href="https://twitter.com/wutlu" target="_blank">@wutlu</a>. © 2016 <a href="#">RedKnee</a>
+							<p>Copyright © 2017 <strong>RedKnee</strong>. All rights reserverd.</p>
+							<p>
+								<a href="#">Terms and Conditions</a>
+								<a href="#">Cookie Policy</a>
+							</p>
 						</footer>
 					</div>
 				</div>

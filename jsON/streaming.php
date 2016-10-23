@@ -67,11 +67,13 @@ $array = [
 		"total_results" => 100,
 		"current_page" => intval($_POST['page']),
 		"total_page" => 10
-	],
-	"scrollTo" => [
-		"element" => "#streaming",
-		"tolerance" => "-64px"
 	]
 ];
+
+if (intval($_POST['page']) != 1)
+	$array["scrollTo"] = [
+		"element" => "#streaming",
+		"tolerance" => "-64px"
+	];
 
 echo json_encode($array);
