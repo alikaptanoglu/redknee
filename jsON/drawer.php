@@ -75,8 +75,8 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 		</div>
 		<div class="panel-collapse collapse<?php get('panel', 'miscelaneous', ' in');?>" id="collapseMiscelaneous">
 			<div class="list-group">
-				<a class="list-group-item" href="miscelaneous-coming-soon.html">Coming Soon</a>
-				<a class="list-group-item" href="miscelaneous-countdown.html">Countdown</a>
+				<a class="list-group-item<?php get('page', 'maintenance', ' active');?>" href="miscelaneous-maintenance.html">Maintenance</a>
+				<a class="list-group-item<?php get('page', 'countdown', ' active');?>" href="miscelaneous-countdown.html">Countdown</a>
 				<a class="list-group-item<?php get('page', '404', ' active');?>" href="miscelaneous-404-not-found.html">404 Not Found</a>
 				<a class="list-group-item<?php get('page', '500', ' active');?>" href="miscelaneous-500-internal.html">500 Internal Error</a>
 			</div>

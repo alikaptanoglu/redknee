@@ -372,6 +372,7 @@ footer.copyright a { font-weight: bold; }
 .title > .container-fluid > h1 { margin: 0; font-weight: 300; }
 .title > .container-fluid > p { font-size: 16px; font-weight: 300; }
 .title.text-center > .container-fluid > .img { float: none; margin: 0 auto; max-width: 64px; }
+
 /*------*/
 .panel-material { box-shadow: none; background: transparent; }
 .panel-material > .panel-heading { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }

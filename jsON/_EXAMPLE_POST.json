@@ -54,5 +54,9 @@
 	"load": {
 		"target": "this",
 		"delay": 1000
+	},
+	"scrollTo": {
+		"element": "#streaming",
+		"tolerance": "-64px"
 	}
 }

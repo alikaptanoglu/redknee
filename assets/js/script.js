@@ -384,6 +384,12 @@ function json_ajax(_this) {
                     $(_this.data('pager')).html(pagination)
                 }
 
+                if (obj.scrollTo) {
+                    var offset = $('#streaming').offset();
+
+                    $('html, body').animate({ scrollTop: (obj.scrollTo.tolerance) ? offset.top + parseInt(obj.scrollTo.tolerance): offset.top }, 500);
+                }
+
             	body.removeClass('polling-active')
             	_this.removeClass('disabled wait')
 

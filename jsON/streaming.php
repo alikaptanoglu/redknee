@@ -67,6 +67,10 @@ $array = [
 		"total_results" => 100,
 		"current_page" => intval($_POST['page']),
 		"total_page" => 10
+	],
+	"scrollTo" => [
+		"element" => "#streaming",
+		"tolerance" => "-64px"
 	]
 ];
 
