@@ -19,7 +19,7 @@
 	</head>
 	<body class="preloader-active">
 		<nav class="header">
-			<div class="container-fluid">
+			<div class="ct container-fluid">
 				<ul class="pull-left">
 					<li class="hidden-lg hidden-md">
 						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
@@ -60,7 +60,7 @@
 			</div>
 		</nav>
 		<div class="search">
-			<div class="container-fluid">
+			<div class="ct container-fluid">
 				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="{csrf}">
 					<input type="text" name="search" class="form-control" placeholder="Search" />
 					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
@@ -69,57 +69,57 @@
 				</form>
 			</div>
 		</div>
+		<div class="ct container-fluid">
+			<ul class="breadcrumb">
+				<li>
+					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
+				</li>
+				<li class="active">Countdown</li>
+			</ul>
+		</div>
+		<div class="title css text-center" data-background-image="url(assets/img/headline/4.png)" data-background-color="#ef4034" data-color="#fff">
+		    <div class="ct container-fluid">
+		    	<p>coming soon</p>
+			    <h1><strong class="countdown" data-deadline="2020/10/10 22:00:00" data-print="%D days %H:%M:%S"></strong></h1>
+		    </div>
+		    <div class="bubble"></div>
+		</div>
 		<main class="content">
-			<div class="container-fluid">
-				<ul class="breadcrumb">
-					<li>
-						<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
-					</li>
-					<li class="active">Countdown</li>
-				</ul>
-			</div>
-			<div class="title css text-center" data-background-image="url(assets/img/headline/4.png)" data-background-color="#ef4034" data-color="#fff">
-			    <div class="container-fluid">
-			    	<p>coming soon</p>
-				    <h1><strong class="countdown" data-deadline="2020/10/10 22:00:00" data-print="%D days %H:%M:%S"></strong></h1>
-			    </div>
-			    <div class="bubble"></div>
-			</div>
-			<div class="container-fluid">
-				<div class="panel-grid row">
-					<div class="col-sm-6 col-sm-offset-3">
-						<div class="panel panel-material">
-							<div class="panel-body panel-body-padding">
-								<form method="post" action="jsON/form-post.php" class="ajax">
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="ion ion-fw ion-email"></i>
-										</div>
-										<input type="text" class="form-control" name="email" id="email" placeholder="E-mail" />
+			<div class="ct container-fluid pd">
+
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="panel panel-material">
+						<div class="panel-body panel-body-padding">
+							<form method="post" action="jsON/form-post.php" class="ajax">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="ion ion-fw ion-email"></i>
 									</div>
-									<div class="text-right">
-										<button type="submit" class="btn btn-info btn-colored ripple">Subscribe</button>
-									</div>
-									<div class="alert alert-info">
-										<i class="ion ion-fw ion-ionformation"></i> Our website is under construction, follow us for update now!
-									</div>
-								</form>
-							</div>
+									<input type="text" class="form-control" name="email" id="email" placeholder="E-mail" />
+								</div>
+								<div class="text-right">
+									<button type="submit" class="btn btn-info btn-colored ripple">Subscribe</button>
+								</div>
+								<div class="alert alert-info">
+									<i class="ion ion-fw ion-ionformation"></i> Our website is under construction, follow us for update now!
+								</div>
+							</form>
 						</div>
-						<footer class="copyright">
-							<p>Copyright © 2017 <strong>RedKnee</strong>. All rights reserverd.</p>
-							<p>
-								<a href="#">Terms and Conditions</a>
-								<a href="#">Cookie Policy</a>
-							</p>
-						</footer>
 					</div>
+					<footer class="copyright">
+						<p>Copyright © 2017 <strong>RedKnee</strong>. All rights reserverd.</p>
+						<p>
+							<a href="#">Terms and Conditions</a>
+							<a href="#">Cookie Policy</a>
+						</p>
+					</footer>
 				</div>
+
 			</div>
 		</main>
 
 		<div class="drawer">
-			<div class="container-fluid load" data-href="jsON/drawer.php?page=countdown&amp;panel=miscelaneous" data-type="get">
+			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=countdown&amp;panel=miscelaneous" data-type="get">
 				<div class="rolling"></div>
 			</div>
 		</div>

@@ -19,7 +19,7 @@
 	</head>
 	<body class="preloader-active">
 		<nav class="header">
-			<div class="container-fluid">
+			<div class="ct container-fluid">
 				<ul class="pull-left">
 					<li class="hidden-lg hidden-md">
 						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
@@ -60,7 +60,7 @@
 			</div>
 		</nav>
 		<div class="search">
-			<div class="container-fluid">
+			<div class="ct container-fluid">
 				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
 					<input type="text" name="search" class="form-control" placeholder="Search" />
 					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
@@ -69,23 +69,22 @@
 				</form>
 			</div>
 		</div>
+		<div class="ct container-fluid">
+			<ul class="breadcrumb">
+				<li>
+					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
+				</li>
+				<li class="active">F.A.Q.</li>
+			</ul>
+		</div>
+		<div class="title css text-center" data-background-image="url(assets/img/headline/2.png)" data-background-color="#333" data-color="#fff">
+		    <div class="ct container-fluid">
+			    <h1>services</h1>
+			    <p>we provide professional services</p>
+		    </div>
+		</div>
 		<main class="content">
-			<div class="container-fluid">
-				<ul class="breadcrumb">
-					<li>
-						<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
-					</li>
-					<li class="active">F.A.Q.</li>
-				</ul>
-			</div>
-			<div class="title css text-center" data-background-image="url(assets/img/headline/2.png)" data-background-color="#333" data-color="#fff">
-			    <div class="container-fluid">
-				    <h1>services</h1>
-				    <p>we provide professional services</p>
-			    </div>
-			</div>
-			<div class="container-fluid">
-				<div class="panel-grid row">
+			<div class="ct container-fluid pd">
 					<div class="col-sm-6">
 						<div class="panel panel-material">
 							<div class="panel-body panel-body-padding">
@@ -172,10 +171,9 @@
 							</div>
 						</div>
 					</div>
-				</div>
 			</div>
 			<footer class="main copyright">
-				<div class="container-fluid">
+				<div class="ct container-fluid">
 					<div class="col col-sm-8">
 						<img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" />
 						<p>Copyright © 2017 <strong>RedKnee</strong>. All rights reserverd.</p>
@@ -205,7 +203,7 @@
 		</main>
 
 		<div class="drawer">
-			<div class="container-fluid load" data-href="jsON/drawer.php?page=services&panel=utility" data-type="get">
+			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=services&panel=utility" data-type="get">
 				<div class="rolling"></div>
 			</div>
 		</div>
