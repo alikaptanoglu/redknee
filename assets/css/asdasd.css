@@ -306,7 +306,7 @@ nav.header {
 }
 nav.header ul > li { float: left; }
 nav.header ul > li > a.drawer-menu { padding: 14px; }
-nav.header ul > li > a.drawer-menu > .disk { border: 2px solid #fff; width: 32px; margin: 6px 0 6px; border-radius: 4px; }
+nav.header ul > li > a.drawer-menu > .disk { border: 2px solid rgba(0, 0, 0, .5); width: 32px; margin: 6px 0 6px; border-radius: 4px; }
 nav.header ul > li > a { display: block; height: 100%; color: #fff; padding: 0 16px; line-height: 64px; }
 nav.header ul > li > a > .ion { font-size: 16px; }
 nav.header ul > li > a > .img { max-height: 64px; }
@@ -316,7 +316,6 @@ nav.header ul > li > a.disabled { opacity: .5; box-shadow: none; cursor: default
 nav.header ul > li > .dropdown-menu { border-radius: 0 0 2px 2px; }
 
 body.drawer-active > nav.header { left: 240px; }
-body.drawer-active.drawer-hidden > nav.header { left: 0; }
 
 @media (max-width: 992px) {
 	body.drawer-active > nav.header { left: 0; }
@@ -324,18 +323,18 @@ body.drawer-active.drawer-hidden > nav.header { left: 0; }
 /*************/
 
 /* Main Content */
-main.content .breadcrumb { margin: 0; padding: 15px 0; background: transparent; }
-main.content .breadcrumb > li.active { font-weight: bold; }
+main.content > .breadcrumb { margin: 0; background: #fff; }
+main.content > .breadcrumb > li.active { font-weight: bold; }
 
-main.content { margin: 0; }
-main.content .panel-grid { padding: 15px 0; }
+main.content > .container-fluid { margin: 0; }
+main.content > .container-fluid > .panel-grid { padding: 15px 0; }
 
 main.content > footer.main { padding: 32px 0; background: #333; color: #ccc; }
-main.content > footer.main .col > .img { opacity: .4; }
-main.content > footer.main .col > .img:hover { opacity: 1; }
-main.content > footer.main .col > .list-group { margin: 10px 0; }
-main.content > footer.main .col > .list-group > .list-group-item { padding: 5px; }
-main.content > footer.main .col > .list-group > .list-group-item:hover { background: rgba(0, 0, 0, .1) }
+main.content > footer.main > .container-fluid > .col > .img { opacity: .4; }
+main.content > footer.main > .container-fluid > .col > .img:hover { opacity: 1; }
+main.content > footer.main > .container-fluid > .col > .list-group { margin: 10px 0; }
+main.content > footer.main > .container-fluid > .col > .list-group > .list-group-item { padding: 5px; }
+main.content > footer.main > .container-fluid > .col > .list-group > .list-group-item:hover { background: rgba(0, 0, 0, .1) }
 main.content > footer.main a { color: #111; }
 main.content > footer.main a:hover { color: #ccc; }
 /***/
@@ -383,9 +382,9 @@ footer.copyright a { font-weight: bold; }
 @media(min-width: 1200px) {}
 /*------*/
 .title { padding: 5% 0; background-size: 700px 100px; background-position: bottom center; }
-.title h1 { font-weight: 300; }
-.title p { font-size: 16px; font-weight: 300; }
-.title.text-cente .img { float: none; margin: 0 auto; max-width: 64px; }
+.title > .container-fluid > h1 { font-weight: 300; }
+.title > .container-fluid > p { font-size: 16px; font-weight: 300; }
+.title.text-center > .container-fluid > .img { float: none; margin: 0 auto; max-width: 64px; }
 
 /*------*/
 .panel-material { box-shadow: none; background: transparent; }
@@ -462,7 +461,7 @@ footer.copyright a { font-weight: bold; }
 /*************/
 /* Search */
 .search { background: #d32f2f; }
-.search .form-control {
+.search > .container-fluid .form-control {
 	height: 48px;
 	border-width: 0;
 	margin: 16px 0 0;
@@ -472,7 +471,7 @@ footer.copyright a { font-weight: bold; }
 	color: rgba(255, 255, 255, .5);
 	background: transparent;
 }
-.search a.times {
+.search > .container-fluid a.times {
 	color: #fff;
 	position: relative;
 	float: right;
@@ -482,8 +481,8 @@ footer.copyright a { font-weight: bold; }
 	line-height: 48px;
 	text-align: center;
 }
-.search a.times { font-size: 22px; }
-.search a.times:hover { background: rgba(255, 255, 255, .1); }
+.search > .container-fluid a.times { font-size: 22px; }
+.search > .container-fluid a.times:hover { background: rgba(255, 255, 255, .1); }
 
 body.search-active > .search { margin: 48px 0 0; }
 /*************/

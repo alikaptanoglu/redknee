@@ -17,18 +17,18 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link href="manifest.json" rel="manifest">
 	</head>
-	<body class="preloader-active">
+	<body class="preloader-active drawer-hidden">
 		<nav class="header">
-			<div class="container-fluid">
+			<div class="container">
 				<ul class="pull-left">
-					<li class="hidden-lg hidden-md">
+					<li>
 						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
 							<div class="disk"></div>
 							<div class="disk"></div>
 							<div class="disk"></div>
 						</a>
 					</li>
-					<li class="visible-lg visible-md">
+					<li>
 						<a href="index.html"><img alt="RedKnee" src="assets/img/logo-navbar.png" class="img img-responsive" /></a>
 					</li>
 				</ul>
@@ -60,7 +60,7 @@
 			</div>
 		</nav>
 		<div class="search">
-			<div class="container-fluid">
+			<div class="container">
 				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="{csrf}">
 					<input type="text" name="search" class="form-control" placeholder="Search" />
 					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
@@ -70,19 +70,21 @@
 			</div>
 		</div>
 		<main class="content">
-			<ul class="breadcrumb">
-				<li>
-					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
-				</li>
-				<li class="active">404 not found</li>
-			</ul>
+			<div class="container">
+				<ul class="breadcrumb">
+					<li>
+						<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
+					</li>
+					<li class="active">404 not found</li>
+				</ul>
+			</div>
 			<div class="title css text-center" data-background-image="url(assets/img/headline/4.png)" data-background-color="#ccc" data-color="#666">
-			    <div class="container-fluid">
+			    <div class="container">
 				    <h1>404</h1>
 				    <p>file not found</p>
 			    </div>
 			</div>
-			<div class="container-fluid">
+			<div class="container">
 				<div class="panel-grid row">
 					<div class="col-sm-6 col-sm-offset-3">
 						<div class="panel panel-material">
