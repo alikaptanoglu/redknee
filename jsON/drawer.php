@@ -5,7 +5,9 @@ ob_start();
 function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($_GET[$key]))?$_GET[$key]:'')==$val)?$class:''; }
 ?>
 <div class="brand">
-	<a href="index.html"><img alt="Brand" src="assets/img/logo-drawer.png" class="img img-responsive" /></a>
+	<a href="index.html">
+		<div class="text-icon">red<strong>knee</strong></div>
+	</a>
 </div>
 <div class="group list-group">
 	<a href="index.html" class="list-group-item<?php get('page', 'home', ' active');?>">

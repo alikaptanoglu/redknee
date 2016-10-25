@@ -562,7 +562,7 @@ function modal(obj) {
 function windowReady() {
     var windowWidth = $(window).width();
 
-    if (!body.hasClass('drawer-hidden'))
+    if (!body.hasClass('wide'))
         if (windowWidth < 992)
             body.removeClass('drawer-active dock-active')
         else
