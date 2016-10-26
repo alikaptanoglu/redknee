@@ -13,11 +13,14 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 	<a href="index.html" class="list-group-item<?php get('page', 'home', ' active');?>">
 		<i class="ion ion-fw ion-home"></i> HOME
 	</a>
-	<a href="home2.html" class="list-group-item disabled">
-		<i class="ion ion-fw ion-home"></i> HOME 2 <span class="badge">Coming Soon</span>
+	<a href="home2.html" class="list-group-item<?php get('page', 'home2', ' active');?>">
+		<i class="ion ion-fw ion-home"></i> HOME 2
 	</a>
 	<a href="home3.html" class="list-group-item disabled">
 		<i class="ion ion-fw ion-home"></i> HOME 3 <span class="badge">Coming Soon</span>
+	</a>
+	<a href="home4.html" class="list-group-item disabled">
+		<i class="ion ion-fw ion-home"></i> HOME 4 <span class="badge">Coming Soon</span>
 	</a>
 </div>
 <div class="group panel-group" id="drawer-menu">
@@ -27,13 +30,13 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 				<strong><i class="ion ion-ios-arrow-down ion-fw"></i> PAGES</strong>
 			</a>
 		</div>
-		<div class="panel-collapse collapse<?php get('panel', 'pages', ' active');?>" id="collapsePages">
+		<div class="panel-collapse collapse<?php get('panel', 'pages', ' in');?>" id="collapsePages">
 			<div class="list-group">
 				<a class="list-group-item" href="adventure-travel.html">Adventure Travel</a>
-				<a class="list-group-item" href="forum.html">Forum</a>
+				<a class="list-group-item<?php get('page', 'forum', ' active');?>" href="forum.html">Forum</a>
 				<a class="list-group-item" href="agency.html">Agency</a>
 				<a class="list-group-item" href="app-landing.html">App Landing</a>
-				<a class="list-group-item" href="resume.html">Resume</a>
+				<a class="list-group-item<?php get('page', 'resume', ' active');?>" href="resume.html">Resume</a>
 				<a class="list-group-item" href="capital-film.html">Capital Film</a>
 				<a class="list-group-item" href="fashion.html">Fashion</a>
 				<a class="list-group-item" href="fitness.html">Fitness</a>

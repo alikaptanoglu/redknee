@@ -121,7 +121,7 @@ $(document).on('click', '.edit-class', function() {
     json_ajax(_this);
 }).keyup(function(e) {
     if (e.keyCode == 27) {
-    	c('Escape Key', 'warn');
+    	body.removeClass('drawer-active dock-active')
     } else if (e.keyCode == 13) {
     	c('Enter Key', 'warn');
     }
