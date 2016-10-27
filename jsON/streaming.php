@@ -60,8 +60,7 @@ $array = [
 	],
 	"dom" => [
 		[ "type" => "remove", "target" => "#streaming > .rolling" ],
-		[ "type" => "remove", "target" => "#streaming > .panel-body" ],
-		[ "type" => "remove", "target" => "#streaming > .panel-footer" ]
+		[ "type" => "remove", "target" => "#streaming > .panel-body" ]
 	],
 	"pagination" => [
 		"total_results" => 100,

@@ -32,23 +32,23 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 		</div>
 		<div class="panel-collapse collapse<?php get('panel', 'pages', ' in');?>" id="collapsePages">
 			<div class="list-group">
-				<a class="list-group-item" href="adventure-travel.html">Adventure Travel</a>
-				<a class="list-group-item<?php get('page', 'forum', ' active');?>" href="forum.html">Forum</a>
-				<a class="list-group-item" href="agency.html">Agency</a>
-				<a class="list-group-item" href="app-landing.html">App Landing</a>
-				<a class="list-group-item<?php get('page', 'resume', ' active');?>" href="resume.html">Resume</a>
-				<a class="list-group-item" href="capital-film.html">Capital Film</a>
-				<a class="list-group-item" href="fashion.html">Fashion</a>
-				<a class="list-group-item" href="fitness.html">Fitness</a>
-				<a class="list-group-item" href="restaurant.html">Restaurant</a>
-				<a class="list-group-item" href="video.html">Video</a>
-				<a class="list-group-item" href="winery.html">Winery</a>
-				<a class="list-group-item" href="event-seminar.html">Event/Seminar</a>
-				<a class="list-group-item" href="architecture.html">Architecture</a>
-				<a class="list-group-item" href="photography.html">Photography</a>
-				<a class="list-group-item" href="portfolio.html">Portfolio</a>
-				<a class="list-group-item" href="shop.html">Shop</a>
-				<a class="list-group-item" href="blog.html">Blog</a>
+				<a class="list-group-item" href="pages-adventure-travel.html">Adventure Travel</a>
+				<a class="list-group-item<?php get('page', 'forum', ' active');?>" href="pages-forum.html">Forum</a>
+				<a class="list-group-item" href="pages-agency.html">Agency</a>
+				<a class="list-group-item" href="pages-app-landing.html">App Landing</a>
+				<a class="list-group-item<?php get('page', 'resume', ' active');?>" href="pages-resume.html">Resume</a>
+				<a class="list-group-item" href="pages-capital-film.html">Capital Film</a>
+				<a class="list-group-item" href="pages-fashion.html">Fashion</a>
+				<a class="list-group-item" href="pages-fitness.html">Fitness</a>
+				<a class="list-group-item" href="pages-restaurant.html">Restaurant</a>
+				<a class="list-group-item" href="pages-video.html">Video</a>
+				<a class="list-group-item" href="pages-winery.html">Winery</a>
+				<a class="list-group-item" href="pages-event-seminar.html">Event/Seminar</a>
+				<a class="list-group-item" href="pages-architecture.html">Architecture</a>
+				<a class="list-group-item" href="pages-photography.html">Photography</a>
+				<a class="list-group-item" href="pages-portfolio.html">Portfolio</a>
+				<a class="list-group-item" href="pages-shop.html">Shop</a>
+				<a class="list-group-item" href="pages-blog.html">Blog</a>
 			</div>
 		</div>
 	</div>

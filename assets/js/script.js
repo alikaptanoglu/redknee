@@ -362,7 +362,7 @@ function json_ajax(_this) {
                 if (obj.pagination) {
                     var pagination = $('<ul/>', { 'class': 'pagination' });
 
-                    if (parseInt(obj.pagination.current_page) > 3)
+                    if (parseInt(obj.pagination.current_page) > 3) 
                         var page = parseInt(obj.pagination.current_page) - 1,
                             btn = $('<li/>').appendTo(pagination),
                             link = $('<a/>', { class: 'ripple', href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
@@ -385,7 +385,7 @@ function json_ajax(_this) {
                 }
 
                 if (obj.scrollTo) {
-                    var offset = $('#streaming').offset();
+                    var offset = $(obj.scrollTo.element).offset();
 
                     $('html, body').animate({ scrollTop: (obj.scrollTo.tolerance) ? offset.top + parseInt(obj.scrollTo.tolerance): offset.top }, 500);
                 }

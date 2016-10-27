@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $array = [
 	"html" => [
 		[
-			"target" => "#like-btn-".intval($_GET['key']),
+			"target" => "this",
 			"type" => "dom",
 			"content" => "<i class=\"ion ion-fw ion-happy\"></i> <span>15</span>"
 		]

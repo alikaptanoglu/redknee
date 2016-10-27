@@ -3,49 +3,62 @@ header('Content-Type => application/json');
 
 ob_start();
 ?>
-<div class="container-fluid">
-	<div class="alert alert-info closes">
-		<i class="ion ion-information ion-fw"></i> Ajax notifications results...
+	<div class="container-fluid closes">
+		<div class="alert alert-info">
+			<i class="ion ion-fw ion-information"></i> Dock alert!
+		</div>
 	</div>
 	<div class="list-group">
-		<div class="list-group-item text-muted">
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Ajax</strong> function is completed!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
-			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> <a href="#">LINK</a> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
+			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong>
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
-		<div class="list-group-item text-muted">
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
-		</div>
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
+			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
+			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
+			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
+		</a>
+		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
+			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
+		</a>
 	</div>
-</div>
+
 <?php
 $content = ob_get_clean();
 
