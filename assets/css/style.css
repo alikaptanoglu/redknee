@@ -509,6 +509,7 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
     padding: 0;
     background: #fff;
 }
+.panel-material > .panel-footer { background: transparent; }
 /*------*/
 .panel-unstyled { background: transparent; box-shadow: none; border-width: 0; }
 .panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
@@ -603,6 +604,8 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn:hover,
 .btn:active,
 .btn:focus { box-shadow: none; }
+
+.btn.active { box-shadow: none; background: #333; color: #fff; }
 
 .btn-info.btn-colored:hover,
 .btn-info.btn-colored:active,

@@ -36,6 +36,8 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+a > .ion { font-size: 17px; }
+
 .ion-fw {
   width: 1.28571429em;
   text-align: center;

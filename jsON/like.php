@@ -6,7 +6,13 @@ $array = [
 		[
 			"target" => "this",
 			"type" => "dom",
-			"content" => "<i class=\"ion ion-fw ion-happy\"></i> <span>15</span>"
+			"content" => "<i class=\"ion ion-fw ion-heart\"></i> <span>15</span>"
+		]
+	],
+	"editClass" => [
+		[
+			"target" => "this",
+			"add" => "active"
 		]
 	],
 	"toast" => [ "text" => "This Liked !", "timeOut" => 1000 ]

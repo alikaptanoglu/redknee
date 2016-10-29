@@ -38,7 +38,7 @@ foreach ($items as $key => $row) {
 		</div>
 		<div class="card-footer">
 			<a class="btn btn-default ripple btn-colored ajax" id="like-btn-<?php echo $key?>" data-href="jsON/like.php?key=<?php echo $key;?>" href="#">
-				<i class="ion ion-fw ion-happy-outline"></i> <span>14</span>
+				<i class="ion ion-fw ion-heart-broken"></i> <span>14</span>
 			</a>
 			<a class="btn btn-default ripple btn-colored ajax" data-href="jsON/share.php" href="#">
 				<i class="ion ion-fw ion-android-share-alt"></i>
