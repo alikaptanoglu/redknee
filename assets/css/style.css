@@ -95,7 +95,6 @@ a:hover { color: #999; }
 	text-shadow: none;
 	padding: 4px 6px;
 }
-
 /*************/
 /* Prıgress */
 .progress { height: 2px; margin: 0; }
@@ -222,6 +221,33 @@ body.polling-active > .polling { display: table; }
 .alert a:hover { opacity: .5; }
 /*************/
 
+/* Forum Thread */
+.forum .user > .float { padding: 0 0 10px; }
+.forum .user > .float > .col { float: left; }
+.forum .user > .float > .col.image {  }
+.forum .user > .float > .col.information { padding: 10px 0 10px 15px; }
+.forum .user > .float > .col.information > h3 { font-weight: 300; }
+
+.forum .thread > .embed-responsive { margin: 10px 0; }
+.forum .thread > .signature {
+	border-width: 1px 0 0;
+	border-color: #ccc;
+	border-style: dashed;
+	margin: 10px 0 0;
+	padding: 10px 0 0;
+}
+
+.quote {
+	border-width: 0 0 0 4px;
+	border-color: #ccc;
+	border-style: solid;
+	padding: 10px 10px 10px 24px;
+	opacity: .7;
+	margin: 0 0 10px;
+}
+.quote:hover { opacity: 1; }
+.quote:before { content: "\f347"; font-family: "Ionicons"; color: #ccc; font-size: 24px; }
+/*************/
 /* Drawer */
 .drawer {
 	width: 240px;
@@ -586,7 +612,6 @@ footer.tiny a { font-weight: bold; }
 	line-height: 48px;
 	text-align: center;
 }
-.search > .ct a.times { font-size: 22px; }
 .search > .ct a.times:hover { background: rgba(255, 255, 255, .1); }
 
 body.search-active > .search { margin: 48px 0 0; }
