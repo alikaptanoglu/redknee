@@ -98,7 +98,7 @@ $(document).on('click', '.edit-class', function() {
 	json_ajax($(this));
 
     return false;
-}).on('click', 'a.ajax', function() {
+}).on('click', 'a.ajax, button.ajax', function() {
     var _this = $(this);
 
     if (_this.data('load'))
@@ -392,9 +392,14 @@ function json_ajax(_this) {
                 }
 
                 if (obj.scrollTo) {
-                    var offset = $(obj.scrollTo.element).offset();
+                    var element = obj.scrollTo.element;
 
-                    $('html, body').animate({ scrollTop: (obj.scrollTo.tolerance) ? offset.top + parseInt(obj.scrollTo.tolerance): offset.top }, 500);
+                    if ($(element).length) {
+                        var offset = $(element).offset();
+
+                        $('html, body').animate({ scrollTop: (obj.scrollTo.tolerance) ? offset.top + parseInt(obj.scrollTo.tolerance): offset.top }, 500);
+                    } else
+                        c(element + ' is not found!', 'warn');
                 }
 
             	body.removeClass('polling-active')
@@ -558,7 +563,8 @@ function modal(obj) {
         (obj.body) ? panel.children('.panel-body').html(obj.body).show() : panel.children('.panel-body').hide();
 		(obj.footer) ? panel.children('.panel-footer').html(obj.footer).show() : panel.children('.panel-footer').hide();
 		(obj.close == false) ? panel.children('.panel-close').hide() : panel.children('.panel-close').show();
-		(obj.class) ? panel.removeClass().addClass('panel panel-material ' + obj.class) : '';
+        (obj.class) ? panel.removeClass().addClass('panel panel-material ' + obj.class) : '';
+		(obj.bodyClass) ? panel.children('.panel-body').removeClass().addClass('panel-body ' + obj.bodyClass) : '';
 	
 		if (obj.closeDelay) {
             window.clearTimeout(modalCloseDelay);

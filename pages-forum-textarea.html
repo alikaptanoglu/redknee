@@ -78,26 +78,123 @@
 				</li>
 				<li><a href="pages-forum.html">Forum</a></li>
 				<li><a href="pages-forum-forum.html">Forum Category</a></li>
-				<li><a href="pages-forum-forum-thread.html">Forum Thread</a></li>
+				<li><a href="pages-forum-thread.html">Forum Thread</a></li>
 				<li class="active"><strong>Forum Textarea (New Topic, New Reply, vs...)</strong></li>
 			</ul>
 		</div>
 		<div class="title css text-center" data-background-image="url(assets/img/headline/1.png)" data-background-color="#60c0bd" data-color="#fff">
 		    <div class="ct container">
 			    <h1>textarea</h1>
-			    <p>new topic, new reply, vs...</p>
+			    <p>new topic, new extend reply, vs...</p>
 		    </div>
 		</div>
 		<main class="ct container pd">
-			<form method="post" action="json/forum-post.json" class="ajax" name="topic-form">
-            	<input type="text" name="subject" class="form-control" placeholder="Subject" />
-            	<textarea style="min-height: 150px;" class="form-control autosize" name="reply" placeholder="Eentry"></textarea>
+			<div class="panel panel-material">
+				<div class="panel-body panel-body-padding">
+					<form method="post" action="jsON/forum-fake-content.php?q=extend-reply" class="ajax" name="topic-form">
+		            	<input type="text" name="subject" class="form-control" placeholder="Subject" />
+		            	<textarea style="min-height: 150px;" class="form-control autosize" name="reply" placeholder="Eentry"></textarea>
 
-            	<div class="text-right">
-            		<button class="btn btn-default btn-colored ripple" type="submit">Publish</button>
-            		<button class="btn btn-primary btn-colored ripple" type="button">Preview</button>
-            	</div>
-           </form>
+		            	<div class="btn-group icon-group" data-toggle="buttons">
+			                <label class="btn btn-primary active">
+			                  <input type="radio" name="icon" value="1" autocomplete="off" checked> <i class="ion ion-erlenmeyer-flask"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off" checked> <i class="ion ion-document-text"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-funnel"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-bookmark"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-folder"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-paper-airplane"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-paperclip"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-briefcase"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-arrow-up-a"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-arrow-right-a"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-arrow-down-a"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-arrow-left-a"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-arrow-swap"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-drag"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-log-in"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-information-circled"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-help-circled"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-backspace"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-help-buoy"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-asterisk"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-alert-circled"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-shuffle"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-search"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-heart"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-star"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-flag"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-hammer"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-settings"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-trash-a"></i>
+			                </label>
+			                <label class="btn btn-primary">
+			                  <input type="radio" name="icon" value="1" autocomplete="off"> <i class="ion ion-edit"></i>
+			                </label>
+			            </div>
+
+		            	<div class="text-right">
+		            		<button class="btn btn-success btn-colored ripple ajax" data-href="jsON/forum-fake-content.php?q=preview" type="button">Preview</button>
+		            		<button class="btn btn-default btn-colored ripple" type="submit">Publish</button>
+		            	</div>
+		            </form>
+				</div>
+			</div>
 		</main>
 		<footer class="mega">
 			<div class="ct container">

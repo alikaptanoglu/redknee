@@ -18,7 +18,7 @@ $content = ob_get_clean();
 $array = [
 	"modal" => [
 		"body" => $content,
-		"class" => "col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2 col-lg-2 col-lg-offset-5 share",
+		"class" => "col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2 col-lg-2 col-lg-offset-5 share-bg",
 		"close" => false
 	]
 ];

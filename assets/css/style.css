@@ -222,11 +222,11 @@ body.polling-active > .polling { display: table; }
 /*************/
 
 /* Forum Thread */
-.forum .user > .float { padding: 0 0 10px; }
-.forum .user > .float > .col { float: left; }
-.forum .user > .float > .col.image {  }
-.forum .user > .float > .col.information { padding: 10px 0 10px 15px; }
-.forum .user > .float > .col.information > h3 { font-weight: 300; }
+.user > .float { padding: 0 0 10px; }
+.user > .float > .col { float: left; }
+.user > .float > .col.image {  }
+.user > .float > .col.information { padding: 10px 0 10px 15px; }
+.user > .float > .col.information > h3 { font-weight: 300; }
 
 .forum .thread > .embed-responsive { margin: 10px 0; }
 .forum .thread > .signature {
@@ -337,12 +337,13 @@ body.dock-active > .overlay-dock { transform: translate(0); z-index: 700; }
 }
 .modal > .panel > .panel-close:hover { background: rgba(0, 0, 0, 1); }
 .modal > .panel > .panel-body { padding: 30px; }
+.modal > .panel > .panel-body.gray { background: #f0f0f0; }
 .modal > .panel > .panel-footer { margin: -2px 0 0; border-radius: 0 0 2px 2px; border-width: 0; }
 .modal > .panel > .panel-footer .btn { margin: 0; }
 
 /* BG Class */
-.modal > .panel.share > .panel-body { background-image: url('../img/share.png'); background-repeat: no-repeat; background-position: -64px -64px; }
-.modal > .panel.user > .panel-body { background-image: url('../img/user.png'); background-repeat: no-repeat; background-position: -64px -64px; }
+.modal > .panel.share-bg > .panel-body { background-image: url('../img/share.png'); background-repeat: no-repeat; background-position: -64px -64px; }
+.modal > .panel.user-bg > .panel-body { background-image: url('../img/user.png'); background-repeat: no-repeat; background-position: -64px -64px; }
 /**/
 
 body.modal-active { overflow-y: hidden; }
@@ -652,8 +653,6 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn-default.btn-colored:active,
 .btn-default.btn-colored:focus { background: #f0f0f0 !important; }
 
-.btn-group > .btn { border-radius: 0; margin: 0; }
-
 .ripple { overflow: hidden; position: relative; transition: all .5s ease 0s; }
 .ripple-effect {
   position: absolute;
@@ -686,6 +685,21 @@ body.search-active > .search { margin: 48px 0 0; }
 .input-group { margin: 0 0 10px; }
 .input-group > .input-group-addon { border-width: 0; background: transparent; }
 .input-group > .input-group-addon > .ion { font-size: 22px; }
+
+.icon-group > label {
+	background: transparent;
+	color: #333;
+	margin: 4px !important;
+	padding: 0;
+	border-radius: 0;
+	border-radius: 50% !important;
+	width: 48px;
+	line-height: 48px;
+	font-size: 22px;
+}
+.icon-group > label.active,
+.icon-group > label.focus,
+.icon-group > label:hover { background: #ef4034 !important; }
 
 /*------*/
 .material-pager > ul.pagination { margin: 20px auto; float: none; display: table; }

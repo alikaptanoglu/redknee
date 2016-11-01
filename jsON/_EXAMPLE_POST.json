@@ -44,7 +44,8 @@
 		"delay": 1000,
 		"closeDelay": 5000,
 		"close": false,
-		"class": "col-sm-4 col-sm-offset-4"
+		"class": "col-sm-4 col-sm-offset-4",
+		"bodyClass": "bg-warning"
 	},
 	"pagination": {
 		"total_results": 1064,
@@ -57,6 +58,7 @@
 	},
 	"scrollTo": {
 		"element": "#streaming",
-		"tolerance": "-64px"
+		"tolerance": "-64px",
+		"speed": 500
 	}
 }
