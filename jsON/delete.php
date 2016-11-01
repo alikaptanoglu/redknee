@@ -61,7 +61,7 @@ if (get('status') == 'confirmation') {
 			],
 			'toast' => [
 				'text' => 'This reply is deleted!'
-			],
+			]
 		];
 	}
 }

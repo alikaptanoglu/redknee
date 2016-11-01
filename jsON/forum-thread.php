@@ -82,8 +82,8 @@ ob_start();
 								<i class="ion ion-fw ion-android-more-vertical"></i>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="ion ion-fw ion-reply"></i> Reply</a></li>
-								<li><a href="#"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
+								<li><a href="pages-forum-reply.html"><i class="ion ion-fw ion-reply"></i> Reply</a></li>
+								<li><a href="pages-forum-textarea.html"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
 								<li><a href="#" class="ajax" data-href="jsON/delete.php?id=message-1&status=confirmation"><i class="ion ion-fw ion-trash-a"></i> Delete</a></li>
 							</ul>
 						</li>
@@ -164,8 +164,8 @@ ob_start();
 								<i class="ion ion-fw ion-android-more-vertical"></i>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="ion ion-fw ion-reply"></i> Reply</a></li>
-								<li><a href="#"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
+								<li><a href="pages-forum-reply.html"><i class="ion ion-fw ion-reply"></i> Reply</a></li>
+								<li><a href="pages-forum-textarea.html"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
 								<li><a href="#" class="ajax" data-href="jsON/delete.php?id=message-2&status=confirmation"><i class="ion ion-fw ion-trash-a"></i> Delete</a></li>
 							</ul>
 						</li>
@@ -244,8 +244,8 @@ ob_start();
 								<i class="ion ion-fw ion-android-more-vertical"></i>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="ion ion-fw ion-reply"></i> Reply</a></li>
-								<li><a href="#"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
+								<li><a href="pages-forum-reply.html"><i class="ion ion-fw ion-reply"></i> Reply</a></li>
+								<li><a href="pages-forum-textarea.html"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
 								<li><a href="#" class="ajax" data-href="jsON/delete.php?id=message-3&status=confirmation"><i class="ion ion-fw ion-trash-a"></i> Delete</a></li>
 							</ul>
 						</li>
@@ -279,9 +279,6 @@ $array = [
 	]
 ];
 
-	$array["scrollTo"] = [
-		"element" => "#forum",
-		"tolerance" => "-64px"
-	];
+$array["scrollTo"] = [ "element" => "#forum", "tolerance" => "-64px" ];
 
 echo json_encode($array);

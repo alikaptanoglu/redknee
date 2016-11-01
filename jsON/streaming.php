@@ -25,6 +25,8 @@ $items = [
 	]
 ];
 
+shuffle($items);
+
 foreach ($items as $key => $row) {
 ?>
 <article class="panel-body">

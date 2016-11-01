@@ -331,8 +331,15 @@ function json_ajax(_this) {
                             $((val.target == 'this')?_this:val.target).before(content)
                         else if (val.type == 'after')
                             $((val.target == 'this')?_this:val.target).after(content)
-                        else if (val.type == 'value')
-                            $((val.target == 'this')?_this:val.target).val(text)
+                        else if (val.type == 'value') {
+                            var $this = $((val.target == 'this')?_this:val.target);
+
+                            if ($this.is('select'))
+                                $this.val(val.text).trigger('change');
+                            else
+                                $this.val(val.text);
+                        } else if (val.type == 'focus')
+                            $((val.target == 'this')?_this:val.target).focus()
                     })
 
                 if (obj.editClass)
@@ -474,6 +481,12 @@ function initial() {
             })
         })
     })
+
+    getScript('.markdown', 'assets/js/bootstrap.markdown.min.js', function(selector) {
+        $(selector).markdown()
+    })
+
+    
 }
 
 function getScript(selector, file, func) {

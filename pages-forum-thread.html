@@ -87,8 +87,8 @@
 				<a href="#" data-href="jsON/like.php" class="btn btn-success btn-colored ripple ajax">
 					<i class="ion ion-fw ion-heart-broken"></i> Like
 				</a>
-				<a href="forum-new-thread.html" class="btn btn-primary btn-colored ripple">Reply</a>
-				<a href="forum-new-thread.html" class="btn btn-primary btn-colored ripple disabled">
+				<a href="pages-forum-textarea.html" class="btn btn-primary btn-colored ripple">Reply</a>
+				<a href="pages-forum-textarea.html" class="btn btn-primary btn-colored ripple disabled">
 					<i class="ion ion-fw ion-locked"></i> Reply
 				</a>
 			</div>
@@ -96,6 +96,18 @@
 				<div class="rolling"></div>
 			</div>
 			<div id="forum-pager" class="material-pager"></div>
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="panel panel-material">
+						<div class="panel-body">
+							<textarea class="autosize form-control" placeholder="Your message" name="message"></textarea>
+							<div class="text-right">
+								<a class="btn btn-default btn-colored ripple ajax" href="#" data-import="message" data-token="{code}" data-href="jsON/forum-textarea.php?q=fast-reply">Submit</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="mega">
 			<div class="ct container">
