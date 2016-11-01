@@ -402,6 +402,11 @@ function json_ajax(_this) {
                         c(element + ' is not found!', 'warn');
                 }
 
+                if (obj.run)
+                    $.each(obj.run, function(key, val) {
+                        eval(val);
+                    })
+
             	body.removeClass('polling-active')
             	_this.removeClass('disabled wait')
 
@@ -486,12 +491,6 @@ function initial() {
             })
         })
     })
-
-    getScript('.markdown', 'assets/js/bootstrap.markdown.min.js', function(selector) {
-        $(selector).markdown()
-    })
-
-    
 }
 
 function getScript(selector, file, func) {

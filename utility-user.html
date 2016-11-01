@@ -81,7 +81,7 @@
 			</ul>
 		</div>
 		<div class="title css text-center" data-background-image="url(assets/img/headline/3.png)" data-background-color="#444" data-color="#fff">
-		    <div class="ct container">
+		    <div class="ct container-fluid">
 			    <h1>jdoe</h1>
 		    </div>
 		</div>
@@ -97,7 +97,6 @@
 							<div class="dropdown">
 								<a href="#" data-toggle="dropdown">@jdoe <i class="caret"></i></a>
 								<ul class="dropdown-menu">
-									<li><a href="utility-user.html"><i class="ion ion-fw ion-person"></i> Profile</a></li>
 									<li><a href="utility-user-dm.html"><i class="ion ion-fw ion-chatbubbles"></i> Direct Message</a></li>
 								</ul>
 							</div>
@@ -196,70 +195,37 @@
 						</div>
 					</div>
 
-					<div class="panel panel-material">
-						<div class="panel-heading">Signature</div>
-						<div class="panel-body">
-							Hey there! I'm using<a href="#">redknee</a>... 
-						</div>
-					</div>
-
 				</div>
 				<div class="col col-sm-10 col-sm-offset-1">
-					
 					<div class="panel panel-material">
+						<div class="panel-heading">Signature</div>
+						<div class="panel-body panel-body-padding">
+							Hey there! I'm using <a href="#">redknee</a>... 
+						</div>
+					</div>
+					
+					<div class="panel panel-material" id="user-comment">
 						<div class="panel-heading">User Comments</div>
-						<div id="user-comment" class="list-group">
-							<div class="list-group-item">
+						<div class="list-group">
+							<div class="list-group-item" id="comment-1">
 								<p>
 									<i class="ion ion-chatbubble ion-fw"></i>
-									<a class="hyper-user" href="#">Admin</a>
+									<a class="hyper-user" href="#">Admin</a> <a class="text-danger ajax" data-href="jsON/delete.php?id=comment-1&status=confirmation" href="#">&times;</a>
 									<span class="date text-muted">
-										<em>08.08.2016 16:04</em>
-									</span>
-								</p>
-								<p>Aliquam congue odio et nulla eleifend, ac maximus massa iaculis.</p>
-							</div>
-							<div class="list-group-item">
-								<p>
-									<i class="ion ion-chatbubble ion-fw"></i>
-									<a class="hyper-user" href="#">Admin</a>
-									<span class="date text-muted">
-										<em>08.08.2016 16:04</em>
-									</span>
-								</p>
-								<p>Aliquam congue odio et nulla eleifend, ac maximus massa iaculis.</p>
-							</div>
-							<div class="list-group-item">
-								<p>
-									<i class="ion ion-chatbubble ion-fw"></i>
-									<a class="hyper-user" href="#">Admin</a>
-									<span class="date text-muted">
-										<em>08.08.2016 16:04</em>
-									</span>
-								</p>
-								<p>Aliquam congue odio et nulla eleifend, ac maximus massa iaculis.</p>
-							</div>
-							<div class="list-group-item">
-								<p>
-									<i class="ion ion-chatbubble ion-fw"></i>
-									<a class="hyper-user" href="#">Admin</a>
-									<span class="date text-muted">
-										<em>08.08.2016 16:04</em>
-									</span>
-								</p>
-								<p>Aliquam congue odio et nulla eleifend, ac maximus massa iaculis.</p>
-							</div>
-							<div class="list-group-item">
-								<p>
-									<i class="ion ion-chatbubble ion-fw"></i>
-									<a class="hyper-user" href="#">Admin</a>
-									<span class="date text-muted">
-										<em>08.08.2016 16:04</em>
+										<em>26 Sep 2016, Fri 11:52</em>
 									</span>
 								</p>
 								<p>Aliquam congue odio et nulla eleifend, ac maximus massa iaculis.</p>
 							</div>
 						</div>
+						<div class="panel-body">
+		            		<form method="post" action="jsON/user-comment.php" class="ajax" id="user-comment-form">
+		            			<textarea class="form-control autosize" name="comment" placeholder="Your comment"></textarea>
+		            			<div class="text-right">
+		            				<button class="btn btn-default btn-colored ripple" type="submit">Submit</button>
+		            			</div>
+		            		</form>
+		            	</div>
 					</div>
 
 				</div>
