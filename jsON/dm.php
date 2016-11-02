@@ -4,7 +4,7 @@ header('Content-Type => application/json');
 ob_start();
 ?>
 <div class="row">
-	<div class="col-sm-8 col-md-9 col-lg-10">
+	<div class="col-sm-8 col-md-9">
 		<div class="panel panel-unstyled">
 			<div class="panel-heading panel-heading-material">
 				<a href="utility-user.html">@jdoe</a>
@@ -54,7 +54,7 @@ ob_start();
 			<input type="text" name="message" placeholder="Your message" class="form-control" />
 		</form>
 	</div>
-	<div class="col-sm-4 col-md-3 col-lg-2">
+	<div class="col-sm-4 col-md-3">
 		<div class="list-group list-group-limit-lg">
 			<div class="list-group-item active">
 				<p><a href="#">John Doe</a> <span class="text-muted">@jdoe</span></p>
