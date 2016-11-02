@@ -29,20 +29,20 @@ $id = rand(10, 100);
 			<div class="tab-panel hidden-xs">
 				<ul class="nav nav-tabs">
 					<li class="active">
-						<a href="#tab-2-1" data-toggle="tab"><i class="ion ion-fw ion-person"></i></a>
+						<a href="#tab-<?php echo $id;?>-1" data-toggle="tab"><i class="ion ion-fw ion-person"></i></a>
 					</li>
 					<li>
-						<a href="#tab-2-2" data-toggle="tab"><i class="ion ion-fw ion-information"></i></a>
+						<a href="#tab-<?php echo $id;?>-2" data-toggle="tab"><i class="ion ion-fw ion-information"></i></a>
 					</li>
 				</ul>
 
 				<div class="tab-content">
-					<div class="tab-pane active" id="tab-2-1">
+					<div class="tab-pane active" id="tab-<?php echo $id;?>-1">
 			          	<p><strong>Join</strong> 2 month</p>
 			            <p><strong>Threads</strong> 44</p>
 			            <p><strong>Likes</strong> 445</p>
 					</div>
-					<div class="tab-pane" id="tab-2-2">
+					<div class="tab-pane" id="tab-<?php echo $id;?>-2">
 			          	<p><strong>Name</strong> John Doe</p>
 			            <p><strong>Age</strong> 24</p>
 			            <p><strong>Location</strong> Netherland</p>
@@ -91,6 +91,9 @@ $array = [
 		[ "type" => "append", "target" => "#forum", "content" => $content ],
 		[ "type" => "value", "target" => "textarea", "text" => "" ],
 		[ "type" => "focus", "target" => "textarea" ]
+	],
+	"toast" => [
+		"text" => "Success !", "timeOut" => 1000
 	]
 ];
 

@@ -630,7 +630,8 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn:active,
 .btn:focus { box-shadow: none; }
 
-.btn.active { box-shadow: none; background: #333; color: #fff; }
+.btn.active,
+.btn.focus { box-shadow: none; background: #333 !important; color: #fff; }
 
 .btn-info.btn-colored:hover,
 .btn-info.btn-colored:active,
@@ -650,6 +651,8 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn-default.btn-colored:hover,
 .btn-default.btn-colored:active,
 .btn-default.btn-colored:focus { background: #f0f0f0 !important; }
+
+.btn-group > .btn { border-radius: 0; margin: 0; }
 
 .ripple { overflow: hidden; position: relative; transition: all .5s ease 0s; }
 .ripple-effect {

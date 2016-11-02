@@ -32,7 +32,7 @@ foreach ($items as $key => $row) {
 <article class="panel-body">
 	<div class="card">
 		<div class="card-heading css" data-background-image="url(<?php echo $row['image'];?>)">
-			<h3><a href="article-read.html"><?php echo $row['title'];?></a></h3>
+			<h3><a href="pages-blog-read.html"><?php echo $row['title'];?></a></h3>
 		</div>
 		<div class="card-body">
 			<p class="text-muted">26 Sep 2016, Fri 11:52</p>
@@ -45,7 +45,7 @@ foreach ($items as $key => $row) {
 			<a class="btn btn-default ripple btn-colored ajax" data-href="jsON/share.php" href="#">
 				<i class="ion ion-fw ion-android-share-alt"></i>
 			</a>
-			<a class="btn btn-default ripple btn-colored" href="article-read.html">
+			<a class="btn btn-default ripple btn-colored" href="pages-blog-read.html">
 				<i class="ion ion-fw ion-chatbubble"></i> <span>40</span>
 			</a>
 		</div>
