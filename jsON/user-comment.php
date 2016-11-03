@@ -33,14 +33,13 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-if (strlen($message) == '')
+if (strlen($message) == '') {
+	header('Content-Type: application/json', true, 422);
+
 	$array = [
-		"toast" => [
-			"text" => "Comment can not be empty!",
-			"timeOut" => 4000
-		]
+		"comment" => [ "Comment can not be empty!" ]
 	];
-else
+} else
 	$array = [
 		"toast" => [
 			"text" => "Comment sent...",

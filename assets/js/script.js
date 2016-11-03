@@ -10,10 +10,11 @@ var resizeTimer,
 	goTimer,
 	toastTimer,
 	modalTimer,
-	modalCloseDelay,
 	keyupTimer,
-    hashPrev,
     loadTimer;
+
+var modalCloseDelay;
+var hashPrev;
 
 $(window).on('load', function (e) {
 	w = $(window).width();
@@ -188,6 +189,16 @@ $(document).on('click', '.edit-class', function() {
         target.html(_this.data('text'))
 }).on('focus', '.error > .form-control', function() {
     $(this).parent('.error').removeClass('active')
+}).on('click', '.switch', function() {
+    var _this = $(this);
+
+    if (!_this.hasClass('disabled')) {
+        if (_this.data('type') == 'radio')
+            $('input[name=' + _this.data('name') + ']').parent('.switch').removeClass('active')
+
+        _this.hasClass('active') ? _this.removeClass('active') : _this.addClass('active')
+        _this.children('input').prop('checked', _this.hasClass('active') ? true : false)
+    }
 })
 
 function json_ajax(_this) {
@@ -284,7 +295,7 @@ function json_ajax(_this) {
                         var element = $('[name=' + key + ']');
 
                         if (element.parent('.error')) {
-                            element.parent('.error').addClass('active').children('.error-message').html(val[0])
+                            element.parent('.error').addClass('active').children('.error-text').html(val[0])
 
                             _this.next('.after-form-errors').remove();
                         }
@@ -503,6 +514,8 @@ function initial() {
             })
         })
     })
+
+    initSwitch()
 }
 
 function getScript(selector, file, func) {
@@ -575,7 +588,7 @@ function modal(obj) {
 		(obj.footer) ? panel.children('.panel-footer').html(obj.footer).show() : panel.children('.panel-footer').hide();
 		(obj.close == false) ? panel.children('.panel-close').hide() : panel.children('.panel-close').show();
         (obj.class) ? panel.removeClass().addClass('panel panel-material ' + obj.class) : '';
-		(obj.bodyClass) ? panel.children('.panel-body').removeClass().addClass('panel-body ' + obj.bodyClass) : '';
+		(obj.bodyClass) ? panel.children('.panel-body').removeClass().addClass('panel-body ' + obj.bodyClass) : panel.children('.panel-body').removeClass('gray');
 	
 		if (obj.closeDelay) {
             window.clearTimeout(modalCloseDelay);
@@ -597,4 +610,19 @@ function windowReady() {
             body.removeClass('drawer-active dock-active')
         else
         	body.addClass('drawer-active')
+}
+
+function initSwitch() {
+    $('.switch').each(function() {
+        var _this = $(this);
+
+        if (_this.children('input[name=' + _this.data('name') + ']').length == 0)
+            _this.append($('<input />', {
+                'type': _this.data('type') == 'checkbox' ? 'checkbox' : 'radio',
+                'class': 'hidden',
+                'value': _this.data('value'),
+                'name': _this.data('name'),
+                'id': _this.data('id')
+            }).prop('checked', _this.hasClass('active')?true:false))
+    })
 }

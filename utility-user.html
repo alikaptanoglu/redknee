@@ -223,7 +223,10 @@
 						</div>
 						<div class="panel-body">
 		            		<form method="post" action="jsON/user-comment.php" class="ajax" id="user-comment-form">
-		            			<textarea class="form-control autosize" name="comment" placeholder="Your comment"></textarea>
+		            			<div class="error">
+		            				<textarea class="form-control autosize" name="comment" placeholder="Your comment"></textarea>
+		            				<div class="error-text">This field can not be empty.</div>
+		            			</div>
 		            			<div class="text-right">
 		            				<button class="btn btn-default btn-colored ripple" type="submit">Submit</button>
 		            			</div>
