@@ -6,8 +6,8 @@ ob_start();
 <div class="row">
 	<div class="col-sm-8 col-md-9 col-lg-10">
 		<div class="panel panel-unstyled">
-			<div class="panel-heading">
-				<a href="utility-user.html">@janet</a>
+			<div class="panel-heading panel-heading-material">
+				<a href="utility-user.html">@jdoe</a>
 			</div>
 			<div class="list-group list-group-limit-lg chat">
 				<div class="list-group-item">

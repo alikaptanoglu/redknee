@@ -32,23 +32,23 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 		</div>
 		<div class="panel-collapse collapse<?php get('panel', 'pages', ' in');?>" id="collapsePages">
 			<div class="list-group">
-				<a class="list-group-item" href="pages-adventure-travel.html">Adventure Travel</a>
+				<a class="list-group-item disabled" href="pages-adventure-travel.html">Adventure Travel <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item<?php get('page', 'forum', ' active');?>" href="pages-forum.html">Forum</a>
-				<a class="list-group-item" href="pages-agency.html">Agency</a>
-				<a class="list-group-item" href="pages-app-landing.html">App Landing</a>
+				<a class="list-group-item disabled" href="pages-agency.html">Agency <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-app-landing.html">App Landing <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item<?php get('page', 'resume', ' active');?>" href="pages-resume.html">Resume</a>
-				<a class="list-group-item" href="pages-capital-film.html">Capital Film</a>
-				<a class="list-group-item" href="pages-fashion.html">Fashion</a>
-				<a class="list-group-item" href="pages-fitness.html">Fitness</a>
-				<a class="list-group-item" href="pages-restaurant.html">Restaurant</a>
-				<a class="list-group-item" href="pages-video.html">Video</a>
-				<a class="list-group-item" href="pages-winery.html">Winery</a>
-				<a class="list-group-item" href="pages-event-seminar.html">Event/Seminar</a>
-				<a class="list-group-item" href="pages-architecture.html">Architecture</a>
-				<a class="list-group-item" href="pages-photography.html">Photography</a>
-				<a class="list-group-item" href="pages-portfolio.html">Portfolio</a>
-				<a class="list-group-item" href="pages-shop.html">Shop</a>
-				<a class="list-group-item" href="pages-blog.html">Blog</a>
+				<a class="list-group-item disabled" href="pages-capital-film.html">Capital Film <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-fashion.html">Fashion <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-fitness.html">Fitness <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-restaurant.html">Restaurant <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-video.html">Video <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-winery.html">Winery <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-event-seminar.html">Event/Seminar <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-architecture.html">Architecture <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-photography.html">Photography <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-portfolio.html">Portfolio <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-shop.html">Shop <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="pages-blog.html">Blog <span class="badge">Coming Soon</span></a>
 			</div>
 		</div>
 	</div>
@@ -60,8 +60,8 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 		</div>
 		<div class="panel-collapse collapse<?php get('panel', 'utility', ' in');?>" id="collapseUtility">
 			<div class="list-group">
-				<a class="list-group-item" href="utility-about-us.html">About Us</a>
-				<a class="list-group-item" href="utility-about-me.html">About Me</a>
+				<a class="list-group-item disabled" href="utility-about-us.html">About Us <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item disabled" href="utility-about-me.html">About Me <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item<?php get('page', 'services', ' active');?>" href="utility-services.html">Services</a>
 				<a class="list-group-item<?php get('page', 'contact', ' active');?>" href="utility-contact.html">Contact</a>
 				<a class="list-group-item<?php get('page', 'signin', ' active');?>" href="utility-sign-in.html">Sign In</a>

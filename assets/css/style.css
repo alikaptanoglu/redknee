@@ -554,7 +554,7 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .panel-material > .panel-footer { background: transparent; }
 /*------*/
 .panel-unstyled { background: transparent; box-shadow: none; border-width: 0; }
-.panel-unstyled > .panel-heading { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
+.panel-unstyled > .panel-heading.panel-heading-material { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
 .panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
 /*------*/
 .card {  }
