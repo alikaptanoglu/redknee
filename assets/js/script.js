@@ -186,6 +186,8 @@ $(document).on('click', '.edit-class', function() {
         target.val(_this.data('text'))
     else
         target.html(_this.data('text'))
+}).on('focus', '.error > .form-control', function() {
+    $(this).parent('.error').removeClass('active')
 })
 
 function json_ajax(_this) {
@@ -270,14 +272,24 @@ function json_ajax(_this) {
                     msg = 'Uncaught Error.';
 
                 if (msg == 422) {
-                	_this.next('.after-form-errors').remove();
+
+                    _this.next('.after-form-errors').remove();
                     _this.after($('<div/>', { class: 'alert alert-danger after-form-errors closes' })).appendTo();
 
                     $('<ul/>', { class: 'list-group' }).appendTo('.after-form-errors');
 
-					$.each($.parseJSON(jqXHR.responseText), function(key, val) {
+                    $.each($.parseJSON(jqXHR.responseText), function(key, val) {
                         $('<li/>', { class: 'list-group-item', html: val }).appendTo('.after-form-errors > .list-group');
+
+                        var element = $('[name=' + key + ']');
+
+                        if (element.parent('.error')) {
+                            element.parent('.error').addClass('active').children('.error-message').html(val[0])
+
+                            _this.next('.after-form-errors').remove();
+                        }
                     })
+
                 } else {
                     toast(msg, 2000)
                 	modal({ 'heading': msg, 'body': jqXHR.responseText, 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1' })

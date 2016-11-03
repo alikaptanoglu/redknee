@@ -685,13 +685,18 @@ body.search-active > .search { margin: 48px 0 0; }
     to { transform: scale(40); opacity: 0; }
 }
 
+.error > .error-message { margin: 2px 0 10px; visibility: hidden; }
+.error > .form-control { margin: 0; }
+.error.active { color: #f3343d; }
+.error.active > .form-control { border-color: #f3343d; }
+.error.active > .error-message { visibility: visible; }
+
 .form-control {
   resize: none;
   background: transparent;
   margin: 0 0 10px;
-  border-width: 0 0 1px;
+  border-width: 1px;
   border-color: #f0f0f0;
-  box-shadow: none;
   cursor: pointer;
   border-radius: 0;
   color: #999;
