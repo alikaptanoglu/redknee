@@ -21,6 +21,16 @@ if (get('status') == 'confirmation') {
 			"class" => "col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1"
 		]
 	];
+} else if (get('status') == 'undo') {
+	$array = [
+		"html" => [
+			[
+				"content" => "<span class=\"text-danger\">Undo</span>",
+				"type" => "dom",
+				"target" => "this"
+			]
+		]
+	];
 } else {
 	if (get('id') == 'message-1')
 		$array = [

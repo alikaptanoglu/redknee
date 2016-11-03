@@ -17,6 +17,19 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 .text-icon { font-size: 36px; font-weight: 300; opacity: .8; line-height: 64px; }
 /*************/
 
+/* Chat */
+.chat > .list-group-item { border-width: 0 !important; }
+.chat > .list-group-item > .float > .col { display: table; width: 10%; }
+.chat > .list-group-item > .float > .col.message {
+	background: #fff;
+	max-width: 90%;
+	min-width: 50%;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1),
+                0 3px 1px -2px rgba(0, 0, 0, .1),
+                0 1px 5px 0 rgba(0, 0, 0, .1);
+    padding: 10px;
+}
+/*************/
 /* Padding & Margin */
 .pd-10 { padding: 10px; }
 .pd-20 { padding: 20px; }
@@ -541,6 +554,7 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .panel-material > .panel-footer { background: transparent; }
 /*------*/
 .panel-unstyled { background: transparent; box-shadow: none; border-width: 0; }
+.panel-unstyled > .panel-heading { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
 .panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
 /*------*/
 .card {  }

@@ -28,7 +28,7 @@ $(window).on('load', function (e) {
         var _this = $(this);
 
         setTimeout(function() {
-           json_ajax(_this, false);
+           json_ajax(_this);
         }, 100 + (i * 100));
 
     })
