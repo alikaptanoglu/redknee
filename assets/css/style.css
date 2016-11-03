@@ -106,7 +106,7 @@ a:hover { color: #999; }
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .2);
 	transform: translate(-100%);
 	transition: none;
 }
@@ -171,7 +171,9 @@ a:hover { color: #999; }
 /* List Group */
 .list-group { margin: 0; }
 .list-group > .list-group-item { background: transparent; border-width: 0; padding: 10px; border-radius: 0; }
+.list-group > .list-group-item.active { background: #ffe8cf; border-radius: 4px; }
 .list-group.list-group-limit { max-height: 100px; overflow: auto; }
+.list-group.list-group-limit-lg { max-height: 400px; overflow: auto; }
 /*************/
 
 /* Polling */

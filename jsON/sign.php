@@ -13,7 +13,7 @@ if ($q == 'in') {
 		<a href="utility-pwd.html"><i class="ion ion-fw ion-information"></i> Forgot your password?</a>
 	</div>
 	<div class="text-right">
-		<button type="submit" class="ajax btn btn-default btn-colored ripple">
+		<button type="submit" class="btn btn-default btn-colored ripple">
 			<i class="ion ion-fw ion-chevron-right"></i>
 		</button>
 	</div>
@@ -30,7 +30,7 @@ if ($q == 'in') {
 		<i class="ion ion-fw ion-information"></i> Example register form.
 	</div>
 	<div class="text-right">
-		<button type="submit" class="ajax btn btn-default btn-colored ripple">
+		<button type="submit" class="btn btn-default btn-colored ripple">
 			<i class="ion ion-fw ion-chevron-right"></i>
 		</button>
 	</div>
@@ -48,7 +48,7 @@ if ($q == 'in') {
 		<a href="utility-sign-up.html"><i class="ion ion-fw ion-information"></i> Or sign up</a>
 	</div>
 	<div class="text-right">
-		<button type="submit" class="ajax btn btn-default btn-colored ripple">
+		<button type="submit" class="btn btn-default btn-colored ripple">
 			<i class="ion ion-fw ion-chevron-right"></i>
 		</button>
 	</div>

@@ -21,7 +21,7 @@ ob_start();
 <div class="list-group-item" id="comment-<?php echo $id;?>">
 	<p>
 		<i class="ion ion-chatbubble ion-fw"></i>
-		<a href="#" class="hyper-user root">Admin</a> <a class="text-danger ajax" data-href="jsON/delete.php?id=comment-<?php echo $id;?>&status=confirmation" href="#">&times;</a>
+		<a href="#" class="hyper-user red bold">Admin</a> <a class="text-danger ajax" data-href="jsON/delete.php?id=comment-<?php echo $id;?>&status=confirmation" href="#">&times;</a>
 		<span class="text-muted">
 			<em>26 Sep 2016, Fri 11:52</em>
 		</span>

@@ -7,7 +7,7 @@ function get($key) { return preg_replace("/[^a-z0-9\-]/i","",(isset($_GET[$key])
 if (get('status') == 'confirmation') {
 	ob_start();
 	?>
-	Are you sure?
+	<p>Delete this item?</p>
 	<div class="text-right">
 		<a href="#" data-target="body" data-remove="modal-active" class="btn btn-default btn-colored ripple edit-class">CANCEL</a>
 		<a href="#" data-href="jsON/delete.php?id=<?php echo get('id')?>&status=ok" class="btn btn-default btn-colored ripple ajax">DELETE</a>
@@ -18,7 +18,7 @@ if (get('status') == 'confirmation') {
 		"modal" => [
 			"body" => $content,
 			"close" => false,
-			"class" => "col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1"
+			"class" => "col-lg-2 col-lg-offset-5 col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1"
 		]
 	];
 } else {

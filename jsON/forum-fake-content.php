@@ -23,7 +23,7 @@ if (get('q') == 'fast-reply') {
 						<a href="#" data-toggle="dropdown">@janetdoe <i class="caret"></i></a>
 						<ul class="dropdown-menu">
 							<li><a href="utility-user.html"><i class="ion ion-fw ion-person"></i> Profile</a></li>
-							<li><a href="utility-user-dm.html"><i class="ion ion-fw ion-chatbubbles"></i> Direct Message</a></li>
+							<li><a href="#" class="ajax" data-href="jsON/dm.php"><i class="ion ion-fw ion-chatbubbles"></i> Direct Message</a></li>
 						</ul>
 					</div>
 				</div>
