@@ -485,7 +485,7 @@ function hashchange(callback) {
         url = window.location.href.split('#')[1],
         time;
  
-    time = window.setInterval(function () {
+    time = window.setInterval(function() {
         hash = (window.location.href.split('#')[1] || '');
 
         if ((hashPrev !== hash) && (hash.length > 1)) {

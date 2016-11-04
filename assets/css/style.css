@@ -517,7 +517,7 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 	.headline.wide > .item:nth-of-type(4) { height: 150px; }
 }
 /*------*/
-.title { padding: 2% 0; background-size: 700px 100px; background-position: bottom center; }
+.title { padding: 4% 0; background-size: 700px 100px; background-position: bottom center; }
 .title > .ct > h1 { font-weight: 300; }
 .title > .ct > p { font-size: 16px; font-weight: 300; }
 .title.text-center > .ct > .img { float: none; margin: 16px auto; max-width: 128px; }
@@ -637,6 +637,7 @@ body.search-active > .search { margin: 48px 0 0; }
 /*************/
 /* Media */
 .media > .media-body > .media-heading > a > span { font-weight: 300; }
+.media-list > .media + .media { border-top: 1px solid #f0f0f0; margin: 15px 0 0; padding: 15px 0 0; }
 /* Button */
 .material-pager > ul.pagination > li > a,
 .btn {
