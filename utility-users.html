@@ -17,11 +17,11 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link href="manifest.json" rel="manifest">
 	</head>
-	<body class="preloader-active wide">
+	<body class="preloader-active">
 		<nav class="header">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<ul class="pull-left">
-					<li>
+					<li class="hidden-lg hidden-md">
 						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
 							<div class="disk"></div>
 							<div class="disk"></div>
@@ -62,7 +62,7 @@
 			</div>
 		</nav>
 		<div class="search">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
 					<input type="text" name="search" class="form-control" placeholder="Search" />
 					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
@@ -71,46 +71,33 @@
 				</form>
 			</div>
 		</div>
-		<div class="ct container">
+		<div class="ct container-fluid">
 			<ul class="breadcrumb">
 				<li>
 					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
 				</li>
-				<li><a href="pages-forum.html">Forum</a></li>
-				<li><a href="pages-forum-forum.html">Forum Category</a></li>
-				<li class="active"><strong>Forum Thread</strong></li>
+				<li class="active"><strong>Users</strong></li>
 			</ul>
 		</div>
 		<div class="hr"></div>
-		<main class="ct container forum">
-			<div class="text-right pdt-10">
-				<a href="#" data-href="jsON/like.php" class="btn btn-success btn-colored ripple ajax">
-					<i class="ion ion-fw ion-heart-broken"></i> Like
-				</a>
-				<a href="pages-forum-textarea.html" class="btn btn-primary btn-colored ripple">Reply</a>
-				<a href="pages-forum-textarea.html" class="btn btn-primary btn-colored ripple disabled">
-					<i class="ion ion-fw ion-locked"></i> Reply
-				</a>
-			</div>
-			<div class="load" data-href="jsON/forum-thread.php" data-pager="#forum-pager" id="forum">
-				<div class="rolling"></div>
-			</div>
-			<div id="forum-pager" class="material-pager"></div>
+		<main class="ct container-fluid">
 			<div class="row">
-				<div class="col-sm-6 col-sm-offset-3">
-					<div class="panel panel-material">
-						<div class="panel-body panel-body-padding">
-							<textarea class="autosize form-control" placeholder="Your message" name="message"></textarea>
-							<div class="text-right">
-								<a class="btn btn-default btn-colored ripple ajax" href="#" data-import="message" data-token="{code}" data-href="jsON/forum-fake-content.php?q=fast-reply">Submit</a>
-							</div>
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="panel panel-material" id="user-lists">
+						<div class="panel-heading">User List</div>
+						<div class="panel-body panel-body-padding load" data-href="jsON/user-list.php" data-pager="#user-pager">
+							<ul class="media-list">
+								<div class="rolling"></div>
+							</ul>
 						</div>
 					</div>
+					<div id="user-pager" class="material-pager"></div>
 				</div>
 			</div>
 		</main>
+
 		<footer class="mega">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<div class="row">
 					<div class="col col-sm-8 copyright">
 						<div class="text-icon">red<strong>knee</strong></div>
@@ -134,7 +121,7 @@
 		</footer>
 
 		<div class="drawer">
-			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=forum&panel=pages" data-type="get">
+			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=users&panel=utility" data-type="get">
 				<div class="rolling"></div>
 			</div>
 		</div>

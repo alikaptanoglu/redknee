@@ -400,6 +400,7 @@
     "thumbnails.less",
     "alerts.less",
     "progress-bars.less",
+    "media.less",
     "list-group.less",
     "panels.less",
     "responsive-embed.less",
@@ -422,5 +423,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=95870eeb96904eaba94a17f04effb966"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=596d2bd712fc96f1dfe4af0bf1d73920"
 }

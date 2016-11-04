@@ -87,7 +87,7 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 .radio > label,
 .checkbox > label { width: 100%; }
 
-.avatar { max-width: 96px; }
+.avatar { max-width: 72px; }
 
 a,
 a:visited,
@@ -517,7 +517,7 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 	.headline.wide > .item:nth-of-type(4) { height: 150px; }
 }
 /*------*/
-.title { padding: 4% 0; background-size: 700px 100px; background-position: bottom center; }
+.title { padding: 2% 0; background-size: 700px 100px; background-position: bottom center; }
 .title > .ct > h1 { font-weight: 300; }
 .title > .ct > p { font-size: 16px; font-weight: 300; }
 .title.text-center > .ct > .img { float: none; margin: 16px auto; max-width: 128px; }
@@ -635,6 +635,8 @@ footer.tiny a { font-weight: bold; }
 
 body.search-active > .search { margin: 48px 0 0; }
 /*************/
+/* Media */
+.media > .media-body > .media-heading > a > span { font-weight: 300; }
 /* Button */
 .material-pager > ul.pagination > li > a,
 .btn {

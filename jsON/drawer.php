@@ -68,6 +68,7 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 				<a class="list-group-item<?php get('page', 'signup', ' active');?>" href="utility-sign-up.html">Sign Up</a>
 				<a class="list-group-item<?php get('page', 'pwd', ' active');?>" href="utility-pwd.html">Password</a>
 				<a class="list-group-item<?php get('page', 'myaccount', ' active');?>" href="utility-my-account.html">My Account</a>
+				<a class="list-group-item<?php get('page', 'users', ' active');?>" href="utility-users.html">Users</a>
 				<a class="list-group-item<?php get('page', 'user', ' active');?>" href="utility-user.html">User</a>
 				<a class="list-group-item<?php get('page', 'faq', ' active');?>" href="utility-faq.html">F.A.Q.</a>
 			</div>

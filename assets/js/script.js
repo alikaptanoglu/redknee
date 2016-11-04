@@ -283,7 +283,6 @@ function json_ajax(_this) {
                     msg = 'Uncaught Error.';
 
                 if (msg == 422) {
-
                     _this.next('.after-form-errors').remove();
                     _this.after($('<div/>', { class: 'alert alert-danger after-form-errors closes' })).appendTo();
 
@@ -411,7 +410,34 @@ function json_ajax(_this) {
                             link = $('<a/>', { class: 'ripple', href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-right' }).appendTo(link);
 
-                    $(_this.data('pager')).html(pagination)
+                    var pager = _this.data('pager');
+
+                    if (pager == 'lazy') {
+                        $(window).scroll(function() {
+                           if ($(window).scrollTop() + $(window).height() > $(document).height() - 1) {
+                                var next = obj.pagination.current_page >= obj.pagination.total_page ? obj.pagination.current_page : parseInt(obj.pagination.current_page) + 1;
+
+                                window.location.hash = 'page-' + next;
+                           }
+                        })
+                    } else
+                        if ($(pager).hasClass('load-more')) {
+                            var next = obj.pagination.current_page >= obj.pagination.total_page ? obj.pagination.current_page : parseInt(obj.pagination.current_page) + 1,
+                                div = $('<div/>', {
+                                    'class': 'text-center'
+                                }),
+                                btn = $('<a/>', {
+                                    'href': '#page-' + next,
+                                    'class': 'btn btn-default btn-colored ripple',
+                                    'html': '<i class="ion ion-fw ion-refresh"></i>'
+                                }).appendTo(div);
+
+                            if (obj.pagination.current_page >= obj.pagination.total_page)
+                                $(pager).addClass('hidden')
+                            else
+                                $(pager).html(div).removeClass('hidden')
+                        } else
+                            $(pager).html(pagination)
                 }
 
                 if (obj.scrollTo) {
