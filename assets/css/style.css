@@ -517,11 +517,58 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 	.headline.wide > .item:nth-of-type(4) { height: 150px; }
 }
 /*------*/
-.title { padding: 4% 0; background-size: 700px 100px; background-position: bottom center; }
-.title > .ct > h1 { font-weight: 300; }
-.title > .ct > p { font-size: 16px; font-weight: 300; }
-.title.text-center > .ct > .img { float: none; margin: 16px auto; max-width: 128px; }
+.megatron {
+	background-size: cover;
+	background-attachment: fixed;
+}
+.megatron > .pattern { padding: 4% 0; }
+.megatron > .pattern > .ct > h1 { font-weight: 300; }
+.megatron > .pattern > .ct > p { font-size: 16px; font-weight: 300; }
 
+.megatron.shake h1 {
+		    animation: flicker 3s infinite;
+	-webkit-animation: flicker 3s infinite;
+}
+.megatron.shake p {
+	        animation: flicker 2s infinite;
+	-webkit-animation: flicker 2s infinite;
+}
+
+@-webkit-keyframes flicker {
+	0%, 43%, 47%, 61%, 63%, 97% {
+		transform: skew(0deg, 0deg);
+		opacity: 1;
+	}
+	45% {
+		transform: rotateX(60deg) scale(.8) skew(-100deg, 60deg);
+		opacity: .3;
+	}
+	62% {
+		opacity: .3;
+	}
+	100% {
+		transform: skew(60deg, 30deg);
+	}
+}
+@keyframes flicker{
+	0%, 43%, 47%, 61%, 63%, 97% {
+		-moz-transform: skew(0deg, 0deg);
+		     transform: skew(0deg, 0deg);
+		opacity: 1;
+	}
+	45% {
+		-moz-transform: rotateX(60deg) scale(.8) skew(-100deg, 60deg);
+		     transform: rotateX(60deg) scale(.8) skew(-100deg, 60deg);
+		     opacity: .3;
+	}
+	62% {
+		opacity: .3;
+	}
+	100% {
+		-moz-transform: skew(60deg, 30deg);
+		     transform:skew(60deg, 30deg);
+	}
+}
 /*------*/
 .panel-material { box-shadow: none; background: transparent; }
 .panel-material > .panel-heading { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }

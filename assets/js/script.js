@@ -507,7 +507,7 @@ function initial() {
         if (_this.data('backgroundImage'))
             _this.css('backgroundImage', _this.data('backgroundImage'))
         if (_this.data('color'))
-            _this.css('color', _this.data('color'))
+            _this.find('a').add(_this).css('color', _this.data('color'))
         if (_this.data('backgroundColor'))
             _this.css('backgroundColor', _this.data('backgroundColor'))
     })
