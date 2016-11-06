@@ -9,6 +9,7 @@ $id = rand(1, 99999999999);
 $array = [];
 
 if (get('q') == 'fast-reply') {
+	$message = nl2br(htmlspecialchars($_POST['message']));
 ?>
 <div class="panel panel-material" id="message-<?php echo $id;?>">
 	<div class="row">
@@ -57,7 +58,11 @@ if (get('q') == 'fast-reply') {
 		<div class="col-lg-9 col-md-8 col-sm-8">
 			<div class="panel panel-material">
 				<div class="panel-body panel-body-padding thread">
-	                <p>Fake reply (<?php echo $id;?>)</p>
+	                <p>
+					<?php
+					echo $message;
+					?>
+	                </p>
 	                <div class="signature">
 	                	Hey there! I'm using <a href="#">redknee</a>...
 	                </div>
@@ -87,8 +92,15 @@ if (get('q') == 'fast-reply') {
 	</div>
 </div>
 <?php
-	$content = ob_get_clean();
+$content = ob_get_clean();
 
+if (strlen($message) == '') {
+	header('Content-Type: application/json', true, 422);
+
+	$array = [
+		"message" => [ "Message can not be empty!" ]
+	];
+} else
 	$array = [
 		"html" => [
 			[ "type" => "append", "target" => "#forum", "content" => $content ],
@@ -101,7 +113,8 @@ if (get('q') == 'fast-reply') {
 		"scrollTo" => [
 			"element" => "#message-" . $id,
 			"tolerance" => "-72px"
-		]
+		],
+		"run" => [ "$('textarea').css('height', '')" ]
 	];
 } else if (get('q') == 'preview') {
 ?>
