@@ -501,17 +501,6 @@ function hashchange(callback) {
 }
 
 function initial() {
-    $('.css').each(function() {
-        var _this = $(this);
-
-        if (_this.data('backgroundImage'))
-            _this.css('backgroundImage', _this.data('backgroundImage'))
-        if (_this.data('color'))
-            _this.find('a').add(_this).css('color', _this.data('color'))
-        if (_this.data('backgroundColor'))
-            _this.css('backgroundColor', _this.data('backgroundColor'))
-    })
-
     $('[data-toggle=tooltip]').tooltip()
     $('[data-toggle=popover]').popover()
 

@@ -31,7 +31,7 @@ foreach ($items as $key => $row) {
 ?>
 <article class="panel-body">
 	<div class="card">
-		<div class="card-heading css" data-background-image="url(<?php echo $row['image'];?>)">
+		<div class="card-heading" style="background-image: url(<?php echo $row['image'];?>)">
 			<h3><a href="pages-blog-read.html"><?php echo $row['title'];?></a></h3>
 		</div>
 		<div class="card-body">

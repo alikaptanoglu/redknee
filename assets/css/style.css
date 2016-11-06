@@ -40,6 +40,11 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 .pd-50 { padding: 50px; }
 .pd-60 { padding: 60px; }
 
+.pd-10p { padding: 10%; }
+.pd-20p { padding: 20%; }
+.pd-30p { padding: 30%; }
+.pd-40p { padding: 40%; }
+
 .pdt-10 { padding-top: 10px; }
 .pdt-20 { padding-top: 20px; }
 .pdt-30 { padding-top: 30px; }
@@ -94,13 +99,6 @@ a:visited,
 a:link,
 a:active { color: #444; }
 a:hover { color: #999; }
-
-.css {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-attachment: scroll;
-	background-size: cover;
-}
 
 .badge {
 	border-radius: 2px;
@@ -472,7 +470,7 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 /*------*/
 .headline > .item {
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center;
 	background-size: cover;
 	padding: 0;
 	height: 200px;
@@ -520,16 +518,19 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .megatron {
 	background-size: cover;
 	background-attachment: fixed;
+	background-position: center;
 }
 .megatron > .pattern { padding: 4% 0; }
+.megatron > .pattern.pattern-dark { background-color: rgba(0, 0, 0, .5); color: #fff; }
+.megatron > .pattern.pattern-dark a { color: #fff; }
 .megatron > .pattern > .ct > h1 { font-weight: 300; }
 .megatron > .pattern > .ct > p { font-size: 16px; font-weight: 300; }
 
-.megatron.shake h1 {
+.megatron.megatron-shake h1 {
 		    animation: flicker 3s infinite;
 	-webkit-animation: flicker 3s infinite;
 }
-.megatron.shake p {
+.megatron.megatron-shake p {
 	        animation: flicker 2s infinite;
 	-webkit-animation: flicker 2s infinite;
 }
@@ -607,7 +608,12 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
 /*------*/
 .card {  }
-.card > .card-heading { border-radius: 2px 2px 0 0; }
+.card > .card-heading {
+	border-radius: 2px 2px 0 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
 .card > .card-heading > h3 {
 	display: block;
 	height: 100%;
