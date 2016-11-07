@@ -530,6 +530,10 @@ function initial() {
         })
     })
 
+    $('.carousel').carousel({
+        interval: 5000
+    })
+
     initSwitch()
 }
 
