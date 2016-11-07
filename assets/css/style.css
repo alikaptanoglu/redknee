@@ -496,7 +496,6 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .headline > .item > a > .type.video:after { content: '\f215'; }
 .headline > .item > a > .type.photo:after { content: '\f148'; }
 .headline > .item > a > .type.article:after { content: '\f12f'; }
-
 .headline > .item > a > .title { color: #fff; font-size: 16px; }
 
 @media(max-width: 767px) {
@@ -516,15 +515,25 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 }
 /*------*/
 .megatron {
-	background-size: cover;
 	background-attachment: fixed;
 	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
-.megatron > .pattern { padding: 4% 0; }
-.megatron > .pattern.pattern-dark { background-color: rgba(0, 0, 0, .5); color: #fff; }
-.megatron > .pattern.pattern-dark a { color: #fff; }
-.megatron > .pattern > .ct > h1 { font-weight: 300; }
-.megatron > .pattern > .ct > p { font-size: 16px; font-weight: 300; }
+.megatron > .megatron-overlay {
+	padding: 4% 0;
+}
+.megatron > .megatron-overlay-light {
+	background-color: rgba(255, 255, 255, .5);
+}
+.megatron > .megatron-overlay-dark {
+	background-color: rgba(0, 0, 0, .5);
+	color: #fff;
+}
+.megatron > .megatron-overlay-dark a { color: #fff; }
+
+.megatron > .megatron-overlay > .ct > h1 { font-weight: 300; }
+.megatron > .megatron-overlay > .ct > p { font-size: 16px; font-weight: 300; }
 
 .megatron.megatron-shake h1 {
 		    animation: flicker 3s infinite;
