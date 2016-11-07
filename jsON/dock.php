@@ -16,9 +16,6 @@ ob_start();
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
 		</a>
 		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
-			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong>
-		</a>
-		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
 			<i class="ion ion-fw ion-ios-bell"></i> <strong>Dummy</strong> notification!
 		</a>
 		<a href="#" class="list-group-item text-muted" data-toggle="tooltip" title="26 Sep 2016, Fri 11:52" data-placement="left" data-container="body">
