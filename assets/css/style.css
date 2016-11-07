@@ -592,7 +592,15 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .panel-material > .panel-body.panel-body-padding { padding: 30px; }
 .panel-material > .panel-body.panel-body-unstyled { padding: 0; box-shadow: none; background: transparent; }
 .panel-material > .panel-body > p { padding: 10px 0; }
-.panel-material > .panel-body.panel-body-null { padding: 0; }
+.panel-material > .panel-body.panel-body-gallery {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding: 0;
+	overflow: hidden;
+}
+.panel-material > .panel-body.panel-body-gallery > a { background: rgba(255, 255, 255, .5); display: block; padding: 20% 10px 10px; }
+.panel-material > .panel-body.panel-body-gallery > a:hover { background: rgba(0, 0, 0, .5); color: #fff; }
 .panel-material > .panel-body + .panel-body { margin: 15px 0 0; }
 .panel-material > .list-group {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1),
@@ -628,10 +636,7 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .card > .card-footer a { margin: 0; }
 .card > .card-footer a > .ion { font-size: 16px; }
 /*------*/
-.gallery > .thumbnail { border-width: 0; margin: 0; padding: 0; }
-.gallery > .thumbnail + .thumbnail { margin: 10px 0 0; }
-.gallery > .thumbnail > .caption { padding: 40px 10px 10px; background: rgba(255, 255, 255, .7); }
-.gallery > .thumbnail > .caption:hover { background: rgba(255, 255, 255, .5); }
+
 /*------*/
 /* Timeline */
 
