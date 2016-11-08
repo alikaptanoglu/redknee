@@ -10,14 +10,14 @@
 
 .row > .col > .col-overlay { margin: 0 -15px; }
 .row > .col > .col-overlay-light { background: rgba(255, 255, 255, .5); }
-.row > .col > .col-overlay-dark { background: rgba(0, 0, 0, .5); color: #fff; }
-.row > .col > .col-overlay-dark a { color: #fff; }
+.row > .col > .col-overlay-dark { background: rgba(0, 0, 0, .5); color: rgba(255, 255, 255, .8); }
+.row > .col > .col-overlay-dark * { color: rgba(255, 255, 255, .8); }
 
-p { line-height: 24px; overflow: hidden; }
-p.single-line { height: 24px; }
-p.double-line { height: 48px; }
-p.triple-line { height: 72px; }
-p.quad-line { height: 96px; }
+p.line { line-height: 24px; overflow: hidden; }
+p.line-a { height: 24px; }
+p.line-dual { height: 48px; }
+p.line-triple { height: 72px; }
+p.line-quad { height: 96px; }
 
 body { overflow-x: hidden; }
 
@@ -43,8 +43,10 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 
 
 /*************/
-
-
+/* Plan */
+.plan > h3 { line-height: 48px; font-weight: 300; }
+.plan > p { padding: 10px 0; }
+.plan > .hr { padding: 1px 0 0; }
 
 
 
@@ -568,9 +570,8 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .megatron.megatron-mega > .megatron-overlay { padding: 15% 0; }
 .megatron > .megatron-overlay { padding: 6% 0; }
 .megatron > .megatron-overlay-light { background-color: rgba(255, 255, 255, .5); }
-.megatron > .megatron-overlay-dark { background-color: rgba(0, 0, 0, .5); color: #fff; }
-.megatron > .megatron-overlay-dark a { color: #fff; }
-
+.megatron > .megatron-overlay-dark { background-color: rgba(0, 0, 0, .5); color: rgba(255, 255, 255, .5); }
+.megatron > .megatron-overlay-dark * { color: rgba(255, 255, 255, .5); }
 .megatron > .megatron-overlay > .ct > h1 { font-weight: 300; }
 .megatron > .megatron-overlay > .ct > p { font-size: 16px; font-weight: 300; }
 
@@ -642,7 +643,6 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 }
 .panel-material > .panel-body.note > p { border-left: 1px solid #c00; padding: 0 0 0 32px; }
 .panel-material > .panel-body > .card { margin: -10px; }
-.panel-material > .panel-body.panel-body-padding { padding: 30px; }
 .panel-material > .panel-body.panel-body-unstyled { padding: 0; box-shadow: none; background: transparent; }
 .panel-material > .panel-body > p { padding: 10px 0; }
 .panel-material > .panel-body.panel-body-gallery {
@@ -667,6 +667,9 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .panel-unstyled { background: transparent; box-shadow: none; border-width: 0; }
 .panel-unstyled > .panel-heading.panel-heading-material { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
 .panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
+/*------*/
+.panel > .panel-heading.panel-heading-2x { font-size: 32px; }
+.panel > .panel-body.panel-body-padding { padding: 30px; }
 /*------*/
 .card {  }
 .card > .card-heading {
@@ -758,10 +761,12 @@ body.search-active > .search { margin: 48px 0 0; }
   background: transparent;
   border-radius: 2px;
   color: #666;
+  font-weight: bold;
 }
 .btn:hover,
 .btn:active,
-.btn:focus { box-shadow: none; }
+.btn:focus,
+.material-pager > ul.pagination > li > a:hover { box-shadow: none; box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2); }
 
 .btn.active,
 .btn.focus { box-shadow: none; background: #333 !important; color: #fff; }
@@ -783,7 +788,16 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn-primary.btn-colored:focus { background: #005af1 !important; }
 .btn-default.btn-colored:hover,
 .btn-default.btn-colored:active,
-.btn-default.btn-colored:focus { background: #f0f0f0 !important; }
+.btn-default.btn-colored:focus { background: #efefef !important; }
+
+.btn-bordered { border: 1px solid; }
+.btn-bordered:hover { color: #fff !important; }
+.btn-info.btn-bordered { border-color: invert; color: #349ef3; }
+.btn-danger.btn-bordered { border-color: invert; color: #f3343d; }
+.btn-warning.btn-bordered { border-color: invert; color: #f3aa34; }
+.btn-success.btn-bordered { border-color: invert; color: #99cd5a; }
+.btn-primary.btn-bordered { border-color: invert; color: #005af1; }
+.btn-default.btn-bordered { border-color: invert; color: #999; }
 /*------*/
 .ripple { overflow: hidden; position: relative; transition: all .5s ease 0s; }
 .ripple-effect {
