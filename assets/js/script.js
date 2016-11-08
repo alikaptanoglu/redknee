@@ -300,10 +300,8 @@ function json_ajax(_this) {
                         }
                     })
 
-                } else {
-                    toast(msg, 2000)
-                	modal({ 'heading': msg, 'body': jqXHR.responseText, 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1' })
-                }
+                } else
+                	modal({ 'body': '<div class="text-danger"><i class="ion ion-fw ion-information"></i> ' + msg + '</div>', 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-5' })
 
                 body.removeClass('polling-active');
                 _this.removeClass('disabled wait');
