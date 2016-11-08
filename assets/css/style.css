@@ -14,7 +14,6 @@
 .row > .col > .col-overlay-dark * { color: rgba(255, 255, 255, .8); }
 
 p.line { line-height: 24px; overflow: hidden; }
-p.line-a { height: 24px; }
 p.line-dual { height: 48px; }
 p.line-triple { height: 72px; }
 p.line-quad { height: 96px; }
@@ -41,6 +40,8 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 #clients-carousel > .carousel-inner > .item > .row > .col > .img-responsive { display: table; margin: 0 auto; }
 
 
+
+/*************/
 
 /*************/
 /* Plan */
@@ -158,6 +159,11 @@ a:hover { color: #999; }
 /*************/
 /* Prıgress */
 .progress { height: 2px; margin: 0; }
+.progress > .progress-bar-red { background: #d12a27; }
+.progress > .progress-bar-green { background: #2e372e; }
+.progress > .progress-bar-blue { background: #30267e; }
+.progress > .progress-bar-purple { background: #412534; }
+.progress > .progress-bar-orange { background: #4c3c1e; }
 /*************/
 /* Overlay */
 .overlay {
@@ -570,8 +576,8 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .megatron.megatron-mega > .megatron-overlay { padding: 15% 0; }
 .megatron > .megatron-overlay { padding: 6% 0; }
 .megatron > .megatron-overlay-light { background-color: rgba(255, 255, 255, .5); }
-.megatron > .megatron-overlay-dark { background-color: rgba(0, 0, 0, .5); color: rgba(255, 255, 255, .5); }
-.megatron > .megatron-overlay-dark * { color: rgba(255, 255, 255, .5); }
+.megatron > .megatron-overlay-dark { background-color: rgba(0, 0, 0, .5); color: rgba(255, 255, 255, .7); }
+.megatron > .megatron-overlay-dark * { color: rgba(255, 255, 255, .7); }
 .megatron > .megatron-overlay > .ct > h1 { font-weight: 300; }
 .megatron > .megatron-overlay > .ct > p { font-size: 16px; font-weight: 300; }
 
@@ -752,6 +758,7 @@ body.search-active > .search { margin: 48px 0 0; }
 /* Media */
 .media > .media-body > .media-heading > a > span { font-weight: 300; }
 .media-list > .media + .media { border-top: 1px solid #f0f0f0; margin: 15px 0 0; padding: 15px 0 0; }
+.media > .media-left > img { width: 64px; }
 /* Button */
 .material-pager > ul.pagination > li > a,
 .btn {
