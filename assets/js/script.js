@@ -1,4 +1,8 @@
-var root = '';
+var root = '',
+    instagram = {
+        'userId': '2105600294',
+        'accessToken': '2105600294.1677ed0.fafcd049ee1e44f99165eddf925b9534',
+    };
 
 var w = 0,
 	body = $('body');
@@ -32,6 +36,18 @@ $(window).on('load', function (e) {
            json_ajax(_this);
         }, 100 + (i * 100));
 
+    })
+
+    getScript('.instagram', 'assets/js/instafeed.min.js', function(selector) {
+        $(selector).each(function() {
+            var _this = $(this),
+                html = _this.html();
+
+            if (html != '')
+                $.extend(instagram, { 'template': html })
+
+            var userFeed = new Instafeed($.extend(instagram, $(this).data())).run();
+        })
     })
 
 	initial()
@@ -502,10 +518,6 @@ function initial() {
     $('[data-toggle=tooltip]').tooltip()
     $('[data-toggle=popover]').popover()
 
-    $.ajaxSetup({
-       cache: true
-    })
-
     getScript('.maskedInput', 'assets/js/maskedinput.min.js', function(selector) {
         $(selector).each(function() {
             var _this = $(this);
@@ -539,10 +551,15 @@ function getScript(selector, file, func) {
     if (obj.length > 0) {
         if (obj.data('load'))
             func(selector)
-        else
+        else {
+            $.ajaxSetup({
+                cache: true
+            })
+
             $.getScript(root + file, function() {
                 func(selector)
             })
+        }
 
         obj.data('load', 'loaded')
     }

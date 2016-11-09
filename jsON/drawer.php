@@ -48,7 +48,7 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 				<a class="list-group-item disabled" href="pages-photography.html">Photography <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-portfolio.html">Portfolio <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-shop.html">Shop <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-blog.html">Blog <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item<?php get('page', 'blog', ' active');?>" href="pages-blog.html">Blog</a>
 			</div>
 		</div>
 	</div>

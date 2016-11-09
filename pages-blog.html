@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<meta name="description" content="RedKnee is the best">
+
+		<link rel="icon" href="favicon.ico">
+
+		<title>RedKnee | Multipurpose Template</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext&v=2" rel="stylesheet" crossorigin="anonymous">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/ionicons.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="manifest.json" rel="manifest">
+	</head>
+	<body class="preloader-active">
+		<nav class="header">
+			<div class="ct container-fluid">
+				<ul class="pull-left">
+					<li class="hidden-lg hidden-md">
+						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
+							<div class="disk"></div>
+							<div class="disk"></div>
+							<div class="disk"></div>
+						</a>
+					</li>
+					<li class="visible-lg visible-md">
+						<a href="index.html">
+							<div class="text-icon">red<strong>knee</strong></div>
+						</a>
+					</li>
+				</ul>
+				<ul class="pull-right">
+					<li>
+						<a href="#top" class="edit-class focus" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
+							<i class="ion ion-ios-search"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="edit-class ajax" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
+							<i class="ion ion-android-notifications"></i> <span class="badge" id="notification-badge">10+</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown">
+							<i class="ion ion-person"></i> <i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li><a class="ajax" data-href="jsON/sign.php?q=in" href="#"><i class="ion ion-fw ion-person"></i> Sign In</a></li>
+							<li><a class="ajax" data-href="jsON/sign.php?q=up" href="#"><i class="ion ion-fw ion-person-add"></i> Sign Up</a></li>
+							<li class="divider"></li>
+							<li><a class="ajax" data-href="jsON/sign.php?q=pw" href="#"><i class="ion ion-fw ion-help"></i> Forgotten Password</a></li>
+							<li class="divider"></li>
+							<li><a href="utility-my-account.html"><i class="ion ion-fw ion-person"></i> My Account</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="search">
+			<div class="ct container-fluid">
+				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
+					<input type="text" name="search" class="form-control" placeholder="Search" />
+					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
+						<i class="ion ion-ios-close-empty"></i>
+					</a>
+				</form>
+			</div>
+		</div>
+		<div class="ct container-fluid">
+			<ul class="breadcrumb">
+				<li>
+					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
+				</li>
+				<li class="active"><strong>Blog</strong></li>
+			</ul>
+		</div>
+		<section class="ct container-fluid">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-2 col-sm-7 col-sm-offset-1">
+					<div class="panel panel-material load" data-pager="#streaming-pager" data-href="jsON/streaming.php" id="streaming">
+						<div class="panel-heading"><i class="ion ion-fw ion-social-rss"></i> Blog</div>
+						<div class="rolling"></div>
+					</div>
+					<div id="streaming-pager" class="material-pager"></div>
+				</div>
+				<div class="col-lg-2 col-sm-3">
+					<div class="panel panel-soft text-right">
+						<div class="panel-heading">Categories</div>
+						<div class="panel-body">
+							<ul class="list-group">
+								<li class="list-group-item"><a href="#">Adobe Photoshop</a></li>
+								<li class="list-group-item"><a href="#">AutoCAD</a></li>
+								<li class="list-group-item"><a href="#">CorelDraw</a></li>
+								<li class="list-group-item"><a href="#">HTML5/CSS3</a></li>
+								<li class="list-group-item"><a href="#">Adobe Illustrator</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel panel-soft text-right">
+						<div class="panel-heading">Recent Posts</div>
+						<div class="panel-body">
+							<ul class="list-group">
+								<li class="list-group-item"><a href="#">Hello World</a></li>
+								<li class="list-group-item"><a href="#">Example Entry</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-material">
+						<div class="panel-heading text-right">Instagram</div>
+						<div class="panel-body instagram float" id="instafeed" data-sort-by="random" data-resolution="low_resolution" data-get="user" data-limit="6">
+							<a target="_blank" href="{{link}}" class="col col-xs-6"><img src="{{image}}" class="img-responsive img-rounded pd-10" /></a>
+						</div>
+					</div>
+
+					<div class="panel panel-soft">
+						<div class="panel-heading text-right">Tags</div>
+						<div class="panel-body">
+							<a href="#"><i class="ion ion-fw ion-ios-pricetag-outline"></i>#foo</a>
+							<a href="#"><i class="ion ion-fw ion-ios-pricetag-outline"></i>#lorem</a>
+							<a href="#"><i class="ion ion-fw ion-ios-pricetag-outline"></i>#besttheme</a>
+							<a href="#"><i class="ion ion-fw ion-ios-pricetag-outline"></i>#theme</a>
+							<a href="#"><i class="ion ion-fw ion-ios-pricetag-outline"></i>#example</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="mega">
+			<div class="ct container-fluid">
+				<div class="row">
+					<div class="col col-sm-8 copyright">
+						<div class="text-icon">red<strong>knee</strong></div>
+						<p class="text-muted">Copyright © 2017 <a href="http://redknee.wutlu.com" target="_blank">RedKnee</a> | All rights reserved.</p>
+						<p>
+							<a href="#">Terms and Conditions</a> | 
+							<a href="#">Cookie Policy</a> | 
+							<a href="#">Help</a>
+						</p>
+					</div>
+					<div class="col col-sm-4 social">
+						<h3>Social Connections</h3>
+						<a class="btn btn-default btn-colored ripple" href="#"><i class="ion ion-fw ion-social-facebook"></i></a>
+						<a class="btn btn-default btn-colored ripple" href="#"><i class="ion ion-fw ion-social-twitter"></i></a>
+						<a class="btn btn-default btn-colored ripple" href="#"><i class="ion ion-fw ion-social-instagram"></i></a>
+						<a class="btn btn-default btn-colored ripple" href="#"><i class="ion ion-fw ion-social-googleplus"></i></a>
+						<a class="btn btn-default btn-colored ripple" href="#"><i class="ion ion-fw ion-social-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="drawer">
+			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=blog&amp;panel=pages" data-type="get">
+				<div class="rolling"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
+
+		<div class="preloader">
+			<div class="rolling"></div>
+			<p>a few seconds</p>
+		</div>
+		<div class="polling">
+			<div class="rolling"></div>
+		</div>
+
+		<div class="toast closes">
+			<div class="toast-content">Toast Alert...</div>
+		</div>
+
+		<a href="#top" class="page-top">
+			<i class="ion ion-chevron-up"></i>
+		</a>
+
+		<div class="dock">
+			<div class="rolling"></div>
+		</div>
+		<div class="overlay overlay-dock edit-class" data-remove="dock-active" data-target="body"></div>
+
+		<div class="modal float">
+			<div class="panel panel-material col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+				<div class="panel-heading"></div>
+				<div class="panel-close edit-class" data-remove="modal-active" data-target="body">
+					<i class="ion ion-ios-close-empty"></i>
+				</div>
+				<div class="panel-body"></div>
+				<div class="panel-footer"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-modal"></div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+		<script src="assets/js/script.js?v=0.7"></script>
+	</body>
+</html>
