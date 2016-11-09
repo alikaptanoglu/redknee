@@ -79,16 +79,44 @@
 				<li class="active"><strong>Blog</strong></li>
 			</ul>
 		</div>
-		<section class="ct container-fluid">
+		<section class="ct container-fluid pd">
 			<div class="row">
-				<div class="col-lg-6 col-lg-offset-2 col-sm-7 col-sm-offset-1">
+				<div class="col-sm-10 col-sm-offset-1">
+					<div class="headline float">
+						<div style="background-image: url(upload/example-small.jpg)" class="item col-lg-5 col-md-4 col-sm-6">
+							<a href="#">
+								<div class="type photo">PHOTO</div>
+								<div class="title">In semper augue vitae porttitor pellentesque</div>
+							</a>
+						</div>
+						<div style="background-image: url(upload/example-small-2.jpg)" class="item col-lg-4 col-md-4 col-sm-6">
+							<a href="#">
+								<div class="type video">VIDEO</div>
+								<div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+							</a>
+						</div>
+						<div style="background-image: url(upload/example-small-3.jpg)" class="item col-lg-3 col-md-4 col-sm-6">
+							<a href="#">
+								<div class="type video">VIDEO</div>
+								<div class="title">Nullam eleifend diam Nullam eleifend diam Nullam eleifend diam</div>
+							</a>
+						</div>
+						<div style="background-image: url(upload/example-small-4.jpg)" class="item col-lg-3 col-md-4 col-sm-6">
+							<a href="#">
+								<div class="type article">ARTICLE</div>
+								<div class="title">Maecenas sagittis orci</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-7 col-sm-offset-1">
 					<div class="panel panel-material load" data-pager="#streaming-pager" data-href="jsON/streaming.php" id="streaming">
 						<div class="panel-heading"><i class="ion ion-fw ion-social-rss"></i> Blog</div>
 						<div class="rolling"></div>
 					</div>
 					<div id="streaming-pager" class="material-pager"></div>
 				</div>
-				<div class="col-lg-2 col-sm-3">
+				<div class="col-sm-3">
 					<div class="panel panel-soft text-right">
 						<div class="panel-heading">Categories</div>
 						<div class="panel-body">
@@ -113,13 +141,15 @@
 
 					<div class="panel panel-material">
 						<div class="panel-heading text-right">Instagram</div>
-						<div class="panel-body instagram float" id="instafeed" data-sort-by="random" data-resolution="low_resolution" data-get="user" data-limit="6">
-							<a target="_blank" href="{{link}}" class="col col-xs-6"><img src="{{image}}" class="img-responsive img-rounded pd-10" /></a>
+						<div class="panel-body instagram float" id="instafeed" data-sort-by="random" data-resolution="low_resolution" data-get="user" data-limit="9">
+							<a target="_blank" href="{{link}}" class="col col-xs-4">
+								<img src="{{image}}" class="img-responsive img-rounded pd-5" />
+							</a>
 						</div>
 					</div>
 
-					<div class="panel panel-soft">
-						<div class="panel-heading text-right">Tags</div>
+					<div class="panel panel-soft text-right">
+						<div class="panel-heading">Tags</div>
 						<div class="panel-body">
 							<a href="#"><i class="ion ion-fw ion-ios-pricetag-outline"></i>#foo</a>
 							<a href="#"><i class="ion ion-fw ion-ios-pricetag-outline"></i>#lorem</a>

@@ -20,6 +20,10 @@ $array = [
 		[
 			"type" => "remove",
 			"target" => ".successfully"
+		],
+		[
+			"type" => "reset",
+			"target" => "this"
 		]
 	]
 ];

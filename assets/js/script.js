@@ -203,7 +203,7 @@ $(document).on('click', '.edit-class', function() {
         target.val(_this.data('text'))
     else
         target.html(_this.data('text'))
-}).on('focus', '.error > .form-control', function() {
+}).on('focus, click', '.error > .form-control', function() {
     $(this).parent('.error').removeClass('active')
 }).on('click', '.switch', function() {
     var _this = $(this);
@@ -474,6 +474,8 @@ function json_ajax(_this) {
             	_this.removeClass('disabled wait')
 
                 initial()
+
+                _this.find('.error').removeClass('active')
             }
          })
     }, 200)
