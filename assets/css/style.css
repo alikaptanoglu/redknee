@@ -513,7 +513,7 @@ body.drawer-active.wide > nav.header { left: 0; }
 	body.drawer-active > nav.header { left: 0; }
 }
 /*************/
-main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
+section.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 /* BreadCrumb */
 .breadcrumb { margin: 0; border-radius: 0; }
 .breadcrumb > li.active { font-weight: bold; }
@@ -576,8 +576,8 @@ main.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 .megatron.megatron-mega > .megatron-overlay { padding: 15% 0; }
 .megatron > .megatron-overlay { padding: 6% 0; }
 .megatron > .megatron-overlay-light { background-color: rgba(255, 255, 255, .5); }
-.megatron > .megatron-overlay-dark { background-color: rgba(0, 0, 0, .5); color: rgba(255, 255, 255, .7); }
-.megatron > .megatron-overlay-dark * { color: rgba(255, 255, 255, .7); }
+.megatron > .megatron-overlay-dark { background-color: rgba(0, 0, 0, .5); color: #fff; }
+.megatron > .megatron-overlay-dark * { color: #fff; }
 .megatron > .megatron-overlay > .ct > h1 { font-weight: 300; }
 .megatron > .megatron-overlay > .ct > p { font-size: 16px; font-weight: 300; }
 
