@@ -408,20 +408,20 @@ function json_ajax(_this) {
                     if (parseInt(obj.pagination.current_page) > 3) 
                         var page = parseInt(obj.pagination.current_page) - 1,
                             btn = $('<li/>').appendTo(pagination),
-                            link = $('<a/>', { class: 'ripple', href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
+                            link = $('<a/>', { class: 'ripple btn btn-default', href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-left' }).appendTo(link);
 
                     if (obj.pagination.total_page > 1)
                         for (var i = parseInt(obj.pagination.current_page)-3; i <= parseInt(obj.pagination.current_page)+3; i++) {
                             if (i >= 1 && i <= obj.pagination.total_page)
                                 var btn = $('<li/>', { class: (i == obj.pagination.current_page) ? 'active' : '' }).appendTo(pagination),
-                                    link = $('<a/>', { class: 'ripple', href: '#page-' + i, html: i }).appendTo(btn);
+                                    link = $('<a/>', { class: 'ripple btn btn-default', href: '#page-' + i, html: i }).appendTo(btn);
                         }
 
                     if (obj.pagination.total_page > parseInt(obj.pagination.current_page)+3)
                         var page = parseInt(obj.pagination.current_page) + 1,
                             btn = $('<li/>').appendTo(pagination),
-                            link = $('<a/>', { class: 'ripple', href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
+                            link = $('<a/>', { class: 'ripple btn btn-default', href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-right' }).appendTo(link);
 
                     var pager = _this.data('pager');
@@ -442,7 +442,7 @@ function json_ajax(_this) {
                                 }),
                                 btn = $('<a/>', {
                                     'href': '#page-' + next,
-                                    'class': 'btn btn-default btn-colored ripple',
+                                    'class': 'btn btn-default ripple',
                                     'html': '<i class="ion ion-fw ion-refresh"></i>'
                                 }).appendTo(div);
 

@@ -163,7 +163,7 @@ ob_start();
 	</div>
 
 	<div class="text-right">
-		<a class="btn btn-danger btn-colored edit-class ripple" data-target=".search-results" data-add="hidden" href="#">
+		<a class="btn btn-danger edit-class ripple" data-target=".search-results" data-add="hidden" href="#">
 			&times;
 		</a>
 	</div>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<meta name="description" content="RedKnee is the best">
+
+		<link rel="icon" href="favicon.ico">
+
+		<title>RedKnee | Multipurpose Template</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,latin-ext&v=2" rel="stylesheet" crossorigin="anonymous">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/css/ionicons.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="manifest.json" rel="manifest">
+	</head>
+	<body class="preloader-active wide">
+		<nav class="header">
+			<div class="ct container">
+				<ul class="pull-left">
+					<li>
+						<a href="#" class="edit-class drawer-menu" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
+							<div class="disk"></div>
+							<div class="disk"></div>
+							<div class="disk"></div>
+						</a>
+					</li>
+					<li class="visible-lg visible-md">
+						<a href="index.html">
+							<div class="text-icon">red<strong>knee</strong></div>
+						</a>
+					</li>
+				</ul>
+				<ul class="pull-right">
+					<li>
+						<a href="#top" class="edit-class focus" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
+							<i class="ion ion-ios-search"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="edit-class ajax" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
+							<i class="ion ion-android-notifications"></i> <span class="badge" id="notification-badge">10+</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" data-toggle="dropdown">
+							<i class="ion ion-person"></i> <i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li><a class="ajax" data-href="jsON/sign.php?q=in" href="#"><i class="ion ion-fw ion-person"></i> Sign In</a></li>
+							<li><a class="ajax" data-href="jsON/sign.php?q=up" href="#"><i class="ion ion-fw ion-person-add"></i> Sign Up</a></li>
+							<li class="divider"></li>
+							<li><a class="ajax" data-href="jsON/sign.php?q=pw" href="#"><i class="ion ion-fw ion-help"></i> Forgotten Password</a></li>
+							<li class="divider"></li>
+							<li><a href="utility-my-account.html"><i class="ion ion-fw ion-person"></i> My Account</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="search">
+			<div class="ct container">
+				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
+					<input type="text" name="search" class="form-control" placeholder="Search" />
+					<a href="#" class="times edit-class" data-remove="search-active" data-target="body">
+						<i class="ion ion-ios-close-empty"></i>
+					</a>
+				</form>
+			</div>
+		</div>
+		<div class="ct container">
+			<ul class="breadcrumb">
+				<li>
+					<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
+				</li>
+				<li class="active"><strong>About Me</strong></li>
+			</ul>
+		</div>
+		<section class="ct container pd">
+			<div class="row">
+				<div class="col-sm-4">
+					<div id="about-me-carousel" class="carousel slide">
+						<ol class="carousel-indicators">
+							<li data-target="#about-me-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#about-me-carousel" data-slide-to="1"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="upload/john-1.jpg" alt="..." />
+							</div>
+							<div class="item">
+								<img src="upload/john-2.jpg" alt="..." />
+							</div>
+						</div>
+						<a class="carousel-control left" href="#about-me-carousel" data-slide="prev">
+							<i class="ion ion-fw ion-ios-arrow-left"></i>
+						</a>
+						<a class="carousel-control right" href="#about-me-carousel" data-slide="next">
+							<i class="ion ion-fw ion-ios-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-soft">
+						<div class="panel-body">
+							<h3 class="panel-heading">John Doe</h3>
+							<p class="line text-muted">HR DIRECTOR</p>
+							<p class="line text-muted pdt-5">Lorem ipsum dolor sit amet, quod nusquam eos at, pro ut diam ornatus. Invenire honestatis ei ius, no fastidii accusamus mel. No facer mediocritatem per, atqui definiebas elaboraret no nam, probo laudem ei nam. Diam delenit ea eos, et nulla assentior pri, pri eu falli iusto.</p>
+							<div class="btn-group pdt-10">
+								<a class="btn btn-info btn-warning btn-bordered ripple" href="#"><i class="ion ion-fw ion-social-facebook"></i></a>
+								<a class="btn btn-info btn-warning btn-bordered ripple" href="#"><i class="ion ion-fw ion-social-twitter"></i></a>
+								<a class="btn btn-info btn-warning btn-bordered ripple" href="#"><i class="ion ion-fw ion-social-instagram"></i></a>
+								<a class="btn btn-info btn-warning btn-bordered ripple" href="#"><i class="ion ion-fw ion-social-googleplus"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="media-list">
+						<div class="media">
+							<div class="media-left">
+								<img class="media-object img-circle" src="assets/img/adobe/ai.png" alt="...">
+							</div>
+							<div class="media-body">
+								<div class="row">
+									<div class="col-xs-6 text-left text-muted">
+										<div class="pd-10"><strong>Adobe Illustrator</strong></div>
+									</div>
+									<div class="col-xs-6 text-right text-muted">
+										<div class="pd-10"><strong>60%</strong></div>
+									</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-orange" style="width: 60%;"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="media">
+							<div class="media-left">
+								<img class="media-object img-circle" src="assets/img/adobe/ps.png" alt="...">
+							</div>
+							<div class="media-body">
+								<div class="row">
+									<div class="col-xs-6 text-left text-muted">
+										<div class="pd-10"><strong>Adobe Photoshop</strong></div>
+									</div>
+									<div class="col-xs-6 text-right text-muted">
+										<div class="pd-10"><strong>90%</strong></div>
+									</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-blue" style="width: 90%;"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="media">
+							<div class="media-left">
+								<img class="media-object img-circle" src="assets/img/adobe/dw.png" alt="...">
+							</div>
+							<div class="media-body">
+								<div class="row">
+									<div class="col-xs-6 text-left text-muted">
+										<div class="pd-10"><strong>Adobe Dreamweaver</strong></div>
+									</div>
+									<div class="col-xs-6 text-right text-muted">
+										<div class="pd-10"><strong>40%</strong></div>
+									</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-green" style="width: 40%;"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="media">
+							<div class="media-left">
+								<img class="media-object img-circle" src="assets/img/adobe/f.png" alt="...">
+							</div>
+							<div class="media-body">
+								<div class="row">
+									<div class="col-xs-6 text-left text-muted">
+										<div class="pd-10"><strong>Adobe Flash</strong></div>
+									</div>
+									<div class="col-xs-6 text-right text-muted">
+										<div class="pd-10"><strong>20%</strong></div>
+									</div>
+								</div>
+								<div class="progress">
+									<div class="progress-bar progress-bar-red" style="width: 20%;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="ct container">
+			<div class="pdt-10p pdb-10p">
+				<div id="about-me-carousel-2" class="carousel slide">
+					<ol class="carousel-indicators" style="bottom: -32px;">
+						<li data-target="#about-me-carousel-2" data-slide-to="0" class="active"></li>
+						<li data-target="#about-me-carousel-2" data-slide-to="1"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="panel panel-material">
+										<div class="panel-body">
+											<div class="card">
+												<div class="card-heading" style="background-image: url(upload/example-small.jpg)">
+													<h3><a href="#">Sed ac mi fringilla</a></h3>
+												</div>
+												<div class="card-body">
+													<p class="text-muted">In venenatis quam vel fringilla pharetra.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="panel panel-material">
+										<div class="panel-body">
+											<div class="card">
+												<div class="card-heading" style="background-image: url(upload/example-small-2.jpg)">
+													<h3><a href="#">Donec suscipit lacus non</a></h3>
+												</div>
+												<div class="card-body">
+													<p class="text-muted">Mauris sed orci non velit tristique porttitor.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="panel panel-material">
+										<div class="panel-body">
+											<div class="card">
+												<div class="card-heading" style="background-image: url(upload/example-small-3.jpg)">
+													<h3><a href="#">Sed ac mi fringilla</a></h3>
+												</div>
+												<div class="card-body">
+													<p class="text-muted">Cras finibus metus quis pharetra rutrum.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="panel panel-material">
+										<div class="panel-body">
+											<div class="card">
+												<div class="card-heading" style="background-image: url(upload/example-small-4.jpg)">
+													<h3><a href="#">Praesent eu ligula ut orci</a></h3>
+												</div>
+												<div class="card-body">
+													<p class="text-muted">Donec suscipit lacus non enim pharetra sagittis.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="panel panel-material">
+										<div class="panel-body">
+											<div class="card">
+												<div class="card-heading" style="background-image: url(upload/example-small-2.jpg)">
+													<h3><a href="#">The cat is very beautiful</a></h3>
+												</div>
+												<div class="card-body">
+													<p class="text-muted">Quisque luctus sapien at velit.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="panel panel-material">
+										<div class="panel-body">
+											<div class="card">
+												<div class="card-heading" style="background-image: url(upload/example-small.jpg)">
+													<h3><a href="#">Cats Love</a></h3>
+												</div>
+												<div class="card-body">
+													<p class="text-muted">Maecenas ut tortor vitae neque maximus gravida.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="ct container">
+			<div class="pdb-10p">
+				<div class="panel panel-soft text-center">
+					<div class="panel-heading panel-heading-md">What Client Says</div>
+					<div class="panel-heading panel-heading-sm text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at elementum, ornare dui a, gravida dolor. Ut dictum ex eu velit molestie dapibus.</div>
+					<div class="hr hr-center"></div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="testimonials text-left">
+									<blockquote>
+										<p>Quisque facilisis arcu iaculis libero semper, mollis congue urna lacinia. Phasellus non turpis non arcu bibendum vulputate.</p>
+									</blockquote>
+									<div class="float">
+										<div class="pull-left img">
+											<img alt="..." src="upload/user.jpg" class="img-responsive img-circle avatar" />
+										</div>
+										<div class="pull-left card">
+											<p class="title">John Doe</p>
+		                      				<p class="text-muted">Commercial Director / Doe News</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6">
+								<div class="testimonials text-left">
+									<blockquote>
+										<p>Integer molestie nulla ullamcorper, ullamcorper mauris at, lacinia metus. Vivamus vitae nisl a tellus consequat porta.</p>
+									</blockquote>
+									<div class="float">
+										<div class="pull-left img">
+											<img alt="..." src="upload/user-4.jpg" class="img-responsive img-circle avatar" />
+										</div>
+										<div class="pull-left card">
+											<p class="title">Dwayne Jackson</p>
+		                      				<p class="text-muted">Commercial Director / Doe News</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div id="clients-carousel" class="carousel slide" data-interval="4000">
+	        <div class="carousel-inner">
+		        <div class="item active">
+		        	<div class="row">
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo1.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo2.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo3.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo4.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo5.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo6.png" /></div>
+					</div>
+		        </div>
+		        <div class="item">
+		        	<div class="row">
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo1.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo2.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo3.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo4.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo5.png" /></div>
+						<div class="col col-sm-2 col-xs-6 text-center"><img class="img-responsive" alt="..." src="assets/img/logos/logo6.png" /></div>
+					</div>
+		        </div>
+	        </div>
+        </div>
+		<footer class="mega">
+			<div class="ct container">
+				<div class="row">
+					<div class="col col-sm-8 copyright">
+						<div class="text-icon">red<strong>knee</strong></div>
+						<p class="text-muted">Copyright © 2017 <a href="http://redknee.wutlu.com" target="_blank">RedKnee</a> | All rights reserved.</p>
+						<p>
+							<a href="#">Terms and Conditions</a> | 
+							<a href="#">Cookie Policy</a> | 
+							<a href="#">Help</a>
+						</p>
+					</div>
+					<div class="col col-sm-4 social">
+						<h3>Social Connections</h3>
+						<a class="btn btn-default ripple" href="#"><i class="ion ion-fw ion-social-facebook"></i></a>
+						<a class="btn btn-default ripple" href="#"><i class="ion ion-fw ion-social-twitter"></i></a>
+						<a class="btn btn-default ripple" href="#"><i class="ion ion-fw ion-social-instagram"></i></a>
+						<a class="btn btn-default ripple" href="#"><i class="ion ion-fw ion-social-googleplus"></i></a>
+						<a class="btn btn-default ripple" href="#"><i class="ion ion-fw ion-social-youtube"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="drawer">
+			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=aboutme&amp;panel=utility" data-type="get">
+				<div class="rolling"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
+
+		<div class="preloader">
+			<div class="rolling"></div>
+			<p>a few seconds</p>
+		</div>
+		<div class="polling">
+			<div class="rolling"></div>
+		</div>
+
+		<div class="toast closes">
+			<div class="toast-content">Toast Alert...</div>
+		</div>
+
+		<a href="#top" class="page-top">
+			<i class="ion ion-chevron-up"></i>
+		</a>
+
+		<div class="dock">
+			<div class="rolling"></div>
+		</div>
+		<div class="overlay overlay-dock edit-class" data-remove="dock-active" data-target="body"></div>
+
+		<div class="modal float">
+			<div class="panel panel-material col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+				<div class="panel-heading"></div>
+				<div class="panel-close edit-class" data-remove="modal-active" data-target="body">
+					<i class="ion ion-ios-close-empty"></i>
+				</div>
+				<div class="panel-body"></div>
+				<div class="panel-footer"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-modal"></div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+		<script src="assets/js/script.js?v=0.7"></script>
+	</body>
+</html>

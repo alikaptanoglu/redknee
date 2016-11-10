@@ -9,8 +9,8 @@ if (get('status') == 'confirmation') {
 	?>
 	<p>Delete this item?</p>
 	<div class="text-right">
-		<a href="#" data-target="body" data-remove="modal-active" class="btn btn-default btn-colored ripple edit-class">CANCEL</a>
-		<a href="#" data-href="jsON/delete.php?id=<?php echo get('id')?>&status=ok" class="btn btn-default btn-colored ripple ajax">DELETE</a>
+		<a href="#" data-target="body" data-remove="modal-active" class="btn btn-default ripple edit-class">CANCEL</a>
+		<a href="#" data-href="jsON/delete.php?id=<?php echo get('id')?>&status=ok" class="btn btn-default ripple ajax">DELETE</a>
 	</div>
 	<?php
 	$content = ob_get_clean();
