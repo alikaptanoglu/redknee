@@ -52,8 +52,10 @@ $(window).on('load', function (e) {
 
 	initial()
 }).on('scroll', function(e) {
-    var st = $(this).scrollTop();
+    var st = $(this).scrollTop(),
+        header = $('.header-opacity');
 
+    (st > 100) ? header.addClass('active') : header.removeClass('active');
     (st > 800) ? body.addClass('top-active') : body.removeClass('top-active');
 }).on('resize', function(e) {
     if ($(window).width() != w) {

@@ -533,6 +533,7 @@ nav.header {
 	background: #ef4034;
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2);
 }
+nav.header.header-opacity.active { background: rgba(0, 0, 0, .2) }
 nav.header > .ct > ul > li { float: left; }
 nav.header > .ct > ul > li > a.drawer-menu { padding: 12px 14px; }
 nav.header > .ct > ul > li > a.drawer-menu > .disk { border-top: 1px solid rgba(255, 255, 255, .8); width: 32px; margin: 10px 0 6px; border-radius: 4px; }
@@ -611,6 +612,10 @@ section.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 	background-size: cover;
 }
 .megatron.megatron-mega > .megatron-overlay { padding: 15% 0; }
+.megatron.megatron-mega > .megatron-overlay > .ct > h1 { font-size: 64px; }
+@media (max-width: 767px) {
+	.megatron.megatron-mega > .megatron-overlay > .ct > h1 { font-size: 32px; }
+}
 .megatron > .megatron-overlay { padding: 6% 0; }
 .megatron > .megatron-overlay-light { background-color: rgba(255, 255, 255, .5); }
 .megatron > .megatron-overlay-dark { background-color: rgba(0, 0, 0, .5); color: #fff; }
@@ -812,12 +817,13 @@ body.search-active > .search { margin: 48px 0 0; }
 .media > .media-left.media-left-flex > img { width: auto; }
 /* Buttons */
 .btn {
-  text-transform: uppercase;
-  border-width: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  margin: 0 0 10px;
-  color: #666 !important;
+	text-transform: uppercase;
+	border-width: 0 !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	margin: 0 0 10px;
+	color: #666 !important;
+	border-radius: 4px;
 }
 .btn:active { box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2) !important; }
 
