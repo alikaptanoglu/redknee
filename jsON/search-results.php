@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 ob_start();
 ?>
-<div class="container-fluid search-results">
+<div class="ct container-fluid search-results pdt-20">
 	<div class="panel panel-material">
 		<div class="panel-heading">Search Results</div>
 

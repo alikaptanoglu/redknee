@@ -531,6 +531,20 @@ body.preloader-active > .preloader { transform: translate(0); }
 /*************/
 
 /* Header */
+.navbar-redknee {
+	background: #fff;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2);
+	border-width: 0;
+	margin: 0;
+}
+.navbar-redknee > .ct > .navbar-header > button > .icon-bar { background: #000; }
+.navbar-redknee > .ct > .navbar-header > .navbar-brand { margin: 0; }
+
+
+
+
+
+/*------*/
 nav.header {
 	position: fixed;
 	z-index: 750;
@@ -691,7 +705,7 @@ section.ct.br { border-width: 1px 0; border-style: solid; border-color: #ccc; }
 .panel-soft h6 { padding: 0; }
 /*------*/
 .panel-material { box-shadow: none; background: transparent; }
-.panel-material > .panel-heading { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
+.panel-material > .panel-heading { font-size: 24px; font-weight: 300; opacity: .9; }
 .panel-material > .panel-body {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1),
               0 3px 1px -2px rgba(0, 0, 0, .1),
@@ -733,11 +747,15 @@ section.ct.br { border-width: 1px 0; border-style: solid; border-color: #ccc; }
 .panel-unstyled > .panel-heading.panel-heading-material { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
 .panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
 /*------*/
+.panel > .panel-heading { cursor: default; }
 .panel > .panel-heading.panel-heading-md { font-size: 32px; }
+@media(max-width: 767px) {
+	.panel > .panel-heading.panel-heading-md { font-size: 24px; }
+}
 .panel > .panel-heading.panel-heading-sm { font-size: 16px; }
 .panel > .panel-body.panel-body-padding { padding: 30px; }
 .panel > .panel-image { display: block; width: 100%; }
-.panel > .panel-image > img { width: 96px; margin: 0 auto -48px; display: table; }
+.panel > .panel-image > img { width: 96px; margin: 0 auto -48px; display: table; box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2); z-index: 1; position: relative; }
 /*------*/
 .card > .card-heading {
 	border-radius: 2px 2px 0 0;
@@ -751,9 +769,13 @@ section.ct.br { border-width: 1px 0; border-style: solid; border-color: #ccc; }
 	height: 100%;
 	padding: 100px 20px 20px;
 	font-weight: 300;
-	background: rgba(178, 156, 134, .2);
+	background: rgba(178, 156, 134, .4);
 	color: #fff;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
 }
+.card.card-item > .card-heading > h3 { padding: 60px 20px; opacity: 0; }
+.card.card-item:hover > .card-heading > h3 { opacity: 1; }
+.card.card-item a { font-weight: bold; }
 .card.card-sm > .card-heading > h3 { padding: 60px 10px 20px; }
 .card.card-lg > .card-heading > h3 { padding: 40% 10px 20px; }
 .card > .card-heading > h3 > a { color: #fff; }
