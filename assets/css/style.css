@@ -576,6 +576,7 @@ body.drawer-active.wide > nav.header { left: 0; }
 /*************/
 section.ct.pd { padding-top: 15px; padding-bottom: 15px; }
 section.ct.br { border-width: 1px 0; border-style: solid; border-color: #ccc; }
+section.ct > .panel { margin: 0; }
 /* BreadCrumb */
 .breadcrumb { margin: 0; border-radius: 0; }
 .breadcrumb > li.active { font-weight: bold; }
@@ -724,15 +725,6 @@ section.ct.br { border-width: 1px 0; border-style: solid; border-color: #ccc; }
 .panel-material > .panel-body > .card { margin: -10px; }
 .panel-material > .panel-body.panel-body-unstyled { padding: 0; box-shadow: none; background: transparent; }
 .panel-material > .panel-body > p { padding: 10px 0; }
-.panel-material > .panel-body.panel-body-gallery {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	padding: 0;
-	overflow: hidden;
-}
-.panel-material > .panel-body.panel-body-gallery > a { background: rgba(255, 255, 255, .5); display: block; padding: 20% 10px 10px; }
-.panel-material > .panel-body.panel-body-gallery > a:hover { background: rgba(0, 0, 0, .5); color: #fff; }
 .panel-material > .panel-body + .panel-body { margin: 15px 0 0; }
 .panel-material > .list-group {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1),
@@ -746,6 +738,17 @@ section.ct.br { border-width: 1px 0; border-style: solid; border-color: #ccc; }
 .panel-unstyled { background: transparent; box-shadow: none; border-width: 0; }
 .panel-unstyled > .panel-heading.panel-heading-material { font-size: 24px; font-weight: 300; cursor: default; opacity: .9; }
 .panel-unstyled > .panel-collapse > .list-group { border-width: 0 !important; }
+/*------*/
+.panel.panel-gallery > .panel-body {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding: 0;
+	overflow: hidden;
+}
+.panel.panel-gallery > .panel-body > a { background: rgba(255, 255, 255, .5); display: block; padding: 20% 10px 10px; }
+.panel.panel-gallery > .panel-body > a:hover { background: rgba(0, 0, 0, .5); color: #fff; }
+
 /*------*/
 .panel > .panel-heading { cursor: default; }
 .panel > .panel-heading.panel-heading-md { font-size: 32px; }
