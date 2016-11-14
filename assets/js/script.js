@@ -446,8 +446,8 @@ function json_ajax(_this) {
                                 }),
                                 btn = $('<a/>', {
                                     'href': '#page-' + next,
-                                    'class': 'btn btn-default ripple',
-                                    'html': '<i class="ion ion-fw ion-refresh"></i>'
+                                    'class': 'btn btn-default rotate rotate-180 ripple',
+                                    'html': '<i class="ion ion-2x ion-fw ion-refresh"></i>'
                                 }).appendTo(div);
 
                             if (obj.pagination.current_page >= obj.pagination.total_page)
