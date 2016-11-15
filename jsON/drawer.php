@@ -41,7 +41,7 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 				<a class="list-group-item disabled" href="pages-fashion.html">Fashion <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-fitness.html">Fitness <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-restaurant.html">Restaurant <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item" href="pages-video.html">Video</a>
+				<a class="list-group-item<?php get('page', 'video', ' active');?>" href="pages-video.html">Video</a>
 				<a class="list-group-item disabled" href="pages-winery.html">Winery <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-event-seminar.html">Event/Seminar <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-architecture.html">Architecture <span class="badge">Coming Soon</span></a>
@@ -98,7 +98,7 @@ $array = [
 	"html" => [
 		[
 			"type" => "dom",
-			"target" => "this",
+			"target" => "this->find(.rolling)",
 			"content" => $content
 		]
 		
