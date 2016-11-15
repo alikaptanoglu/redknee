@@ -71,6 +71,23 @@ $(window).on('load', function (e) {
     w = $(window).width();
 })
 
+/*
+function directory(dir) {
+    var sp = dir.split('.');
+
+    if (dir.indexOf('.find')) {
+        $.each(sp, function(key, val) {
+            c(val)
+        })
+    } else {
+        c(eval(dir));
+    }
+}
+
+directory("body");
+directory("body.find(nav)");
+*/
+
 $(document).on('click', '.edit-class', function() {
     var _this = $(this);
 
