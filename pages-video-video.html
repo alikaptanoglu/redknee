@@ -164,22 +164,97 @@
 						</div>
 						<div class="panel-footer">
 							<a class="btn btn-default ripple" href="#">
-								<i class="ion ion-fw ion-plus"></i> Add to
+								<i class="ion ion-fw ion-plus"></i>
 							</a>
 							<a class="btn btn-default ripple" href="#">
-								<i class="ion ion-fw ion-android-share-alt"></i> Share
+								<i class="ion ion-fw ion-android-share-alt"></i>
 							</a>
-							<span class="dropdown">
-								<a class="btn btn-default ripple" data-toggle="dropdown" href="#">
-									<i class="ion ion-fw ion-more"></i>
-								</a>
-								<ul class="dropdown-menu pull-right">
-									<li><a href="#"><i class="ion ion-fw ion-flag"></i> Report</a></li>
-								</ul>
-							</span>
+							<a class="btn btn-default ripple" href="#">
+								<i class="ion ion-fw ion-flag"></i> Report
+							</a>
 						</div>
-						<div class="panel-body">
-							<p><strong>Published on May 9, 2015</strong></p>
+						<div class="panel-body panel-body-padding">
+							<div class="read-more edit-class" data-target="this" data-add="active">
+								<p><strong>Published on May 9, 2015</strong></p>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+								<p><strong>Category</strong> <a href="#">Music</a></p>
+								<p><strong>Category</strong> Standard RedKnee License</p>
+							</div>
+						</div>
+						<div class="panel-body panel-body-padding">
+							<form class="ajax" method="post" action="jsON/video-fake-comment.php">
+								<div class="error">
+									<textarea name="comment" type="text" class="form-control autosize" placeholder="Add a comment"></textarea>
+									<div class="error-text">Valid*</div>
+								</div>
+								<div class="text-right">
+									<button type="submit" class="btn btn-default">Submit</button>
+								</div>
+							</form>
+						</div>
+						<div class="panel-body panel-body-padding comments">
+							<div class="media-list">
+								<div class="media" id="video-comment-d2">
+									<div class="media-left">
+										<img class="media-object img-circle" src="upload/user.jpg" alt="...">
+									</div>
+									<div class="media-body">
+										<div class="row">
+											<div class="col-xs-8">
+												<p class="pd-5">
+													<a href="utility-user.html"><strong>John Doe</strong></a>
+													<a href="#" class="ajax" data-href="jsON/delete.php?id=video-comment-d2&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+													<a href="#"><i class="ion ion-fw ion-flag"></i></a>
+												</p>
+											</div>
+											<div class="col-xs-4 text-muted text-right">
+												<p class="pd-5">1d</p>
+											</div>
+											<div class="col-xs-12">
+												<p class="pd-5">Nulla facilisi. Nunc ullamcorper imperdiet suscipit. Maecenas rhoncus sed risus convallis suscipit. Ut eget elementum lectus, quis pulvinar nibh. Fusce vehicula diam nec risus eleifend, imperdiet suscipit felis viverra. Proin neque nibh, vehicula in porta a, lobortis sed nisl. Sed sagittis varius tristique. Aliquam erat volutpat.</p>
+												<p class="pd-5">
+													<a href="#">
+														<i class="ion ion-fw ion-thumbsup"></i> 21
+													</a>
+													<a href="#">
+														<i class="ion ion-fw ion-thumbsdown"></i> 10
+													</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="media" id="video-comment-d1">
+									<div class="media-left">
+										<img class="media-object img-circle" src="upload/user-1.jpg" alt="...">
+									</div>
+									<div class="media-body">
+										<div class="row">
+											<div class="col-xs-8">
+												<p class="pd-5">
+													<a href="utility-user.html"><strong>Janet</strong></a>
+													<a href="#" class="ajax" data-href="jsON/delete.php?id=video-comment-d1&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+													<a href="#"><i class="ion ion-fw ion-flag"></i></a>
+												</p>
+											</div>
+											<div class="col-xs-4 text-muted text-right">
+												<p class="pd-5">2d</p>
+											</div>
+											<div class="col-xs-12">
+												<p class="pd-5">Ut eget elementum lectus, quis pulvinar nibh. Fusce vehicula diam nec risus eleifend, imperdiet suscipit felis viverra. Proin neque nibh, vehicula in porta a, lobortis sed nisl. Sed sagittis varius tristique. Aliquam erat volutpat.</p>
+												<p class="pd-5">
+													<a href="#">
+														<i class="ion ion-fw ion-thumbsup"></i> 114
+													</a>
+													<a href="#">
+														<i class="ion ion-fw ion-thumbsdown"></i>
+													</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -55,8 +55,8 @@ $(window).on('load', function (e) {
     var st = $(this).scrollTop(),
         header = $('.header-opacity');
 
-    if (!header.hasClass('header-opacity-lock'))
-        (st > 100) ? header.addClass('active') : header.removeClass('active');
+    if (!header.hasClass('lock'))
+        (st > 164) ? header.addClass('active') : header.removeClass('active');
     (st > 800) ? body.addClass('top-active') : body.removeClass('top-active');
 }).on('resize', function(e) {
     if ($(window).width() != w) {
@@ -78,11 +78,11 @@ $(document).on('click', '.edit-class', function() {
         return false;
 
     if (_this.data('remove'))
-        $((_this.target == 'this')?_this:_this.data('target')).removeClass(_this.data('remove'))
+        $((_this.data('target') == 'this')?_this:_this.data('target')).removeClass(_this.data('remove'))
     if (_this.data('toggle'))
-        $((_this.target == 'this')?_this:_this.data('target')).toggleClass(_this.data('toggle'))
+        $((_this.data('target') == 'this')?_this:_this.data('target')).toggleClass(_this.data('toggle'))
     if (_this.data('add'))
-        $((_this.target == 'this')?_this:_this.data('target')).addClass(_this.data('add'))
+        $((_this.data('target') == 'this')?_this:_this.data('target')).addClass(_this.data('add'))
 }).on('click', '.focus', function() {
 	var _this = $(this);
 
