@@ -124,7 +124,7 @@ $(document).on('click', '.edit-class', function() {
 
 		e.preventDefault()
 	}
-}).on('click', '.closes', function(e) {
+}).on('click', '.closes', function() {
 	var _this = $(this);
 
 	if (_this.data('target'))
@@ -236,6 +236,10 @@ $(document).on('click', '.edit-class', function() {
         _this.children('input').prop('checked', _this.hasClass('active') ? true : false)
     }
 })
+
+function clear_hash() {
+    window.history.pushState("", document.title, window.location.pathname);
+}
 
 function json_ajax(_this) {
 	if (_this.hasClass('disabled'))
@@ -455,23 +459,23 @@ function json_ajax(_this) {
                            }
                         })
                     } else
-                        if ($(pager).hasClass('load-more')) {
+                        if (eval(directory(pager)).hasClass('load-more')) {
                             var next = obj.pagination.current_page >= obj.pagination.total_page ? obj.pagination.current_page : parseInt(obj.pagination.current_page) + 1,
                                 div = $('<div/>', {
                                     'class': 'text-center'
                                 }),
                                 btn = $('<a/>', {
                                     'href': '#page-' + next,
-                                    'class': 'btn btn-default rotate rotate-180 ripple',
-                                    'html': '<i class="ion ion-2x ion-fw ion-refresh"></i>'
+                                    'class': 'btn btn-default ripple',
+                                    'html': eval(directory(pager)).data('text')
                                 }).appendTo(div);
 
                             if (obj.pagination.current_page >= obj.pagination.total_page)
-                                $(pager).addClass('hidden')
+                                eval(directory(pager)).addClass('hidden')
                             else
-                                $(pager).html(div).removeClass('hidden')
+                                eval(directory(pager)).html(div).removeClass('hidden')
                         } else
-                            $(eval(directory(pager))).html(pagination)
+                            eval(directory(pager)).html(pagination)
                 }
 
                 if (obj.scrollTo) {
