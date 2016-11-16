@@ -91,10 +91,10 @@ $content = ob_get_clean();
 
 $array = [
 	"html" => [
-		[ "type" => "append", "target" => "#popular-videos > .panel-body", "content" => $content ]
+		[ "type" => "append", "target" => "this->children(.panel-body)", "content" => $content ]
 	],
 	"dom" => [
-		[ "type" => "remove", "target" => "#popular-videos > .panel-body > .rolling" ]
+		[ "type" => "remove", "target" => "this->find(.rolling)" ]
 	],
 	"pagination" => [
 		"total_results" => 100,

@@ -160,11 +160,11 @@ $content = ob_get_clean();
 
 $array = [
 	"html" => [
-		[ "type" => "append", "target" => "#forum", "content" => $content ]
+		[ "type" => "append", "target" => "this", "content" => $content ]
 	],
 	"dom" => [
-		[ "type" => "remove", "target" => "#forum > .rolling" ],
-		[ "type" => "remove", "target" => "#forum > .list-group" ]
+		[ "type" => "remove", "target" => "this->children(.rolling)" ],
+		[ "type" => "remove", "target" => "this->children(.list-group)" ]
 	],
 	"pagination" => [
 		"total_results" => 50,
@@ -175,7 +175,7 @@ $array = [
 
 if (intval($_POST['page']) != 1)
 	$array["scrollTo"] = [
-		"element" => "#forum",
+		"element" => "this",
 		"tolerance" => "-64px"
 	];
 

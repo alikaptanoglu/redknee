@@ -471,11 +471,11 @@ function json_ajax(_this) {
                             else
                                 $(pager).html(div).removeClass('hidden')
                         } else
-                            $(pager).html(pagination)
+                            $(eval(directory(pager))).html(pagination)
                 }
 
                 if (obj.scrollTo) {
-                    var element = obj.scrollTo.element;
+                    var element = eval(directory(obj.scrollTo.element));
 
                     if ($(element).length) {
                         var offset = $(element).offset();

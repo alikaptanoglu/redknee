@@ -266,11 +266,11 @@ $content = ob_get_clean();
 
 $array = [
 	"html" => [
-		[ "type" => "append", "target" => "#forum", "content" => $content ]
+		[ "type" => "append", "target" => "this", "content" => $content ]
 	],
 	"dom" => [
-		[ "type" => "remove", "target" => "#forum > .rolling" ],
-		[ "type" => "remove", "target" => "#forum > .panel" ]
+		[ "type" => "remove", "target" => "this->children(.rolling)" ],
+		[ "type" => "remove", "target" => "this->children(.panel)" ]
 	],
 	"pagination" => [
 		"total_results" => 100,
@@ -279,6 +279,6 @@ $array = [
 	]
 ];
 
-$array["scrollTo"] = [ "element" => "#forum", "tolerance" => "-64px" ];
+$array["scrollTo"] = [ "element" => "this", "tolerance" => "-64px" ];
 
 echo json_encode($array);

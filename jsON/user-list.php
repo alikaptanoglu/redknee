@@ -77,7 +77,7 @@ $content = ob_get_clean();
 
 $array = [
 	"html" => [
-		[ "type" => "dom", "target" => "#user-lists > .panel-body > .media-list", "content" => $content ]
+		[ "type" => "dom", "target" => "this->children(.media-list)", "content" => $content ]
 	],
 	"pagination" => [
 		"total_results" => 50,
@@ -87,7 +87,7 @@ $array = [
 ];
 
 $array["scrollTo"] = [
-	"element" => "#user-lists",
+	"element" => "this->closest(.panel)",
 	"tolerance" => "-64px"
 ];
 

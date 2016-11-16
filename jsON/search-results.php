@@ -172,7 +172,7 @@ ob_start();
 $content = ob_get_clean();
 
 $array = [
-	"html" => [ [ "type" => "after", "content" => $content, "target" => ".search" ] ],
+	"html" => [ [ "type" => "after", "content" => $content, "target" => "this->closest(.search)" ] ],
 	"dom" => [ [ "type" => "remove", "target" => ".search-results" ] ]
 ];
 

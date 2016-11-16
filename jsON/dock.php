@@ -68,7 +68,7 @@ $array = [
 		],
 		[
 			"type" => "dom",
-			"target" => "#notification-badge",
+			"target" => "this->children(.badge)",
 			"content" => ""
 		]
 	]

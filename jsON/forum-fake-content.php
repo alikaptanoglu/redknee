@@ -103,7 +103,7 @@ if (strlen($message) == '') {
 } else
 	$array = [
 		"html" => [
-			[ "type" => "append", "target" => "#forum", "content" => $content ],
+			[ "type" => "append", "target" => ".forum->children(.load)", "content" => $content ],
 			[ "type" => "value", "target" => "textarea", "text" => "" ],
 			[ "type" => "focus", "target" => "textarea" ]
 		],

@@ -58,11 +58,11 @@ $content = ob_get_clean();
 
 $array = [
 	"html" => [
-		[ "type" => "append", "target" => "#streaming", "content" => $content ]
+		[ "type" => "append", "target" => "this", "content" => $content ]
 	],
 	"dom" => [
-		[ "type" => "remove", "target" => "#streaming > .rolling" ],
-		[ "type" => "remove", "target" => "#streaming > .panel-body" ]
+		[ "type" => "remove", "target" => "this->children(.rolling)" ],
+		[ "type" => "remove", "target" => "this->children(.panel-body)" ]
 	],
 	"pagination" => [
 		"total_results" => 100,
@@ -73,7 +73,7 @@ $array = [
 
 if (intval($_POST['page']) != 1)
 	$array["scrollTo"] = [
-		"element" => "#streaming",
+		"element" => "this",
 		"tolerance" => "-64px"
 	];
 
