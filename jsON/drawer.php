@@ -1,8 +1,9 @@
 <?php
 header('Content-Type: application/json');
-ob_start();
 
 function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($_GET[$key]))?$_GET[$key]:'')==$val)?$class:''; }
+
+ob_start();
 ?>
 <div class="brand">
 	<a href="index.html">
