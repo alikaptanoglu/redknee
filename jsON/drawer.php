@@ -98,7 +98,7 @@ $array = [
 	"html" => [
 		[
 			"type" => "dom",
-			"target" => "this->find(.rolling)",
+			"target" => "this",
 			"content" => $content
 		]
 		

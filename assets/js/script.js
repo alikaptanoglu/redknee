@@ -72,24 +72,20 @@ $(window).on('load', function (e) {
 })
 
 function directory(dir) {
-    if ($.type(dir) == 'object') {
-        return dir;
-    } else {
-        var sp = dir.split('->'),
-                _this,
-                directory = '';
+    var sp = dir.split('->'),
+            _this,
+            directory = '';
 
-        $.each(sp, function(key, val) {
-            if (_this) {
-                var brackets = val.split(/[(\)]/);
+    $.each(sp, function(key, val) {
+        if (_this) {
+            var brackets = val.split(/[(\)]/);
 
-                directory = directory + "." + brackets[0] + "('" + brackets[1] + "')";
-            } else
-                _this = "$(" + (val == 'this' ? this : "'" + val + "'" ) + ")";
-        })
+            directory = directory + "." + brackets[0] + "('" + brackets[1] + "')";
+        } else
+            _this = val == 'this' ? '_this' : "$('" + val + "')";
+    })
 
-        return eval(_this + directory);
-    }
+    return _this + directory;
 }
 
 $(document).on('click', '.edit-class', function() {
@@ -99,11 +95,11 @@ $(document).on('click', '.edit-class', function() {
         return false;
 
     if (_this.data('remove'))
-        (_this.data('target') == 'this'?_this:directory(_this.data('target'))).removeClass(_this.data('remove'))
+        eval(directory(_this.data('target'))).removeClass(_this.data('remove'))
     if (_this.data('toggle'))
-        (_this.data('target') == 'this'?_this:directory(_this.data('target'))).toggleClass(_this.data('toggle'))
+        eval(directory(_this.data('target'))).toggleClass(_this.data('toggle'))
     if (_this.data('add'))
-        (_this.data('target') == 'this'?_this:directory(_this.data('target'))).addClass(_this.data('add'))
+        eval(directory(_this.data('target'))).addClass(_this.data('add'))
 }).on('click', '.focus', function() {
 	var _this = $(this);
 
@@ -361,18 +357,17 @@ function json_ajax(_this) {
                 if (obj.dom)
                     $.each(obj.dom, function(key, val) {
                         if (val.type == 'show')
-                            (val.target == 'this'?_this:directory(val.target)).show()
+                            eval(directory(val.target)).show()
                         else if (val.type == 'hide')
-                            (val.target == 'this'?_this:directory(val.target)).hide()
+                            eval(directory(val.target)).hide()
                         else if (val.type == 'remove')
-                            (val.target == 'this'?_this:directory(val.target)).remove()
+                            eval(directory(val.target)).remove()
                         else if (val.type == 'reset')
-                            (val.target == 'this'?_this[0]:directory(val.target)[0]).reset()
+                            eval(directory(val.target))[0].reset()
                         else if (val.type == 'appendTo')
-                            (val.element == 'this'?_this:directory(val.element)).appendTo(val.target)
+                            eval(directory(val.element)).appendTo(val.target)
                         else if (val.type == 'prependTo')
-                            (val.element == 'this'?_this:directory(val.element)).prependTo(val.target)
-
+                            eval(directory(val.element)).prependTo(val.target)
                     })
                 if (obj.html)
                     $.each(obj.html, function(key, val) {
@@ -382,44 +377,44 @@ function json_ajax(_this) {
                             content = escapeHTML(val.content);
 
                         if (val.type == 'dom')
-                            (val.target == 'this'?_this:directory(val.target)).html(content)
+                            eval(directory(val.target)).html(content)
                         else if (val.type == 'append')
-                            (val.target == 'this'?_this:directory(val.target)).append(content)
+                            eval(directory(val.target)).append(content)
                         else if (val.type == 'prepend')
-                            (val.target == 'this'?_this:directory(val.target)).prepend(content)
+                            eval(directory(val.target)).prepend(content)
                         else if (val.type == 'before')
-                            (val.target == 'this'?_this:directory(val.target)).before(content)
+                            eval(directory(val.target)).before(content)
                         else if (val.type == 'after')
-                            (val.target == 'this'?_this:directory(val.target)).after(content)
+                            eval(directory(val.target)).after(content)
                         else if (val.type == 'value') {
-                            var $this = (val.target == 'this'?_this:directory(val.target));
+                            var $this = eval(directory(val.target));
 
                             if ($this.is('select'))
-                                $this.val(val.text).trigger('change');
+                                $this.val(val.text).trigger('change')
                             else
-                                $this.val(val.text);
+                                $this.val(val.text)
                         } else if (val.type == 'focus')
-                            (val.target == 'this'?_this:directory(val.target)).focus()
+                            eval(directory(val.target)).focus()
                     })
 
                 if (obj.editClass)
                     $.each(obj.editClass, function(key, val) {
                         if (val.remove)
-                            (val.target == 'this'?_this:directory(val.target)).removeClass(val.remove)
+                            eval(directory(val.target)).removeClass(val.remove)
                         if (val.add)
-                            (val.target == 'this'?_this:directory(val.target)).addClass(val.add)
+                            eval(directory(val.target)).addClass(val.add)
                     })
 
                 if (obj.editCss)
                     $.each(obj.editCss, function(key, val) {
-                        (val.target == 'this'?_this:directory(val.target)).css(val.css[0])
+                        eval(directory(val.target)).css(val.css[0])
                     })
 
                 if (obj.load) {
                     window.clearTimeout(loadTimer);
 
                     loadTimer = window.setTimeout(function() {
-                        json_ajax((obj.load.target == 'this'?_this:directory(obj.load.target)));
+                        json_ajax(eval(directory(obj.load.target)));
                     }, obj.load.delay)
                 }
 
