@@ -78,6 +78,7 @@ ob_start();
 			]
 		]
 	];
+	$array["run"] = [ "clear_hash()" ];
 break;
 case 'videos':
 	ob_start();
@@ -115,7 +116,6 @@ foreach ($items as $key => $row) {
 }
 ?>
 </div>
-<div id="video-pager" class="material-pager pdt-10" data-text="Load More"></div>
 <?php
 	$content = ob_get_clean();
 
@@ -128,6 +128,12 @@ foreach ($items as $key => $row) {
 			"current_page" => intval($_POST['page']),
 			"total_page" => 10
 		]
+	];
+
+if (intval($_POST['page']) != 1)
+	$array["scrollTo"] = [
+		"element" => "this",
+		"tolerance" => "-72px"
 	];
 break;
 case 'about':
@@ -173,7 +179,6 @@ case 'about':
 		</div>
 	</div>
 </div>
-
 <?php
 	$content = ob_get_clean();
 
@@ -182,6 +187,7 @@ case 'about':
 			[ "type" => "dom", "target" => ".tab-area", "content" => $content ]
 		]
 	];
+	$array["run"] = [ "clear_hash()" ];
 break;
 case 'playlists':
 	ob_start();
@@ -243,7 +249,6 @@ foreach ($items as $key => $row) {
 }
 ?>
 </div>
-<div id="video-pager" class="material-pager pdt-10" data-text="Load More"></div>
 <?php
 	$content = ob_get_clean();
 
@@ -258,11 +263,14 @@ foreach ($items as $key => $row) {
 		]
 	];
 
+if (intval($_POST['page']) != 1)
+	$array["scrollTo"] = [
+		"element" => "this",
+		"tolerance" => "-72px"
+	];
+
 break;
 }
-
-if (get('tab') != 'videos')
-	$array["run"] = [ "clear_hash()" ];
 
 $array["editClass"] = [
 	[
@@ -273,11 +281,6 @@ $array["editClass"] = [
 		"target" => "this->parent(li)",
 		"add" => "active"
 	]
-];
-
-$array["scrollTo"] = [
-	"element" => ".tab-area",
-	"tolerance" => "-72px"
 ];
 
 echo json_encode($array);
