@@ -5,10 +5,47 @@ function get($key) { return preg_replace("/[^a-z0-9\-]/i","",(isset($_GET[$key])
 
 $array = [];
 
-ob_start();
+$items = [
+	[
+		"title" => "Etiam non nisi sed...",
+		"image" => "upload/funny1.jpg"
+	],
+	[
+		"title" => "Morbi sed felis vulputate...",
+		"image" => "upload/funny2.jpg"
+	],
+	[
+		"title" => "Duis tincidunt libero sed...",
+		"image" => "upload/funny3.jpg"
+	],
+	[
+		"title" => "Proin viverra urna eu...",
+		"image" => "upload/sports1.jpg"
+	],
+	[
+		"title" => "Praesent id metus ac enim...",
+		"image" => "upload/sports2.jpg"
+	],
+	[
+		"title" => "Nam interdum elit vitae...",
+		"image" => "upload/sports3.jpg"
+	],
+	[
+		"title" => "Nulla lobortis turpis...",
+		"image" => "upload/game1.jpg"
+	],
+	[
+		"title" => "Vestibulum sed tellus eu...",
+		"image" => "upload/game2.jpg"
+	]
+];
+
+shuffle($items);
 
 switch (get('tab')) {
 case 'home':
+
+ob_start();
 ?>
 <div class="row">
 	<div class="col-sm-7">
@@ -45,43 +82,6 @@ break;
 case 'videos':
 	ob_start();
 
-	$items = [
-		[
-			"title" => "Etiam non nisi sed enim bibendum porta.",
-			"image" => "upload/funny1.jpg"
-		],
-		[
-			"title" => "Morbi sed felis vulputate, molestie enim quis, pretium turpis.",
-			"image" => "upload/funny2.jpg"
-		],
-		[
-			"title" => "Duis tincidunt libero sed odio laoreet, et porta elit vestibulum.",
-			"image" => "upload/funny3.jpg"
-		],
-		[
-			"title" => "Proin viverra urna eu scelerisque egestas.",
-			"image" => "upload/sports1.jpg"
-		],
-		[
-			"title" => "Praesent id metus ac enim mattis interdum.",
-			"image" => "upload/sports2.jpg"
-		],
-		[
-			"title" => "Nam interdum elit vitae massa sagittis pretium.",
-			"image" => "upload/sports3.jpg"
-		],
-		[
-			"title" => "Nulla lobortis turpis vestibulum tempus maximus.",
-			"image" => "upload/game1.jpg"
-		],
-		[
-			"title" => "Vestibulum sed tellus eu dui ornare hendrerit.",
-			"image" => "upload/game2.jpg"
-		]
-	];
-
-	shuffle($items);
-
 	$i = 0;
 ?>
 <div class="row">
@@ -101,9 +101,9 @@ foreach ($items as $key => $row) {
 		<div class="thumbnail">
 			<img src="<?php echo $row['image'];?>" alt="..." />
 			<div class="caption">
-				<p>
+				<h5>
 					<a href="pages-video-video.html"><strong><?php echo $row['title'];?></strong></a>
-				</p>
+				</h5>
 				<ul class="list-inline text-muted">
 					<li>1.172 view</li>
 					<li>3 weeks ago</li>
@@ -184,7 +184,80 @@ case 'about':
 	];
 break;
 case 'playlists':
-	// Playlists kaldı
+	ob_start();
+
+	$i = 0;
+?>
+<h3 class="single-title">
+	Playlist <?php echo intval($_POST['page']).$i;?>
+	<span class="dropdown">
+		<a href="#" class="btn btn-default ripple" data-toggle="dropdown">
+			<i class="caret"></i>
+		</a>
+		<ul class="dropdown-menu pull-right">
+			<li><a href="#"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
+			<li><a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a></li>
+    	</ul>
+	</span>
+</h3>
+<div class="row">
+<?php
+foreach ($items as $key => $row) {
+	if ($i == 4) {
+?>
+		</div>
+		<h3 class="single-title">
+			Playlist <?php echo intval($_POST['page']).$i;?>
+			<span class="dropdown">
+				<a href="#" class="btn btn-default ripple" data-toggle="dropdown">
+					<i class="caret"></i>
+				</a>
+				<ul class="dropdown-menu pull-right">
+					<li><a href="#"><i class="ion ion-fw ion-edit"></i> Edit</a></li>
+					<li><a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a></li>
+		    	</ul>
+			</span>
+		</h3>
+		<div class="row">
+<?php
+		$i = 0;
+	}
+
+	$i++;
+?>
+	<div class="col-sm-6 col-md-3">
+		<div class="thumbnail">
+			<img src="<?php echo $row['image'];?>" alt="..." />
+			<div class="caption">
+				<h5>
+					<a href="pages-video-video.html"><strong><?php echo $row['title'];?></strong></a>
+				</h5>
+				<ul class="list-inline text-muted">
+					<li>1.172 view</li>
+					<li>3 weeks ago</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<?php
+}
+?>
+</div>
+<div id="video-pager" class="material-pager pdt-10" data-text="Load More"></div>
+<?php
+	$content = ob_get_clean();
+
+	$array = [
+		"html" => [
+			[ "type" => "dom", "target" => ".tab-area", "content" => $content ]
+		],
+		"pagination" => [
+			"total_results" => 100,
+			"current_page" => intval($_POST['page']),
+			"total_page" => 10
+		]
+	];
+
 break;
 }
 

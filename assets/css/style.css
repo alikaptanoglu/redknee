@@ -29,6 +29,16 @@ p.line-dual { height: 48px; }
 p.line-triple { height: 72px; }
 p.line-quad { height: 96px; }
 
+h1.single-title,
+h2.single-title,
+h3.single-title,
+h4.single-title,
+h5.single-title,
+h6.single-title {
+	font-weight: 300;
+	padding: 10px 0;
+}
+
 /* Readmore */
 .read-more {
 	overflow: hidden;
@@ -61,6 +71,8 @@ h1, h2, h3, h4, h5, h6,
 p,
 ul { margin: 0; padding: 0; list-style: none; }
 ul.dropdown-menu { border-width: 0; margin: 0; }
+
+
 
 /*************/
 /* Testimonials */
