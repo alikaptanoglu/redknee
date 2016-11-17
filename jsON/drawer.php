@@ -48,7 +48,7 @@ ob_start();
 				<a class="list-group-item disabled" href="pages-architecture.html">Architecture <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-photography.html">Photography <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-portfolio.html">Portfolio <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-shop.html">Shop <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item<?php get('page', 'shop', ' active');?>" href="pages-shop.html">Shop</a>
 				<a class="list-group-item<?php get('page', 'blog', ' active');?>" href="pages-blog.html">Blog</a>
 			</div>
 		</div>
