@@ -57,7 +57,7 @@ $(window).on('load', function (e) {
 
     if (!header.hasClass('lock'))
         (st > 164) ? header.addClass('active') : header.removeClass('active');
-    (st > 800) ? body.addClass('top-active') : body.removeClass('top-active');
+        (st > 800) ? body.addClass('top-active') : body.removeClass('top-active');
 
     $('.nav-image').children('.image').css('z-index', (st > 1) ? 749 : 782);
 }).on('resize', function(e) {
@@ -102,7 +102,7 @@ $(document).on('click', '.edit-class', function() {
         eval(directory(_this.data('target'))).toggleClass(_this.data('toggle'))
     if (_this.data('add'))
         eval(directory(_this.data('target'))).addClass(_this.data('add'))
-}).on('click', '.focus', function() {
+}).on('click', '.focus, .focus-to', function() {
 	var _this = $(this);
 
 	if (!_this.hasClass('disabled')) {
