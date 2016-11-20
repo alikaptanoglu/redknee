@@ -222,6 +222,8 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 .closes { cursor: pointer; }
 
 .disabled { opacity: .5; }
+.disabled.disabled-unstyled { opacity: 1; }
+
 .wait { cursor: wait; }
 
 .hr { padding: 2px; box-shadow: inset 0 0 4px 0 rgba(100, 100, 100, .5); }
@@ -581,16 +583,36 @@ body.preloader-active > .preloader { transform: translate(0); }
 
 /* Header */
 .navbar-redknee {
-	background: #fff;
+	background: #ccc;
 	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2);
 	border-width: 0;
 	margin: 0;
+	border-radius: 0;
 }
+.navbar-redknee > .ct > .navbar-collapse > .navbar-nav > li > a { font-weight: bold; }
 .navbar-redknee > .ct > .navbar-header > button > .icon-bar { background: #000; }
 .navbar-redknee > .ct > .navbar-header > .navbar-brand { margin: 0; }
-
-
-
+.navbar-redknee .nav-image.nav-image-black { background: #444; }
+.navbar-redknee .nav-image.nav-image-red { background: #e34646; }
+.navbar-redknee .nav-image { padding-right: 52px; color: #fff; }
+.navbar-redknee .nav-image:hover { background: #fff; color: #333; }
+.navbar-redknee .nav-image > .image {
+	position: absolute;
+	bottom: 0;
+	right: 2px;
+	z-index: 752;
+	width: 48px;
+	height: 64px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+@media (max-width: 992px) {
+	.navbar-redknee .nav-image { padding-right: 10px; }
+	.navbar-redknee .nav-image > .image { display: none; }
+}
+.mega-dropdown { position: static !important; }
+.mega-dropdown > .mega-dropdown-menu { padding: 15px; text-align: center; width: 100%; border-width: 0; border-radius: 0; }
+.mega-dropdown > .mega-dropdown-menu > .nav-tabs { display: inline-block; }
 
 
 /*------*/
@@ -630,6 +652,7 @@ section.ct > .panel { margin: 0; }
 .breadcrumb-panel { background: #f9f9f9; box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1); }
 .breadcrumb { margin: 0; border-radius: 0; }
 .breadcrumb > li.active { font-weight: bold; }
+.breadcrumb > li + li::before { content: '\f3d3'; font-family: Ionicons; color: #666; padding: 0 10px; font-weight: 300; }
 /*************/
 
 /*------*/
@@ -884,6 +907,9 @@ footer.tiny a { font-weight: bold; }
 .tab-panel.tab-panel-red > .nav-tabs > li > a { color: #c00; }
 .tab-panel.tab-panel-red > .nav-tabs > li > a:hover { color: #c00; }
 .tab-panel.tab-panel-red > .nav-tabs > li > a::after { background: #c00; }
+/*------*/
+.tab-panel.tab-panel-center > .tab-content,
+.tab-panel.tab-panel-center > .nav-tabs { display: table; margin: 0 auto; }
 /*------*/
 .tab-panel.tab-panel-split > ul { border-width: 0; }
 .tab-panel.tab-panel-split > ul > li > a { background: transparent; }

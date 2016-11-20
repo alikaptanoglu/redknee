@@ -143,7 +143,7 @@ case 'about':
 	<div class="col-sm-6">
 		<div class="pd-10 text-muted">
 			<ul>
-				<li><strong>24,487</strong> subscribers</li>
+				<li><strong>300,207</strong> subscribers</li>
 				<li><strong>7,308,493</strong> views</li>
 				<li>Joined Aug 23, 2013</li>
 			</ul>
