@@ -58,8 +58,6 @@ $(window).on('load', function (e) {
     if (!header.hasClass('lock'))
         (st > 164) ? header.addClass('active') : header.removeClass('active');
         (st > 800) ? body.addClass('top-active') : body.removeClass('top-active');
-
-    $('.nav-image').children('.image').css('z-index', (st > 1) ? 749 : 782);
 }).on('resize', function(e) {
     if ($(window).width() != w) {
         body.addClass('preloader-active')
