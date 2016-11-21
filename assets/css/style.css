@@ -71,6 +71,7 @@ h1, h2, h3, h4, h5, h6,
 p,
 ul { margin: 0; padding: 0; list-style: none; }
 ul.dropdown-menu { border-width: 0; margin: 0; }
+ul.dropdown-menu > li > a { padding: 10px 15px; }
 .img-center { float: none; margin: 0 auto; }
 
 
@@ -135,14 +136,13 @@ ul.dropdown-menu { border-width: 0; margin: 0; }
 .carousel.carousel-thumbnails > .carousel-indicators:after { clear: both; }
 .carousel.carousel-thumbnails > .carousel-indicators > li { float: left; width: 10%; height: auto; display: table; box-shadow: none; }
 .carousel.carousel-thumbnails > .carousel-indicators > li > img { }
-.carousel.carousel-thumbnails > .carousel-indicators > li.active { box-shadow: 0 2px 0 0 rgba(0, 0, 0, .5); background: rgba(0, 0, 0, .1) }
-/*------*/
+.carousel.carousel-thumbnails > .carousel-indicators > li.active { background: rgba(0, 0, 0, .1) }
+
 /*************/
 
 /*************/
 /* Thumbnail */
 .thumbnail { background: transparent; border-width: 0; border-radius: 0; padding: 0; }
-
 /*************/
 
 
@@ -853,6 +853,7 @@ section.ct > .panel { margin: 0; }
 }
 .panel > .panel-heading.panel-heading-sm { font-size: 16px; }
 .panel > .panel-body.panel-body-padding { padding: 30px; }
+.panel > .panel-body.panel-body-edge { padding: 0; }
 .panel > .panel-image { display: block; width: 100%; }
 .panel > .panel-image > img { width: 96px; margin: 0 auto -48px; display: table; box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2); z-index: 1; position: relative; }
 .panel > .panel-image.panel-image-left > img { margin: 0 auto -48px 16px; }
