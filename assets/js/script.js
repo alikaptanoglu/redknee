@@ -575,7 +575,7 @@ function initial() {
 
         carouselTimer = window.setTimeout(function() {
             _this.trigger('click')
-        }, 200)
+        }, 500)
     })
 
     initSwitch()
