@@ -15,7 +15,8 @@ var resizeTimer,
 	toastTimer,
 	modalTimer,
 	keyupTimer,
-    loadTimer;
+    loadTimer,
+    carouselTimer;
 
 var modalCloseDelay;
 var hashPrev;
@@ -567,6 +568,15 @@ function initial() {
     })
 
     $('.carousel').carousel()
+    $('.carousel > .carousel-indicators > li').on('mouseover', function() {
+        var _this = $(this);
+
+        window.clearTimeout(carouselTimer)
+
+        carouselTimer = window.setTimeout(function() {
+            _this.trigger('click')
+        }, 200)
+    })
 
     initSwitch()
 }
