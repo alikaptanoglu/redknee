@@ -96,7 +96,6 @@ ul.dropdown-menu > li > a { padding: 10px 15px; }
 .testimonials > .float > .card > .title { color: #c00; }
 /*************/
 /* Carousels */
-/*------*/
 .carousel > .carousel-indicators > li {
 	border-width: 0;
 	border-radius: 0;
@@ -531,7 +530,6 @@ body.dock-active > .overlay-dock { transform: translate(0); z-index: 700; }
 .modal > .panel > .panel-body.gray { background: #f0f0f0; }
 .modal > .panel > .panel-footer { margin: -2px 0 0; border-radius: 0 0 2px 2px; border-width: 0; }
 
-
 /* BG Class */
 .modal > .panel.share-bg > .panel-body { background-image: url('../img/share.png'); background-repeat: no-repeat; background-position: -64px -64px; }
 .modal > .panel.user-bg > .panel-body { background-image: url('../img/user.png'); background-repeat: no-repeat; background-position: -64px -64px; }
@@ -910,8 +908,6 @@ footer.mega { background: #ccc; padding: 30px 0; }
 footer.mega a { font-weight: 700; }
 footer.mega > .ct > .row > .copyright {}
 footer.mega > .ct > .row > .social { padding-top: 10px; }
-footer.mega > .ct > .row > .social > h3 { font-weight: 300; margin: 0 0 10px; }
-footer.mega > .ct > .row > .social > .btn { margin: 0 !important; }
 /*------*/
 footer.tiny { padding: 30px 0; }
 footer.tiny a { font-weight: 700; }
@@ -928,9 +924,9 @@ footer.shopping > .ct > .delivery > .col > a > .ion {
 	margin: 16px auto;
 }
 footer.shopping > .ct > .delivery > .col > a > p { font-weight: 300; }
-footer.shopping > .ct > .row > .col > .text-icon { line-height: 32px; }
+footer.shopping > .ct > .row > .col > .text-icon { background: #999; margin: 0 0 10px; padding: 0 10px; display: table; }
 /*------*/
-footer.shopping.white { background: #fafafa; }
+footer.light { background: #fafafa; }
 /*************/
 
 /* Tab Content */
