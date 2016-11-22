@@ -39,6 +39,16 @@ h6.single-title {
 	padding: 10px 0;
 }
 
+/* Discount */
+.discount:before,
+.discount:after { content: " "; display: table; }
+.discount:after { clear: both; }
+.discount { display: table; margin: 0 auto; }
+.discount > .percent { float: left; margin: 2px 0 0; padding: 10px; text-align: center; font-size: 22px; }
+.discount > .price { float: left; padding: 0 0 0 10px; text-align: left; }
+.discount > .price > s { font-size: 14px; display: block; margin: 0 0 2px; }
+.discount > .price > mark { font-size: 20px; font-weight: 700; }
+
 /* Readmore */
 .read-more {
 	overflow: hidden;
@@ -645,7 +655,7 @@ nav.header {
 	right: 0;
 	left: 0;
 	background: #ef4034;
-	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 nav.header.header-opacity { background: rgba(0, 0, 0, .1); box-shadow: none; }
 nav.header.header-opacity.active { background: #ef4034; }
@@ -847,6 +857,8 @@ section.ct > .panel { margin: 0; }
 
 /*------*/
 .panel > .panel-heading { cursor: default; }
+.panel > .panel-heading > .tiny,
+.panel > .panel-heading > .tiny > a { font-size: 16px; }
 .panel > .panel-heading.panel-heading-md { font-size: 32px; }
 @media(max-width: 767px) {
 	.panel > .panel-heading.panel-heading-md { font-size: 24px; }
@@ -900,9 +912,25 @@ footer.mega > .ct > .row > .copyright {}
 footer.mega > .ct > .row > .social { padding-top: 10px; }
 footer.mega > .ct > .row > .social > h3 { font-weight: 300; margin: 0 0 10px; }
 footer.mega > .ct > .row > .social > .btn { margin: 0 !important; }
-
+/*------*/
 footer.tiny { padding: 30px 0; }
 footer.tiny a { font-weight: 700; }
+/*------*/
+footer.shopping > .ct > .delivery { text-align: center; padding: 24px 0; }
+footer.shopping > .ct > .delivery > .col { padding: 24px; }
+footer.shopping > .ct > .delivery > .col > a > h3 { font-weight: 300; }
+footer.shopping > .ct > .delivery > .col > a > .ion {
+	display: table;
+	width: 96px;
+	line-height: 96px;
+	border: 1px solid #666;
+	border-radius: 50%;
+	margin: 16px auto;
+}
+footer.shopping > .ct > .delivery > .col > a > p { font-weight: 300; }
+footer.shopping > .ct > .row > .col > .text-icon { line-height: 32px; }
+/*------*/
+footer.shopping.white { background: #fafafa; }
 /*************/
 
 /* Tab Content */
@@ -965,6 +993,7 @@ footer.tiny a { font-weight: 700; }
 body.search-active > .search { margin: 48px 0 0; }
 /*************/
 /* Media */
+.media.media-center { display: table; margin: 0 auto; }
 .media > .media-body > .media-heading > a > span { font-weight: 300; }
 .media-list > .media + .media { border-top: 1px solid #f0f0f0; margin: 15px 0 0; padding: 15px 0 0; }
 .media > .media-left > img { width: 64px; }

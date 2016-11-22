@@ -42,9 +42,9 @@ a > .ion { font-size: 17px; }
   width: 1.28571429em;
   text-align: center;
 }
-.ion-2x { font-size: 200%; }
-.ion-3x { font-size: 300%; }
-.ion-4x { font-size: 400%; }
+.ion-2x { font-size: 200% !important; }
+.ion-3x { font-size: 300% !important; }
+.ion-4x { font-size: 400% !important; }
 
 .ion-alert:before { content: "\f101"; }
 .ion-alert-circled:before { content: "\f100"; }
