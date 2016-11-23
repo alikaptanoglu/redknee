@@ -852,7 +852,20 @@ section.ct > .panel { margin: 0; }
 }
 .panel.panel-gallery > .panel-body > a { background: rgba(255, 255, 255, .5); display: block; padding: 20% 10px 10px; }
 .panel.panel-gallery > .panel-body > a:hover { background: rgba(0, 0, 0, .5); color: #fff; }
-
+/*------*/
+.panel.panel-product > .panel-body > * { position: relative; z-index: 2; }
+.panel.panel-product > .panel-body { position: relative; }
+.panel.panel-product > .panel-body > .product-logo {
+	width: 24px;
+}
+.panel.panel-product > .panel-body > .product-image {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 50%;
+	z-index: 1;
+}
+.panel.panel-product > .panel-body > h5 { font-size: 16px; font-weight: bold; }
 /*------*/
 .panel > .panel-heading { cursor: default; }
 .panel > .panel-heading > .tiny,
@@ -868,6 +881,7 @@ section.ct > .panel { margin: 0; }
 .panel > .panel-image > img { width: 96px; margin: 0 auto -48px; display: table; box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2); z-index: 1; position: relative; }
 .panel > .panel-image.panel-image-left > img { margin: 0 auto -48px 16px; }
 .panel > .panel-footer .btn { margin: 0; }
+
 /*------*/
 .card > .card-heading {
 	border-radius: 2px 2px 0 0;
@@ -929,14 +943,16 @@ footer.shopping > .ct > .row > .col > .text-icon { background: #999; margin: 0 0
 footer.light { background: #fafafa; }
 /*************/
 
+/*************/
+
 /* Tab Content */
-.tab-panel > .nav-tabs { border-bottom: 2px solid #ddd; }
+.tab-panel > .nav-tabs { border-bottom: 2px solid #ddd; padding: 0 1px; }
 .tab-panel > .nav-tabs > li.active > a,
 .tab-panel > .nav-tabs > li.active > a:focus,
 .tab-panel > .nav-tabs > li.active > a:hover { border-width: 0; }
-.tab-panel > .nav-tabs > li > a { border: none; color: #666; }
+.tab-panel > .nav-tabs > li > a { border-width: 0; color: #666; margin: 0; }
 .tab-panel > .nav-tabs > li.active > a,
-.tab-panel > .nav-tabs > li > a:hover { border: none; color: #4285f4; background: transparent; }
+.tab-panel > .nav-tabs > li > a:hover { border-width: 0; color: #4285f4; background: transparent; }
 .tab-panel > .nav-tabs > li > a::after {
 	content: "";
 	background: #4285f4;
@@ -950,7 +966,7 @@ footer.light { background: #fafafa; }
 }
 .tab-panel > .nav-tabs > li.active > a::after,
 .tab-panel > .nav-tabs > li:hover > a::after { transform: scale(1); }
-.tab-panel > .tab-content { padding: 10px; }
+.tab-panel > .tab-content { padding: 10px 0; }
 
 .tab-panel.tab-panel-red > .nav-tabs > li > a { color: #c00; }
 .tab-panel.tab-panel-red > .nav-tabs > li > a:hover { color: #c00; }
