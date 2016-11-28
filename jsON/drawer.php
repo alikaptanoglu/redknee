@@ -38,6 +38,7 @@ ob_start();
 				<a class="list-group-item disabled" href="pages-agency.html">Agency <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-app-landing.html">App Landing <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item<?php get('page', 'resume', ' active');?>" href="pages-resume.html">Resume</a>
+				<a class="list-group-item<?php get('page', 'sign', ' active');?>" href="pages-sign.html">Sign</a>
 				<a class="list-group-item disabled" href="pages-capital-film.html">Capital Film <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-fashion.html">Fashion <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-fitness.html">Fitness <span class="badge">Coming Soon</span></a>

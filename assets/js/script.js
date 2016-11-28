@@ -51,6 +51,8 @@ $(window).on('load', function (e) {
         })
     })
 
+    getScript('#bubble', 'assets/js/bubble.js', function() {})
+
 	initial()
 }).on('scroll', function(e) {
     var st = $(this).scrollTop(),
