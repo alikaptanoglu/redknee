@@ -139,10 +139,7 @@ $(document).on('click', '.edit-class', function() {
 }).on('click', 'a.ajax, button.ajax', function() {
     var _this = $(this);
 
-    if (_this.data('load'))
-	   json_ajax($(_this.data('load')));
-    else
-        json_ajax(_this);
+    json_ajax(_this.data('load')?$(_this.data('load')):_this);
 }).on('keyup', '.keyup', function() {
     var _this = $(this);
 
@@ -271,7 +268,7 @@ function json_ajax(_this) {
                 array = $("<div />");
 
             $.each(items, function(key, val) {
-                array.data(val, $('[name=' + val + ']').val());
+                array.data(val, $('#' + val).val());
 
                 data_vars = $.extend(data_vars, array.data());
             })
