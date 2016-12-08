@@ -148,7 +148,7 @@ $(document).on('click', '.edit-class', function() {
     window.clearTimeout(keyupTimer);
 
     keyupTimer = window.setTimeout(function() {
-        json_ajax(_this);
+        json_ajax(_this.data('target')?$(_this.data('target')):_this);
     }, 500)
 
     return false;
@@ -237,8 +237,8 @@ function json_ajax(_this) {
             else
             	data_method = 'GET';
 
-        if (_this.data('type'))
-            data_method = _this.data('type');
+        if (_this.data('method'))
+            data_method = _this.data('method');
 
         data_vars = $.extend(data_vars, _this.data());
 
