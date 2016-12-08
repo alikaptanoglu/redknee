@@ -1,4 +1,5 @@
 var root = '',
+    development = true,
     instagram = {
         'userId': '2105600294',
         'accessToken': '2105600294.1677ed0.fafcd049ee1e44f99165eddf925b9534',
@@ -318,29 +319,32 @@ function json_ajax(_this) {
                             _this.next('.after-form-errors').remove();
                         }
                     })
-
-
-
-
                 } else {
-                    var posts = '<li class="list-group-item">request method: <strong>' + data_method + '</strong></li>';
+                    var posts = '';
 
                     $.each(data_vars, function(key, val) {
                         posts = posts + '<li class="list-group-item">' + key + ': <strong>' + val + '</strong></li>';
                     })
 
-                	modal({
-                        'heading': msg,
-                        'body': '<div>' + 
-                                '   <label>Request URL:</label>' + 
-                                '   <input type="text" class="form-control" readonly value="' + URL + '" />' + 
-                                '</div>' + 
-                                '<div class="alert alert-info">' + 
-                                '   <ul class="list-group">' + posts + '</ul>' + 
-                                '</div>' + 
-                                '<div class="well">' + jqXHR.responseText + '</div>',
-                        'class': 'col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1'
-                    })
+                    if (development)
+                    	modal({
+                            'heading': msg,
+                            'body': '<div>' + 
+                                    '   <label>Request URL:</label>' + 
+                                    '   <input type="text" class="form-control" readonly value="' + data_method + ' : ' + URL + '" />' + 
+                                    '</div>' + 
+                                    '<div class="alert alert-info">' + 
+                                    '   <ul class="list-group">' + posts + '</ul>' + 
+                                    '</div>' + 
+                                    '<div>' + jqXHR.responseText + '</div>',
+                            'class': 'col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1'
+                        })
+                    else
+                        modal({
+                            'body': msg,
+                            'bodyClass': 'text-center',
+                            'class': 'col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2'
+                        })
                 }
 
                 body.removeClass('polling-active');
