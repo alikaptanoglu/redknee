@@ -6,7 +6,7 @@ $q = preg_replace("/[^inupw]/i", "", $_GET['q']);
 
 if ($q == 'in') {
 ?>
-<div class="panel-brand brand-beach-glass">Free Sign In</div>
+<div class="panel-brand brand-beach-glass">Sign In</div>
 <form method="post" action="jsON/form-post.php" class="ajax" data-token="{token-code}">
 	<input type="text" class="form-control" name="uid" placeholder="E-mail" />
 	<input type="password" class="form-control" name="pwd" placeholder="Password" />

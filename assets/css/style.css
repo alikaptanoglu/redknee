@@ -1157,13 +1157,16 @@ body.search-active > .search { margin: 48px 0 0; }
   resize: none;
   background: rgba(255, 255, 255, .2);
   margin: 0 0 10px;
-  border-width: 1px;
+  border-width: 0 0 1px;
   border-color: rgba(0, 0, 0, .2);
   cursor: pointer;
   border-radius: 0;
   color: #999;
+  box-shadow: none;
 }
-.form-control:focus { cursor: text; box-shadow: none; border-color: rgba(0, 0, 0, .6); }
+.form-control:focus { box-shadow: none; cursor: text; border-color: rgba(0, 0, 0, .6); }
+
+textarea.form-control { padding: 20px; }
 /*------*/
 .input-group { margin: 0 0 10px; }
 .input-group > .input-group-addon { border-width: 0; background: transparent; }
