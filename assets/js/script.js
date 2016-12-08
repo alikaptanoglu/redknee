@@ -336,7 +336,7 @@ function json_ajax(_this) {
                                     '<div class="alert alert-info">' + 
                                     '   <ul class="list-group">' + posts + '</ul>' + 
                                     '</div>' + 
-                                    '<div>' + jqXHR.responseText + '</div>',
+                                    '<div class="well">' + jqXHR.responseText + '</div>',
                             'class': 'col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1'
                         })
                     else
