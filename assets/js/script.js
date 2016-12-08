@@ -328,7 +328,7 @@ function json_ajax(_this) {
 
                     if (development)
                     	modal({
-                            'heading': msg,
+                            'heading': 'Development Mode',
                             'body': '<div>' + 
                                     '   <label>Request URL:</label>' + 
                                     '   <input type="text" class="form-control" readonly value="' + data_method + ' : ' + URL + '" />' + 
@@ -336,6 +336,7 @@ function json_ajax(_this) {
                                     '<div class="alert alert-info">' + 
                                     '   <ul class="list-group">' + posts + '</ul>' + 
                                     '</div>' + 
+                                    '<h3 class="pdb-10">' + msg + '</h3>' + 
                                     '<div class="well">' + jqXHR.responseText + '</div>',
                             'class': 'col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1'
                         })
