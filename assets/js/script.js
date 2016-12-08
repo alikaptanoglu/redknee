@@ -226,19 +226,19 @@ function json_ajax(_this) {
     _this.addClass('disabled wait');
 
     formTimer = window.setTimeout(function() {
-    	var data_type = 'POST',
+    	var data_method = 'POST',
     		data_vars;
 
     	if (_this.is('form'))
             data_vars = $.extend(data_vars, getFormData(_this))
     	else if (_this.is('a'))
         	if (_this.data('token'))
-            	data_type = 'POST';
+            	data_method = 'POST';
             else
-            	data_type = 'GET';
+            	data_method = 'GET';
 
         if (_this.data('type'))
-            data_type = _this.data('type');
+            data_method = _this.data('type');
 
         data_vars = $.extend(data_vars, _this.data());
 
@@ -274,11 +274,13 @@ function json_ajax(_this) {
             hashPrev = "page-" + page;
         }
 
+        var URL = _this.is('form') ? _this.attr('action') : _this.data('href');
+
     	$.ajax({
-            type: data_type,
+            type: data_method,
             dataType: 'json',
-            url: _this.is('form') ? _this.attr('action') : _this.data('href'),
-            data: (data_type == 'POST') ? data_vars : '',
+            url: URL,
+            data: (data_method == 'POST') ? data_vars : '',
             error: function(jqXHR, exception) {
             	var msg = '';
 
@@ -317,8 +319,29 @@ function json_ajax(_this) {
                         }
                     })
 
-                } else
-                	modal({ 'body': '<div class="text-danger"><i class="ion ion-fw ion-information"></i> ' + msg + '</div>', 'class': 'col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 col-lg-2 col-lg-offset-5' })
+
+
+
+                } else {
+                    var posts = '<li class="list-group-item">request method: <strong>' + data_method + '</strong></li>';
+
+                    $.each(data_vars, function(key, val) {
+                        posts = posts + '<li class="list-group-item">' + key + ': <strong>' + val + '</strong></li>';
+                    })
+
+                	modal({
+                        'heading': msg,
+                        'body': '<div>' + 
+                                '   <label>Request URL:</label>' + 
+                                '   <input type="text" class="form-control" readonly value="' + URL + '" />' + 
+                                '</div>' + 
+                                '<div class="alert alert-info">' + 
+                                '   <ul class="list-group">' + posts + '</ul>' + 
+                                '</div>' + 
+                                '<div class="well">' + jqXHR.responseText + '</div>',
+                        'class': 'col-lg-8 col-lg-offset-2 col-xs-10 col-xs-offset-1'
+                    })
+                }
 
                 body.removeClass('polling-active');
                 _this.removeClass('disabled wait');

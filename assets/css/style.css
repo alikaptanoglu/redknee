@@ -286,7 +286,7 @@ a:hover { color: #999; }
 	font-weight: 300;
 }
 /*************/
-/* Prıgress */
+/* Progress */
 .progress { height: 2px; margin: 0; border-radius: 0; }
 .progress > .progress-bar-red { background: #d12a27; }
 .progress > .progress-bar-green { background: #2e372e; }
@@ -302,7 +302,7 @@ a:hover { color: #999; }
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, .2);
+	background-color: rgba(0, 0, 0, .4);
 	transform: translate(-100%);
 	transition: none;
 }
