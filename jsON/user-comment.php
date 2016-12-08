@@ -18,17 +18,26 @@ $id = rand(1, 9999999999999);
 
 ob_start();
 ?>
-<div class="list-group-item" id="comment-<?php echo $id;?>">
-	<p>
-		<i class="ion ion-chatbubble ion-fw"></i>
-		<a href="#" class="hyper-user red bold">Admin</a> <a class="text-danger ajax" data-href="jsON/delete.php?id=comment-<?php echo $id;?>&status=confirmation" href="#">
-			<i class="ion ion-trash-a"></i>
-		</a>
-		<span class="text-muted">
-			<em>26 Sep 2016, Fri 11:52</em>
-		</span>
-	</p>
-	<p><?php echo $message;?></p>
+<div class="media" id="user-comment-d<?php echo $id;?>">
+	<div class="media-left">
+		<img class="media-object img-circle" src="upload/user-5.jpg" alt="...">
+	</div>
+	<div class="media-body">
+		<div class="row">
+			<div class="col-xs-8">
+				<p class="pd-5">
+					<a href="utility-user.html"><strong>You</strong></a>
+					<a href="#" class="ajax" data-href="jsON/delete.php?id=user-comment-d<?php echo $id;?>&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+				</p>
+			</div>
+			<div class="col-xs-4 text-muted text-right">
+				<p class="pd-5">Now</p>
+			</div>
+			<div class="col-xs-12">
+				<p class="pd-5"><?php echo $message;?></p>
+			</div>
+		</div>
+	</div>
 </div>
 <?php
 $content = ob_get_clean();
@@ -48,7 +57,7 @@ if (strlen($message) == '') {
 		"html" => [
 			[
 				"type" => "append",
-				"target" => "#user-comment > .list-group",
+				"target" => ".comments",
 				"content" => $content
 			]
 		],

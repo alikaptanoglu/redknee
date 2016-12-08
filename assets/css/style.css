@@ -395,6 +395,9 @@ body.polling-active > .polling { display: table; }
 	background-image: url('../img/rolling.svg');
 	background-size: 48px;
 }
+.rolling.rolling-white {
+	background-image: url('../img/rolling-white.svg');
+}
 /*************/
 
 /* Alert */
@@ -539,12 +542,13 @@ body.dock-active > .overlay-dock { transform: translate(0); z-index: 700; }
 	position: absolute;
 	top: 0;
 	right: 0;
-	border-radius: 50%;
+	border-radius: 2px;
 	background: rgba(0, 0, 0, .1);
 	color: #fff;
 }
 .modal > .panel > .panel-close:hover { background: rgba(0, 0, 0, 1); }
 .modal > .panel > .panel-body { padding: 30px; }
+.modal > .panel > .panel-body > .panel-brand { margin: -30px -30px 10px; }
 .modal > .panel > .panel-body.gray { background: #f0f0f0; }
 .modal > .panel > .panel-footer { margin: -2px 0 0; border-radius: 0 0 2px 2px; border-width: 0; }
 
@@ -902,7 +906,31 @@ section.ct > .panel { margin: 0; }
 	.panel > .panel-heading.panel-heading-md { font-size: 24px; }
 }
 .panel > .panel-heading.panel-heading-sm { font-size: 16px; }
+.panel > .panel-body > .panel-brand {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin: -10px -10px 10px;
+	padding: 30px;
+	position: relative;
+	font-size: 24px;
+}
+.panel > .panel-body > .panel-brand.brand-blue-sky { color: #fff; background-image: url(../img/brands/blue-sky.jpg); }
+.panel > .panel-body > .panel-brand.brand-blue-grey { background-image: url(../img/brands/blue-grey.jpg); }
+.panel > .panel-body > .panel-brand.brand-blues { background-image: url(../img/brands/blues.jpg); }
+.panel > .panel-body > .panel-brand.brand-dreary-day { background-image: url(../img/brands/dreary-day.jpg); }
+.panel > .panel-body > .panel-brand.brand-sunset-camping { color: #fff; background-image: url(../img/brands/sunset-camping.jpg); }
+.panel > .panel-body > .panel-brand.brand-summer-twilight { color: #fff; background-image: url(../img/brands/summer-twilight.jpg); }
+.panel > .panel-body > .panel-brand.brand-banana-flame { color: #fff; background-image: url(../img/brands/banana-flame.jpg); }
+.panel > .panel-body > .panel-brand.brand-creamy-grey { background-image: url(../img/brands/creamy-grey.jpg); }
+.panel > .panel-body > .panel-brand.brand-ocean { color: #fff; background-image: url(../img/brands/ocean.jpg); }
+.panel > .panel-body > .panel-brand.brand-sparkling-sife { color: #fff; background-image: url(../img/brands/sparkling-sife.jpg); }
+.panel > .panel-body > .panel-brand.brand-yellow { color: #fff; background-image: url(../img/brands/yellow.jpg); }
+.panel > .panel-body > .panel-brand.brand-beach-glass { background-image: url(../img/brands/beach-glass.jpg); }
+.panel > .panel-body > .panel-brand.brand-green-thumb { color: #fff; background-image: url(../img/brands/green-thumb.jpg); }
+
 .panel > .panel-body.panel-body-padding { padding: 30px; }
+.panel > .panel-body.panel-body-padding > .panel-brand { margin: -30px -30px 10px; }
 .panel > .panel-body.panel-body-edge { padding: 0; }
 .panel > .panel-image { display: block; width: 100%; }
 .panel > .panel-image > img { width: 96px; margin: 0 auto -48px; display: table; box-shadow: 0 0 10px 1px rgba(0, 0, 0, .2); z-index: 1; position: relative; }
@@ -1111,16 +1139,7 @@ body.search-active > .search { margin: 48px 0 0; }
 .btn-bordered.btn-default:hover,
 .btn-bordered.btn-default:focus { color: #333 !important; }
 /*------*/
-.ripple { overflow: hidden; position: relative; transition: all .5s ease 0s; }
-.ripple-effect {
-  position: absolute;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background: #fff;
-
-  animation: ripple-animation 2s;
-}
+.ripple:focus { transition: all 1s ease-in-out 0s; box-shadow: inset 0 0 0 50px rgba(255, 255, 255, .4) !important; }
 
 @keyframes ripple-animation {
     from { transform: scale(1); opacity: .4; }
@@ -1176,18 +1195,15 @@ body.search-active > .search { margin: 48px 0 0; }
 }
 .switch::after {
     background: #fff;
-    color: #999;
     border-radius: 10px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
-    content: '\f404';
     width: 20px;
-    line-height: 20px;
+    height: 20px;
     position: relative;
-    font-family: Ionicons;
-    text-align: center;
     display: table;
+    content: '';
 }
-.switch.active::after { margin-left: 20px; content: '\f3fd'; background: #333; color: #fff; }
+.switch.active::after { margin-left: 20px; background: #333; }
 /*------*/
 .material-pager > ul.pagination { margin: 20px auto; float: none; display: table; }
 .material-pager > ul.pagination > li > a { margin: 5px; min-width: 48px; text-align: center; }

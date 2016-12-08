@@ -211,20 +211,56 @@
 				<div class="col col-sm-5">
 					<div class="panel panel-material" id="user-comment">
 						<div class="panel-heading">User Comments</div>
-						<div class="list-group">
-							<div class="list-group-item" id="comment-1">
-								<p>
-									<i class="ion ion-chatbubble ion-fw"></i>
-									<a class="hyper-user red bold" href="#">Admin</a> <a class="text-danger ajax" data-href="jsON/delete.php?id=comment-1&status=confirmation" href="#">
-										<i class="ion ion-trash-a"></i>
-									</a>
-									<span class="date text-muted">
-										<em>26 Sep 2016, Fri 11:52</em>
-									</span>
-								</p>
-								<p>Aliquam congue odio et nulla eleifend, ac maximus massa iaculis.</p>
+
+						<div class="panel-body panel-body-padding comments">
+							<div class="media-list">
+								<div class="media" id="user-comment-d2">
+									<div class="media-left">
+										<img class="media-object img-circle" src="upload/user.jpg" alt="...">
+									</div>
+									<div class="media-body">
+										<div class="row">
+											<div class="col-xs-8">
+												<p class="pd-5">
+													<a href="utility-user.html"><strong>John Doe</strong></a>
+													<a href="#" class="ajax" data-href="jsON/delete.php?id=user-comment-d2&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+													<a href="#"><i class="ion ion-fw ion-flag"></i></a>
+												</p>
+											</div>
+											<div class="col-xs-4 text-muted text-right">
+												<p class="pd-5">1d</p>
+											</div>
+											<div class="col-xs-12">
+												<p class="pd-5">Proin neque nibh, vehicula in porta a, lobortis sed nisl. Sed sagittis varius tristique. Aliquam erat volutpat.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="media" id="user-comment-d1">
+									<div class="media-left">
+										<img class="media-object img-circle" src="upload/user-1.jpg" alt="...">
+									</div>
+									<div class="media-body">
+										<div class="row">
+											<div class="col-xs-8">
+												<p class="pd-5">
+													<a href="utility-user.html"><strong>Janet</strong></a>
+													<a href="#" class="ajax" data-href="jsON/delete.php?id=user-comment-d1&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+													<a href="#"><i class="ion ion-fw ion-flag"></i></a>
+												</p>
+											</div>
+											<div class="col-xs-4 text-muted text-right">
+												<p class="pd-5">2d</p>
+											</div>
+											<div class="col-xs-12">
+												<p class="pd-5">Proin neque nibh, vehicula in porta a, lobortis sed nisl. Sed sagittis varius tristique. Aliquam erat volutpat.</p>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
+
 						<div class="panel-body">
 		            		<form method="post" action="jsON/user-comment.php" class="ajax">
 		            			<div class="error">

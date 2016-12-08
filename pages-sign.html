@@ -63,7 +63,7 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="text-icon">Red<strong>Knee</strong><span>Sign In</span></div>
-					<div class="panel panel-material user-bg">
+					<div class="panel panel-material">
 						<div class="panel-body panel-body-padding">
 							<form method="post" action="#">
 								<input type="text" class="form-control" name="" id="" placeholder="E-mail" />
@@ -74,7 +74,7 @@
 								<button type="submit" class="btn btn-default ripple">Login</button>
 								<ul class="list-group list-group-sign">
 									<li class="list-group-item">
-										<a href="#"><i class="ion ion-fw ion-person"></i> Sign Up</a>
+										<a href="#" class="ajax" data-href="jsON/sign.php?q=up"><i class="ion ion-fw ion-person"></i> Sign Up</a>
 									</li>
 									<li class="list-group-item">
 										<a href="#"><i class="ion ion-fw ion-person-add"></i> Forgotten Password</a>
@@ -97,12 +97,13 @@
 		</div>
 
 		<canvas class="overlay bg-overlay" id="bubble"></canvas>
+
 		<div class="preloader">
 			<div class="rolling"></div>
 			<p>a few seconds</p>
 		</div>
 		<div class="polling">
-			<div class="rolling"></div>
+			<div class="rolling rolling-white"></div>
 		</div>
 
 		<div class="toast closes">

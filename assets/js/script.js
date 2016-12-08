@@ -158,33 +158,10 @@ $(document).on('click', '.edit-class', function() {
     json_ajax(_this);
 }).keyup(function(e) {
     if (e.keyCode == 27) {
-    	body.removeClass('drawer-active dock-active')
+    	body.removeClass('dock-active')
     } else if (e.keyCode == 13) {
     	c('Enter Key', 'warn');
     }
-}).on('mouseup', '.ripple', function (event) {
-    var _this = $(this),
-        div = $('<div/>', { class: 'ripple-effect' }),
-        btnOffset = _this.offset(),
-        xPos = event.pageX - btnOffset.left,
-        yPos = event.pageY - btnOffset.top,
-        ripple = $(".ripple-effect");
-
-    event.preventDefault();
-
-    ripple.css({
-        "width": _this.height(),
-        "height": _this.height()
-    });
-
-    div.css({
-        "top": yPos - (ripple.height()/2),
-        "left": xPos - (ripple.width()/2)
-    }).appendTo(_this);
-
-    window.setTimeout(function(){
-        div.remove();
-    }, 500);
 }).on('click', '.upload-base64', function() {
     var _this = $(this),
         input = $('<input/>', { type: 'file' }),

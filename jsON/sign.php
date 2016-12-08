@@ -21,11 +21,30 @@ if ($q == 'in') {
 <?php
 } else if ($q == 'up') {
 ?>
+<div class="panel-brand brand-ocean">Free Sign Up</div>
 <form method="post" action="jsON/form-post.php" class="ajax" id="form-id" data-token="{token-code}">
-	<input type="text" class="form-control" name="name" placeholder="Name" />
-	<input type="text" class="form-control" name="uid" placeholder="E-mail" />
-	<input type="text" class="form-control" name="pwd" placeholder="Password" />
-	<input type="password" class="form-control" name="pwd-re" placeholder="Re Password" />
+	<div class="list-group">
+		<div class="list-group-item">
+			<label class="text-muted" for="name">Name</label>
+			<input type="text" class="form-control" name="name" id="name" placeholder="Name" />
+		</div>
+		<div class="list-group-item">
+			<label class="text-muted" for="uid">E-mail</label>
+			<input type="text" class="form-control" name="uid" id="uid" placeholder="E-mail" />
+		</div>
+		<div class="list-group-item">
+			<div class="row">
+				<div class="col-xs-6">
+					<label class="text-muted" for="pwd">Password</label>
+					<input type="text" class="form-control" name="pwd" id="pwd" placeholder="Password" />
+				</div>
+				<div class="col-xs-6">
+					<label class="text-muted" for="pwd-re">Re-Password</label>
+					<input type="password" class="form-control" name="pwd-re" id="pwd-re" placeholder="Re Password" />
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="alert alert-info">
 		<i class="ion ion-fw ion-information"></i> Example register form.
 	</div>
@@ -61,7 +80,7 @@ $content = ob_get_clean();
 $array = [
 	"modal" => [
 		"body" => $content,
-		"class" => "col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-4 user-bg"
+		"class" => "col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-4"
 	]
 ];
 
