@@ -660,7 +660,7 @@ function modal(obj) {
 		(obj.footer) ? panel.children('.panel-footer').html(obj.footer).show() : panel.children('.panel-footer').hide();
 		(obj.close == false) ? panel.children('.panel-close').hide() : panel.children('.panel-close').show();
         (obj.class) ? panel.removeClass().addClass('panel panel-material ' + obj.class) : '';
-		(obj.bodyClass) ? panel.children('.panel-body').removeClass().addClass('panel-body ' + obj.bodyClass) : panel.children('.panel-body').removeClass('gray');
+		(obj.bodyClass) ? panel.children('.panel-body').removeClass().addClass('panel-body ' + obj.bodyClass) : panel.children('.panel-body').removeClass().addClass('panel-body');
 	
 		if (obj.closeDelay) {
             window.clearTimeout(modalCloseDelay);

@@ -32,11 +32,13 @@
 			opacity: .5;
 		}
 
-		.text-icon { color: #fff; font-weight: 300; }
+		.panel > .panel-heading { color: #fff; }
+
+		.text-icon.logo { line-height: 32px; color: #fff; }
 
 		.list-inline > li { padding: 2px 4px !important; }
 		.list-inline > li > a {
-			background-color: rgba(0, 0, 0, .2);
+			background-color: rgba(0, 0, 0, .4);
 			color: rgba(255, 255, 255, .8);
 			margin: 0;
 			padding: 2px 4px;
@@ -45,63 +47,77 @@
 		.list-inline > li > a:hover {
 			background-color: rgba(0, 0, 0, .6);
 		}
+		.copyright { color: #fff; margin: 10px 0; }
+		.pounds > a { font-weight: bold; }
+		.pounds > a:before { content: '\f219'; font-family: 'Ionicons'; margin: 0 2px 0; }
 		</style>
 	</head>
-	<body class="preloader-active">
+	<body class="preloader-active wide">
 		<div class="container">
+			<div class="text-icon logo">
+				Red<strong>Knee</strong><span>Sign In</span>
+			</div>
 			<div class="row">
-				<div class="col-sm-8">
-					<div class="panel panel-material">
-						<div class="panel-body panel-body-padding">
-							<input type="text" class="form-control" placeholder="Search in RedKnee" name="search" />
-						</div>
-						<div class="panel-body panel-body-padding">
-							<a href="#"><strong>#</strong>NationalChristmasTreeDay</a>
-							<a href="#"><strong>#</strong>GregLake</a>
-							<a href="#"><strong>#</strong>ThursdayThoughts</a>
-							<a href="#"><strong>#</strong>FMQs</a>
-							<a href="#"><strong>#</strong>JohnLennon</a>
-						</div>
-					</div>
-					<ul class="list-inline">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Developers</a></li>
-						<li><a href="#">Careers</a></li>
-						<li><a href="#">Privacy</a></li>
-						<li><a href="#">Cookies</a></li>
-						<li><a href="#">Terms</a></li>
-						<li><a href="#">Help</a></li>
-					</ul>
-				</div>
 				<div class="col-sm-4">
-					<div class="text-icon">Red<strong>Knee</strong><span>Sign In</span></div>
 					<div class="panel panel-material">
 						<div class="panel-body panel-body-padding">
-							<form method="post" action="#">
+							<form method="post" action="jsON/form-post.php" class="ajax" data-token="{token-code}">
 								<input type="text" class="form-control" name="" id="" placeholder="E-mail" />
 								<input type="text" class="form-control" name="" id="" placeholder="Password" />
 								<div class="input-group" data-toggle="tooltip" title="Remember Me">
 									<div class="switch" data-id="switch" data-method="checkbox" data-name="switch" data-value="on"></div>
 								</div>
 								<button type="submit" class="btn btn-default ripple">Login</button>
-								<ul class="list-group">
-									<li class="list-group-item">
-										<a href="#" class="ajax" data-href="jsON/sign.php?q=up"><i class="ion ion-fw ion-person"></i> Sign Up</a>
-									</li>
-									<li class="list-group-item">
-										<a href="#" class="ajax" data-href="jsON/sign.php?q=pw"><i class="ion ion-fw ion-person-add"></i> Forgotten Password</a>
-									</li>
-									<li class="list-group-item dropdown">
-										<a href="#" data-toggle="dropdown">
-											<i class="ion ion-fw ion-network"></i> Connect with <i class="caret"></i>
-										</a>
-										<ul class="dropdown-menu">
-											<li><a href="#"><i class="ion ion-fw ion-social-facebook"></i> Facebook</a></li>
-											<li><a href="#"><i class="ion ion-fw ion-social-twitter"></i> Twitter</a></li>
-										</ul>
-									</li>
-								</ul>
 							</form>
+							<ul class="list-group">
+								<li class="list-group-item">
+									<a href="#" class="ajax" data-href="jsON/sign.php?q=up"><i class="ion ion-fw ion-person"></i> Sign Up</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#" class="ajax" data-href="jsON/sign.php?q=pw"><i class="ion ion-fw ion-person-add"></i> Forgotten Password</a>
+								</li>
+								<li class="list-group-item dropdown">
+									<a href="#" data-toggle="dropdown">
+										<i class="ion ion-fw ion-network"></i> Connect with <i class="caret"></i>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="#"><i class="ion ion-fw ion-social-facebook"></i> Facebook</a></li>
+										<li><a href="#"><i class="ion ion-fw ion-social-twitter"></i> Twitter</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<p class="copyright">© 2017 Red<strong>Knee</strong> | All rights reserved.</p>
+						<ul class="list-inline">
+							<li><a href="#" data-href="jsON/language.php" class="ajax">English</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Developers</a></li>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Privacy</a></li>
+							<li><a href="#">Cookies</a></li>
+							<li><a href="#">Terms</a></li>
+							<li><a href="#">Help</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-8">
+					<div class="panel panel-material">
+						<div class="panel-body panel-body-padding">
+							<h1>Why do we use it?</h1>
+							<p>
+								<a class="edit-class" href="#" data-target="body" data-add="drawer-active">
+									<i class="ion ion-fw ion-navicon"></i>
+								</a>
+								It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+							</p>
+						</div>
+						<div class="panel-heading">Trends</div>
+						<div class="panel-body panel-body-padding pounds">
+							<a href="#">NationalChristmasTreeDay</a>
+							<a href="#">GregLake</a>
+							<a href="#">ThursdayThoughts</a>
+							<a href="#">FMQs</a>
+							<a href="#">JohnLennon</a>
 						</div>
 					</div>
 				</div>
@@ -109,6 +125,13 @@
 		</div>
 
 		<canvas class="overlay bg-overlay" id="bubble"></canvas>
+
+		<div class="drawer">
+			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=sign&amp;panel=pages" data-method="get">
+				<div class="rolling"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
 
 		<div class="preloader">
 			<div class="rolling"></div>
