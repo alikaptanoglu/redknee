@@ -21,20 +21,25 @@
 		<nav class="header">
 			<div class="ct container">
 				<ul class="pull-left">
+					<li>
+						<a class="ripple" href="index.html">
+							<div class="text-icon text-icon-responsive">red<strong>knee</strong></div>
+						</a>
+					</li>
 				</ul>
 				<ul class="pull-right">
 					<li>
-						<a href="#top" class="edit-class focus" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
+						<a href="#top" class="edit-class focus ripple" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
 							<i class="ion ion-ios-search"></i>
 						</a>
 					</li>
 					<li>
-						<a href="#" class="edit-class ajax" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
+						<a href="#" class="edit-class ajax ripple" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
 							<i class="ion ion-android-notifications"></i> <span class="badge">10+</span>
 						</a>
 					</li>
 					<li class="dropdown">
-						<a href="#" data-toggle="dropdown">
+						<a class="ripple" href="#" data-toggle="dropdown">
 							<i class="ion ion-person"></i> <i class="caret"></i>
 						</a>
 						<ul class="dropdown-menu pull-right">
@@ -60,8 +65,88 @@
 			</div>
 		</div>
 		<section class="ct container pd">
-
+			<div class="row">
+				<div class="col-sm-4 col-md-3">
+					<div class="panel panel-material">
+						<div class="panel-image panel-image-left">
+							<img alt="..." src="upload/user-1.jpg" class="img-rounded" />
+						</div>
+						<div class="panel-body">
+							<div class="card card-sm">
+								<div class="card-heading" style="background-image: url(upload/channel4.jpg)">
+									<h3>
+										<a href="pages-social-profile.html">Janet Lisa Doe <i class="ion ion-fw ion-checkmark-circled"></i></a>
+									</h3>
+								</div>
+								<div class="card-body">
+									<div class="row social-panel">
+										<div class="col col-xs-4">
+											<a href="#">
+												<p>ENTRIES</p>
+												<p>14K</p>
+											</a>
+										</div>
+										<div class="col col-xs-4">
+											<a href="#">
+												<p>FOLLOWERS</p>
+												<p>10K</p>
+											</a>
+										</div>
+										<div class="col col-xs-4">
+											<a href="#">
+												<p>FOLLOWING</p>
+												<p>1K</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8 col-md-6">
+					<div class="panel panel-material">
+						<div class="panel-body social-textarea">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<img alt="..." src="upload/user-1.jpg" class="img-rounded" />
+								</div>
+								<textarea class="form-control autosize" name="entry" placeholder="How are you today?"></textarea>
+							</div>
+							<div class="float">
+								<div class="pull pull-left">
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-unlocked"></i></a>
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-image"></i></a>
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-location"></i></a>
+								</div>
+								<div class="pull pull-right">
+									<a class="btn btn-default ripple disabled" href="#">140</a>
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-android-send"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-material">
+						<div class="panel-body">asdasd</div>
+						<div class="panel-body">asdasd</div>
+						<div class="panel-body">asdasd</div>
+						<div class="panel-body">asdasd</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-3">
+					<div class="panel panel-material">
+					<div class="panel-body">asdasd</div>
+					</div>
+				</div>
+			</div>
 		</section>
+
+		<div class="drawer">
+			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=social&amp;panel=pages" data-method="get">
+				<div class="rolling"></div>
+			</div>
+		</div>
+		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
 
 		<div class="preloader">
 			<div class="rolling"></div>

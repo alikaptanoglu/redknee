@@ -38,7 +38,6 @@ ob_start();
 				<a class="list-group-item disabled" href="pages-agency.html">Agency <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-app-landing.html">App Landing <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item<?php get('page', 'resume', ' active');?>" href="pages-resume.html">Resume</a>
-				<a class="list-group-item<?php get('page', 'sign', ' active');?>" href="pages-social-sign.html">Social Sign</a>
 				<a class="list-group-item<?php get('page', 'social', ' active');?>" href="pages-social.html">Social Network</a>
 				<a class="list-group-item disabled" href="pages-capital-film.html">Capital Film <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item disabled" href="pages-fashion.html">Fashion <span class="badge">Coming Soon</span></a>
@@ -70,6 +69,7 @@ ob_start();
 				<a class="list-group-item<?php get('page', 'signin', ' active');?>" href="utility-sign-in.html">Sign In</a>
 				<a class="list-group-item<?php get('page', 'signup', ' active');?>" href="utility-sign-up.html">Sign Up</a>
 				<a class="list-group-item<?php get('page', 'pwd', ' active');?>" href="utility-pwd.html">Password</a>
+				<a class="list-group-item<?php get('page', 'sign', ' active');?>" href="utility-social-sign.html">Social Sign</a>
 				<a class="list-group-item<?php get('page', 'myaccount', ' active');?>" href="utility-my-account.html">My Account</a>
 				<a class="list-group-item<?php get('page', 'users', ' active');?>" href="utility-users.html">Users</a>
 				<a class="list-group-item<?php get('page', 'user', ' active');?>" href="utility-user.html">User</a>
