@@ -375,7 +375,7 @@ a:hover { color: #999; }
 /* List Group */
 .list-group { margin: 0; }
 .list-group > .list-group-item { background: transparent; border-width: 0; padding: 10px; border-radius: 0; }
-.list-group > .list-group-item.active { background-color: #333; border-radius: 2px; }
+.list-group > .list-group-item.active { background-color: #ccc; border-radius: 2px; }
 .list-group.list-group-limit { max-height: 100px; overflow: auto; }
 .list-group.list-group-limit-lg { max-height: 400px; overflow: auto; }
 /*************/

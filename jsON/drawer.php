@@ -11,16 +11,16 @@ ob_start();
 	</a>
 </div>
 <div class="group list-group">
-	<a href="index.html" class="list-group-item<?php get('page', 'home', ' active');?>">
+	<a href="index.html" class="list-group-item ripple<?php get('page', 'home', ' active');?>">
 		<i class="ion ion-fw ion-home"></i> HOME
 	</a>
-	<a href="home2.html" class="list-group-item<?php get('page', 'home2', ' active');?>">
+	<a href="home2.html" class="list-group-item ripple<?php get('page', 'home2', ' active');?>">
 		<i class="ion ion-fw ion-home"></i> HOME 2
 	</a>
-	<a href="home3.html" class="list-group-item disabled">
+	<a href="home3.html" class="list-group-item ripple disabled">
 		<i class="ion ion-fw ion-home"></i> HOME 3 <span class="badge">Coming Soon</span>
 	</a>
-	<a href="home4.html" class="list-group-item disabled">
+	<a href="home4.html" class="list-group-item ripple disabled">
 		<i class="ion ion-fw ion-home"></i> HOME 4 <span class="badge">Coming Soon</span>
 	</a>
 </div>
@@ -33,24 +33,24 @@ ob_start();
 		</div>
 		<div class="panel-collapse collapse<?php get('panel', 'pages', ' in');?>" id="collapsePages">
 			<div class="list-group">
-				<a class="list-group-item disabled" href="pages-adventure-travel.html">Adventure Travel <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item<?php get('page', 'forum', ' active');?>" href="pages-forum.html">Forum</a>
-				<a class="list-group-item disabled" href="pages-agency.html">Agency <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-app-landing.html">App Landing <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item<?php get('page', 'resume', ' active');?>" href="pages-resume.html">Resume</a>
-				<a class="list-group-item<?php get('page', 'social', ' active');?>" href="pages-social.html">Social Network</a>
-				<a class="list-group-item disabled" href="pages-capital-film.html">Capital Film <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-fashion.html">Fashion <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-fitness.html">Fitness <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-restaurant.html">Restaurant <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item<?php get('page', 'video', ' active');?>" href="pages-video.html">Video</a>
-				<a class="list-group-item disabled" href="pages-winery.html">Winery <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-event-seminar.html">Event/Seminar <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-architecture.html">Architecture <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-photography.html">Photography <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item disabled" href="pages-portfolio.html">Portfolio <span class="badge">Coming Soon</span></a>
-				<a class="list-group-item<?php get('page', 'shop', ' active');?>" href="pages-shop.html">Shop</a>
-				<a class="list-group-item<?php get('page', 'blog', ' active');?>" href="pages-blog.html">Blog</a>
+				<a class="list-group-item ripple disabled" href="pages-adventure-travel.html">Adventure Travel <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple<?php get('page', 'forum', ' active');?>" href="pages-forum.html">Forum</a>
+				<a class="list-group-item ripple disabled" href="pages-agency.html">Agency <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-app-landing.html">App Landing <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple<?php get('page', 'resume', ' active');?>" href="pages-resume.html">Resume</a>
+				<a class="list-group-item ripple<?php get('page', 'social', ' active');?>" href="pages-social.html">Social Network</a>
+				<a class="list-group-item ripple disabled" href="pages-capital-film.html">Capital Film <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-fashion.html">Fashion <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-fitness.html">Fitness <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-restaurant.html">Restaurant <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple<?php get('page', 'video', ' active');?>" href="pages-video.html">Video</a>
+				<a class="list-group-item ripple disabled" href="pages-winery.html">Winery <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-event-seminar.html">Event/Seminar <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-architecture.html">Architecture <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-photography.html">Photography <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-portfolio.html">Portfolio <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple<?php get('page', 'shop', ' active');?>" href="pages-shop.html">Shop</a>
+				<a class="list-group-item ripple<?php get('page', 'blog', ' active');?>" href="pages-blog.html">Blog</a>
 			</div>
 		</div>
 	</div>
@@ -62,18 +62,18 @@ ob_start();
 		</div>
 		<div class="panel-collapse collapse<?php get('panel', 'utility', ' in');?>" id="collapseUtility">
 			<div class="list-group">
-				<a class="list-group-item<?php get('page', 'aboutus', ' active');?>" href="utility-about-us.html">About Us</a>
-				<a class="list-group-item<?php get('page', 'aboutme', ' active');?>" href="utility-about-me.html">About Me</a>
-				<a class="list-group-item<?php get('page', 'services', ' active');?>" href="utility-services.html">Services</a>
-				<a class="list-group-item<?php get('page', 'contact', ' active');?>" href="utility-contact.html">Contact</a>
-				<a class="list-group-item<?php get('page', 'signin', ' active');?>" href="utility-sign-in.html">Sign In</a>
-				<a class="list-group-item<?php get('page', 'signup', ' active');?>" href="utility-sign-up.html">Sign Up</a>
-				<a class="list-group-item<?php get('page', 'pwd', ' active');?>" href="utility-pwd.html">Password</a>
-				<a class="list-group-item<?php get('page', 'sign', ' active');?>" href="utility-social-sign.html">Social Sign</a>
-				<a class="list-group-item<?php get('page', 'myaccount', ' active');?>" href="utility-my-account.html">My Account</a>
-				<a class="list-group-item<?php get('page', 'users', ' active');?>" href="utility-users.html">Users</a>
-				<a class="list-group-item<?php get('page', 'user', ' active');?>" href="utility-user.html">User</a>
-				<a class="list-group-item<?php get('page', 'faq', ' active');?>" href="utility-faq.html">F.A.Q.</a>
+				<a class="list-group-item ripple<?php get('page', 'aboutus', ' active');?>" href="utility-about-us.html">About Us</a>
+				<a class="list-group-item ripple<?php get('page', 'aboutme', ' active');?>" href="utility-about-me.html">About Me</a>
+				<a class="list-group-item ripple<?php get('page', 'services', ' active');?>" href="utility-services.html">Services</a>
+				<a class="list-group-item ripple<?php get('page', 'contact', ' active');?>" href="utility-contact.html">Contact</a>
+				<a class="list-group-item ripple<?php get('page', 'signin', ' active');?>" href="utility-sign-in.html">Sign In</a>
+				<a class="list-group-item ripple<?php get('page', 'signup', ' active');?>" href="utility-sign-up.html">Sign Up</a>
+				<a class="list-group-item ripple<?php get('page', 'pwd', ' active');?>" href="utility-pwd.html">Password</a>
+				<a class="list-group-item ripple<?php get('page', 'sign', ' active');?>" href="utility-social-sign.html">Social Sign</a>
+				<a class="list-group-item ripple<?php get('page', 'myaccount', ' active');?>" href="utility-my-account.html">My Account</a>
+				<a class="list-group-item ripple<?php get('page', 'users', ' active');?>" href="utility-users.html">Users</a>
+				<a class="list-group-item ripple<?php get('page', 'user', ' active');?>" href="utility-user.html">User</a>
+				<a class="list-group-item ripple<?php get('page', 'faq', ' active');?>" href="utility-faq.html">F.A.Q.</a>
 			</div>
 		</div>
 	</div>
@@ -86,10 +86,10 @@ ob_start();
 		</div>
 		<div class="panel-collapse collapse<?php get('panel', 'miscelaneous', ' in');?>" id="collapseMiscelaneous">
 			<div class="list-group">
-				<a class="list-group-item<?php get('page', 'maintenance', ' active');?>" href="miscelaneous-maintenance.html">Maintenance</a>
-				<a class="list-group-item<?php get('page', 'countdown', ' active');?>" href="miscelaneous-countdown.html">Countdown</a>
-				<a class="list-group-item<?php get('page', '404', ' active');?>" href="miscelaneous-404-not-found.html">404 Not Found</a>
-				<a class="list-group-item<?php get('page', '500', ' active');?>" href="miscelaneous-500-internal.html">500 Internal Error</a>
+				<a class="list-group-item ripple<?php get('page', 'maintenance', ' active');?>" href="miscelaneous-maintenance.html">Maintenance</a>
+				<a class="list-group-item ripple<?php get('page', 'countdown', ' active');?>" href="miscelaneous-countdown.html">Countdown</a>
+				<a class="list-group-item ripple<?php get('page', '404', ' active');?>" href="miscelaneous-404-not-found.html">404 Not Found</a>
+				<a class="list-group-item ripple<?php get('page', '500', ' active');?>" href="miscelaneous-500-internal.html">500 Internal Error</a>
 			</div>
 		</div>
 	</div>
