@@ -92,9 +92,7 @@ function directory(dir) {
     return _this + directory;
 }
 
-$(document).on('click', '.edit-class', function() {
-    var _this = $(this);
-
+function iClass(_this) {
     if (_this.hasClass('disabled'))
         return false;
 
@@ -104,6 +102,16 @@ $(document).on('click', '.edit-class', function() {
         eval(directory(_this.data('target'))).toggleClass(_this.data('toggle'))
     if (_this.data('add'))
         eval(directory(_this.data('target'))).addClass(_this.data('add'))
+}
+
+$(document).on('click', '.click-class', function() {
+    var _this = $(this);
+
+    iClass(_this)
+}).on('blur', '.blur-class', function() {
+    var _this = $(this);
+
+    iClass(_this)
 }).on('click', '.focus, .focus-to', function() {
 	var _this = $(this);
 

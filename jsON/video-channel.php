@@ -54,7 +54,7 @@ ob_start();
 		</div>
 	</div>
 	<div class="col-sm-5">
-		<div class="pd-10 read-more edit-class" data-target="this" data-add="active">
+		<div class="pd-10 read-more click-class" data-target="this" data-add="active">
 			<p><a href="pages-video-video.html"><strong>In ac massa in magna pharetra fermentum ac id dui.</strong></a></p>
 			<p class="text-muted">
 				<ul class="list-inline">

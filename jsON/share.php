@@ -10,7 +10,7 @@ ob_start();
 	<a href="#" class="list-group-item"><i class="ion ion-fw ion-social-googleplus"></i> Share on Google Plus</a>
 </div>
 <div class="text-right pdt-10">
-	<a class="edit-class btn btn-danger ripple" href="#" data-target="body" data-remove="modal-active">CANCEL</a>
+	<a class="click-class btn btn-danger ripple" href="#" data-target="body" data-remove="modal-active">CANCEL</a>
 </div>
 <?php
 $content = ob_get_clean();

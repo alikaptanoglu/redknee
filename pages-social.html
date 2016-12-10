@@ -17,24 +17,31 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link href="manifest.json" rel="manifest">
 	</head>
-	<body class="preloader-active wide">
+	<body class="preloader-active">
 		<nav class="header">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<ul class="pull-left">
-					<li>
+					<li class="hidden-lg hidden-md">
+						<a href="#" class="click-class drawer-menu ripple" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
+							<div class="disk"></div>
+							<div class="disk"></div>
+							<div class="disk"></div>
+						</a>
+					</li>
+					<li class="visible-lg visible-md">
 						<a href="index.html" class="ripple">
-							<div class="text-icon text-icon-responsive">red<strong>knee</strong></div>
+							<div class="text-icon">red<strong>knee</strong></div>
 						</a>
 					</li>
 				</ul>
 				<ul class="pull-right">
 					<li>
-						<a href="#top" class="edit-class focus ripple" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
+						<a href="#top" class="click-class focus ripple" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
 							<i class="ion ion-ios-search"></i>
 						</a>
 					</li>
 					<li>
-						<a href="#" class="edit-class ajax ripple" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
+						<a href="#" class="click-class ajax ripple" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
 							<i class="ion ion-android-notifications"></i> <span class="badge">10+</span>
 						</a>
 					</li>
@@ -55,18 +62,44 @@
 			</div>
 		</nav>
 		<div class="search">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
-					<input type="text" name="search" class="form-control" placeholder="Search" />
-					<a href="#" class="times edit-class ripple" data-remove="search-active" data-target="body">
-						<i class="ion ion-ios-close-empty"></i>
-					</a>
+					<input type="text" name="search" class="form-control blur-class" data-remove="search-active" data-target="body" placeholder="Search" />
 				</form>
 			</div>
 		</div>
-		<section class="ct container pd">
+		<section class="ct container-fluid pd">
 			<div class="row">
-				<div class="col-sm-4 col-md-3">
+				<div class="col-sm-6 col-sm-offset-1">
+					<div class="panel panel-material">
+						<div class="panel-body social-textarea">
+							<div class="input-group">
+								<div class="input-group-addon">
+									<img alt="..." src="upload/user-1.jpg" class="img-rounded" />
+								</div>
+								<textarea class="form-control autosize" name="entry" placeholder="How are you today?"></textarea>
+							</div>
+							<div class="float">
+								<div class="pull pull-left">
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-unlocked"></i></a>
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-image"></i></a>
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-location"></i></a>
+								</div>
+								<div class="pull pull-right">
+									<a class="btn btn-default ripple disabled" href="#">140</a>
+									<a class="btn btn-default ripple" href="#"><i class="ion ion-android-send"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-material">
+						<div class="panel-body">asdasd</div>
+						<div class="panel-body">asdasd</div>
+						<div class="panel-body">asdasd</div>
+						<div class="panel-body">asdasd</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
 					<div class="panel panel-material">
 						<div class="panel-image panel-image-left">
 							<img alt="..." src="upload/user-1.jpg" class="img-rounded" />
@@ -103,50 +136,147 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-8 col-md-6">
+
 					<div class="panel panel-material">
-						<div class="panel-body social-textarea">
-							<div class="input-group">
-								<div class="input-group-addon">
-									<img alt="..." src="upload/user-1.jpg" class="img-rounded" />
+						<div class="panel-heading">Trends <span class="tiny"><a href="#">Change</a></span></div>
+						<div class="panel-body">
+							<div class="list-group">
+								<div class="list-group-item">
+									<a href="#">#NationalChristmasTreeDay</a>
+									<span class="text-muted">144k Entry</span>
 								</div>
-								<textarea class="form-control autosize" name="entry" placeholder="How are you today?"></textarea>
-							</div>
-							<div class="float">
-								<div class="pull pull-left">
-									<a class="btn btn-default ripple" href="#"><i class="ion ion-unlocked"></i></a>
-									<a class="btn btn-default ripple" href="#"><i class="ion ion-image"></i></a>
-									<a class="btn btn-default ripple" href="#"><i class="ion ion-location"></i></a>
+								<div class="list-group-item">
+									<a href="#">#GregLake</a>
+									<span class="text-muted">124k Entry</span>
 								</div>
-								<div class="pull pull-right">
-									<a class="btn btn-default ripple disabled" href="#">140</a>
-									<a class="btn btn-default ripple" href="#"><i class="ion ion-android-send"></i></a>
+								<div class="list-group-item">
+									<a href="#">#ThursdayThoughts</a>
+									<span class="text-muted">72k Entry</span>
+								</div>
+								<div class="list-group-item">
+									<a href="#">#FMQs</a>
+									<span class="text-muted">64k Entry</span>
+								</div>
+								<div class="list-group-item">
+									<a href="#">#JohnLennon</a>
+									<span class="text-muted">54k Entry</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="panel panel-material">
-						<div class="panel-body">asdasd</div>
-						<div class="panel-body">asdasd</div>
-						<div class="panel-body">asdasd</div>
-						<div class="panel-body">asdasd</div>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md-3">
-					<div class="panel panel-material">
-					<div class="panel-body">asdasd</div>
+						<div class="panel-body panel-body-padding">
+							<ul class="list-inline">
+								<li>© 2017 Red<strong>Knee</strong></li>
+								<li><a href="#" data-href="jsON/language.php" class="ajax">English</a></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Developers</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">Privacy</a></li>
+								<li><a href="#">Cookies</a></li>
+								<li><a href="#">Terms</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<div class="drawer">
-			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=social&amp;panel=pages" data-method="get">
-				<div class="rolling"></div>
+			<div class="ct container-fluid">
+				<div class="brand">
+					<a href="index.html" class="visible-xs visible-sm">
+						<div class="text-icon">red<strong>knee</strong></div>
+					</a>
+				</div>
+				<div class="group list-group">
+					<a href="index.html" class="list-group-item ripple">
+						<i class="ion ion-fw ion-home"></i> HOME
+					</a>
+					<a href="#" class="list-group-item ripple">
+						<i class="ion ion-fw ion-chatbubbles"></i> Direct Messages <span class="badge">0</span>
+					</a>
+					<a href="#" class="list-group-item ripple">
+						<i class="ion ion-fw ion-gear-b"></i> Settings
+					</a>
+					<a href="#" class="list-group-item ripple">
+						<i class="ion ion-fw ion-log-out"></i> Log Out
+					</a>
+				</div>
+
+				<div class="group panel-group" id="drawer-menu">
+					<div class="panel panel-unstyled">
+						<div class="panel-heading">
+							<a data-toggle="collapse" data-parent="#drawer-menu" href="#collapsePages">
+								<strong><i class="ion ion-ios-arrow-down ion-fw"></i> Linked accounts</strong>
+							</a>
+						</div>
+						<div class="panel-collapse collapse" id="collapsePages">
+							<div class="list-group">
+								<a class="list-group-item ripple active" href="#"><i class="ion ion-fw ion-person"></i> Janet Lisa Doe</a>
+								<a class="list-group-item ripple" href="#"><i class="ion ion-fw ion-person"></i> John Test</a>
+								<a class="list-group-item ripple" href="#"><i class="ion ion-fw ion-person"></i> John Doe</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-material">
+					<div class="panel-heading">Who to follow</div>
+					<div class="panel-body">
+						<ul class="media-list">
+							<li class="media">
+								<div class="media-left">
+									<img class="media-object img-circle avatar" src="upload/user-3.jpg" alt="..." />
+								</div>
+								<div class="media-body">
+								    <p class="media-heading">
+								    	<a href="utility-user.html">John Test</a>
+								    </p>
+								    <a href="#" class="btn btn-info btn-xs btn-mr btn-bordered ripple">
+								    	<i class="ion ion-person-add"></i> Follow
+								    </a>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<img class="media-object img-circle avatar" src="upload/user-1.jpg" alt="..." />
+								</div>
+								<div class="media-body">
+								    <p class="media-heading">
+								    	<a href="utility-user.html">John Doe</a>
+								    </p>
+								    <a href="#" class="btn btn-info btn-xs btn-mr btn-bordered ripple">
+								    	<i class="ion ion-person-add"></i> Follow
+								    </a>
+								</div>
+							</li>
+							<li class="media">
+								<div class="media-left">
+									<img class="media-object img-circle avatar" src="upload/user-2.jpg" alt="..." />
+								</div>
+								<div class="media-body">
+								    <p class="media-heading">
+								    	<a href="utility-user.html">Test Doe</a>
+								    </p>
+								    <a href="#" class="btn btn-info btn-xs btn-mr btn-bordered ripple">
+								    	<i class="ion ion-person-add"></i> Follow
+								    </a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group">
+							<a class="btn btn-default ripple" href="#"><i class="ion ion-refresh"></i></a>
+							<a class="btn btn-default ripple" href="#"><i class="ion ion-shuffle"></i></a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
+		<div class="overlay overlay-drawer click-class" data-remove="drawer-active" data-target="body"></div>
 
 		<div class="preloader">
 			<div class="rolling"></div>
@@ -167,12 +297,12 @@
 		<div class="dock">
 			<div class="rolling"></div>
 		</div>
-		<div class="overlay overlay-dock edit-class" data-remove="dock-active" data-target="body"></div>
+		<div class="overlay overlay-dock click-class" data-remove="dock-active" data-target="body"></div>
 
 		<div class="modal float">
 			<div class="panel panel-material col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
 				<div class="panel-heading"></div>
-				<div class="panel-close edit-class" data-remove="modal-active" data-target="body">
+				<div class="panel-close click-class" data-remove="modal-active" data-target="body">
 					<i class="ion ion-ios-close-empty"></i>
 				</div>
 				<div class="panel-body"></div>

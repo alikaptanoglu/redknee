@@ -22,7 +22,7 @@
 			<div class="ct container">
 				<ul class="pull-left">
 					<li>
-						<a href="#" class="edit-class drawer-menu ripple" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
+						<a href="#" class="click-class drawer-menu ripple" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
 							<div class="disk"></div>
 							<div class="disk"></div>
 							<div class="disk"></div>
@@ -36,12 +36,12 @@
 				</ul>
 				<ul class="pull-right">
 					<li>
-						<a href="#top" class="edit-class focus ripple" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
+						<a href="#top" class="click-class focus ripple" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
 							<i class="ion ion-ios-search"></i>
 						</a>
 					</li>
 					<li>
-						<a href="#" class="edit-class ajax ripple" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
+						<a href="#" class="click-class ajax ripple" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
 							<i class="ion ion-android-notifications"></i> <span class="badge">10+</span>
 						</a>
 					</li>
@@ -64,10 +64,7 @@
 		<div class="search">
 			<div class="ct container">
 				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
-					<input type="text" name="search" class="form-control" placeholder="Search" />
-					<a href="#" class="times edit-class ripple" data-remove="search-active" data-target="body">
-						<i class="ion ion-ios-close-empty"></i>
-					</a>
+					<input type="text" name="search" class="form-control blur-class" data-remove="search-active" data-target="body" placeholder="Search" />
 				</form>
 			</div>
 		</div>
@@ -174,7 +171,7 @@
 							</a>
 						</div>
 						<div class="panel-body panel-body-padding">
-							<div class="read-more edit-class" data-target="this" data-add="active">
+							<div class="read-more click-class" data-target="this" data-add="active">
 								<p><strong>Published on May 9, 2015</strong></p>
 								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
 								<p><strong>Category</strong> <a href="#">Music</a></p>
@@ -403,7 +400,7 @@
 				<div class="rolling"></div>
 			</div>
 		</div>
-		<div class="overlay overlay-drawer edit-class" data-remove="drawer-active" data-target="body"></div>
+		<div class="overlay overlay-drawer click-class" data-remove="drawer-active" data-target="body"></div>
 
 		<div class="preloader">
 			<div class="rolling"></div>
@@ -424,12 +421,12 @@
 		<div class="dock">
 			<div class="rolling"></div>
 		</div>
-		<div class="overlay overlay-dock edit-class" data-remove="dock-active" data-target="body"></div>
+		<div class="overlay overlay-dock click-class" data-remove="dock-active" data-target="body"></div>
 
 		<div class="modal float">
 			<div class="panel panel-material col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
 				<div class="panel-heading"></div>
-				<div class="panel-close edit-class" data-remove="modal-active" data-target="body">
+				<div class="panel-close click-class" data-remove="modal-active" data-target="body">
 					<i class="ion ion-ios-close-empty"></i>
 				</div>
 				<div class="panel-body"></div>

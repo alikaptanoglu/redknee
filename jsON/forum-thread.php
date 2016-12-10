@@ -58,7 +58,7 @@ ob_start();
 
 	                <p>Ut vitae diam ac ligula dignissim tincidunt. Proin euismod ipsum in nibh pulvinar, vulputate accumsan justo ornare. Nullam eu leo eget dui eleifend lacinia id at elit. Proin cursus, sem id pharetra venenatis, enim enim consequat est, quis hendrerit odio tellus in elit. Suspendisse sed elit imperdiet, aliquam lorem quis, scelerisque erat. Sed sit amet lobortis erat. Nulla enim risus, pretium a velit non, lacinia venenatis mi.</p>
 	                
-	                <a class="edit-class btn btn-default ripple" data-target="#hidden-content-1" data-toggle="hidden" href="#">
+	                <a class="click-class btn btn-default ripple" data-target="#hidden-content-1" data-toggle="hidden" href="#">
 	                	<i class="ion ion-fw ion-eye"></i>Spoiler
 	                </a>
 	                <div class="hidden text-danger" id="hidden-content-1">Morbi lacus leo, consectetur ac pretium vitae, viverra in nisl. Proin id accumsan nisl. Phasellus scelerisque quam vitae tincidunt pulvinar. Duis vel convallis leo, id eleifend neque. Etiam placerat mauris eros, sed porttitor nisi tempus non. Fusce consequat massa quis sem tincidunt, non tempus purus commodo. Integer ac sodales lorem. Morbi vel orci eu tortor dictum dignissim.</div>

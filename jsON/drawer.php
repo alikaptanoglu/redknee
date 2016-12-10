@@ -6,7 +6,7 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 ob_start();
 ?>
 <div class="brand">
-	<a href="index.html">
+	<a href="index.html" class="visible-xs visible-sm">
 		<div class="text-icon">red<strong>knee</strong></div>
 	</a>
 </div>
