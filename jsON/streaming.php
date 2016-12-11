@@ -39,7 +39,7 @@ foreach ($items as $key => $row) {
 			<p><?php echo $row['description'];?></p>
 		</div>
 		<div class="card-footer">
-			<a class="btn btn-info ripple ajax" id="like-btn-<?php echo $key?>" data-href="jsON/like.php?key=<?php echo $key;?>" href="#">
+			<a class="btn btn-danger ripple ajax" id="like-btn-<?php echo $key?>" data-href="jsON/like.php?key=<?php echo $key;?>" href="#">
 				<i class="ion ion-fw ion-heart-broken"></i> <span>14</span>
 			</a>
 			<a class="btn btn-default ripple ajax" data-href="jsON/share.php" href="#">
