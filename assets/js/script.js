@@ -225,6 +225,8 @@ $(document).on('click', '.click-class', function() {
         iframe = _this.children('iframe');
 
     iframe.attr('src', iframe.data('src')).css({ 'visibility': 'visible' })
+}).on('keyup', '.character-limit', function() {
+    character_limit($(this))
 })
 
 function clear_hash() {
@@ -607,6 +609,19 @@ function initial() {
                                 'url(' + _this.children('iframe').data('img') + ')'
         })
     })
+
+    $('.character-limit').each(function() {
+        character_limit($(this))
+    })
+}
+
+function character_limit(_this) {
+    var limit = parseInt(_this.data('limit')) - _this.val().length,
+        indicator = $(eval(directory(_this.data('indicator'))));
+
+    (limit < 20) ? indicator.addClass('text-danger') : indicator.removeClass('text-danger')
+
+    indicator.html(limit)
 }
 
 function getScript(selector, file, func) {

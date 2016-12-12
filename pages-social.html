@@ -143,7 +143,7 @@
 								<div class="input-group-addon">
 									<img alt="..." src="upload/user-6.jpg" class="img-rounded" />
 								</div>
-								<textarea class="form-control autosize" name="entry" placeholder="How are you today?"></textarea>
+								<textarea class="form-control autosize character-limit" data-limit="140" data-indicator="this->closest(.panel)->find(.indicator)" name="entry" placeholder="How are you today?"></textarea>
 							</div>
 							<div class="float">
 								<div class="pull pull-left">
@@ -152,7 +152,7 @@
 									<a class="btn btn-default ripple" href="#"><i class="ion ion-location"></i></a>
 								</div>
 								<div class="pull pull-right">
-									<a class="btn btn-default ripple disabled" href="#">140</a>
+									<span class="indicator"></span>
 									<a class="btn btn-default ripple" href="#"><i class="ion ion-android-send"></i></a>
 								</div>
 							</div>
