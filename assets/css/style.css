@@ -1273,4 +1273,15 @@ textarea.form-control { padding: 20px; }
 @media (max-width: 767px) {
 	.panel-social-textarea > .panel-body > .input-group > .input-group-addon > .img-rounded { width: 48px; }
 }
+/*------*/
+.social-video {
+	background-repeat: no-repeat, repeat, no-repeat;
+	background-position: center;
+	background-size: auto, auto, cover;
+
+	cursor: pointer;
+	opacity: .8;
+}
+.social-video:hover { opacity: 1; }
+.social-video > iframe { visibility: hidden; }
 /*************/

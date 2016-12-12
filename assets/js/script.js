@@ -37,7 +37,6 @@ $(window).on('load', function (e) {
         setTimeout(function() {
            json_ajax(_this);
         }, 100 + (i * 100));
-
     })
 
     getScript('.instagram', 'assets/js/instafeed.min.js', function(selector) {
@@ -221,6 +220,11 @@ $(document).on('click', '.click-class', function() {
         _this.hasClass('active') ? _this.removeClass('active') : _this.addClass('active')
         _this.children('input').prop('checked', _this.hasClass('active') ? true : false)
     }
+}).on('click', '.social-video', function() {
+    var _this = $(this),
+        iframe = _this.children('iframe');
+
+    iframe.attr('src', iframe.data('src')).css({ 'visibility': 'visible' })
 })
 
 function clear_hash() {
@@ -331,7 +335,9 @@ function json_ajax(_this) {
                     var posts = '';
 
                     $.each(data_vars, function(key, val) {
-                        posts = posts + '<li class="list-group-item">' + key + ': <strong>' + val + '</strong></li>';
+                        var input = $('[name="' + key + '"]');
+
+                        posts = posts + '<li class="list-group-item">' + key + ': <strong>' + ((input.attr('type') == 'password') ? '[secret]' : val) + '</strong></li>';
                     })
 
                     if (development)
@@ -591,6 +597,16 @@ function initial() {
     })
 
     initSwitch()
+
+    $('.social-video').each(function() {
+        var _this = $(this);
+
+        _this.css({
+            'background-image': 'url(assets/img/play.svg),' + 
+                                'url(assets/img/overlay.svg),' + 
+                                'url(' + _this.children('iframe').data('img') + ')'
+        })
+    })
 }
 
 function getScript(selector, file, func) {
