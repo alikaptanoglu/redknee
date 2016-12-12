@@ -29,7 +29,7 @@ $items = [
 <article class="panel-body">
 	<div class="card">
 		<div class="card-body">
-			<ul class="list-inline text-right pdb-5">
+			<ul class="list-inline text-right pdb-10">
 				<li class="text-muted">16h</li>
 				<li class="dropdown">
 					<a href="#" data-toggle="dropdown">
@@ -110,7 +110,7 @@ $items = [
 <article class="panel-body">
 	<div class="card">
 		<div class="card-body">
-			<ul class="list-inline text-right pdb-5">
+			<ul class="list-inline text-right pdb-10">
 				<li class="text-muted">16h</li>
 				<li class="dropdown">
 					<a href="#" data-toggle="dropdown">

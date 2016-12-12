@@ -1277,7 +1277,7 @@ textarea.form-control { padding: 20px; }
 .social-video {
 	background-repeat: no-repeat, repeat, no-repeat;
 	background-position: center;
-	background-size: auto, auto, cover;
+	background-size: 10%, auto, cover;
 
 	cursor: pointer;
 	opacity: .8;
