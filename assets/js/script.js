@@ -225,7 +225,7 @@ $(document).on('click', '.click-class', function() {
         iframe = _this.children('iframe');
 
     iframe.attr('src', iframe.data('src')).css({ 'visibility': 'visible' })
-}).on('keyup', '.character-limit', function() {
+}).on('keydown', '.character-limit', function() {
     character_limit($(this))
 })
 
