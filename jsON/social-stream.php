@@ -55,6 +55,9 @@ $items = [
 							<li>
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
 							</li>
+							<li>
+								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -150,6 +153,9 @@ $items = [
 							<li>
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
 							</li>
+							<li>
+								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -237,6 +243,9 @@ $items = [
 							<li>
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
 							</li>
+							<li>
+								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -321,6 +330,9 @@ $items = [
 							</li>
 							<li>
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
+							</li>
+							<li>
+								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
 							</li>
 						</ul>
 					</div>

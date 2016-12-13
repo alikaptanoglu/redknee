@@ -135,46 +135,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-6">
-					<form method="post" action="jsON/form-post.php" class="ajax">
-					<div class="panel panel-material panel-social-textarea">
-						<div class="panel-body">
-							<div class="input-group">
-								<div class="input-group-addon">
-									<img alt="..." src="upload/user-6.jpg" class="img-rounded" />
-								</div>
-								<textarea class="form-control autosize character-limit" data-limit="140" data-indicator="this->closest(.panel)->find(.indicator)" name="entry" placeholder="How are you today?"></textarea>
-							</div>
-							<div class="float">
-								<div class="pull pull-left">
-									<a class="btn btn-default ripple" href="#"><i class="ion ion-unlocked"></i></a> <!-- To change the lock value, use the ajax function and change the value in the database and reflect it here. -->
-									<a class="btn btn-default ripple upload-base64" data-img="#social-image" data-input="input[name=social-image]" href="#"><i class="ion ion-image"></i></a>
-									<a class="btn btn-default ripple geo-location" data-results="#geo-results" data-show="true" href="#"><i class="ion ion-location"></i></a>
-								</div>
-								<div class="pull pull-right">
-									<span class="indicator"></span>
-									<button type="submit" class="btn btn-default ripple">
-										<i class="ion ion-android-send"></i>
-									</submit>
-								</div>
-							</div>
-							<div class="image-area">
-								<img id="social-image" src="assets/img/rolling.svg" class="img-responsive img-center" />
-							</div>
-							<select id="geo-results" name="geo-results" class="form-control selectpicker hidden"></select>
-							<input type="hidden" name="social-image" />
-						</div>
-					</div>
-					</form>
-					<div class="m-center">
-						<a class="btn btn-default ripple" href="#">New <span>+2</span> Entry</a>
-					</div>
-					<div class="panel panel-material load" data-href="jsON/social-stream.php" data-pager="lazy">
-						<div class="rolling"></div>
-					</div>
 
-					<div class="panel panel-material">
+					<div class="panel panel-material hidden-xs">
 						<div class="panel-body panel-body-padding">
 							<ul class="list-inline">
 								<li>© 2017 Red<strong>Knee</strong></li>
@@ -188,6 +150,57 @@
 								<li><a href="#">Help</a></li>
 							</ul>
 						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<form method="post" action="jsON/social-entry-post.php" class="ajax">
+						<div class="panel panel-material panel-social-textarea">
+							<div class="panel-body">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<img alt="..." src="upload/user-6.jpg" class="img-rounded" />
+									</div>
+									<textarea class="form-control autosize character-limit" data-limit="140" data-indicator="this->closest(.panel)->find(.indicator)" name="entry" placeholder="How are you today?"></textarea>
+								</div>
+								<div class="float">
+									<div class="pull pull-left">
+										<a class="btn btn-default btn-mr ripple" href="#"><i class="ion ion-unlocked"></i></a> <!-- To change the lock value, use the ajax function and change the value in the database and reflect it here. -->
+										<a class="btn btn-default btn-mr ripple upload-base64" data-img=".image-area->children(.img)" data-input="input[name=social-image]" data-hidden=".image-area|remove" href="#"><i class="ion ion-image"></i></a>
+										<a class="btn btn-default btn-mr ripple geo-location" data-location="input[name=geo-location]" data-coords="input[name=geo-coords]" data-hidden=".geo-area|remove" href="#"><i class="ion ion-location"></i></a>
+									</div>
+									<div class="pull pull-right">
+										<span class="indicator"></span>
+										<button type="submit" class="btn btn-mr btn-default ripple">
+											<i class="ion ion-android-send"></i>
+										</submit>
+									</div>
+								</div>
+							</div>
+							<div class="panel-body geo-area hidden">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="ion ion-fw ion-location"></i>
+									</div>
+									<input type="text" name="geo-location" placeholder="Location" class="form-control geo-input" />
+									<input type="hidden" name="geo-coords" placeholder="Coordinates" class="geo-input" />
+									<span class="input-group-btn">
+										<a class="btn btn-mr btn-default ripple click-value" data-target=".geo-input" data-value="" data-hidden=".geo-area|add" href="#">
+											&times;
+										</a>
+									</span>
+								</div>
+							</div>
+							<div class="panel-body image-area hidden">
+								<img alt="Image" class="img-responsive img-center img click-value" data-target="input[name=social-image]" data-value="" data-hidden=".image-area|add" />
+								<input type="hidden" name="social-image" />
+							</div>
+						</div>
+					</form>
+					<div class="m-center">
+						<a class="btn btn-default ripple" href="#">New <span>+2</span> Entry</a>
+					</div>
+					<div class="panel panel-material load" data-href="jsON/social-stream.php" data-pager="lazy">
+						<div class="rolling"></div>
 					</div>
 				</div>
 			</div>

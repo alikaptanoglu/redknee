@@ -4,9 +4,6 @@ var root = '',
         'userId': '2105600294',
         'accessToken': '2105600294.1677ed0.fafcd049ee1e44f99165eddf925b9534',
     },
-    googleMapsApi = {
-        'key': 'AIzaSyBwKeQvLlAQ2G3HN3Dztsej6-RlpkrAGr4'
-    },
     lang = $('html').attr('lang');
 
 var w = 0,
@@ -110,11 +107,19 @@ function iClass(_this) {
 $(document).on('click', '.click-class', function() {
     var _this = $(this);
 
+    hidden(_this)
     iClass(_this)
 }).on('click', '.click-value', function() {
     var _this = $(this);
 
-    eval(directory(_this.data('target'))).val(_this.data('value'))
+    hidden(_this)
+
+    var $this = eval(directory(_this.data('target')));
+
+    if ($this.is('select'))
+        $this.val(_this.data('value')).trigger('change')
+    else
+        $this.val(_this.data('value'))
 }).on('blur', '.blur-class', function() {
     var _this = $(this);
 
@@ -190,6 +195,8 @@ $(document).on('click', '.click-class', function() {
 
     input.click()
     input.on('change', function() {
+        body.addClass('polling-active');
+
         if (input[0].files && input[0].files[0]) {
             var extension = input[0].files[0].name.split('.').pop().toLowerCase();
 
@@ -197,14 +204,19 @@ $(document).on('click', '.click-class', function() {
                 var filereader = new FileReader()
                     filereader.onload = function(e) {
                         if (_this.data('input'))
-                            $(_this.data('input')).val(e.target.result)
+                            eval(directory(_this.data('input'))).val(e.target.result)
                         if (_this.data('img'))
-                            $(_this.data('img')).attr('src', e.target.result)
+                            eval(directory(_this.data('img'))).attr('src', e.target.result)
+
+                        hidden(_this)
+                        body.removeClass('polling-active');
                     }
 
                     filereader.readAsDataURL(input[0].files[0])
             } else {
                 toast(fileTypes['alert'], 4000)
+
+                body.removeClass('polling-active');
             }
         }
     })
@@ -507,20 +519,12 @@ function json_ajax(_this) {
 
                 if (_this.data('type') == 'geo') {
                     if (obj.status == 'OK') {
+                        var loc = obj.results[3];
 
-                        $(_this.data('results')).html('').css({ 'z-index': 10 });
+                        eval(directory(_this.data('location'))).val(loc.formatted_address)
+                        eval(directory(_this.data('coords'))).val(loc.geometry.location.lat + ',' + loc.geometry.location.lng)
 
-                        $.each(obj.results, function(key, val) {
-                            $(_this.data('results')).prepend($('<option>', {
-                                value: val.geometry.location.lat + ',' + val.geometry.location.lng,
-                                text: val.formatted_address
-                            }))
-                        })
-
-                        $(_this.data('results')).selectpicker('refresh');
-
-                        if (_this.data('show'))
-                            $(_this.data('results')).parent('.bootstrap-select').removeClass('hidden')
+                        hidden(_this)
 
                         body.removeClass('polling-active')
                     }
@@ -620,6 +624,18 @@ function escapeHTML(text) {
     };
 
     return text.replace(/[&<>\\"']/g, function(m) { return map[m]; });
+}
+
+function hidden(_this) {
+    if (_this.data('hidden')) {
+        var hid = _this.data('hidden').split('|'),
+            element = eval(directory(hid[0]));
+
+        if (hid[1] == 'add')
+            element.addClass('hidden')
+        else if (hid[1] == 'remove')
+            element.removeClass('hidden')
+    }
 }
 
 /* Hash Change */
