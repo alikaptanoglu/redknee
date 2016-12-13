@@ -396,7 +396,7 @@ $content = ob_get_clean();
 
 $array = [
 	"html" => [
-		[ "type" => "append", "target" => "this", "content" => $content ]
+		[ "type" => (intval($_POST['page']) == 1)?"dom":"append", "target" => "this", "content" => $content ]
 	],
 	"dom" => [
 		[ "type" => "remove", "target" => "this->children(.rolling)" ]
@@ -407,5 +407,11 @@ $array = [
 		"total_page" => 10
 	]
 ];
+
+if (intval($_POST['page']) == 1)
+	$array["scrollTo"] = [
+		"element" => "body",
+		"tolerance" => "-50px"
+	];
 
 echo json_encode($array);
