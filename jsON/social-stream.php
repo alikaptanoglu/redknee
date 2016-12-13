@@ -31,7 +31,7 @@ $items = [
 		<div class="card-body">
 			<div class="pdb-10">
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-xs-9">
 						<div class="media">
 							<div class="media-left">
 								<img class="media-object img-rounded" src="upload/user-3.jpg" alt="..." />
@@ -44,7 +44,7 @@ $items = [
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-6 text-right">
+					<div class="col-xs-3 text-right">
 						<a href="#" data-toggle="dropdown">
 							<i class="caret"></i>
 						</a>
@@ -126,7 +126,7 @@ $items = [
 		<div class="card-body">
 			<div class="pdb-10">
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-xs-9">
 						<div class="media">
 							<div class="media-left">
 								<img class="media-object img-rounded" src="upload/user-4.jpg" alt="..." />
@@ -139,7 +139,7 @@ $items = [
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-6 text-right">
+					<div class="col-xs-3 text-right">
 						<a href="#" data-toggle="dropdown">
 							<i class="caret"></i>
 						</a>
@@ -213,7 +213,7 @@ $items = [
 		<div class="card-body">
 			<div class="pdb-10">
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-xs-9">
 						<div class="media">
 							<div class="media-left">
 								<img class="media-object img-rounded" src="upload/user-5.jpg" alt="..." />
@@ -226,7 +226,7 @@ $items = [
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-6 text-right">
+					<div class="col-xs-3 text-right">
 						<a href="#" data-toggle="dropdown">
 							<i class="caret"></i>
 						</a>
@@ -298,7 +298,7 @@ $items = [
 		<div class="card-body">
 			<div class="pdb-10">
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-xs-9">
 						<div class="media">
 							<div class="media-left">
 								<img class="media-object img-rounded" src="upload/user-4.jpg" alt="..." />
@@ -311,7 +311,7 @@ $items = [
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-6 text-right">
+					<div class="col-xs-3 text-right">
 						<a href="#" data-toggle="dropdown">
 							<i class="caret"></i>
 						</a>

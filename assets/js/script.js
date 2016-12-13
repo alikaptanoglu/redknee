@@ -3,7 +3,11 @@ var root = '',
     instagram = {
         'userId': '2105600294',
         'accessToken': '2105600294.1677ed0.fafcd049ee1e44f99165eddf925b9534',
-    };
+    },
+    googleMapsApi = {
+        'key': 'AIzaSyBwKeQvLlAQ2G3HN3Dztsej6-RlpkrAGr4'
+    },
+    lang = $('html').attr('lang');
 
 var w = 0,
 	body = $('body');
@@ -39,7 +43,7 @@ $(window).on('load', function (e) {
         }, 100 + (i * 100));
     })
 
-    getScript('.instagram', 'assets/js/instafeed.min.js', function(selector) {
+    getScript('.instagram', [{ 'type': 'js', 'src': 'assets/js/instafeed.min.js' }], function(selector) {
         $(selector).each(function() {
             var _this = $(this),
                 html = _this.html();
@@ -51,7 +55,7 @@ $(window).on('load', function (e) {
         })
     })
 
-    getScript('#bubble', 'assets/js/bubble.js', function() {})
+    getScript('#bubble', [{ 'type': 'js', 'src': 'assets/js/bubble.js' }], function() {})
 
 	initial()
 }).on('scroll', function(e) {
@@ -107,6 +111,10 @@ $(document).on('click', '.click-class', function() {
     var _this = $(this);
 
     iClass(_this)
+}).on('click', '.click-value', function() {
+    var _this = $(this);
+
+    eval(directory(_this.data('target'))).val(_this.data('value'))
 }).on('blur', '.blur-class', function() {
     var _this = $(this);
 
@@ -227,6 +235,57 @@ $(document).on('click', '.click-class', function() {
     iframe.attr('src', iframe.data('src')).css({ 'visibility': 'visible' })
 }).on('keydown', '.character-limit', function() {
     character_limit($(this))
+}).on('click', '.geo-location', function() {
+    var _this = $(this);
+
+    body.addClass('polling-active');
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var data_vars = [];
+
+            $.each(_this.data(), function(key, val) {
+                data_vars['data-' + key] = val;
+            })
+
+            var attributes = {
+                    'data-type': 'geo',
+                    'data-href': 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.coords.latitude + ',' + position.coords.longitude + '&sensor=false'
+                },
+                element = $('<a />', $.extend(attributes, data_vars));
+
+            json_ajax(element)
+        }, function(error) {
+            var msg = '';
+
+            if (error.code) {
+                if (error.PERMISSION_DENIED)
+                    msg = 'User denied the request for Geolocation.';
+                else if (error.POSITION_UNAVAILABLE)
+                    msg = 'Location information is unavailable.';
+                else if (error.TIMEOUT)
+                    msg = 'The request to get user location timed out.';
+                else if (error.UNKNOWN_ERROR)
+                    msg = 'An unknown error occurred.';
+
+                modal({
+                    'body': msg,
+                    'bodyClass': 'text-center',
+                    'class': 'col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2'
+                })
+            }
+
+            body.removeClass('polling-active');
+        })
+    } else {
+        modal({
+            'body': 'Sorry, your browser does not support geolocation services.',
+            'bodyClass': 'text-center',
+            'class': 'col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2'
+        })
+
+        body.removeClass('polling-active');
+    }
 })
 
 function clear_hash() {
@@ -446,6 +505,27 @@ function json_ajax(_this) {
                 if (obj.modal)
                     modal(obj.modal)
 
+                if (_this.data('type') == 'geo') {
+                    if (obj.status == 'OK') {
+
+                        $(_this.data('results')).html('').css({ 'z-index': 10 });
+
+                        $.each(obj.results, function(key, val) {
+                            $(_this.data('results')).prepend($('<option>', {
+                                value: val.geometry.location.lat + ',' + val.geometry.location.lng,
+                                text: val.formatted_address
+                            }))
+                        })
+
+                        $(_this.data('results')).selectpicker('refresh');
+
+                        if (_this.data('show'))
+                            $(_this.data('results')).parent('.bootstrap-select').removeClass('hidden')
+
+                        body.removeClass('polling-active')
+                    }
+                }
+
                 if (obj.pagination) {
                     var pagination = $('<ul/>', { 'class': 'pagination' });
 
@@ -518,7 +598,9 @@ function json_ajax(_this) {
             	body.removeClass('polling-active')
             	_this.removeClass('disabled wait')
 
-                initial()
+                setTimeout(function() {
+                    initial()
+                }, 100)
 
                 _this.find('.error').removeClass('active')
             }
@@ -565,7 +647,7 @@ function initial() {
     $('[data-toggle=tooltip]').tooltip()
     $('[data-toggle=popover]').popover()
 
-    getScript('.maskedInput', 'assets/js/maskedinput.min.js', function(selector) {
+    getScript('.maskedInput', [{ 'type': 'js', 'src': 'assets/js/maskedinput.min.js' }], function(selector) {
         $(selector).each(function() {
             var _this = $(this);
 
@@ -573,11 +655,11 @@ function initial() {
         })
     })
 
-    getScript('.autosize', 'assets/js/autosize.min.js', function(selector) {
+    getScript('.autosize', [{ 'type': 'js', 'src': 'assets/js/autosize.min.js' }], function(selector) {
         autosize($(selector))
     })
 
-    getScript('.countdown', 'assets/js/countdown.min.js', function(selector) {
+    getScript('.countdown', [{ 'type': 'js', 'src': 'assets/js/countdown.min.js' }], function(selector) {
         $(selector).each(function() {
             var _this = $(this);
 
@@ -613,6 +695,14 @@ function initial() {
     $('.character-limit').each(function() {
         character_limit($(this))
     })
+
+    getScript('.selectpicker', [
+        { 'type': 'js', 'src': 'assets/js/bootstrap-select.min.js' },
+        { 'type': 'js', 'src': 'assets/js/locales/bootstrap-select/defaults-' + lang + '.js' },
+        { 'type': 'css', 'src': 'assets/css/bootstrap-select.min.css' }
+    ], function(selector) {
+        $(selector).selectpicker()
+    })
 }
 
 function character_limit(_this) {
@@ -624,23 +714,36 @@ function character_limit(_this) {
     indicator.html(limit)
 }
 
-function getScript(selector, file, func) {
+function getScript(selector, files, func) {
     var obj = $(selector);
 
     if (obj.length > 0) {
-        if (obj.data('load'))
+        var file_count = files.length;
+
+        $.each(files, function(key, obj) {
+            var file_url = (obj['src'].substring(0, 4) == 'http') ? obj['src'] : root + obj['src'];
+
+            if (obj['type'] == 'js') {
+                var count = $('script[src=\'' + obj['src'] + '\']').length;
+
+                if (!count)
+                    $('<script />', {
+                        'src': file_url
+                    }).appendTo('body');
+            } else if (obj['type'] == 'css') {
+                var count = $('link[href=\'' + obj['src'] + '\']').length;
+
+                if (!count)
+                    $('<link />', {
+                        'href': file_url,
+                        'rel': 'stylesheet'
+                    }).appendTo('head');
+            }
+        })
+
+        setTimeout(function() {
             func(selector)
-        else {
-            $.ajaxSetup({
-                cache: true
-            })
-
-            $.getScript(root + file, function() {
-                func(selector)
-            })
-        }
-
-        obj.data('load', 'loaded')
+        }, 100)
     }
 }
 
