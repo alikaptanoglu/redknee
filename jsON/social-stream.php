@@ -2,28 +2,10 @@
 header('Content-Type: application/json');
 ob_start();
 
-$items = [
-	[
-		"title" => "Morbi quis odio eu ex consectetura.",
-		"description" => "Nullam cursus purus et lorem semper, vitae blandit ex dapibus.",
-		"image" => "upload/example-small.jpg"
-	],
-	[
-		"title" => "Nulla convallis elit eget libero semper posuere.",
-		"description" => "Etiam sollicitudin orci faucibus purus ultrices, eu euismod tellus venenatis.",
-		"image" => "upload/example-small-2.jpg"
-	],
-	[
-		"title" => "Nunc vehicula sem quis neque placerat tempus.",
-		"description" => "Quisque facilisis lorem sit amet ligula faucibus imperdiet non in tortor.",
-		"image" => "upload/example-small-3.jpg"
-	],
-	[
-		"title" => "Maecenas tincidunt velit eu nunc aliquet luctus.",
-		"description" => "Duis eget diam ultrices, sodales mi condimentum, accumsan lectus.",
-		"image" => "upload/example-small-4.jpg"
-	]
-];
+$id1 = rand(1, 9999999999999);
+$id2 = rand(1, 9999999999999);
+$id3 = rand(1, 9999999999999);
+$id4 = rand(1, 9999999999999);
 ?>
 <!-- Video Article -->
 <article class="panel-body">
@@ -38,7 +20,7 @@ $items = [
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
-							    	<a href="utility-user.html"><strong>John Test</strong></a>
+							    	<a href="pages-social-user.html"><strong>John Test</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
 							</div>
@@ -80,7 +62,7 @@ $items = [
 			</div>
 		</div>
 		<div class="card-middle">
-			<a class="btn btn-default ripple ajax" id="like-btn-1b" data-href="jsON/like.php?key=1b" href="#">
+			<a class="btn btn-default ripple ajax" id="like-btn-<?php echo $id1;?>" data-href="jsON/like.php?key=<?php echo $id1;?>" href="#">
 				<i class="ion ion-fw ion-heart-broken"></i> <span>14</span>
 			</a>
 			<a class="btn btn-default ripple" href="#">
@@ -95,7 +77,7 @@ $items = [
 				<a class="btn btn-default ripple" href="#">Older Comments (+5)</a>
 			</div>
 			<div class="media-list">
-				<div class="media" id="social-comment-1b">
+				<div class="media" id="social-comment-<?php echo $id1;?>">
 					<div class="media-left">
 						<img class="media-object img-circle" src="upload/user-6.jpg" alt="...">
 					</div>
@@ -104,7 +86,7 @@ $items = [
 							<div class="col-xs-8">
 								<p class="pd-5">
 									<a href="pages-social-profile.html"><strong>You</strong></a>
-									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-1b&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-<?php echo $id1;?>&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
 								</p>
 							</div>
 							<div class="col-xs-4 text-muted text-right">
@@ -136,7 +118,7 @@ $items = [
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
-							    	<a href="utility-user.html"><strong>Jack Muscle</strong></a>
+							    	<a href="pages-social-user.html"><strong>Jack Muscle</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
 							</div>
@@ -170,7 +152,7 @@ $items = [
 			</div>
 		</div>
 		<div class="card-middle">
-			<a class="btn btn-default ripple ajax" id="like-btn-1b" data-href="jsON/like.php?key=1b" href="#">
+			<a class="btn btn-default ripple ajax" id="like-btn-<?php echo $id2;?>" data-href="jsON/like.php?key=<?php echo $id2;?>" href="#">
 				<i class="ion ion-fw ion-heart-broken"></i> <span>14</span>
 			</a>
 			<a class="btn btn-default ripple" href="#">
@@ -185,7 +167,7 @@ $items = [
 				<a class="btn btn-default ripple" href="#">Older Comments (+5)</a>
 			</div>
 			<div class="media-list">
-				<div class="media" id="social-comment-1b">
+				<div class="media" id="social-comment-<?php echo $id2;?>">
 					<div class="media-left">
 						<img class="media-object img-circle" src="upload/user-6.jpg" alt="...">
 					</div>
@@ -194,7 +176,7 @@ $items = [
 							<div class="col-xs-8">
 								<p class="pd-5">
 									<a href="pages-social-profile.html"><strong>You</strong></a>
-									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-1b&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-<?php echo $id2;?>&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
 								</p>
 							</div>
 							<div class="col-xs-4 text-muted text-right">
@@ -226,7 +208,7 @@ $items = [
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
-							    	<a href="utility-user.html"><strong>Megan Flex</strong></a>
+							    	<a href="pages-social-user.html"><strong>Megan Flex</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
 							</div>
@@ -257,7 +239,7 @@ $items = [
 			</div>
 		</div>
 		<div class="card-middle">
-			<a class="btn btn-default ripple ajax" id="like-btn-1b" data-href="jsON/like.php?key=1b" href="#">
+			<a class="btn btn-default ripple ajax" id="like-btn-<?php echo $id3;?>" data-href="jsON/like.php?key=<?php echo $id3;?>" href="#">
 				<i class="ion ion-fw ion-heart-broken"></i> <span>14</span>
 			</a>
 			<a class="btn btn-default ripple" href="#">
@@ -272,7 +254,7 @@ $items = [
 				<a class="btn btn-default ripple" href="#">Older Comments (+5)</a>
 			</div>
 			<div class="media-list">
-				<div class="media" id="social-comment-1b">
+				<div class="media" id="social-comment-<?php echo $id3;?>">
 					<div class="media-left">
 						<img class="media-object img-circle" src="upload/user-6.jpg" alt="...">
 					</div>
@@ -281,7 +263,7 @@ $items = [
 							<div class="col-xs-8">
 								<p class="pd-5">
 									<a href="pages-social-profile.html"><strong>You</strong></a>
-									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-1b&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-<?php echo $id3;?>&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
 								</p>
 							</div>
 							<div class="col-xs-4 text-muted text-right">
@@ -314,7 +296,7 @@ $items = [
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
-							    	<a href="utility-user.html"><strong>Jack Muscle</strong></a>
+							    	<a href="pages-social-user.html"><strong>Jack Muscle</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
 							</div>
@@ -348,7 +330,7 @@ $items = [
 			</div>
 		</div>
 		<div class="card-middle">
-			<a class="btn btn-default ripple ajax" id="like-btn-1b" data-href="jsON/like.php?key=1b" href="#">
+			<a class="btn btn-default ripple ajax" id="like-btn-<?php echo $id4;?>" data-href="jsON/like.php?key=<?php echo $id4;?>" href="#">
 				<i class="ion ion-fw ion-heart-broken"></i> <span>14</span>
 			</a>
 			<a class="btn btn-default ripple" href="#">
@@ -363,7 +345,7 @@ $items = [
 				<a class="btn btn-default ripple" href="#">Older Comments (+5)</a>
 			</div>
 			<div class="media-list">
-				<div class="media" id="social-comment-1b">
+				<div class="media" id="social-comment-<?php echo $id4;?>">
 					<div class="media-left">
 						<img class="media-object img-circle" src="upload/user-6.jpg" alt="...">
 					</div>
@@ -372,7 +354,7 @@ $items = [
 							<div class="col-xs-8">
 								<p class="pd-5">
 									<a href="pages-social-profile.html"><strong>You</strong></a>
-									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-1b&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-<?php echo $id4;?>&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
 								</p>
 							</div>
 							<div class="col-xs-4 text-muted text-right">

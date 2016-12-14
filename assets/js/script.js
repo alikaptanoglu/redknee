@@ -162,7 +162,7 @@ $(document).on('click', '.click-class', function() {
 }).on('click', 'a.ajax, button.ajax', function() {
     var _this = $(this);
 
-    json_ajax(_this.data('load')?$(_this.data('load')):_this);
+    json_ajax(_this.data('load')?eval(directory(_this.data('load'))):_this);
 }).on('keyup', '.keyup', function() {
     var _this = $(this);
 
@@ -324,7 +324,7 @@ function json_ajax(_this) {
             	data_method = 'GET';
 
         if (_this.data('method'))
-            data_method = _this.data('method');
+            data_method = _this.data('method').toUpperCase();
 
         data_vars = $.extend(data_vars, _this.data());
 
@@ -452,58 +452,68 @@ function json_ajax(_this) {
 
                 if (obj.dom)
                     $.each(obj.dom, function(key, val) {
-                        if (val.type == 'show')
-                            eval(directory(val.target)).show()
-                        else if (val.type == 'hide')
-                            eval(directory(val.target)).hide()
-                        else if (val.type == 'remove')
-                            eval(directory(val.target)).remove()
-                        else if (val.type == 'reset')
-                            eval(directory(val.target))[0].reset()
-                        else if (val.type == 'appendTo')
-                            eval(directory(val.element)).appendTo(val.target)
-                        else if (val.type == 'prependTo')
-                            eval(directory(val.element)).prependTo(val.target)
+                        setTimeout(function() {
+                            if (val.type == 'show')
+                                eval(directory(val.target)).show()
+                            else if (val.type == 'hide')
+                                eval(directory(val.target)).hide()
+                            else if (val.type == 'remove')
+                                eval(directory(val.target)).remove()
+                            else if (val.type == 'reset')
+                                eval(directory(val.target))[0].reset()
+                            else if (val.type == 'appendTo')
+                                eval(directory(val.element)).appendTo(val.target)
+                            else if (val.type == 'prependTo')
+                                eval(directory(val.element)).prependTo(val.target)
+                        }, val.delay)
                     })
                 if (obj.html)
                     $.each(obj.html, function(key, val) {
-                        var content = val.content;
+                        setTimeout(function() {
+                            var content = val.content;
 
-                        if (val.escapeHTML)
-                            content = escapeHTML(val.content);
+                            if (val.escapeHTML)
+                                content = escapeHTML(val.content);
 
-                        if (val.type == 'dom')
-                            eval(directory(val.target)).html(content)
-                        else if (val.type == 'append')
-                            eval(directory(val.target)).append(content)
-                        else if (val.type == 'prepend')
-                            eval(directory(val.target)).prepend(content)
-                        else if (val.type == 'before')
-                            eval(directory(val.target)).before(content)
-                        else if (val.type == 'after')
-                            eval(directory(val.target)).after(content)
-                        else if (val.type == 'value') {
-                            var $this = eval(directory(val.target));
+                            if (val.type == 'dom')
+                                eval(directory(val.target)).html(content)
+                            else if (val.type == 'append')
+                                eval(directory(val.target)).append(content)
+                            else if (val.type == 'prepend')
+                                eval(directory(val.target)).prepend(content)
+                            else if (val.type == 'before')
+                                eval(directory(val.target)).before(content)
+                            else if (val.type == 'after')
+                                eval(directory(val.target)).after(content)
+                            else if (val.type == 'value') {
+                                var $this = eval(directory(val.target));
 
-                            if ($this.is('select'))
-                                $this.val(val.text).trigger('change')
-                            else
-                                $this.val(val.text)
-                        } else if (val.type == 'focus')
-                            eval(directory(val.target)).focus()
+                                if ($this.is('select'))
+                                    $this.val(val.text).trigger('change')
+                                else
+                                    $this.val(val.text)
+                            } else if (val.type == 'focus')
+                                eval(directory(val.target)).focus()
+                        }, val.delay)
                     })
 
                 if (obj.editClass)
                     $.each(obj.editClass, function(key, val) {
                         if (val.remove)
-                            eval(directory(val.target)).removeClass(val.remove)
+                            setTimeout(function() {
+                                eval(directory(val.target)).removeClass(val.remove)
+                            }, val.addDelay)
                         if (val.add)
-                            eval(directory(val.target)).addClass(val.add)
+                            setTimeout(function() {
+                                eval(directory(val.target)).addClass(val.add)
+                            }, val.removeDelay)
                     })
 
                 if (obj.editCss)
                     $.each(obj.editCss, function(key, val) {
-                        eval(directory(val.target)).css(val.css[0])
+                        setTimeout(function() {
+                            eval(directory(val.target)).css(val.css[0])
+                        }, val.delay)
                     })
 
                 if (obj.load) {
@@ -519,7 +529,7 @@ function json_ajax(_this) {
 
                 if (_this.data('type') == 'geo') {
                     if (obj.status == 'OK') {
-                        var loc = obj.results[3];
+                        var loc = obj.results[0];
 
                         eval(directory(_this.data('location'))).val(loc.formatted_address)
                         eval(directory(_this.data('coords'))).val(loc.geometry.location.lat + ',' + loc.geometry.location.lng)
@@ -530,27 +540,28 @@ function json_ajax(_this) {
                     }
                 }
 
-                if (obj.pagination) {
+                if (obj.pagination && _this.data('pager')) {
+                    setTimeout(function() {
                     var pagination = $('<ul/>', { 'class': 'pagination' });
 
                     if (parseInt(obj.pagination.current_page) > 3) 
                         var page = parseInt(obj.pagination.current_page) - 1,
                             btn = $('<li/>').appendTo(pagination),
-                            link = $('<a/>', { class: 'ripple btn btn-info', href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
+                            link = $('<a/>', { class: 'ripple btn btn-default', href: '#page-' + page, 'aria-label': 'Previous' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-left' }).appendTo(link);
 
                     if (obj.pagination.total_page > 1)
                         for (var i = parseInt(obj.pagination.current_page)-3; i <= parseInt(obj.pagination.current_page)+3; i++) {
                             if (i >= 1 && i <= obj.pagination.total_page)
                                 var btn = $('<li/>').appendTo(pagination),
-                                    link = $('<a/>', { class: 'ripple btn btn-info', href: '#page-' + i, html: i }).appendTo(btn);
+                                    link = $('<a/>', { class: 'ripple btn btn-default', href: '#page-' + i, html: i }).appendTo(btn);
                             if (i == obj.pagination.current_page) link.addClass('active')
                         }
 
                     if (obj.pagination.total_page > parseInt(obj.pagination.current_page)+3)
                         var page = parseInt(obj.pagination.current_page) + 1,
                             btn = $('<li/>').appendTo(pagination),
-                            link = $('<a/>', { class: 'ripple btn btn-info', href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
+                            link = $('<a/>', { class: 'ripple btn btn-default', href: '#page-' + page, 'aria-label': 'Next' }).appendTo(btn),
                             icon = $('<i/>', { 'aria-hidden': 'true', class: 'ion ion-ios-arrow-right' }).appendTo(link);
 
                     var pager = _this.data('pager');
@@ -571,7 +582,7 @@ function json_ajax(_this) {
                                 }),
                                 btn = $('<a/>', {
                                     'href': '#page-' + next,
-                                    'class': 'btn btn-default ripple',
+                                    'class': 'btn btn-default btn-mr ripple',
                                     'html': eval(directory(pager)).data('text')
                                 }).appendTo(div);
 
@@ -581,6 +592,7 @@ function json_ajax(_this) {
                                 eval(directory(pager)).html(div).removeClass('hidden')
                         } else
                             eval(directory(pager)).html(pagination)
+                    }, obj.pagination.delay)
                 }
 
                 if (obj.scrollTo) {
@@ -589,7 +601,9 @@ function json_ajax(_this) {
                     if ($(element).length) {
                         var offset = $(element).offset();
 
-                        $('html, body').animate({ scrollTop: (obj.scrollTo.tolerance) ? offset.top + parseInt(obj.scrollTo.tolerance): offset.top }, 500);
+                        setTimeout(function() {
+                            $('html, body').animate({ scrollTop: (obj.scrollTo.tolerance) ? offset.top + parseInt(obj.scrollTo.tolerance): offset.top }, 500);
+                        }, obj.scrollTo.delay)
                     } else
                         c(element + ' is not found!', 'warn');
                 }

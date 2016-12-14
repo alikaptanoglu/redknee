@@ -8,23 +8,23 @@
 		"delay": 1000 // Delay MS
 	},
 	"html": [
-		{ "type": "append", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true },
-		{ "type": "dom", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true },
-		{ "type": "prepend", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true },
-		{ "type": "before", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true },
-		{ "type": "after", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true }
-		{ "type": "value", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true }
+		{ "type": "append", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true, "delay": 1000 },
+		{ "type": "dom", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true, "delay": 1000 },
+		{ "type": "prepend", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true, "delay": 1000 },
+		{ "type": "before", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true, "delay": 1000 },
+		{ "type": "after", "target": "form[name=topic-form]", "content": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true, "delay": 1000 },
+		{ "type": "value", "target": "form[name=topic-form]", "text": "<div class=\"alert alert-success\">Success...</div>", "escapeHTML": true, "delay": 1000 }
 	],
 	"dom": [
-		{ "type": "show", "target": ".target-selector" },
-		{ "type": "hide", "target": ".target-selector" },
-		{ "type": "remove", "target": ".target-selector" },
-		{ "type": "reset", "target": ".target-selector" },
-		{ "type": "appendTo", "element": ".element", "target": ".target-selector" },
-		{ "type": "prependTo", "element": ".element", "target": ".target-selector" }
+		{ "type": "show", "target": ".target-selector", "delay": 1000 },
+		{ "type": "hide", "target": ".target-selector", "delay": 1000 },
+		{ "type": "remove", "target": ".target-selector", "delay": 1000 },
+		{ "type": "reset", "target": ".target-selector", "delay": 1000 },
+		{ "type": "appendTo", "element": ".element", "target": ".target-selector", "delay": 1000 },
+		{ "type": "prependTo", "element": ".element", "target": ".target-selector", "delay": 1000 }
 	],
 	"editClass": [
-		{ "target": ".target-selector", "add": "ion-android-favorite text-danger", "remove": "ion-android-favorite-outline" }
+		{ "target": ".target-selector", "add": "ion-android-favorite text-danger", "remove": "ion-android-favorite-outline", "addDelay": 1000, "removeDelay": 1000 }
 	],
 	"editCss": [
 		{
@@ -34,7 +34,8 @@
 					"padding": "10px",
 					"color": "#fff"
 				}
-			]
+			],
+			"delay": 1000
 		}
 	],
 	"modal": {
@@ -59,7 +60,8 @@
 	"scrollTo": {
 		"element": "#streaming",
 		"tolerance": "-64px",
-		"speed": 500
+		"speed": 500,
+		"delay": 1000
 	},
 	"run": [ "function1()", "function2()" ]
 }

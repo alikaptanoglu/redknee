@@ -564,6 +564,7 @@ body.dock-active > .overlay-dock { transform: translate(0); z-index: 700; }
 }
 .modal > .panel > .panel-close:hover { background: rgba(0, 0, 0, 1); }
 .modal > .panel > .panel-body { padding: 30px; }
+.modal > .panel > .panel-body > .material-pager { margin: 20px 0 0; padding: 0; }
 .modal > .panel > .panel-body > .panel-brand { margin: -30px -30px 20px; }
 .modal > .panel > .panel-body.gray { background: #f0f0f0; }
 .modal > .panel > .panel-footer { margin: -2px 0 0; border-radius: 0 0 2px 2px; border-width: 0; }
@@ -1251,7 +1252,8 @@ textarea.form-control { padding: 20px; }
 }
 .switch.active::after { margin-left: 20px; background: #333; }
 /*------*/
-.material-pager > ul.pagination { margin: 20px auto; float: none; display: table; }
+.material-pager { padding: 0 0 20px; }
+.material-pager > ul.pagination { margin: 0 auto; float: none; display: table; }
 .material-pager > ul.pagination > li > a { margin: 5px; min-width: 48px; text-align: center; }
 .material-pager > ul.pagination > li > a:hover { background: rgba(0, 0, 0, .1); }
 .material-pager > ul.pagination > li.active > a { background: #2577ff; color: #fff; }
