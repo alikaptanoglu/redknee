@@ -245,7 +245,7 @@ $(document).on('click', '.click-class', function() {
         iframe = _this.children('iframe');
 
     iframe.attr('src', iframe.data('src')).css({ 'visibility': 'visible' })
-}).on('keydown', '.character-limit', function() {
+}).on('keydown, keyup', '.character-limit', function() {
     character_limit($(this))
 }).on('click', '.geo-location', function() {
     var _this = $(this);

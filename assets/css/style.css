@@ -1277,6 +1277,7 @@ textarea.form-control { padding: 20px; }
 	-webkit-filter: grayscale(100%);
     	    filter: grayscale(100%);
 }
+.panel-social-textarea > .panel-body > .input-group > .input-group-addon > .img-to { width: 32px; }
 .panel-social-textarea > .panel-body.image-area {
 	-webkit-box-sizing: content-box;
 	   -moz-box-sizing: content-box;
@@ -1303,6 +1304,7 @@ textarea.form-control { padding: 20px; }
 .panel-social-textarea > .panel-body.image-area > .img:hover { opacity: .8; }
 @media (max-width: 767px) {
 	.panel-social-textarea > .panel-body > .input-group > .input-group-addon > .img-rounded { width: 48px; }
+	.panel-social-textarea > .panel-body > .input-group > .input-group-addon > .img-to { width: 32px; }
 }
 /*------*/
 .social-video {

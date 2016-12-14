@@ -49,6 +49,7 @@ ob_start();
 				<a class="list-group-item ripple disabled" href="pages-architecture.html">Architecture <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item ripple disabled" href="pages-photography.html">Photography <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item ripple disabled" href="pages-portfolio.html">Portfolio <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-admin.html">Admin <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item ripple<?php get('page', 'shop', ' active');?>" href="pages-shop.html">Shop</a>
 				<a class="list-group-item ripple<?php get('page', 'blog', ' active');?>" href="pages-blog.html">Blog</a>
 			</div>

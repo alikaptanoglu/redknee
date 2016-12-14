@@ -6,6 +6,8 @@ $id1 = rand(1, 9999999999999);
 $id2 = rand(1, 9999999999999);
 $id3 = rand(1, 9999999999999);
 $id4 = rand(1, 9999999999999);
+
+function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($_GET[$key]))?$_GET[$key]:'')==$val)?$class:''; }
 ?>
 <!-- Video Article -->
 <article class="panel-body">
@@ -20,6 +22,7 @@ $id4 = rand(1, 9999999999999);
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
+							    	<?php get('q', 'profile', '<a href="#">Jack Doe</a> <i class="ion ion-fw ion-ios-arrow-right"></i>');?>
 							    	<a href="pages-social-user.html"><strong>John Test</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
@@ -38,7 +41,7 @@ $id4 = rand(1, 9999999999999);
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
 							</li>
 							<li>
-								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
+								<a href="pages-social-entry.html"><i class="ion ion-fw ion-link"></i> External Link</a>
 							</li>
 						</ul>
 					</div>
@@ -118,6 +121,7 @@ $id4 = rand(1, 9999999999999);
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
+							    	<?php get('q', 'profile', '<a href="#">Jack Doe</a> <i class="ion ion-fw ion-ios-arrow-right"></i>');?>
 							    	<a href="pages-social-user.html"><strong>Jack Muscle</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
@@ -136,7 +140,7 @@ $id4 = rand(1, 9999999999999);
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
 							</li>
 							<li>
-								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
+								<a href="pages-social-entry.html"><i class="ion ion-fw ion-link"></i> External Link</a>
 							</li>
 						</ul>
 					</div>
@@ -208,6 +212,7 @@ $id4 = rand(1, 9999999999999);
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
+							    	<?php get('q', 'profile', '<a href="#">Jack Doe</a> <i class="ion ion-fw ion-ios-arrow-right"></i>');?>
 							    	<a href="pages-social-user.html"><strong>Megan Flex</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
@@ -226,7 +231,7 @@ $id4 = rand(1, 9999999999999);
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
 							</li>
 							<li>
-								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
+								<a href="pages-social-entry.html"><i class="ion ion-fw ion-link"></i> External Link</a>
 							</li>
 						</ul>
 					</div>
@@ -296,6 +301,7 @@ $id4 = rand(1, 9999999999999);
 							</div>
 							<div class="media-body">
 							    <p class="media-heading">
+							    	<?php get('q', 'profile', '<a href="#">Jack Doe</a> <i class="ion ion-fw ion-ios-arrow-right"></i>');?>
 							    	<a href="pages-social-user.html"><strong>Jack Muscle</strong></a>
 							    </p>
 							    <p class="text-muted">16h</p>
@@ -314,7 +320,7 @@ $id4 = rand(1, 9999999999999);
 								<a href="#"><i class="ion ion-fw ion-trash-a"></i> Delete</a>
 							</li>
 							<li>
-								<a href="#"><i class="ion ion-fw ion-link"></i> External Link</a>
+								<a href="pages-social-entry.html"><i class="ion ion-fw ion-link"></i> External Link</a>
 							</li>
 						</ul>
 					</div>

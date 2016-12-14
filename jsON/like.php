@@ -19,3 +19,7 @@ $array = [
 ];
 
 echo json_encode($array);
+
+/*
+	To see the likes; You can open modal with 2 separate buttons like "Dislike Like" and "See Like".
+*/
