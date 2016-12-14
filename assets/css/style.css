@@ -50,7 +50,6 @@ p.line-quad { height: 96px; }
 }
 .dropdown-menu > .active > a { background: #444; }
 .dropdown-menu > .active > a:hover { background: #ccc; }
-.dropdown-menu > li > a { box-shadow: inset 10px 0 0 0 #f0f0f0; }
 
 h1.single-title,
 h2.single-title,
