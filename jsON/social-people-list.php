@@ -75,7 +75,7 @@ foreach ($list as $row) {
 		    </p>
 		</div>
 		<div class="media-right">
-			<a href="#" class="btn btn-info btn-sm btn-mr btn-bordered ripple active">
+			<a href="#" class="btn btn-default btn-sm btn-mr btn-bordered ripple active">
 				<i class="ion ion-fw ion-person-add"></i>
 				<span class="hidden-xs">Follow</span>
 			</a>
