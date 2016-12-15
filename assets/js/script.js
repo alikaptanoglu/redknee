@@ -54,6 +54,14 @@ $(window).on('load', function (e) {
 
     getScript('#bubble', [{ 'type': 'js', 'src': 'assets/js/bubble.js' }], function() {})
 
+    getScript('.snow', [{ 'type': 'js', 'src': 'assets/js/snow2.js' }], function() {
+        snow.count = 30;   // number of flakes
+        snow.delay = 20;   // timer interval
+        snow.minSpeed = 2; // minimum movement/time slice
+        snow.maxSpeed = 5; // maximum movement/time slice
+        snow.start();
+    })
+
 	initial()
 }).on('scroll', function(e) {
     var st = $(this).scrollTop(),
@@ -298,6 +306,10 @@ $(document).on('click', '.click-class', function() {
 
         body.removeClass('polling-active');
     }
+}).on('click', '.click-toast', function() {
+    var _this = $(this);
+
+    toast(_this.data('text'), _this.data('timeout'))
 })
 
 function clear_hash() {
