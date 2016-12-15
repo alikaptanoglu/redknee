@@ -67,15 +67,7 @@ foreach ($list as $row) {
 		    <h4 class="media-heading">
 		    	<a href="pages-social-user.html"><?php echo $row['name'];?></a>
 		    </h4>
-		    <p class="text-muted">
-		    	<i class="ion ion-fw ion-location"></i> SD/New York
-		    </p>
-		    <p class="text-muted">
-		    	<i class="ion ion-fw ion-university"></i> Harward University
-		    </p>
-		</div>
-		<div class="media-right">
-			<a href="#" class="btn btn-default btn-sm btn-mr btn-bordered ripple active">
+			<a href="#" class="btn btn-default btn-mr ripple">
 				<i class="ion ion-fw ion-person-add"></i>
 				<span class="hidden-xs">Follow</span>
 			</a>
@@ -97,7 +89,7 @@ if (intval($page) == 1)
 				  "<div class=\"text-center load-more pdt-10\">".
 				  "	<a".
 				  "		href=\"#\"".
-				  "		class=\"btn btn-block btn-mr btn-default ripple ajax\"".
+				  "		class=\"btn btn-mr btn-default ripple ajax\"".
 				  "		data-href=\"jsON/social-people-list.php\"".
 				  "		data-page=\"2\"".
 				  "		data-method=\"post\">Load More</a>".
@@ -117,7 +109,7 @@ $array["html"] = [
 			"target" => ".modal->children(.panel)->children(.panel-body)->children(.load-more)",
 			"content" => "<a".
 				  		 "	href=\"#\"".
-				  		 "	class=\"btn btn-block btn-mr btn-default ripple ajax\"".
+				  		 "	class=\"btn btn-mr btn-default ripple ajax\"".
 				  		 "	data-href=\"jsON/social-people-list.php\"".
 				  		 "	data-page=\"".$next_page."\"".
 				  		 "	data-method=\"post\">Load More</a>"

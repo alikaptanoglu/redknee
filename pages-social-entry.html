@@ -18,7 +18,7 @@
 		<link href="manifest.json" rel="manifest">
 	</head>
 	<body class="preloader-active">
-		<nav class="header theme-4">
+		<nav class="header theme-1">
 			<div class="ct container-fluid">
 				<ul class="pull-left">
 					<li class="hidden-lg hidden-md">
@@ -38,11 +38,6 @@
 					<li>
 						<a href="#top" class="click-class focus ripple" data-add="search-active" data-remove="dock-active" data-focus="input[name=search]" data-target="body">
 							<i class="ion ion-ios-search"></i>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="click-class ajax ripple" data-href="jsON/dock.php" data-add="dock-active" data-remove="search-active" data-target="body">
-							<i class="ion ion-android-notifications"></i> <span class="badge">10+</span>
 						</a>
 					</li>
 					<li class="dropdown">
@@ -72,44 +67,7 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="panel panel-material">
-						<div class="panel-image panel-image-left">
-							<img alt="..." src="upload/user-6.jpg" class="img-rounded" />
-						</div>
-						<div class="panel-body">
-							<div class="card card-sm">
-								<div class="card-heading" style="background-image: url(upload/channel4.jpg)">
-									<h3>
-										<a href="pages-social-profile.html">Jack Doe <i class="ion ion-fw ion-checkmark-circled"></i></a>
-									</h3>
-								</div>
-								<div class="card-body">
-									<div class="row social-panel">
-										<div class="col col-xs-4">
-											<a href="#">
-												<p>ENTRIES</p>
-												<p>14K</p>
-											</a>
-										</div>
-										<div class="col col-xs-4">
-											<a href="#" data-href="jsON/social-people-list.php" data-method="post" class="ajax">
-												<p>FOLLOWERS</p>
-												<p>10K</p>
-											</a>
-										</div>
-										<div class="col col-xs-4">
-											<a href="#" data-href="jsON/social-people-list.php" data-method="post" class="ajax">
-												<p>FOLLOWING</p>
-												<p>1K</p>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="panel panel-material">
-						<div class="panel-heading">Trends <span class="tiny"><a href="#">Change</a></span></div>
+						<div class="panel-heading">Trends</div>
 						<div class="panel-body">
 							<div class="list-group">
 								<div class="list-group-item">
@@ -153,54 +111,87 @@
 					</div>
 				</div>
 				<div class="col-sm-6">
-					<form method="post" action="jsON/social-entry-post.php" class="ajax">
-						<div class="panel panel-material panel-social-textarea">
-							<div class="panel-body">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<img alt="..." src="upload/user-6.jpg" class="img-rounded" />
-									</div>
-									<textarea class="form-control autosize character-limit" data-limit="140" data-indicator="this->closest(.panel)->find(.indicator)" name="entry" placeholder="How are you today?"></textarea>
-								</div>
-								<div class="float">
-									<div class="pull pull-left">
-										<a class="btn btn-default btn-mr ripple" href="#"><i class="ion ion-unlocked"></i></a> <!-- To change the lock value, use the ajax function and change the value in the database and reflect it here. -->
-										<a class="btn btn-default btn-mr ripple upload-base64" data-img=".image-area->children(.img)" data-input="input[name=social-image]" data-hidden=".image-area|remove" href="#"><i class="ion ion-image"></i></a>
-										<a class="btn btn-default btn-mr ripple geo-location" data-location="input[name=geo-location]" data-coords="input[name=geo-coords]" data-hidden=".geo-area|remove" href="#"><i class="ion ion-location"></i></a>
-									</div>
-									<div class="pull pull-right">
-										<span class="indicator"></span>
-										<button type="submit" class="btn btn-mr btn-default ripple">
-											<i class="ion ion-android-send"></i>
-										</submit>
-									</div>
-								</div>
+					<div class="panel panel-material">
+<article class="panel-body">
+	<div class="card">
+		<div class="card-body">
+			<div class="pdb-10">
+				<div class="row">
+					<div class="col-xs-9">
+						<div class="media">
+							<div class="media-left">
+								<img class="media-object img-rounded" src="upload/user-4.jpg" alt="..." />
 							</div>
-							<div class="panel-body geo-area hidden">
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="ion ion-fw ion-location"></i>
-									</div>
-									<input type="text" name="geo-location" placeholder="Location" class="form-control geo-input" />
-									<input type="hidden" name="geo-coords" placeholder="Coordinates" class="geo-input" />
-									<span class="input-group-btn">
-										<a class="btn btn-mr btn-default ripple click-value" data-target=".geo-input" data-value="" data-hidden=".geo-area|add" href="#">
-											&times;
-										</a>
-									</span>
-								</div>
-							</div>
-							<div class="panel-body image-area hidden">
-								<img alt="Image" class="img-responsive img-center img click-value" data-target="input[name=social-image]" data-value="" data-hidden=".image-area|add" />
-								<input type="hidden" name="social-image" />
+							<div class="media-body">
+							    <p class="media-heading">
+							    	<a href="pages-social-user.html"><strong>Jack Muscle</strong></a>
+							    </p>
+							    <p class="text-muted">16h</p>
 							</div>
 						</div>
-					</form>
-					<div class="m-center">
-						<a class="btn btn-default ripple" href="#">New <span>+2</span> Entry</a>
 					</div>
-					<div class="panel panel-material load" data-href="jsON/social-stream.php" data-pager="lazy">
-						<div class="rolling"></div>
+					<div class="col-xs-3 text-right">
+						<a href="#" data-toggle="dropdown">
+							<i class="caret"></i>
+						</a>
+						<ul class="dropdown-menu pull-right">
+							<li>
+								<a href="pages-social-entry.html"><i class="ion ion-fw ion-link"></i> External Link</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="social-image">
+				<img alt="..." src="upload/social-stream-2.jpg" class="img-responsive" />
+			</div>
+			<div class="pdt-10 pdl-5 read-more click-class" data-target="this" data-add="active">
+				<p><strong>The standard Lorem Ipsum passage, used since the 1500s</strong></p>
+				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+				<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+			</div>
+		</div>
+		<div class="card-middle">
+			<a class="btn btn-default ripple ajax load" data-href="jsON/sign.php?q=in" href="#">
+				<i class="ion ion-fw ion-heart-broken"></i> <span>14</span>
+			</a>
+			<a class="btn btn-default ripple" href="#">
+				<i class="ion ion-fw ion-android-share"></i>
+			</a>
+			<a class="btn btn-default ripple click-class" data-target="this->closest(.card)->children(.comments)" data-remove="hidden" href="#">
+				<i class="ion ion-fw ion-chatbubbles"></i> <span>99+</span>
+			</a>
+		</div>
+		<div class="card-body comments hidden">
+			<div class="m-center">
+				<a class="btn btn-default ripple" href="#">Older Comments (+5)</a>
+			</div>
+			<div class="media-list">
+				<div class="media" id="social-comment-<?php echo $id4;?>">
+					<div class="media-left">
+						<img class="media-object img-circle" src="upload/user-6.jpg" alt="...">
+					</div>
+					<div class="media-body">
+						<div class="row">
+							<div class="col-xs-8">
+								<p class="pd-5">
+									<a href="pages-social-profile.html"><strong>Jordan</strong></a>
+									<a href="#" class="ajax" data-href="jsON/delete.php?id=social-comment-<?php echo $id4;?>&status=confirmation"><i class="ion ion-fw ion-trash-a"></i></a>
+								</p>
+							</div>
+							<div class="col-xs-4 text-muted text-right">
+								<p class="pd-5">2h</p>
+							</div>
+							<div class="col-xs-12">
+								<p class="pd-5">Nullam cursus purus et lorem semper, vitae blandit ex dapibus.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
 					</div>
 				</div>
 			</div>
@@ -217,36 +208,13 @@
 					<a href="pages-social.html" class="list-group-item ripple">
 						<i class="ion ion-fw ion-home"></i> HOME
 					</a>
-					<a href="#" data-href="jsON/dm.php" class="list-group-item ripple ajax">
-						<i class="ion ion-fw ion-chatbubbles"></i> Direct Messages <span class="badge">0</span>
+					<a href="index.html" class="list-group-item ripple">
+						<i class="ion ion-fw ion-home"></i> RedKnee HOME
 					</a>
-					<a href="#" class="list-group-item ripple">
-						<i class="ion ion-fw ion-gear-b"></i> Settings
-					</a>
-					<a href="utility-social-sign.html" class="list-group-item ripple">
-						<i class="ion ion-fw ion-log-out"></i> Log Out
-					</a>
-				</div>
-
-				<div class="group panel-group" id="drawer-menu">
-					<div class="panel panel-unstyled">
-						<div class="panel-heading">
-							<a data-toggle="collapse" data-parent="#drawer-menu" href="#collapsePages">
-								<strong><i class="ion ion-ios-arrow-down ion-fw"></i> Linked accounts</strong>
-							</a>
-						</div>
-						<div class="panel-collapse collapse" id="collapsePages">
-							<div class="list-group">
-								<a class="list-group-item ripple active" href="#"><i class="ion ion-fw ion-person"></i> Jack Doe</a>
-								<a class="list-group-item ripple" href="#"><i class="ion ion-fw ion-person"></i> John Test</a>
-								<a class="list-group-item ripple" href="#"><i class="ion ion-fw ion-person"></i> John Doe</a>
-							</div>
-						</div>
-					</div>
 				</div>
 
 				<div class="panel panel-material">
-					<div class="panel-heading">Who to follow</div>
+					<div class="panel-heading">Peoples</div>
 					<div class="panel-body">
 						<ul class="media-list">
 							<li class="media">
@@ -257,7 +225,7 @@
 								    <p class="media-heading">
 								    	<a href="utility-user.html">John Test</a>
 								    </p>
-								    <a href="#" class="btn btn-info btn-sm btn-mr btn-bordered ripple">
+								    <a href="#" data-href="jsON/sign.php?q=in" class="btn btn-info btn-sm btn-mr btn-bordered ripple ajax">
 								    	<i class="ion ion-fw ion-person-add"></i> Follow
 								    </a>
 								</div>
@@ -270,7 +238,7 @@
 								    <p class="media-heading">
 								    	<a href="utility-user.html">John Doe</a>
 								    </p>
-								    <a href="#" class="btn btn-info btn-sm btn-mr btn-bordered ripple">
+								    <a href="#" data-href="jsON/sign.php?q=in" class="btn btn-info btn-sm btn-mr btn-bordered ripple ajax">
 								    	<i class="ion ion-fw ion-person-add"></i> Follow
 								    </a>
 								</div>
@@ -283,7 +251,7 @@
 								    <p class="media-heading">
 								    	<a href="utility-user.html">Test Doe</a>
 								    </p>
-								    <a href="#" class="btn btn-info btn-sm btn-mr btn-bordered ripple">
+								    <a href="#" data-href="jsON/sign.php?q=in" class="btn btn-info btn-sm btn-mr btn-bordered ripple ajax">
 								    	<i class="ion ion-fw ion-person-add"></i> Follow
 								    </a>
 								</div>

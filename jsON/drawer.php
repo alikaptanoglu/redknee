@@ -5,6 +5,21 @@ function get($key, $val, $class) { echo (preg_replace("/[^a-z0-9]/i","",(isset($
 
 ob_start();
 ?>
+<ul class="row themes">
+	<li class="col col-xs-3 theme-1">
+		<a href="#" class="click-class" data-target="nav.header,.navbar-redknee,.search" data-add="theme-1" data-remove="theme-1 theme-2 theme-3 theme-4"></a>
+	</li>
+	<li class="col col-xs-3 theme-2">
+		<a href="#" class="click-class" data-target="nav.header,.navbar-redknee,.search" data-add="theme-2" data-remove="theme-1 theme-2 theme-3 theme-4"></a>
+	</li>
+	<li class="col col-xs-3 theme-3">
+		<a href="#" class="click-class" data-target="nav.header,.navbar-redknee,.search" data-add="theme-3" data-remove="theme-1 theme-2 theme-3 theme-4"></a>
+	</li>
+	<li class="col col-xs-3 theme-4">
+		<a href="#" class="click-class" data-target="nav.header,.navbar-redknee,.search" data-add="theme-4" data-remove="theme-1 theme-2 theme-3 theme-4"></a>
+	</li>
+</ul>
+
 <div class="brand">
 	<a href="index.html" class="visible-xs visible-sm">
 		<div class="text-icon">red<strong>knee</strong></div>
@@ -49,6 +64,7 @@ ob_start();
 				<a class="list-group-item ripple disabled" href="pages-architecture.html">Architecture <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item ripple disabled" href="pages-photography.html">Photography <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item ripple disabled" href="pages-portfolio.html">Portfolio <span class="badge">Coming Soon</span></a>
+				<a class="list-group-item ripple disabled" href="pages-admin.html">Admin <span class="badge">Coming Soon</span></a>
 				<a class="list-group-item ripple<?php get('page', 'shop', ' active');?>" href="pages-shop.html">Shop</a>
 				<a class="list-group-item ripple<?php get('page', 'blog', ' active');?>" href="pages-blog.html">Blog</a>
 			</div>

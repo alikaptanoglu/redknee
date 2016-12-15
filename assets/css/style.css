@@ -3,6 +3,16 @@
 *:before,
 *:after { transition: all .3s ease-in-out 0s; }
 
+
+/* Themes */
+.themes > .col { padding: 0; }
+.themes > .col > a {
+	display: block;
+	height: 10px;
+}
+.themes:hover > .col > a { height: 32px; }
+/*************/
+
 .material-image {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1),
                 0 3px 1px -2px rgba(0, 0, 0, .1),
@@ -40,7 +50,6 @@ p.line-quad { height: 96px; }
 }
 .dropdown-menu > .active > a { background: #444; }
 .dropdown-menu > .active > a:hover { background: #ccc; }
-.dropdown-menu > li > a { box-shadow: inset 10px 0 0 0 #f0f0f0; }
 
 h1.single-title,
 h2.single-title,
@@ -479,7 +488,7 @@ body.polling-active > .polling { display: table; }
 	transition: all .2s ease 0s;
 	overflow: auto;
 }
-.drawer > .ct > .brand { margin: 0 -15px 10px; padding: 0 15px; max-height: 64px; background: #efefef; }
+.drawer > .ct > .brand { margin: 0 -15px; padding: 0 15px; max-height: 64px; background: #efefef; }
 .drawer > .ct > .brand > a { color: #666; }
 .drawer > .ct > .group { margin: 0 -15px 5px; }
 .drawer > .ct > .group a { display: block; height: 100%; padding: 0 15px; }
@@ -647,7 +656,6 @@ body.preloader-active > .preloader { transform: translate(0); }
 
 /* Header */
 .navbar-redknee {
-	background: #c92d2d;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1),
                 0 3px 1px -2px rgba(0, 0, 0, .1),
                 0 1px 5px 0 rgba(0, 0, 0, .1);
@@ -693,14 +701,28 @@ nav.header {
 	top: 0;
 	right: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0) linear-gradient(141deg, #ef4034 0%, #ec554b 51%, #c8281d 75%) repeat scroll 0 0;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1),
                 0 3px 1px -2px rgba(0, 0, 0, .1),
                 0 1px 5px 0 rgba(0, 0, 0, .1);
     max-height: 64px;
 }
+
+.theme-1 { background: rgba(0, 0, 0, 0) linear-gradient(141deg, #ef4034 0%, #ec554b 50%, #c8281d 75%) repeat scroll 0 0; }
+.theme-2 { background: rgba(0, 0, 0, 0) linear-gradient(141deg, #b83b0f 0%, #db661f 50%, #e89f2c 75%) repeat scroll 0 0; }
+.theme-3 { background: rgba(0, 0, 0, 0) linear-gradient(141deg, #a20fb8 0%, #d41fdb 50%, #772ce8 75%) repeat scroll 0 0; }
+.theme-4 { background: rgba(0, 0, 0, 0) linear-gradient(141deg, #0fb8ad 0%, #1fc8db 50%, #2cb5e8 75%) repeat scroll 0 0; }
+
 nav.header.header-opacity { background: rgba(0, 0, 0, .1); box-shadow: none; }
-nav.header.header-opacity.active { background: #ef4034; }
+
+nav.header.header-opacity.theme-1.active,
+.search.theme-1 { background: #d32f2f; }
+nav.header.header-opacity.theme-2.active,
+.search.theme-2 { background: #a93309; }
+nav.header.header-opacity.theme-3.active,
+.search.theme-3 { background: #8620c5; }
+nav.header.header-opacity.theme-4.active,
+.search.theme-4 { background: #2fbed3; }
+
 nav.header > .ct > ul > li { float: left; }
 nav.header > .ct > ul > li > a.drawer-menu { padding: 12px 14px; }
 nav.header > .ct > ul > li > a.drawer-menu > .disk { border-top: 1px solid rgba(255, 255, 255, .8); width: 32px; margin: 10px 0 6px; border-radius: 4px; }
@@ -1062,7 +1084,7 @@ footer.light { background: #fafafa; }
 .tab-panel.tab-panel-split > ul > li > a { background: transparent; }
 /*************/
 /* Search */
-.search { background: #d32f2f; margin: 16px 0 0; }
+.search { margin: 16px 0 0; }
 .search > .ct .form-control {
 	height: 48px;
 	border-width: 0;
@@ -1277,6 +1299,7 @@ textarea.form-control { padding: 20px; }
 	-webkit-filter: grayscale(100%);
     	    filter: grayscale(100%);
 }
+.panel-social-textarea > .panel-body > .input-group > .input-group-addon > .img-to { width: 32px; }
 .panel-social-textarea > .panel-body.image-area {
 	-webkit-box-sizing: content-box;
 	   -moz-box-sizing: content-box;
@@ -1303,6 +1326,7 @@ textarea.form-control { padding: 20px; }
 .panel-social-textarea > .panel-body.image-area > .img:hover { opacity: .8; }
 @media (max-width: 767px) {
 	.panel-social-textarea > .panel-body > .input-group > .input-group-addon > .img-rounded { width: 48px; }
+	.panel-social-textarea > .panel-body > .input-group > .input-group-addon > .img-to { width: 32px; }
 }
 /*------*/
 .social-video {
