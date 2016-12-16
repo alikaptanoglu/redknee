@@ -3,6 +3,7 @@
 *:before,
 *:after { transition: all .3s ease-in-out 0s; }
 
+label { color: #666; font-size: 12px; }
 
 /* Themes */
 .themes > .col { padding: 0; }
