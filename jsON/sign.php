@@ -48,6 +48,9 @@ if ($q == 'in') {
 				</div>
 			</div>
 		</div>
+		<div class="list-group-item">
+			<div class="captcha"></div>
+		</div>
 	</div>
 	<div class="alert alert-info">
 		<i class="ion ion-fw ion-information"></i> Example register form.

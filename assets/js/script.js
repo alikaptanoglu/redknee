@@ -1,13 +1,18 @@
 var root = '',
-    development = true,
-    instagram = {
+    development = true;
+
+var instagram = {
         'userId': '2105600294',
         'accessToken': '2105600294.1677ed0.fafcd049ee1e44f99165eddf925b9534',
     },
-    lang = $('html').attr('lang');
+    recaptcha = {
+        'sitekey': '6LdMWA8UAAAAAN3RfoNHOD7Oo6f1SN2BKVR_vW6p',
+        'secretkey': '[secret]'
+    };
 
 var w = 0,
-	body = $('body');
+	body = $('body'),
+    lang = $('html').attr('lang');
 
 var resizeTimer,
 	editClassTimer,
@@ -709,6 +714,19 @@ function initial() {
                 _this.text(e.strftime(_this.data('print')));
             })
         })
+    })
+
+    getScript('.captcha', [{ 'type': 'js', 'src': 'https://www.google.com/recaptcha/api.js' }], function(selector) {
+        var re = $('<div />', {
+            'class': 'g-recaptcha',
+            'data-sitekey': recaptcha['sitekey']
+        });
+
+        $(selector).append(re);
+
+        setTimeout(function() {
+            Recaptcha.reload();
+        }, 200)
     })
 
     $('.carousel').carousel()
