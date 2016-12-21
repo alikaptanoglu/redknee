@@ -52,12 +52,9 @@ if ($q == 'in') {
 			<div class="captcha"></div>
 		</div>
 	</div>
-	<div class="alert alert-info">
-		<i class="ion ion-fw ion-information"></i> Example register form.
-	</div>
 	<div class="text-right">
 		<button type="submit" class="btn btn-default ripple">
-			<i class="ion ion-fw ion-chevron-right"></i>
+			Sign Up <i class="ion ion-fw ion-chevron-right"></i>
 		</button>
 	</div>
 </form>

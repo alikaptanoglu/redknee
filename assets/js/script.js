@@ -6,8 +6,7 @@ var instagram = {
         'accessToken': '2105600294.1677ed0.fafcd049ee1e44f99165eddf925b9534',
     },
     recaptcha = {
-        'sitekey': '6LdMWA8UAAAAAN3RfoNHOD7Oo6f1SN2BKVR_vW6p',
-        'secretkey': '[secret]'
+        'sitekey': '6LdMWA8UAAAAAN3RfoNHOD7Oo6f1SN2BKVR_vW6p'
     };
 
 var w = 0,
@@ -716,17 +715,19 @@ function initial() {
         })
     })
 
-    getScript('.captcha', [{ 'type': 'js', 'src': 'https://www.google.com/recaptcha/api.js' }], function(selector) {
+    getScript('.captcha', [{ 'type': 'js', 'src': 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' }], function(selector) {
         var re = $('<div />', {
-            'class': 'g-recaptcha',
-            'data-sitekey': recaptcha['sitekey']
+            'id': 'g-recaptcha',
+            'class': 'captcha'
         });
 
-        $(selector).append(re);
+        $(selector).html(re);
 
         setTimeout(function() {
-            Recaptcha.reload();
-        }, 200)
+            grecaptcha.render('g-recaptcha', {
+                'sitekey': recaptcha['sitekey']
+            })
+        }, 100)
     })
 
     $('.carousel').carousel()
@@ -788,7 +789,9 @@ function getScript(selector, files, func) {
 
                 if (!count)
                     $('<script />', {
-                        'src': file_url
+                        'src': file_url,
+                        'async': '',
+                        'defer': ''
                     }).appendTo('body');
             } else if (obj['type'] == 'css') {
                 var count = $('link[href=\'' + obj['src'] + '\']').length;
