@@ -10,10 +10,10 @@ if ($q == 'in') {
 <form method="post" action="jsON/form-post.php" class="ajax" data-token="{token-code}">
 	<input type="text" class="form-control" name="uid" placeholder="E-mail" />
 	<input type="password" class="form-control" name="pwd" placeholder="Password" />
-	<a href="utility-pwd.html" class="btn btn-default ripple">
-		<i class="ion ion-fw ion-information"></i> Forgot your password?
-	</a>
 	<div class="text-right">
+		<a href="utility-pwd.html" class="btn btn-default btn-mr ripple">
+			Forgotten Password
+		</a>
 		<button type="submit" class="btn btn-default btn-mr ripple">
 			<i class="ion ion-fw ion-chevron-right"></i>
 		</button>
