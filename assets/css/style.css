@@ -1229,6 +1229,7 @@ body.search-active > .search { margin: 64px 0 0; }
 }
 /*------*/
 .error > .error-text { margin: 2px 0 10px; visibility: hidden; }
+.error > .error-text-mr { margin: 0; }
 .error > .form-control { margin: 0; }
 .error.active { color: #f3343d; }
 .error.active > .form-control { border-color: #f3343d; }
