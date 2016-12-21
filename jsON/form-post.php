@@ -26,7 +26,8 @@ $array = [
 			"type" => "reset",
 			"target" => "this"
 		]
-	]
+	],
+	"captchaReset" => "--all--"
 ];
 
 echo json_encode($array);

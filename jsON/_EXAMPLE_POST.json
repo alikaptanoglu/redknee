@@ -63,5 +63,6 @@
 		"speed": 500,
 		"delay": 1000
 	},
-	"run": [ "function1()", "function2()" ]
+	"run": [ "function1()", "function2()" ],
+	"captchaReset": "--all-- or captcha_div_id"
 }

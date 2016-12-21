@@ -10,11 +10,11 @@ if ($q == 'in') {
 <form method="post" action="jsON/form-post.php" class="ajax" data-token="{token-code}">
 	<input type="text" class="form-control" name="uid" placeholder="E-mail" />
 	<input type="password" class="form-control" name="pwd" placeholder="Password" />
-	<div class="alert alert-info">
-		<a href="utility-pwd.html"><i class="ion ion-fw ion-information"></i> Forgot your password?</a>
-	</div>
+	<a href="utility-pwd.html" class="btn btn-default ripple">
+		<i class="ion ion-fw ion-information"></i> Forgot your password?
+	</a>
 	<div class="text-right">
-		<button type="submit" class="btn btn-default ripple">
+		<button type="submit" class="btn btn-default btn-mr ripple">
 			<i class="ion ion-fw ion-chevron-right"></i>
 		</button>
 	</div>
@@ -49,11 +49,11 @@ if ($q == 'in') {
 			</div>
 		</div>
 		<div class="list-group-item">
-			<div class="captcha"></div>
+			<div class="captcha" data-id="modal-captcha"></div>
 		</div>
 	</div>
 	<div class="text-right">
-		<button type="submit" class="btn btn-default ripple">
+		<button type="submit" class="btn btn-default btn-mr ripple">
 			Sign Up <i class="ion ion-fw ion-chevron-right"></i>
 		</button>
 	</div>
@@ -64,16 +64,13 @@ if ($q == 'in') {
 <div class="panel-brand brand-sunset-camping">Forgotten Password</div>
 <form method="post" action="jsON/form-post.php" class="ajax" id="form-id" data-token="{token-code}">
 	<input type="text" class="form-control" name="uid" placeholder="E-mail" />
-	<div class="alert alert-warning">
-		Captcha code "<strong>43rw2f</strong>".
-	</div>
-	<input type="text" class="form-control" name="uid" placeholder="Captcha" />
-	<div class="alert alert-info">
-		<a href="utility-sign-up.html"><i class="ion ion-fw ion-information"></i> Or sign up</a>
-	</div>
+	<div class="captcha" data-id="modal-captcha"></div>
 	<div class="text-right">
-		<button type="submit" class="btn btn-default ripple">
-			<i class="ion ion-fw ion-chevron-right"></i>
+		<a href="utility-sign-up.html" class="btn btn-default btn-mr ripple">
+			Sign Up
+		</a>
+		<button type="submit" class="btn btn-default btn-mr ripple">
+			Send <i class="ion ion-fw ion-chevron-right"></i>
 		</button>
 	</div>
 </form>
@@ -85,7 +82,7 @@ $content = ob_get_clean();
 $array = [
 	"modal" => [
 		"body" => $content,
-		"class" => "col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-4"
+		"class" => "col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4"
 	]
 ];
 

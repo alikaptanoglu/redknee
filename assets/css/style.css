@@ -5,7 +5,18 @@
 
 label { color: #666; font-size: 12px; }
 
-.captcha { display: table; }
+.captcha {
+	-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+	-webkit-transform: scale(.90);
+	        transform: scale(.90);
+	margin: 0 0 5px;
+	height: 78px;
+	background-image: url(../img/rolling.svg);
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	background-size: 10%;
+}
 
 /* Themes */
 .themes > .col { padding: 0; }

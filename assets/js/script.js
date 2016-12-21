@@ -25,7 +25,8 @@ var resizeTimer,
     carouselTimer;
 
 var modalCloseDelay;
-var hashPrev;
+var hashPrev,
+    gr = {};
 
 $(window).on('load', function (e) {
 	w = $(window).width();
@@ -629,6 +630,15 @@ function json_ajax(_this) {
                         eval(val);
                     })
 
+                if (obj.captchaReset) {
+                    if (obj.captchaReset == '--all--') {
+                        $('.captcha').each(function() {
+                            grecaptcha.reset(gr['gr-' + $(this).data('id')])
+                        })
+                    } else
+                    grecaptcha.reset(gr['gr-' + obj.captchaReset])
+                }
+
             	body.removeClass('polling-active')
             	_this.removeClass('disabled wait')
 
@@ -689,6 +699,24 @@ function hashchange(callback) {
     }, 100);
 }
 
+function captcha() {
+    var _this = $(this),
+        re = $('<div />', {
+            'id': _this.data('id'),
+            'class': 'g-recaptcha'
+        });
+
+    if (_this.html() == '') {
+        _this.html(re);
+
+        setTimeout(function() {
+            gr['gr-' + _this.data('id')] = grecaptcha.render(_this.data('id'), {
+                'sitekey': recaptcha['sitekey']
+            })
+        }, 200)
+    }
+}
+
 function initial() {
     $('[data-toggle=tooltip]').tooltip()
     $('[data-toggle=popover]').popover()
@@ -715,19 +743,8 @@ function initial() {
         })
     })
 
-    getScript('.captcha', [{ 'type': 'js', 'src': 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' }], function(selector) {
-        var re = $('<div />', {
-            'id': 'g-recaptcha',
-            'class': 'captcha'
-        });
-
-        $(selector).html(re);
-
-        setTimeout(function() {
-            grecaptcha.render('g-recaptcha', {
-                'sitekey': recaptcha['sitekey']
-            })
-        }, 100)
+    getScript('.captcha', [{ 'type': 'js', 'src': 'https://www.google.com/recaptcha/api.js?render=explicit' }], function(selector) {
+        $(selector).each(captcha)
     })
 
     $('.carousel').carousel()

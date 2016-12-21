@@ -80,7 +80,7 @@
 		</div>
 		<section class="ct container">
 			<div class="row">
-				<div class="col col-sm-6 col-sm-offset-1 col-lg-4 col-lg-offset-4">
+				<div class="col col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
 					<div class="panel panel-material">
 						<div class="panel-heading">Sign Up</div>
 						<div class="panel-body panel-body-padding">
@@ -89,12 +89,13 @@
 								<input type="text" class="form-control" name="uid" placeholder="E-mail" />
 								<input type="text" class="form-control" name="pwd" placeholder="Password" />
 								<input type="password" class="form-control" name="pwd-re" placeholder="Re Password" />
-								<div class="alert alert-info">
-									<a href="utility-sign-in.html"><i class="ion ion-fw ion-information"></i> I'am user!</a>
-								</div>
+								<div class="captcha" data-id="captcha"></div>
 								<div class="text-right">
-									<button type="submit" class="btn btn-default ripple">
-										<i class="ion ion-fw ion-chevron-right"></i>
+									<a class="btn btn-default btn-mr ripple" href="utility-sign-in.html">
+										Sign In
+									</a>
+									<button type="submit" class="btn btn-default btn-mr ripple">
+										Sign Up <i class="ion ion-fw ion-chevron-right"></i>
 									</button>
 								</div>
 							</form>
