@@ -67,9 +67,9 @@ ob_start();
 				<p class="text-muted">(Including Tax)</p>
 				<h3 class="pd-5">$ 740,00</h3>
 				<p class="text-muted">Shipping Cost</p>
-				<h3 class="pd-5 pdb-10">$ 2,00</h3>
+				<h3 class="pd-5 pdb-20">$ 2,00</h3>
 				<a href="#" class="btn btn-default btn-block ripple" href="#">Use Promotion Code</a>
-				<a href="#" class="btn btn-danger btn-bordered btn-block ripple" href="#">Complete Shopping</a>
+				<a href="#" class="btn btn-danger btn-block ripple" href="#">Complete Shopping</a>
 			</div>
 		</div>
 	</div>

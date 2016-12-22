@@ -17,9 +17,9 @@
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link href="manifest.json" rel="manifest">
 	</head>
-	<body class="preloader-active wide" id="snow">
+	<body class="preloader-active" id="snow">
 		<nav class="header theme-1">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<ul class="pull-left">
 					<li>
 						<a href="#" class="click-class drawer-menu ripple" data-toggle="drawer-active" data-target="body" data-remove="dock-active">
@@ -67,24 +67,27 @@
 			</div>
 		</nav>
 		<div class="search theme-1">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<form class="ajax keyup" method="post" action="jsON/search-results.php" data-token="csrf">
-					<input type="text" name="search" class="form-control blur-class" data-remove="search-active" data-target="body" placeholder="Search" />
+					<input type="text" name="search" id="search" class="form-control blur-class" data-remove="search-active" data-target="body" placeholder="Search" />
 				</form>
 			</div>
 		</div>
 		<div class="breadcrumb-panel">
-			<div class="ct container">
+			<div class="ct container-fluid">
 				<ul class="breadcrumb">
 					<li>
 						<a href="index.html"><i class="ion ion-fw ion-home"></i> HOME</a>
 					</li>
-					<li class="active"><strong>Shop</strong></li>
+					<li>
+						<a href="pages-shop.html">Shop</a>
+					</li>
+					<li class="active"><strong>Group</strong></li>
 				</ul>
 			</div>
 		</div>
 	    <nav class="navbar navbar-redknee theme-1">
-	        <div class="ct container">
+	        <div class="ct container-fluid">
 	            <div class="navbar-header">
 	                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-top" aria-expanded="false">
 	                    <span class="sr-only">Toggle navigation</span>
@@ -100,7 +103,7 @@
 	                    <li class="dropdown mega-dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women</a>
 	                        <div class="dropdown-menu mega-dropdown-menu">
-	                            <div class="ct container text-left">
+	                            <div class="ct container-fluid text-left">
 					            	<div class="row">
 						            	<div class="col-sm-4">
 						            		<div class="panel panel-soft">
@@ -210,7 +213,7 @@
 	                        	<i class="image" style="background-image: url(assets/img/men.png)"></i>
 	                        </a>
 	                        <div class="dropdown-menu mega-dropdown-menu">
-	                            <div class="ct container text-left">
+	                            <div class="ct container-fluid text-left">
 					            	<div class="row">
 						            	<div class="col-sm-9">
 						            		<ul class="float">
@@ -282,7 +285,7 @@
 	                    <li class="dropdown mega-dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Rings</a>
 	                        <div class="dropdown-menu mega-dropdown-menu">
-	                            <div class="ct container">
+	                            <div class="ct container-fluid">
 									<div class="tab-panel tab-panel-split tab-panel-center">
 										<div class="tab-content">
 											<div class="tab-pane active" id="tab-t1">
@@ -371,7 +374,7 @@
 	                    <li class="dropdown mega-dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Outdoor</a>
 	                        <div class="dropdown-menu mega-dropdown-menu">
-	                            <div class="ct container text-left">
+	                            <div class="ct container-fluid text-left">
 									<div class="row">
 						            	<div class="col-sm-6">
 						            		<div class="embed-responsive embed-responsive-16by9">
@@ -432,457 +435,55 @@
 	            </div>
 	        </div>
 	    </nav>
-		<section class="ct container pd">
+		<section class="ct container-fluid pd">
 			<div class="row">
-				<div class="col-md-9 col-sm-8">
+				<div class="col-sm-10 col-sm-offset-1">
 					<div class="panel panel-material">
-						<div class="panel-body panel-body-edge">
-							<div id="shopping-carousel" class="carousel carousel-thumbnails slide">
-								<div class="carousel-inner">
-									<div class="item active">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-1.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-2.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-3.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-4.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-5.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-6.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-7.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-8.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-9.jpg" alt="..." /></a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html"><img src="upload/shopping-carousel-10.jpg" alt="..." /></a>
-									</div>
-								</div>
-								<ul class="carousel-indicators">
-									<li data-target="#shopping-carousel" data-slide-to="0" class="active"><img alt="..." src="upload/shopping-carousel-thumbnail-1.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="1"><img alt="..." src="upload/shopping-carousel-thumbnail-2.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="2"><img alt="..." src="upload/shopping-carousel-thumbnail-3.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="3"><img alt="..." src="upload/shopping-carousel-thumbnail-4.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="4"><img alt="..." src="upload/shopping-carousel-thumbnail-5.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="5"><img alt="..." src="upload/shopping-carousel-thumbnail-6.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="6"><img alt="..." src="upload/shopping-carousel-thumbnail-7.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="7"><img alt="..." src="upload/shopping-carousel-thumbnail-8.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="8"><img alt="..." src="upload/shopping-carousel-thumbnail-9.png" class="img-responsive" /></li>
-									<li data-target="#shopping-carousel" data-slide-to="9"><img alt="..." src="upload/shopping-carousel-thumbnail-10.png" class="img-responsive" /></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="tab-panel tab-panel-red tab-panel-split">
-						<ul class="nav nav-tabs">
-							<li class="active">
-								<a class="disabled disabled-unstyled click-toast" data-text="You need to change the link links to tab menus." data-timeout="1000" href="#tab-b1" data-toggle="tab">Highlights</a>
-							</li>
-							<li>
-								<a class="disabled disabled-unstyled click-toast" data-text="You need to change the link links to tab menus." data-timeout="1000" href="#tab-b1" data-toggle="tab">Discounted Products</a>
-							</li>
-							<li>
-								<a class="disabled disabled-unstyled click-toast" data-text="You need to change the link links to tab menus." data-timeout="1000" href="#tab-b1" data-toggle="tab">Bestsellers</a>
-							</li>
-							<li>
-								<a class="disabled disabled-unstyled click-toast" data-text="You need to change the link links to tab menus." data-timeout="1000" href="#tab-b1" data-toggle="tab">Cargo Fares</a>
-							</li>
-							<li>
-								<a class="disabled disabled-unstyled click-toast" data-text="You need to change the link links to tab menus." data-timeout="1000" href="#tab-b1" data-toggle="tab">Delivery Today</a>
-							</li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane active" id="tab-b1">
-								<div class="panel panel-material">
-									<div class="panel-body text-center">
-										<div class="list-group">
-											<div class="list-group-item">
-												<div class="row">
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$390,00</s>
-																	<mark>$290,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Apple iPhone 7 32 GB</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$1.100,00</s>
-																	<mark>$880,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$390,00</s>
-																	<mark>$290,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Apple iPhone 7 32 GB</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$1.100,00</s>
-																	<mark>$880,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-												</div>
-											</div>
-											<div class="list-group-item">
-												<div class="row">
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$390,00</s>
-																	<mark>$290,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Apple iPhone 7 32 GB</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$1.100,00</s>
-																	<mark>$880,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$390,00</s>
-																	<mark>$290,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-													<div class="col-sm-6 col-md-3">
-														<a href="pages-shop-product.html">
-															<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-															<p class="line line-dual">Apple iPhone 7 32 GB</p>
-															<div class="discount pd-10">
-																<div class="percent alert alert-danger">14%</div>
-																<div class="price">
-																	<s class="text-muted">$1.100,00</s>
-																	<mark>$880,00</mark>
-																</div>
-															</div>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab-b2">
-								<div class="panel panel-material">
-									<div class="panel-body">
-										<!-- Change Tab Link #tab-b2 -->
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab-b3">
-								<div class="panel panel-material">
-									<div class="panel-body">
-										<!-- Change Tab Link #tab-b3 -->
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab-b4">
-								<div class="panel panel-material">
-									<div class="panel-body">
-										<!-- Change Tab Link #tab-b4 -->
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab-b5">
-								<div class="panel panel-material">
-									<div class="panel-body">
-										<!-- Change Tab Link #tab-b5 -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-4">
-					<div class="panel panel-material text-center">
-						<div class="panel-heading">
-							<p>Day's Offer</p>
-							<p class="tiny">
-								<a href="pages-shop-products.html">See all offers</a>
-							</p>
-						</div>
 						<div class="panel-body panel-body-padding">
-							<div id="offer-carousel" class="carousel slide" data-interval="4000">
-								<div class="carousel-inner">
-									<div class="item active">
-										<a href="pages-shop-product.html">
-											<h4 class="countdown pd-10" data-deadline="2017/12/01 21:22:00" data-print="%D days %H:%M:%S"></h4>
-											<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-											<p class="line line-dual">Apple iPhone 7 32 GB</p>
-											<div class="discount pd-10">
-												<div class="percent alert alert-danger">14%</div>
-												<div class="price">
-													<s class="text-muted">$1.100,00</s>
-													<mark>$880,00</mark>
-												</div>
-											</div>
-										</a>
-									</div>
-									<div class="item">
-										<a href="pages-shop-product.html">
-											<h4 class="countdown pd-10" data-deadline="2017/12/01 19:10:50" data-print="%D days %H:%M:%S"></h4>
-											<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-											<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-											<div class="discount pd-10">
-												<div class="percent alert alert-danger">14%</div>
-												<div class="price">
-													<s class="text-muted">$390,00</s>
-													<mark>$290,00</mark>
-												</div>
-											</div>
-										</a>
+							<div class="panel-brand brand-striped">
+								<div class="row">
+									<div class="col-xs-6">asd</div>
+									<div class="col-xs-6 text-right">
+										<select class="selectpicker change" data-target=".shopping-grid" id="sort" data-width="100px" multiple title="Sort">
+											<optgroup label="Price" data-max-options="1">
+												<option>Price Most</option>
+												<option>Price Least</option>
+											</optgroup>
+											<optgroup label="Sales" data-max-options="1">
+												<option>Sales Most</option>
+												<option>Sales Least</option>
+											</optgroup>
+											<optgroup label="Date" data-max-options="1">
+												<option>Date Newest</option>
+												<option>Date Oldest</option>
+											</optgroup>
+											<optgroup label="Star" data-max-options="1">
+												<option>Star Best</option>
+												<option>Star Worst</option>
+											</optgroup>
+										</select>
+										<span class="btn-group">
+											<a class="btn btn-default ripple btn-mr active" href="#">
+												<i class="ion ion-grid"></i>
+											</a>
+											<a class="btn btn-default ripple btn-mr" href="#">
+												<i class="ion ion-ios-list-outline"></i>
+											</a>
+										</span>
 									</div>
 								</div>
-								<a class="carousel-control left" href="#offer-carousel" data-slide="prev">
-									<i class="ion ion-fw ion-ios-arrow-left"></i>
-								</a>
-								<a class="carousel-control right" href="#offer-carousel" data-slide="next">
-									<i class="ion ion-fw ion-ios-arrow-right"></i>
-								</a>
+							</div>
+							<div class="load shopping-grid" data-include="sort,search" data-pager="#shopping-pager" data-href="jsON/shopping-grid.php" data-token="{token}">
+								<div class="rolling"></div>
 							</div>
 						</div>
 					</div>
-
-					<div class="panel panel-material">
-						<div class="panel-body">
-							<a href="pages-shop-product.html">
-								<img alt="..." src="upload/shopping-1.jpg" class="img img-responsive material-image" />
-							</a>
-						</div>
-						<div class="panel-body">
-							<a href="pages-shop-product.html">
-								<img alt="..." src="upload/shopping-2.jpg" class="img img-responsive material-image" />
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-12 col-sm-12">
-					<div class="panel panel-material">
-						<div class="panel-heading">Inspired by the products you look at</div>
-						<div class="panel-body panel-body-padding">
-							<div id="bottom-carousel" class="carousel slide" data-interval="4000">
-								<div class="carousel-inner text-center">
-									<div class="item active">
-										<div class="row">
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$390,00</s>
-															<mark>$290,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Apple iPhone 7 32 GB</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$1.100,00</s>
-															<mark>$880,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$390,00</s>
-															<mark>$290,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Apple iPhone 7 32 GB</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$1.100,00</s>
-															<mark>$880,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="row">
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$390,00</s>
-															<mark>$290,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Apple iPhone 7 32 GB</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$1.100,00</s>
-															<mark>$880,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-washingmachine.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Samsung WW8PJ3282KW/AH A+++ 8KG 1200RPM Washing Machine</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$390,00</s>
-															<mark>$290,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<a href="pages-shop-product.html">
-													<div class="pdb-10"><img alt="..." src="upload/day-iphone.png" class="img-responsive img-center" /></div>
-													<p class="line line-dual">Apple iPhone 7 32 GB</p>
-													<div class="discount pd-10">
-														<div class="percent alert alert-danger">14%</div>
-														<div class="price">
-															<s class="text-muted">$1.100,00</s>
-															<mark>$880,00</mark>
-														</div>
-													</div>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-								<a class="carousel-control left" href="#bottom-carousel" data-slide="prev">
-									<i class="ion ion-fw ion-ios-arrow-left"></i>
-								</a>
-								<a class="carousel-control right" href="#bottom-carousel" data-slide="next">
-									<i class="ion ion-fw ion-ios-arrow-right"></i>
-								</a>
-							</div>
-						</div>
-					</div>
+					<div id="shopping-pager" class="material-pager"></div>
 				</div>
 			</div>
 		</section>
 		<footer class="mega shopping">
-			<div class="ct container">
-				<div class="row delivery">
-					<div class="col col-sm-6 col-md-3">
-						<a href="#">
-							<div class="title">Delivery Today</div>
-							<i class="ion ion-3x ion-fw ion-model-s"></i>
-							<p class="text-muted">The orders you give until 14:00 are on your doorstep the same day.</p>
-						</a>
-					</div>
-					<div class="col col-sm-6 col-md-3">
-						<a href="#">
-							<div class="title">One-Click Secure Shopping</div>
-							<i class="ion ion-3x ion-fw ion-locked"></i>
-							<p class="text-muted">Save your payment and address information, make secure shopping.</p>
-						</a>
-					</div>
-					<div class="col col-sm-6 col-md-3">
-						<a href="#">
-							<div class="title">You Mobile Pocket</div>
-							<i class="ion ion-3x ion-fw ion-iphone"></i>
-							<p class="text-muted">Enjoy safe shopping anywhere you want.</p>
-						</a>
-					</div>
-					<div class="col col-sm-6 col-md-3">
-						<a href="#">
-							<div class="title">Easy Return</div>
-							<i class="ion ion-3x ion-fw ion-checkmark"></i>
-							<p class="text-muted">Returning the product you bought has never been easier.</p>
-						</a>
-					</div>
-				</div>
-
+			<div class="ct container-fluid">
 				<div class="carousel slide" data-interval="4000">
 				    <div class="carousel-inner">
 				        <div class="item active">
@@ -906,8 +507,7 @@
 			</div>
 		</footer>
 		<footer class="mega light">
-			<div class="ct container">
-
+			<div class="ct container-fluid">
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="panel panel-material">
@@ -1011,7 +611,7 @@
 		</footer>
 
 		<div class="drawer">
-			<div class="ct container-fluid load" data-href="jsON/drawer.php?page=shop&amp;panel=pages" data-method="get">
+			<div class="ct container-fluid load" data-href="jsON/shopping-drawer.php" data-method="get">
 				<div class="rolling"></div>
 			</div>
 		</div>

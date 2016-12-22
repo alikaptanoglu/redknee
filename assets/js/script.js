@@ -59,7 +59,7 @@ $(window).on('load', function (e) {
 
     getScript('#bubble', [{ 'type': 'js', 'src': 'assets/js/bubble.js' }], function() {})
 
-    getScript('.snow', [{ 'type': 'js', 'src': 'assets/js/snow2.js' }], function() {
+    getScript('#snow', [{ 'type': 'js', 'src': 'assets/js/snow2.js' }], function() {
         snow.count = 30;   // number of flakes
         snow.delay = 20;   // timer interval
         snow.minSpeed = 2; // minimum movement/time slice
@@ -136,7 +136,7 @@ $(document).on('click', '.click-class', function() {
 }).on('blur', '.blur-class', function() {
     var _this = $(this);
 
-    iClass(_this)
+    if (!_this.hasClass('blur-disabled')) iClass(_this)
 }).on('click', '.focus, .focus-to', function() {
 	var _this = $(this);
 
@@ -182,14 +182,20 @@ $(document).on('click', '.click-class', function() {
     window.clearTimeout(keyupTimer);
 
     keyupTimer = window.setTimeout(function() {
-        json_ajax(_this.data('target')?$(_this.data('target')):_this);
+        json_ajax(_this.data('target')?eval(directory(_this.data('target'))):_this);
     }, 500)
 
     return false;
 }).on('change', '.change', function() {
     var _this = $(this);
 
-    json_ajax(_this);
+/*
+    $.each(_this, function(key, val) {
+        if (val.is('select')) {
+            val.hide()
+        }
+    })
+*/
 }).keyup(function(e) {
     if (e.keyCode == 27) {
     	body.removeClass('dock-active')
