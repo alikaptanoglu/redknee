@@ -444,36 +444,36 @@
 								<div class="row">
 									<div class="col-xs-6">asd</div>
 									<div class="col-xs-6 text-right">
-										<select class="selectpicker change" data-target=".shopping-grid" id="sort" data-width="100px" multiple title="Sort">
+										<select class="selectpicker change" data-target=".shopping-grid" name="sort" data-width="100px" multiple title="Sort">
 											<optgroup label="Price" data-max-options="1">
-												<option>Price Most</option>
-												<option>Price Least</option>
+												<option value="price-most">Price Most</option>
+												<option value="price-least">Price Least</option>
 											</optgroup>
 											<optgroup label="Sales" data-max-options="1">
-												<option>Sales Most</option>
-												<option>Sales Least</option>
+												<option value="sales-most">Sales Most</option>
+												<option value="sales-least">Sales Least</option>
 											</optgroup>
 											<optgroup label="Date" data-max-options="1">
-												<option>Date Newest</option>
-												<option>Date Oldest</option>
+												<option value="date-newest">Date Newest</option>
+												<option value="date-oldest">Date Oldest</option>
 											</optgroup>
 											<optgroup label="Star" data-max-options="1">
-												<option>Star Best</option>
-												<option>Star Worst</option>
+												<option value="star-best">Star Best</option>
+												<option value="star-worst">Star Worst</option>
 											</optgroup>
 										</select>
-										<span class="btn-group">
-											<a class="btn btn-default ripple btn-mr active" href="#">
-												<i class="ion ion-grid"></i>
-											</a>
-											<a class="btn btn-default ripple btn-mr" href="#">
-												<i class="ion ion-ios-list-outline"></i>
-											</a>
+										<span class="btn-group btn-group-sm" data-toggle="butstons">
+											<label class="btn btn-primary btn-mr active">
+												<input type="radio" class="change" name="grid" value="grid" data-target=".shopping-grid"> <i class="ion ion-grid"></i>
+											</label>
+											<label class="btn btn-primary btn-mr">
+												<input type="radio" class="change" name="grid" value="line" data-target=".shopping-grid"> <i class="ion ion-ios-list-outline"></i>
+											</label>
 										</span>
 									</div>
 								</div>
 							</div>
-							<div class="load shopping-grid" data-include="sort,search" data-pager="#shopping-pager" data-href="jsON/shopping-grid.php" data-token="{token}">
+							<div class="load shopping-grid" data-include="sort,search,grid" data-pager="#shopping-pager" data-href="jsON/shopping-grid.php" data-token="{token}">
 								<div class="rolling"></div>
 							</div>
 						</div>

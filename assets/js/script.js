@@ -187,15 +187,11 @@ $(document).on('click', '.click-class', function() {
 
     return false;
 }).on('change', '.change', function() {
-    var _this = $(this);
+    var _this = $(this),
+        selected = _this.find("option:selected").val();
 
-/*
-    $.each(_this, function(key, val) {
-        if (val.is('select')) {
-            val.hide()
-        }
-    })
-*/
+    if (_this.is('select') || _this.is('input'))
+        json_ajax(_this.data('target')?eval(directory(_this.data('target'))):_this);
 }).keyup(function(e) {
     if (e.keyCode == 27) {
     	body.removeClass('dock-active')
@@ -356,7 +352,43 @@ function json_ajax(_this) {
                 array = $("<div />");
 
             $.each(items, function(key, val) {
-                array.data(val, $('#' + val).val());
+                var item = $('[name=' + val + ']');
+
+                if (
+                    item.attr('type') && (
+                        (
+                            item.attr('type') == 'text' ||
+                            item.attr('type') == 'datetime' ||
+                            item.attr('type') == 'datetime-local' ||
+                            item.attr('type') == 'email' ||
+                            item.attr('type') == 'month' ||
+                            item.attr('type') == 'number' ||
+                            item.attr('type') == 'range' ||
+                            item.attr('type') == 'search' ||
+                            item.attr('type') == 'tel' ||
+                            item.attr('type') == 'time' ||
+                            item.attr('type') == 'url' ||
+                            item.attr('type') == 'week'
+                        )
+                    ) || (
+                        item.is('textarea')
+                    ) || (
+                        item.is('select')
+                    )
+                ) {
+                    array.data(val, item.val());
+                } else if (
+                    (
+                        item.attr('type') == 'radio' ||
+                        item.attr('type') == 'checkbox'
+                    ) &&
+                        item.prop('checked')
+                ) {
+                    $.each(item, function(key, val) {
+                        if (item.prop('checked'))
+                            c(1)
+                    })
+                }
 
                 data_vars = $.extend(data_vars, array.data());
             })

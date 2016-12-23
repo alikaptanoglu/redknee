@@ -59,7 +59,7 @@ shuffle($list);
 
 foreach ($list as $row) {
 ?>
-	<li class="media">
+	<div class="media">
 		<div class="media-left">
 			<img class="media-object img-circle avatar" src="<?php echo $row['image'];?>" alt="..." />
 		</div>
@@ -69,7 +69,7 @@ foreach ($list as $row) {
 		    </h4>
 		    <p class="text-muted"><?php echo $row['title'];?></p>
 		</div>
-	</li>
+	</div>
 <?php
 }
 
